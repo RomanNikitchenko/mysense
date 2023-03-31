@@ -1,2 +1,8 @@
-@import './common';
-@import './example';
+//utils
+@import './utils/common';
+@import './utils/container';
+@import './utils/vars';
+//components
+@import './components/header';
+@import './components/hero';
+@import './components/footer';
