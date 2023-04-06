@@ -1,0 +1,44 @@
+/* placeholders */
+%body {
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.03em;
+  font-size: 14px;
+}
+body {
+  @extend %body;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+%img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+img {
+  @extend %img;
+}
+
+%tag {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  @extend %tag;
+}
+
+%list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.site-nav {
+  @extend %list;
+}
