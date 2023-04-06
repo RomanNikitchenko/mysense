@@ -1,3 +1,24 @@
-.header {
-    color: rgb(10, 57, 158);
+.page-header{
+    padding: 16px 0;
+    border: 1px solid;
+}
+
+.container{
+    border: 1px solid;
+}
+
+.logo__header-icon{
+    display: block;
+}
+
+.main-nav{
+    display: flex;
+}
+
+.site-nav {
+    display: none;
+
+    @media screen and (min-width: 1280px) {
+        display: flex;
+    }
 }

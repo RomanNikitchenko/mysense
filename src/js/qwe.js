@@ -1,1 +1,1 @@
-console.log('qwerty');
+console.log('qwe');
