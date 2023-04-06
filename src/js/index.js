@@ -1,1 +1,1 @@
-import './qwe';
+import './languageToggle';

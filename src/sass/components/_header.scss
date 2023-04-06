@@ -3,6 +3,11 @@
     border: 1px solid;
 }
 
+.page-header__conteiner{
+    display: flex;
+    align-items: center;
+}
+
 .container{
     border: 1px solid;
 }
@@ -20,5 +25,43 @@
 
     @media screen and (min-width: 1280px) {
         display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-left: 268px;
+
+        &__item:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        &__link {
+            font-family: 'Golos Text', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 140%;
+            letter-spacing: -0.05em;
+            display: block;
+            color: var(--text-color-nav);
+            text-decoration: none;
+        }
     }
+}
+
+.language-switcher{
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.05em;
+    color: var(--text-color-nav);
+    margin-left: auto;
+}
+
+.language-menu .language-list {
+    display: none;
+}
+
+.language-menu.open .language-list {
+    display: block;
 }
