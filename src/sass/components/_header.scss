@@ -47,21 +47,40 @@
     }
 }
 
-.language-switcher{
+.page-header__button{
     font-family: 'Golos Text', sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
-    line-height: 140%;
-    letter-spacing: -0.05em;
-    color: var(--text-color-nav);
-    margin-left: auto;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0;
+    margin: 0;
+    border-radius: 100px;
 }
 
-.language-menu .language-list {
-    display: none;
+.page-header__button.login{
+    color: #795BDA;
+    width: 84px;
+    height: 32px;
+    background-color: rgba(121, 91, 218, 0.1);
 }
 
-.language-menu.open .language-list {
-    display: block;
+.page-header__button.choose-person{
+    @media screen and (max-width: 743px) {
+        display: none;
+    }
+    
+    color: #FFFFFF;
+    width: 146px;
+    height: 32px;
+    background-color: #795BDA;
+    margin-left: 8px;
 }

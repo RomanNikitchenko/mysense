@@ -1,0 +1,35 @@
+.language-menu{
+    margin-left: auto;
+    position: relative;
+    margin-right: 16px;
+}
+
+.language-toggle{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.language{
+    margin-right: 4px;
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.05em;
+    color: var(--text-color-nav);
+}
+
+.language-menu .language-list {
+    display: none;
+}
+
+.language-menu.open .language-list {
+    display: block;
+}
+
+.language-list{
+    border: 1px solid;
+    position: absolute;
+}
