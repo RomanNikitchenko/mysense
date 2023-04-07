@@ -1,2 +1,0 @@
-!function(){var e=document.querySelector(".language-menu"),t=e.querySelector(".language-toggle"),n=e.querySelector(".language-list");t.addEventListener("click",(function(){e.classList.toggle("open")})),n.addEventListener("click",(function(n){n.preventDefault();var a=n.target.getAttribute("lang");document.documentElement.lang=a,t.textContent=n.target.textContent,e.classList.remove("open")}))}();
-//# sourceMappingURL=index.1d7eddf3.js.map

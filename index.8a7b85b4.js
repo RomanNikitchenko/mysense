@@ -1,2 +1,0 @@
-const e=document.querySelector(".language-menu"),t=e.querySelector(".language-toggle"),n=e.querySelector(".language-list");t.addEventListener("click",(function(){e.classList.toggle("open")})),n.addEventListener("click",(function(n){n.preventDefault();const l=n.target.getAttribute("lang");document.documentElement.lang=l,t.textContent=n.target.textContent,e.classList.remove("open")}));
-//# sourceMappingURL=index.8a7b85b4.js.map
