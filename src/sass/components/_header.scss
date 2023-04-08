@@ -1,15 +1,11 @@
 .page-header{
     padding: 16px 0;
-    border: 1px solid;
 }
 
 .page-header__conteiner{
+    position: relative;
     display: flex;
     align-items: center;
-}
-
-.container{
-    border: 1px solid;
 }
 
 .logo__header-icon{
@@ -18,6 +14,10 @@
 
 .main-nav{
     display: flex;
+}
+
+.page-header__logo--padding-top {
+    padding-top: 6px;
 }
 
 .site-nav {
@@ -71,7 +71,13 @@
     width: 84px;
     height: 32px;
     background-color: rgba(121, 91, 218, 0.1);
+
+    .icon-login {
+        margin-right: 8px;
+    }
 }
+
+
 
 .page-header__button.choose-person{
     @media screen and (max-width: 743px) {
