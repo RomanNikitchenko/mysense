@@ -37,6 +37,19 @@
             letter-spacing: -0.05em;
             color: #222B40;
         }
+        &::after {
+            display: block;
+            content: '';
+            top: 50%;
+            height: 0.6px;
+            width: 0%;
+            left: 0;
+            background-color: #000;
+            transition: 0.3s ease all .1s;
+        }
+        &:hover::after {
+            width: 100%;
+        }
     }
 }
 .link-psiholog {
@@ -48,6 +61,19 @@
     line-height: 140%;
     letter-spacing: -0.05em;
     color: #222B40;
+    &::after {
+        display: block;
+        content: '';
+        top: 50%;
+        height: 0.6px;
+        width: 0%;
+        left: 0;
+        background-color: #000;
+        transition: 0.3s ease all .1s;
+    }
+    &:hover::after {
+        width: 100%;
+    }
 }
 
 
@@ -95,6 +121,7 @@
     cursor: pointer;
 }
 .footer__mail {
+    display: inline-block;
     text-align: right;
     margin-bottom: 22px;
     font-weight: 700;
@@ -104,6 +131,9 @@
     letter-spacing: -0.01em;
     color: #222B40;
     text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 .footer__social {
     display: flex;
@@ -118,4 +148,65 @@
     width: 46px;
     height: 46px;
     margin-left: 8px;
+    &:hover {
+        background: rgba(121, 91, 218, 0.1);
+    }
 }
+
+@media screen and (max-width: 1280px) {
+    .footer__block-links {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .footer__list {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        margin-right: 20px;
+        .footer__link {
+            padding-bottom: 15px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    .link-psiholog {
+        border-left: none;
+        padding: 0px 40px 0 0;
+    }
+  }
+  @media screen and (max-width: 744px) {
+    .footer__list {
+        flex-direction: column;
+    }
+
+    .footer__right {
+        justify-content: flex-end;
+    }
+    .footer__support {
+        margin-bottom: 34px;
+    }
+    .footer__mail {
+        margin-bottom: 58px;
+    }
+    .footer__social {
+        margin-bottom: 50px;
+    }
+  }
+  @media screen and (max-width: 390px) {
+    .footer__list .footer__link a {
+        font-size: 12px;
+    }
+    .footer_sign-in {
+        font-size: 12px;
+        margin-top: 14px;
+    }
+    .footer__right {
+        min-width: 160px;
+    }
+    .social__icon {
+        width: 32px;
+        height: 32px;
+    }
+    .footer-icon {
+        width: 13px;
+    }
+  }
