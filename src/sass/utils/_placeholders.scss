@@ -41,6 +41,7 @@ p {
   list-style: none;
 }
 .site-nav,
-.language-list {
+.language-list,
+.list {
   @extend %list;
 }
