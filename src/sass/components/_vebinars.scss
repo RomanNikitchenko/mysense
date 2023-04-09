@@ -1,0 +1,108 @@
+.vebinars {
+    padding: 30px 0;
+    overflow: hidden;
+}
+.vebinars-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+    margin-bottom: 30px;
+}
+.vebinars__cards-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.vebinar__card-column {
+    flex: 1 1 360px;
+    background: #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease 0s;
+    &:hover {
+        box-shadow: 0 2 10 2 rgba(34, 43, 64, 0.1);
+        transform: translateY(-3px);
+    }
+}
+.card__block-top {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    img {
+        width: 46px;
+        margin-right: 10px;
+    }
+}
+.card__name {
+    h4 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        margin-bottom: 4px;
+    }
+    p {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.4);
+    }
+}
+.card__block-title {
+    a {
+        display: block;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 110%;
+        letter-spacing: -0.06em;
+        color: #222B40;
+        padding: 20px;
+    }
+}
+.card__block-statistic {
+    padding: 0 20px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.statistic_left {
+    display: flex;
+    align-items: center;
+    .card__likes {
+        margin-left: 20px;
+    }
+}
+
+.card__date {
+    text-align: right;
+    span {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+        color: rgba(34, 43, 64, 0.4);
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .vebinars__cards-wrap {
+        overflow-x: scroll;
+        width: 110%;
+        padding-right: 60px;
+    }
+    .vebinar__card-column {
+        width: 550px;
+    }
+}
+@media screen and (max-width: 744px) {
+    .vebinars__body {
+        width: 110%;
+    }
+    .vebinar__card-column {
+        width: 290px;
+    }
+}
