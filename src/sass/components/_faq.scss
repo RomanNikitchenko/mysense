@@ -1,7 +1,5 @@
-.faq {
-}
-.faq__body {
-}
+
+
 .faq__title {
     position: relative;
     font-weight: 500;
@@ -10,17 +8,13 @@
     letter-spacing: -0.06em;
     color: #222B40;
     margin-bottom: 42px;
-    &::after {
-        position: absolute;
-        content: '';
-        
-        width: 100%;
-        height: 100%;
-        top: 0;
-        right: 0;
-    }
 }
-
+#icon-heart {
+    display: block;
+    position: absolute;
+    bottom: 6.5px;
+    right: 105px;
+}
 .item__wrap {
     position: relative;
     display: flex;
@@ -54,14 +48,6 @@
   
 .block__title.active::after {
     transform: rotate(45deg);
-}
-
-
-.faq__items {
-
-}
-.item {
-
 }
 .item__content {
     border-bottom: 1px solid rgba(34, 43, 64, 0.1);
