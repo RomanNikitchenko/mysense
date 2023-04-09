@@ -7,13 +7,14 @@
     line-height: 110%;
     letter-spacing: -0.06em;
     color: #222B40;
+    max-width: 615px;
     margin-bottom: 42px;
 }
-#icon-heart {
+.faq-section__icon-heart {
     display: block;
     position: absolute;
     bottom: 6.5px;
-    right: 105px;
+    right: -14px;
 }
 .item__wrap {
     position: relative;
@@ -102,6 +103,7 @@
 @media screen and (max-width: 1280px) {
     .faq__title {
         font-size: 42px;
+        max-width: 463px;
     }
     .item__title {
         font-size: 24px;
@@ -116,6 +118,12 @@
   @media screen and (max-width: 744px) {
     .faq__title {
         font-size: 34px;
+        max-width: 463px;
+    }
+    .faq-section__icon-heart {
+        bottom: 4px;
+        right: 194px;
+        width: 10px;
     }
     .item__title {
         font-size: 16px;
