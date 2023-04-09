@@ -3,6 +3,7 @@
   font-family: Roboto, sans-serif;
   letter-spacing: 0.03em;
   font-size: 14px;
+  background-color: var(--background-color-body);
 }
 body {
   @extend %body;
@@ -39,6 +40,8 @@ p {
   margin: 0;
   list-style: none;
 }
-.site-nav {
+.site-nav,
+.language-list,
+.list {
   @extend %list;
 }

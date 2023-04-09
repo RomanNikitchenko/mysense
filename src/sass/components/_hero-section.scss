@@ -1,0 +1,226 @@
+.hero-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0 0 0;
+
+    @media screen and (min-width: 744px) {
+        padding: 80px 0 0 0;
+    }
+}
+
+.hero-section {
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../images/hero-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 220px;
+    background-size: contain;
+
+    // @media (min-device-pixel-ratio: 2),
+    // (min-resolution: 192dpi),
+    // (min-resolution: 2dppx) {
+    //     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    //         url();
+    // }
+
+    @media screen and (min-width: 744px) {
+        background-image: url(../images/hero-tablet.jpg);
+        background-position: center;
+        background-size: cover;
+
+        // @media (min-device-pixel-ratio: 2),
+        // (min-resolution: 192dpi),
+        // (min-resolution: 2dppx) {
+        //     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        //         url();
+        // }
+    }
+
+    @media screen and (min-width: 1280px) {
+        background-image: url(../images/hero-desktop.jpg);
+    }
+    //     @media (min-device-pixel-ratio: 2),
+    //     (min-resolution: 192dpi),
+    //     (min-resolution: 2dppx) {
+    //         background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    //             url();
+    //     }
+    // }
+}
+
+.hero-section-container{
+    margin-bottom: 326px;
+    @media screen and (min-width: 744px) {
+        margin-bottom: 429px;
+    }
+    @media screen and (min-width: 1280px) {
+        margin-bottom: 87px;
+    }
+}
+
+.hero-section__title{
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 744px) {
+        position: relative;
+        width: 416px;
+        font-size: 64px;
+        line-height: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+.hero-section__icon-love-heart {
+    display: none;
+    @media screen and (min-width: 744px) {
+        display: block;
+        position: absolute;
+        bottom: 6.5px;
+        right: 105px;
+    }
+}
+
+.hero-section__text{
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: var(--text-color);
+
+    @media screen and (min-width: 744px) {
+        width: 314px;
+    }
+}
+
+.hero-section__content-container {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: 744px) {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 744px;
+    }
+    @media screen and (min-width: 1280px) {
+        width: 1280px;
+    }
+}
+
+.hero-section__content{
+    width: 370px;
+    padding: 30px;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+.hero-section__content-text{
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.hero-section__content-text span{
+    font-weight: 600;
+}
+
+.hero-section__content-button{
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    color: var(--text-color-white);
+
+    width: 310px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background: #795BDA;
+    border: 1px solid transparent;
+    border-radius: 150px;
+    margin-bottom: 20px;
+}
+
+.hero-section__content-button-icon{
+    margin-left: 12px;
+}
+
+.hero-section__content-list{
+    display: flex;
+}
+
+.hero-section__content-list-item{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.hero-section__content-list-item:not(:last-child){
+    margin-right: 21px;
+}
+
+.hero-section__content-list-item-span {
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    color: rgba(34, 43, 64, 0.4);
+
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(34, 43, 64, 0.4);;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.hero-section__content-list-item-span span {
+    font-size: 14px;
+}
+
+.hero-section__content-list-item:nth-child(2) .hero-section__content-list-item-span {
+    align-items: baseline;
+    padding-top: 10px;
+}
+
+.hero-section__content-list-item-text{
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    color: rgba(34, 43, 64, 0.4);
+}
+
+.hero-section__content-list-item:nth-child(1) .hero-section__content-list-item-text{
+    width: 70px;
+}
+
+.hero-section__content-list-item:nth-child(2) .hero-section__content-list-item-text{
+    width: 103px;
+}

@@ -1,0 +1,130 @@
+.tests {
+    padding: 70px 0;
+    overflow-x: hidden;
+}
+.tests__block-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.tests__title {
+    position: relative;
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+}
+.tests-section__icon-love-heart {
+    position: absolute;
+    bottom: 9px;
+    right: -18px;
+}
+.test__btn {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    color: #795BDA;
+    border: none;
+    background: rgba(121, 91, 218, 0.1);
+    height: 46px;
+    border-radius: 23px;
+    padding: 16px 24px;
+    &:hover {
+        background: rgba(121, 91, 218, 0.2);
+    }
+}
+.tests-icon-btn-arrow {
+    margin-left: 10px;
+}
+.tests__type-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+.card__link {
+    text-decoration: none;
+}
+.card-type__wrapper {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1 1 auto;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &:hover {
+        background: rgba(121, 91, 218, 0.2);
+    }
+}
+.card-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+    max-width: 140px;
+}
+.mobile-test__btn {
+    display: none;
+}
+
+@media screen and (max-width: 1280px) {
+    .tests__type-cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .tests__title {
+        font-size: 42px;
+    }
+    .card__link-744 {
+        display: none;
+    }
+}
+@media screen and (max-width: 744px) {
+    .tests__title {
+        font-size: 34px;
+    }
+    .tests-section__icon-love-heart {
+        bottom: 4px;
+        right: -14px;
+        width: 10px;
+        height: 8px;
+    }
+    .tests__type-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+    .card-type__wrapper {
+        height: 170px;
+    }
+    .card-title {
+        font-size: 20px;
+    }
+    .card__link-390 {
+        display: none;
+    }
+    .test__btn {
+        display: none;
+    }
+    .mobile-test__btn {
+        display: block;
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 390px) {
+    .tests__title {
+        font-size: 34px;
+    }
+    .tests__type-cards {
+        gap: 10px;
+    }
+    .card-title {
+        font-size: 20px;
+    }
+   
+}
