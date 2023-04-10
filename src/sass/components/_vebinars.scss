@@ -93,7 +93,7 @@
     line-height: 100%;
     letter-spacing: -0.05em;
     color: #222B40;
-    max-width: 420px;
+    max-width: 350px;
     margin-bottom: 20px;
 }
 .meeting-card__btn {
@@ -114,7 +114,7 @@
     flex-direction: column;
     justify-content: space-between;
     border-left: 1px solid rgba(34, 43, 64, 0.1);
-    margin-left: 330px;
+    margin-left: 212px;
 }
 .meeting__spicer {
     span {
@@ -128,8 +128,6 @@
         padding: 9px 18px;
         border-radius: 18px;
     }
-}
-.meeting__spicer-name {
 }
 .spicer-name {
     font-weight: 500;
@@ -294,6 +292,7 @@
 @media screen and (max-width: 744px) {
     .card__meeting {
         background: #fff;
+        max-width: 360px;
     }
     .meeting__image {
         max-width: 390px;
