@@ -42,6 +42,7 @@ p {
 }
 .site-nav,
 .language-list,
-.list {
+.hero-section__content-list,
+.user-manual__list {
   @extend %list;
 }

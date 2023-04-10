@@ -17,36 +17,33 @@
     background-position: 50% 220px;
     background-size: contain;
 
-    // @media (min-device-pixel-ratio: 2),
-    // (min-resolution: 192dpi),
-    // (min-resolution: 2dppx) {
-    //     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    //         url();
-    // }
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        background-image: url(../images/hero-mobile@2x.jpg);
+    }
 
     @media screen and (min-width: 744px) {
         background-image: url(../images/hero-tablet.jpg);
         background-position: center;
         background-size: cover;
 
-        // @media (min-device-pixel-ratio: 2),
-        // (min-resolution: 192dpi),
-        // (min-resolution: 2dppx) {
-        //     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-        //         url();
-        // }
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            background-image: url(../images/hero-tablet@2x.jpg);
+        }
     }
 
     @media screen and (min-width: 1280px) {
         background-image: url(../images/hero-desktop.jpg);
+
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            background-image: url(../images/hero-desktop@2x.jpg);
+        }
     }
-    //     @media (min-device-pixel-ratio: 2),
-    //     (min-resolution: 192dpi),
-    //     (min-resolution: 2dppx) {
-    //         background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    //             url();
-    //     }
-    // }
 }
 
 .hero-section-container{
@@ -109,11 +106,13 @@
     margin-right: auto;
 
     @media screen and (min-width: 744px) {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
         width: 744px;
     }
     @media screen and (min-width: 1280px) {
+        padding-left: 80px;
+        padding-right: 80px;
         width: 1280px;
     }
 }
