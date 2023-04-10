@@ -1,0 +1,75 @@
+.our-team{
+    padding: 140px 0 80px;
+    border: 1px solid;
+}
+
+.our-team__container{
+    border: 1px solid green;
+}
+
+.our-team__header{
+    margin-bottom: 40px;
+    border: 1px solid red;
+    @media screen and (min-width: 1280px) {
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+.our-team__title{
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: var(--text-color);
+    @media screen and (min-width: 744px) {
+        font-size: 42px;
+    }
+    @media screen and (min-width: 1280px) {
+        font-size: 56px;
+    }
+}
+
+.our-team__icon{
+    width: 10px;
+    height: 8px;
+    margin-left: -5px;
+    margin-bottom: -5px;
+    @media screen and (min-width: 744px) {
+        width: 14px;
+        height: 12px;
+    }
+}
+
+.our-team__all-specialists{
+    width: 265px;
+    height: 102px;
+    background-color: red;
+    display: none;
+    @media screen and (min-width: 1280px) {
+        display: block;
+    }
+}
+
+//our-team__list-container
+.our-team__list-container {
+    width: 100%;
+    overflow-x: scroll;
+    border: 1px solid fuchsia;
+}
+
+.our-team__list {
+    display: flex;
+    white-space: nowrap;
+}
+
+.our-team__list li {
+    flex: 0 0 auto;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #ccc;
+}
