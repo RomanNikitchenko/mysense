@@ -1,6 +1,8 @@
 .our-team{
     padding: 140px 0 80px;
     border: 1px solid;
+    position: relative;
+    overflow: hidden;
 }
 
 .our-team__container{
@@ -56,20 +58,32 @@
 }
 
 //our-team__list-container
-.our-team__list-container {
-    width: 100%;
+.our-team__list-scroll {
+    width: 740px;
     overflow-x: scroll;
     border: 1px solid fuchsia;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.our-team__list-container {
+    display: flex;
+    white-space: nowrap;
 }
 
 .our-team__list {
     display: flex;
     white-space: nowrap;
+    padding: 0 175px;
 }
 
-.our-team__list li {
-    flex: 0 0 auto;
+.our-team__item {
+    width: 290px;
     padding: 10px;
-    margin-right: 10px;
     background-color: #ccc;
+}
+
+.our-team__item:not(:last-child) {
+    margin-right: 20px;
 }
