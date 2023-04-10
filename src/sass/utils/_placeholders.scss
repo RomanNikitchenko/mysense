@@ -9,6 +9,10 @@ body {
   @extend %body;
 }
 
+.articles{
+  overflow: hidden;
+}
+
 body.modal-open {
   overflow: hidden;
 }
