@@ -1,0 +1,194 @@
+.articles {
+    padding: 70px 0;
+}
+.articles__block-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.articles__title {
+    position: relative;
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+}
+.articles-section__icon-love-heart {
+    position: absolute;
+    bottom: 9px;
+    right: -18px;
+}
+.articles__btn {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    color: #795BDA;
+    border: none;
+    background: rgba(121, 91, 218, 0.1);
+    height: 46px;
+    border-radius: 23px;
+    padding: 16px 24px;
+    &:hover {
+        background: rgba(121, 91, 218, 0.2);
+    }
+}
+.articles-icon-btn-arrow {
+    margin-left: 10px;
+}
+.articles__cards-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.articles__card-column {
+    flex: 1 1 360px;
+    background: #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease 0s;
+    &:hover {
+        box-shadow: 0 2 10 2 rgba(34, 43, 64, 0.1);
+        transform: translateY(-3px);
+    }
+}
+.card__block-top {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    img {
+        width: 46px;
+        margin-right: 10px;
+    }
+}
+.card__name {
+    h4 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        margin-bottom: 4px;
+    }
+    p {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.4);
+    }
+}
+.card__block-title {
+    a {
+        display: block;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 110%;
+        letter-spacing: -0.06em;
+        color: #222B40;
+        padding: 20px;
+    }
+    p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        // letter-spacing: -0.05em;
+        color: #222B40;
+        padding: 0 20px 20px;
+    }
+}
+.card__block-statistic {
+    padding: 0 20px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.statistic_left {
+    display: flex;
+    align-items: center;
+    .card__likes {
+        margin-left: 20px;
+    }
+}
+
+.card__date {
+    text-align: right;
+    span {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+        color: rgba(34, 43, 64, 0.4);
+    }
+}
+.articles__btn-390 {
+    display: none;
+}
+
+
+@media screen and (max-width: 1280px) {
+    .articles__title {
+        font-size: 42px;
+        max-width: 344px;
+    }
+    .articles-section__icon-love-heart {
+        position: absolute;
+        bottom: 9px;
+        right: -18px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .articles__title {
+        font-size: 34px;
+    }
+    .articles-section__icon-love-heart {
+        width: 10px;
+        height: 8px;
+        bottom: 4px;
+        right: -18px;
+    }
+    .articles__cards-wrap {
+        overflow-x: scroll;
+        width: 110%;
+        padding-right: 60px;
+    }
+    .articles__card-column {
+        width: 550px;
+    }
+}
+@media screen and (max-width: 744px) {
+    .articles__body {
+        width: 110%;
+    }
+    .articles__card-column {
+        width: 290px;
+    }
+    .articles__btn-390 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        color: #fff;
+        border: none;
+        background: #795bda;
+        height: 46px;
+        border-radius: 23px;
+        padding: 16px 24px;
+        margin: 20px auto;
+        width: 100%;
+        &:hover {
+            background: rgba(121, 91, 218, 0.2);
+        }
+    }
+    .articles__btn {
+        display: none;
+    }
+}
