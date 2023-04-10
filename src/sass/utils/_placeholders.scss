@@ -12,7 +12,9 @@ body {
 body.modal-open {
   overflow: hidden;
 }
-
+main {
+  overflow: hidden;
+}
 %img {
   display: block;
   width: 100%;
