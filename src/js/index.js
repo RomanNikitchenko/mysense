@@ -1,2 +1,3 @@
 import './languageToggle';
-import './card-slider'
+import './card-slider';
+import './faq';

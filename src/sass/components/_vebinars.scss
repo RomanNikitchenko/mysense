@@ -1,0 +1,347 @@
+.vebinars {
+    padding: 30px 0;
+    overflow: hidden;
+}
+.vebinar__block-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.vebinars-title-h2 {
+    position: relative;
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+    max-width: 517px;
+}
+.vebinars-section__icon-heart {
+    display: block;
+    position: absolute;
+    bottom: 6.5px;
+    right: -19px;
+}
+.vebinars__btn {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    color: #795BDA;
+    border: none;
+    background: rgba(121, 91, 218, 0.1);
+    height: 46px;
+    border-radius: 23px;
+    padding: 16px 24px;
+    &:hover {
+        background: rgba(121, 91, 218, 0.2);
+    }
+}
+.vebinars-icon-btn-arrow {
+    margin-left: 10px;
+}
+.meeting-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+    margin-bottom: 30px;
+}
+.meeting__cards-wrap {
+    margin-bottom: 60px;
+}
+.card__meeting {
+    background:  url('../images/man.jpg') no-repeat right #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+.card__meeting-women {
+    background:  url('../images/women.jpg') no-repeat right #FFFFFF;
+}
+.meeting__left-block {
+    padding: 30px 20px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.meeting__info-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.meeting__date {
+    margin-bottom: 74px;
+    span {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+        border: 1px solid #222B40;
+        padding: 9px 18px;
+        border-radius: 18px;
+    }
+}
+.meeting__title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    max-width: 420px;
+    margin-bottom: 20px;
+}
+.meeting-card__btn {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    background: #795BDA;
+    padding: 16px 36px;
+    border-radius: 25px;
+    border: none;
+    max-width: 200px;
+}
+.meeting__spicer-block {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid rgba(34, 43, 64, 0.1);
+    margin-left: 330px;
+}
+.meeting__spicer {
+    span {
+        display: inline-block;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+        border: 1px solid #222B40;
+        padding: 9px 18px;
+        border-radius: 18px;
+    }
+}
+.meeting__spicer-name {
+}
+.spicer-name {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+}
+.experience__spicer {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    color: rgba(34, 43, 64, 0.4);
+}
+.meeting__image {
+    max-width: 266px;
+    display: none;
+}
+.vebinars__btn-390 {
+    display: none;
+}
+
+
+
+/*--------------------------------------*/
+
+.vebinars-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+    margin-bottom: 30px;
+}
+.vebinars__cards-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.vebinar__card-column {
+    flex: 1 1 360px;
+    background: #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease 0s;
+    &:hover {
+        box-shadow: 0 2 10 2 rgba(34, 43, 64, 0.1);
+        transform: translateY(-3px);
+    }
+}
+.card__block-top {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    img {
+        width: 46px;
+        margin-right: 10px;
+    }
+}
+.card__name {
+    h4 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        margin-bottom: 4px;
+    }
+    p {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.4);
+    }
+}
+.card__block-title {
+    a {
+        display: block;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 110%;
+        letter-spacing: -0.06em;
+        color: #222B40;
+        padding: 20px;
+    }
+}
+.card__block-statistic {
+    padding: 0 20px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.statistic_left {
+    display: flex;
+    align-items: center;
+    .card__likes {
+        margin-left: 20px;
+    }
+}
+
+.card__date {
+    text-align: right;
+    span {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+        color: rgba(34, 43, 64, 0.4);
+    }
+}
+
+
+@media screen and (max-width: 1280px) {
+    .card__meeting {
+        flex-wrap: wrap;
+    }
+    .meeting__left-block {
+        flex-direction: column;
+    }
+    .meeting__spicer-block {
+        border-left: none;
+        margin-left: 0;
+        padding: 20px 0 0;
+    }
+    .meeting__info-block {
+        border-bottom: 1px solid rgba(34, 43, 64, 0.2);
+        padding-bottom: 20px;
+        max-width: 375px;
+    }
+    .meeting__spicer {
+        margin: 8px 0 20px;
+    }
+    .card__meeting {
+        background:  url('../images/man-mobile.jpg') no-repeat right #FFFFFF;
+        border-radius: 8px;
+        justify-content: space-between;
+        display: flex;
+    }
+    .card__meeting-women {
+        background:  url('../images/women-mobile.jpg') no-repeat right #FFFFFF;
+        border-radius: 8px;
+        justify-content: space-between;
+        display: flex;
+    }
+    .vebinars-title-h2 {
+        font-size: 42px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .vebinars__cards-wrap {
+        overflow-x: scroll;
+        width: 110%;
+        padding-right: 60px;
+    }
+    .vebinar__card-column {
+        width: 550px;
+    }
+}
+@media screen and (max-width: 744px) {
+    .card__meeting {
+        background: #fff;
+    }
+    .meeting__image {
+        max-width: 390px;
+        display: block;
+    }
+    .meeting__left-block {
+        padding: 30px 0px 20px 20px;
+    }
+    .meeting__title {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+    .vebinars__btn {
+        display: none;
+    }
+    .meeting__date {
+        margin-bottom: 35px;
+    }
+    .vebinars__body {
+        width: 110%;
+    }
+    .vebinars-title-h2 {
+        font-size: 34px;
+    }
+    .vebinar__card-column {
+        width: 290px;
+    }
+    .vebinars__btn-390 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        color: #fff;
+        border: none;
+        background: #795bda;
+        height: 46px;
+        border-radius: 23px;
+        padding: 16px 24px;
+        margin: 20px;
+        width: 100%;
+        &:hover {
+            background: rgba(121, 91, 218, 0.2);
+        }
+    }
+    .meeting-card__btn {
+        display: none;
+    }
+}
