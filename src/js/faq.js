@@ -1,8 +1,12 @@
-   // Анимация спойлера
-   $('.item__wrap').click(function(event) {
-    if($('.item__content').hasClass('one')){
-        $('.item__wrap').not($(this)).removeClass('active');
-        $('.item__text').not($(this).next()).slideUp(300);
+const itemWraps = document.querySelectorAll('.item__wrap');
+itemWraps.forEach(itemWrap => {
+  itemWrap.addEventListener('click', () => {
+    itemWrap.classList.toggle('rotated');
+    const itemText = itemWrap.nextElementSibling;
+    if (itemText.style.maxHeight) {
+      itemText.style.maxHeight = null;
+    } else {
+      itemText.style.maxHeight = itemText.scrollHeight + 'px';
     }
-    $(this).toggleClass('active').next().slideToggle(300);
+  });
 });
