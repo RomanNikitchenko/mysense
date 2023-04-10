@@ -136,3 +136,20 @@
         margin-left: 66px;
     }
   }
+
+  //фнимация для контента блока <div class="item__text">
+  .item__text {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.5s ease;
+  }
+
+  .item__text.active {
+      max-height: 1000px;
+      /* здесь может быть любое достаточно большое значение */
+  }
+
+  .item__wrap.rotated::before {
+      transform: rotate(0deg);
+      right: 0;
+  }
