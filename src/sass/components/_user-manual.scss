@@ -59,12 +59,15 @@
     align-items: center;
     border: 1px solid transparent;
     margin-bottom: 6px;
+    cursor: pointer;
     @media screen and (min-width: 1280px) {
         width: 72px;
         height: 72px;
         margin-bottom: 12px;
     }
 }
+
+
 
 .user-manual__list{
     padding: 0 20px;

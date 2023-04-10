@@ -8,9 +8,13 @@
     width: 390px;
   }
   @media screen and (min-width: 744px) {
+    padding-left: 40px;
+    padding-right: 40px;
     width: 744px;
   }
   @media screen and (min-width: 1280px) {
+    padding-left: 80px;
+    padding-right: 80px;
     width: 1280px;
   }
 }
