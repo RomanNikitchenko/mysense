@@ -107,6 +107,10 @@
     border-radius: 25px;
     border: none;
     max-width: 200px;
+    cursor: pointer;
+    &:hover {
+        background: #6c52c3;
+    }
 }
 .meeting__spicer-block {
     padding: 20px;
@@ -114,7 +118,7 @@
     flex-direction: column;
     justify-content: space-between;
     border-left: 1px solid rgba(34, 43, 64, 0.1);
-    margin-left: 330px;
+    margin-left: 280px;
 }
 .meeting__spicer {
     span {
@@ -292,6 +296,7 @@
 @media screen and (max-width: 744px) {
     .card__meeting {
         background: #fff;
+        max-width: 350px;
     }
     .meeting__image {
         max-width: 100%;
@@ -303,6 +308,14 @@
     .meeting__title {
         font-size: 20px;
         margin-bottom: 0;
+    }
+    .vebinars-section__icon-heart {
+        display: block;
+        position: absolute;
+        bottom: 5px;
+        right: -13px;
+        width: 10px;
+        height: 8px;
     }
     .vebinars__btn {
         display: none;
@@ -332,7 +345,7 @@
         background: #795bda;
         height: 46px;
         border-radius: 23px;
-        padding: 16px 24px;
+        padding: 16px 0px 16px 24px;
         margin: 20px;
         width: 100%;
         &:hover {

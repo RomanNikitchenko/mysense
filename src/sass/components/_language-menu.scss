@@ -30,8 +30,16 @@
 }
 
 .language-list{
-    border: 1px solid;
     position: absolute;
+    padding: 8px 8px 4px;
+    background: #f3f3f3;
+    li {
+        margin: 5px 0;
+        a {
+            text-decoration: none;
+            color: var(--text-color-nav);;
+        }
+    }
 }
 
 .icon-arrow{

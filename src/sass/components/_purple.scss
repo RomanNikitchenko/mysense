@@ -10,6 +10,7 @@
 .purple__left-block {
 }
 .purple__title {
+    position: relative;
     font-weight: 500;
     position: relative;
     font-size: 56px;
@@ -18,6 +19,9 @@
     max-width: 458px;
 }
 .purple-section__icon-heart {
+    position: absolute;
+    bottom: 6px;
+    right: 139px;
 }
 .purple__center-block {
     display: flex;
@@ -141,10 +145,10 @@
         font-size: 34px;
     }
     .purple-section__icon-heart {
-        // position: absolute;
         width: 10px;
         height: 8px;
-        top: 5px;
+        top: 137px;
+        right: 154px;
     }
     .purple__body {
         display: flex;

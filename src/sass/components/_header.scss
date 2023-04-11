@@ -44,7 +44,21 @@
             display: block;
             color: var(--text-color-nav);
             text-decoration: none;
+            &::after {
+                display: block;
+                content: '';
+                top: 50%;
+                height: 0.6px;
+                width: 0%;
+                left: 0;
+                background-color: #000;
+                transition: 0.3s ease all .1s;
+            }
+            &:hover::after {
+                width: 100%;
+            }
         }
+        
     }
 }
 
@@ -78,7 +92,7 @@
     }
 
     &:hover {
-        background-color: #795bda33;
+        background-color: rgba(121, 91, 218, 0.2);
     }
 }
 
@@ -95,7 +109,7 @@
     background-color: #795BDA;
     margin-left: 8px;
 
-        &:hover {
-            background-color: #7155cd;
-        }
+    &:hover {
+        background-color: #694fbf;
+    }
 }
