@@ -30,6 +30,7 @@
 }
 
 .user-manual__title{
+    position: relative;
     font-family: 'Golos Text';
     font-style: normal;
     font-weight: 500;
@@ -48,7 +49,22 @@
         width: 519px;
     }
 }
-
+.user-manual-section__icon-heart {
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: -4px;
+    @media screen and (max-width: 1280px) {
+        bottom: 5px;
+        right: 11px;
+    }
+    @media screen and (max-width: 744px) {
+        bottom: 3px;
+        right: 155px;
+        width: 10px;
+        height: 8px;
+    }
+}
 .user-manual__button{
     width: 46px;
     height: 46px;
