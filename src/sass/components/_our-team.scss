@@ -1,17 +1,16 @@
 .our-team{
     padding: 140px 0 80px;
-    border: 1px solid;
-    position: relative;
+    outline: 1px solid;
     overflow: hidden;
 }
 
 .our-team__container{
-    border: 1px solid green;
+    outline: 1px solid green;
 }
 
 .our-team__header{
     margin-bottom: 40px;
-    border: 1px solid red;
+    outline: 1px solid red;
     @media screen and (min-width: 1280px) {
         margin-bottom: 50px;
         display: flex;
@@ -47,43 +46,260 @@
     }
 }
 
-.our-team__all-specialists{
-    width: 265px;
-    height: 102px;
-    background-color: red;
+//all-specialists
+.all-specialists{
+    display: block;
+    outline: 1px solid red;
+
+    .all-specialists__title{
+        font-family: 'Golos Text';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 110%;
+        letter-spacing: -0.06em;
+        color: var(--text-color);
+        margin-bottom: 20px;
+    }
+
+    .all-specialists__buttons{
+        display: flex;
+        outline: 1px solid yellow;
+
+        .all-specialists__button{
+            height: 46px;
+            border: 2px solid #F3F3F3;
+            overflow: hidden;
+        }
+
+        .all-specialists__button:not(:last-child) {
+            width: 46px;
+            border-radius: 50%;
+        }
+
+        .all-specialists__button:last-child {
+            width: 239px;
+            border-radius: 150px;
+
+            font-family: 'Golos Text';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 100%;
+            letter-spacing: -0.06em;
+            color: var(--accent-color);
+            background-color: rgba(121, 91, 218, 0.1);
+        }
+
+        .all-specialists__button:not(:first-child) {
+            margin-left: -9px;
+        }
+    }
+}
+
+.all-specialists--hidden-desktop {
     display: none;
+
     @media screen and (min-width: 1280px) {
         display: block;
     }
 }
 
+.all-specialists--hidden-mobile-tablet {
+    display: block;
+
+    @media screen and (min-width: 1280px) {
+        display: none;
+    }
+}
+
+
 //our-team__list-container
-.our-team__list-scroll {
+.our-team__list-cards {
     width: 740px;
     overflow-x: scroll;
-    border: 1px solid fuchsia;
-    position: absolute;
+    outline: 1px solid fuchsia;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 744px) {
+        width: auto;
+        overflow-x: visible;
+        position: static;
+        left: auto;
+        transform: none;
+    }
 }
 
 .our-team__list-container {
     display: flex;
     white-space: nowrap;
+
+    @media screen and (min-width: 744px) {
+        white-space: normal;
+    }
 }
 
 .our-team__list {
     display: flex;
     white-space: nowrap;
-    padding: 0 175px;
+    padding: 0 195px;
+
+    @media screen and (min-width: 744px) {
+        white-space: normal;
+        padding: 0;
+        flex-wrap: wrap;
+        margin-top: -20px;
+        margin-left: -20px;
+    }
 }
 
-.our-team__item {
+.our-team__item{
+    background-color: var(--text-color-card);
+    border-radius: 8px;
+    overflow: hidden;
     width: 290px;
-    padding: 10px;
-    background-color: #ccc;
+    padding-bottom: 20px;
+    @media screen and (min-width: 744px) {
+        width: auto;
+        margin-top: 20px;
+        margin-left: 20px;
+        flex-basis: calc(100% / 2 - 20px);
+    }
+
+    @media screen and (min-width: 1280px) {
+        flex-basis: calc(100% / 4 - 20px);
+    }
 }
 
 .our-team__item:not(:last-child) {
     margin-right: 20px;
+    @media screen and (min-width: 744px) {
+        margin-right: 0;
+    }
 }
+
+.our-team__photo{
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.our-team__caption{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.our-team__name{
+    margin-bottom: 8px;
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: var(--text-color);
+}
+
+.our-team__experience{
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.05em;
+    color: rgba(34, 43, 64, 0.4);
+}
+
+.our-team__specialties{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+    .our-team__specialty {
+        font-family: 'Golos Text';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: var(--text-color);
+    }
+
+    .our-team__specialty:nth-child(1),
+    .our-team__specialty:nth-child(2),
+    .our-team__specialty:nth-child(4) {
+        padding-right: 12px;
+        margin-right: 12px;
+        border-right: 1px solid rgba(34, 43, 64, 0.1);
+    }
+
+    @media screen and (min-width: 744px) {
+        .our-team__specialty:nth-child(3) {
+            padding-right: 12px;
+            margin-right: 12px;
+        }
+    }
+}
+
+.our-team__price{
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    color: var(--text-color);
+
+    .our-team__price-value{
+        font-size: 32px;
+        line-height: 100%;
+    }
+
+    .our-team__price-unit{
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+.our-team__buttons{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.our-team__session-button{
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    color: var(--text-color-white);
+    background-color: var(--accent-color);
+    border: 1px solid transparent;
+    border-radius: 150px;
+
+    width: 175px;
+    height: 46px;
+    margin-right: 4px;
+}
+
+.our-team__details-button {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    background-color: var(--accent-color);
+    border-radius: 150px;
+
+    .our-team__icon-Hello {
+        width: 14px;
+        height: 14px;
+    }
+}
+

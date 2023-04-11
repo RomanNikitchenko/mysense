@@ -1,5 +1,6 @@
 <section class="our-team">
     <div class="container our-team__container">
+
         <div class="our-team__header">
             <h2 class="our-team__title">
                 Наші спеціалісти
@@ -9,42 +10,192 @@
                     <use href="./images/symbol-defs.svg#icon-love-heart"></use>
                 </svg>
             </h2>
-            <div class="our-team__all-specialists">
-                
+
+            <div class="all-specialists all-specialists--hidden-desktop">
+                <h3 class="all-specialists__title">Понад 50 психологів</h3>
             </div>
+
         </div>
-        <div class="our-team__list-scroll">
+
+        <div class="our-team__list-cards">
             <div class="our-team__list-container">
                 <ul class="our-team__list">
-                    <li class="our-team__item">Элемент 1</li>
-                    <li class="our-team__item">Элемент 2</li>
-                    <li class="our-team__item">Элемент 3</li>
-                    <li class="our-team__item">Элемент 4</li>
-                    <li class="our-team__item">Элемент 5</li>
-                    <li class="our-team__item">Элемент 6</li>
-                    <li class="our-team__item">Элемент 7</li>
-                    <li class="our-team__member">
-                        <picture>
-                            <!-- <source
-                                srcset="./images/imgMarketing270.jpg 1x, ./images/imgMarketing270@2x.jpg 2x, ./images/imgMarketing270@3x.jpg 3x"
-                                media="(min-width: 1200px)" type="image/jpeg" />
-                            <source
-                                srcset="./images/imgMarketing354.jpg 1x, ./images/imgMarketing354@2x.jpg 2x, ./images/imgMarketing354@3x.jpg 3x"
-                                media="(min-width: 768px)" type="image/jpeg" />
-                            <source
-                                srcset="./images/imgMarketing450.jpg 1x, ./images/imgMarketing450@2x.jpg 2x, ./images/imgMarketing450@3x.jpg 3x"
-                                media="(min-width: 480px)" type="image/jpeg" />
+
+                    <li class="our-team__item">
+                        <figure class="our-team__photo">
+                            <picture>
+                                <source media="(min-width: 1280px)"
+                                    srcset="./images/our-team-desktop.jpg 1x, ./images/our-team-desktop@2x.jpg 2x" />
+
+                                <source media="(min-width: 744px)"
+                                    srcset="./images/our-team-tablet.jpg 1x, ./images/our-team-tablet@2x.jpg 2x" />
+
+                                <source media="(max-width: 743px)"
+                                    srcset="./images/our-team-mobil.jpg 1x, ./images/our-team-mobil@2x.jpg 2x" />
+
+                                <img src="./images/our-team-mobil.jpg" alt="Фото Іван Виговський" />
+                            </picture>
+
+                            <figcaption class="our-team__caption">
+                                <h3 class="our-team__name">Іван Виговський</h3>
+                                <p class="our-team__experience">3 роки практики</p>
+                            </figcaption>
+                        </figure>
                     
-                            <img srcset="./images/imgMarketing270.jpg 270w, ./images/imgMarketing354.jpg 354w, ./images/imgMarketing450.jpg 450w"
-                                sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, 100vw" src="/images/imgMarketing450.jpg"
-                                alt="Описание изображения для всех версий" />
-                        </picture> -->
-                        <div class="team-member__bottom-description">
-                            <h3 class="team-member__title">Николай Тарасов</h3>
-                            <p class="team-member__text">Marketing</p>
+                        <ul class="our-team__specialties">
+                            <li class="our-team__specialty">Тривога</li>
+                            <li class="our-team__specialty">Страх</li>
+                            <li class="our-team__specialty">Мотивація</li>
+                            <li class="our-team__specialty">Вигорання</li>
+                            <li class="our-team__specialty">Стосунки</li>
+                        </ul>
+
+                        <div class="our-team__price">
+                            <span class="our-team__price-value">300 </span><span class="our-team__price-unit">грн/час</span>
+                        </div>
+
+                        <div class="our-team__buttons">
+                            <button type="button" class="our-team__session-button">Записатись на сессію</button>
+                            <button type="button" class="our-team__details-button">
+                                <img class="our-team__icon-Hello" src="./images/Hello.png" alt="icon Hello">
+                            </button>
                         </div>
                     </li>
+
+                    <li class="our-team__item">
+                        <figure class="our-team__photo">
+                            <picture>
+                                <source media="(min-width: 1280px)"
+                                    srcset="./images/our-team-desktop.jpg 1x, ./images/our-team-desktop@2x.jpg 2x" />
+
+                                <source media="(min-width: 744px)"
+                                    srcset="./images/our-team-tablet.jpg 1x, ./images/our-team-tablet@2x.jpg 2x" />
+
+                                <source media="(max-width: 743px)"
+                                    srcset="./images/our-team-mobil.jpg 1x, ./images/our-team-mobil@2x.jpg 2x" />
+
+                                <img src="./images/our-team-mobil.jpg" alt="Фото Іван Виговський" />
+                            </picture>
+
+                            <figcaption class="our-team__caption">
+                                <h3 class="our-team__name">Іван Виговський</h3>
+                                <p class="our-team__experience">3 роки практики</p>
+                            </figcaption>
+                        </figure>
+                    
+                        <ul class="our-team__specialties">
+                            <li class="our-team__specialty">Тривога</li>
+                            <li class="our-team__specialty">Страх</li>
+                            <li class="our-team__specialty">Мотивація</li>
+                            <li class="our-team__specialty">Вигорання</li>
+                            <li class="our-team__specialty">Стосунки</li>
+                        </ul>
+
+                        <div class="our-team__price">
+                            <span class="our-team__price-value">300 </span><span class="our-team__price-unit">грн/час</span>
+                        </div>
+
+                        <div class="our-team__buttons">
+                            <button type="button" class="our-team__session-button">Записатись на сессію</button>
+                            <button type="button" class="our-team__details-button">
+                                <img class="our-team__icon-Hello" src="./images/Hello.png" alt="icon Hello">
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="our-team__item">
+                        <figure class="our-team__photo">
+                            <picture>
+                                <source media="(min-width: 1280px)"
+                                    srcset="./images/our-team-desktop.jpg 1x, ./images/our-team-desktop@2x.jpg 2x" />
+
+                                <source media="(min-width: 744px)"
+                                    srcset="./images/our-team-tablet.jpg 1x, ./images/our-team-tablet@2x.jpg 2x" />
+
+                                <source media="(max-width: 743px)"
+                                    srcset="./images/our-team-mobil.jpg 1x, ./images/our-team-mobil@2x.jpg 2x" />
+
+                                <img src="./images/our-team-mobil.jpg" alt="Фото Іван Виговський" />
+                            </picture>
+
+                            <figcaption class="our-team__caption">
+                                <h3 class="our-team__name">Іван Виговський</h3>
+                                <p class="our-team__experience">3 роки практики</p>
+                            </figcaption>
+                        </figure>
+                    
+                        <ul class="our-team__specialties">
+                            <li class="our-team__specialty">Тривога</li>
+                            <li class="our-team__specialty">Страх</li>
+                            <li class="our-team__specialty">Мотивація</li>
+                            <li class="our-team__specialty">Вигорання</li>
+                            <li class="our-team__specialty">Стосунки</li>
+                        </ul>
+
+                        <div class="our-team__price">
+                            <span class="our-team__price-value">300 </span><span class="our-team__price-unit">грн/час</span>
+                        </div>
+
+                        <div class="our-team__buttons">
+                            <button type="button" class="our-team__session-button">Записатись на сессію</button>
+                            <button type="button" class="our-team__details-button">
+                                <img class="our-team__icon-Hello" src="./images/Hello.png" alt="icon Hello">
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="our-team__item">
+                        <figure class="our-team__photo">
+                            <picture>
+                                <source media="(min-width: 1280px)"
+                                    srcset="./images/our-team-desktop.jpg 1x, ./images/our-team-desktop@2x.jpg 2x" />
+
+                                <source media="(min-width: 744px)"
+                                    srcset="./images/our-team-tablet.jpg 1x, ./images/our-team-tablet@2x.jpg 2x" />
+
+                                <source media="(max-width: 743px)"
+                                    srcset="./images/our-team-mobil.jpg 1x, ./images/our-team-mobil@2x.jpg 2x" />
+
+                                <img src="./images/our-team-mobil.jpg" alt="Фото Іван Виговський" />
+                            </picture>
+
+                            <figcaption class="our-team__caption">
+                                <h3 class="our-team__name">Іван Виговський</h3>
+                                <p class="our-team__experience">3 роки практики</p>
+                            </figcaption>
+                        </figure>
+                    
+                        <ul class="our-team__specialties">
+                            <li class="our-team__specialty">Тривога</li>
+                            <li class="our-team__specialty">Страх</li>
+                            <li class="our-team__specialty">Мотивація</li>
+                            <li class="our-team__specialty">Вигорання</li>
+                            <li class="our-team__specialty">Стосунки</li>
+                        </ul>
+
+                        <div class="our-team__price">
+                            <span class="our-team__price-value">300 </span><span class="our-team__price-unit">грн/час</span>
+                        </div>
+
+                        <div class="our-team__buttons">
+                            <button type="button" class="our-team__session-button">Записатись на сессію</button>
+                            <button type="button" class="our-team__details-button">
+                                <img class="our-team__icon-Hello" src="./images/Hello.png" alt="icon Hello">
+                            </button>
+                        </div>
+                    </li>
+
                 </ul>
+            </div>
+        </div>
+
+        <div class="all-specialists all-specialists--hidden-mobile-tablet">
+            <h3 class="all-specialists__title">Понад 50 психологів</h3>
+            <div class="all-specialists__buttons">
+                <button class="all-specialists__button"></button>
+                <button class="all-specialists__button"></button>
+                <button class="all-specialists__button"></button>
+                <button class="all-specialists__button">Усі психологи</button>
             </div>
         </div>
     </div>

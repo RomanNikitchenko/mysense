@@ -48,6 +48,7 @@ p {
 .language-list,
 .hero-section__content-list,
 .user-manual__list,
-.our-team__list {
+.our-team__list,
+.our-team__specialties {
   @extend %list;
 }
