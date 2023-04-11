@@ -157,6 +157,10 @@
     border: 1px solid transparent;
     border-radius: 150px;
     margin-bottom: 20px;
+    cursor: pointer;
+    &:hover {
+        background: #694fbf;
+    }
 }
 
 .hero-section__content-button-icon{

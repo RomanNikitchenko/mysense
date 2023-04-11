@@ -44,7 +44,21 @@
             display: block;
             color: var(--text-color-nav);
             text-decoration: none;
+            &::after {
+                display: block;
+                content: '';
+                top: 50%;
+                height: 0.6px;
+                width: 0%;
+                left: 0;
+                background-color: #000;
+                transition: 0.3s ease all .1s;
+            }
+            &:hover::after {
+                width: 100%;
+            }
         }
+        
     }
 }
 
@@ -76,6 +90,9 @@
     .icon-login {
         margin-right: 8px;
     }
+    &:hover {
+        background: rgba(121, 91, 218, 0.2);
+    }
 }
 
 
@@ -90,4 +107,7 @@
     height: 32px;
     background-color: #795BDA;
     margin-left: 8px;
+    &:hover {
+        background: #694fbf;
+    }
 }

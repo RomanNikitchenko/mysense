@@ -15,10 +15,11 @@
     letter-spacing: -0.06em;
     color: #222B40;
 }
-.articles-section__icon-love-heart {
+.articles-section__icon-heart {
     position: absolute;
+    display: block;
     bottom: 9px;
-    right: -18px;
+    right: -20px;
 }
 .articles__btn {
     display: flex;
@@ -133,24 +134,25 @@
 @media screen and (max-width: 1280px) {
     .articles__title {
         font-size: 42px;
-        max-width: 344px;
+        max-width: 258px;
     }
-    .articles-section__icon-love-heart {
+    .articles-section__icon-heart {
         position: absolute;
-        bottom: 9px;
-        right: -18px;
+        bottom: 5px;
+        right: 58px;
     }
 }
 
 @media screen and (max-width: 960px) {
     .articles__title {
+        position: relative;
         font-size: 34px;
+        max-width: 210px;
     }
-    .articles-section__icon-love-heart {
-        width: 10px;
-        height: 8px;
+    .articles-section__icon-heart {
+        position: absolute;
         bottom: 4px;
-        right: -18px;
+        right: 45px;
     }
     .articles__cards-wrap {
         overflow-x: scroll;
@@ -162,6 +164,13 @@
     }
 }
 @media screen and (max-width: 744px) {
+    .articles-section__icon-heart {
+        position: absolute;
+        width: 10px;
+        height: 8px;
+        bottom: 4px;
+        right: 50px;
+    }
     .articles__body {
         width: 110%;
     }
@@ -181,9 +190,9 @@
         background: #795bda;
         height: 46px;
         border-radius: 23px;
-        padding: 16px 24px;
-        margin: 20px auto;
-        width: 100%;
+        padding: 16px 10px 16px 24px;
+        margin: 20px 10px;
+        width: 90%;
         &:hover {
             background: rgba(121, 91, 218, 0.2);
         }
