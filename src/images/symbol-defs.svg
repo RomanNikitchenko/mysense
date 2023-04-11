@@ -101,6 +101,8 @@
 <path d="M21.333 0c9.949 0 18.387 6.709 21.333 16-2.946 9.291-11.384 16-21.333 16s-18.387-6.709-21.333-16c2.946-9.291 11.384-16 21.333-16zM21.333 24c4.418 0 8-3.582 8-8s-3.582-8-8-8c-4.418 0-8 3.582-8 8s3.582 8 8 8z"></path>
 </symbol>
 
+<symbol id="icon-arrow-r-grey" viewBox="0 0 32 32">
+<path fill="none" stroke="#b5b5b5" style="stroke: var(--color1, #b5b5b5)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.5556" d="M0 16h28.444M28.444 16l-14.222 14.222M28.444 16l-14.222-14.222"></path>
 </symbol>
 </defs>
 </svg>
