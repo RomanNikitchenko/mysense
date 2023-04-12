@@ -1,5 +1,6 @@
 .our-team{
-    padding: 140px 0 80px;
+    // padding: 140px 0 80px;
+    padding: 0 0 80px;
     overflow: hidden;
 }
 
@@ -227,6 +228,23 @@
     line-height: 110%;
     letter-spacing: -0.06em;
     color: var(--text-color);
+    display: flex;
+
+    .our-team__status{
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+
+    .our-team__status.online {
+        background-color: #56F08B;
+        /* зеленый цвет для онлайн-статуса */
+    }
+
+    .our-team__status.offline {
+        background-color: #f05656;
+        /* красный цвет для оффлайн-статуса */
+    }
 }
 
 .our-team__experience{
@@ -295,6 +313,13 @@
     display: flex;
     align-items: center;
     margin-left: 20px;
+    width: 250px;
+    @media screen and (min-width: 744px) {
+        width: 282px;
+    }
+    @media screen and (min-width: 1280px) {
+        width: 225px;
+    }
 }
 
 .our-team__session-button{
@@ -310,19 +335,41 @@
     border-radius: 150px;
     cursor: pointer;
 
-    width: 175px;
+    width: 200px;
     height: 46px;
     margin-right: 4px;
+
+    @media screen and (min-width: 744px) {
+        width: 232px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 175px;
+    }
+
 
     &:hover {
         background-color: #7155cd;
     }
 }
 
+.our-team__session-button.not--friendly{
+    width: 262px;
+    margin: 0;
+
+    @media screen and (min-width: 744px) {
+        width: 282px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 225px;
+    }
+}
+
 .our-team__details-button {
+    display: none;
     width: 46px;
     height: 46px;
-    display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid transparent;
@@ -340,3 +387,6 @@
     }
 }
 
+.our-team__details-button.friendly{
+    display: flex;
+}
