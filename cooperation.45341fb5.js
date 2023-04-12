@@ -1,0 +1,2 @@
+const e=document.querySelector(".language-menu"),t=e.querySelector(".language-toggle"),n=t.querySelector(".language"),o=e.querySelector(".language-list"),l=t.querySelector(".icon-arrow");t.addEventListener("click",(function(){e.classList.toggle("open"),l.classList.toggle("rotate")})),o.addEventListener("click",(function(t){t.preventDefault();const o=t.target.getAttribute("lang");document.documentElement.lang=o,n.textContent=t.target.textContent,e.classList.remove("open"),l.classList.remove("rotate")}));
+//# sourceMappingURL=cooperation.45341fb5.js.map
