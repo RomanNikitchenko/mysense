@@ -1,7 +1,6 @@
 .hero-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 30px 0 0 0;
 
     @media screen and (min-width: 744px) {
@@ -25,7 +24,7 @@
 
     @media screen and (min-width: 744px) {
         background-image: url(../images/ImgCooperation/heroTablet@2x.jpg);
-        background-position: center;
+        background-position: 50% top;
         background-size: cover;
 
         @media (min-device-pixel-ratio: 2),
@@ -46,15 +45,15 @@
     }
 }
 
-.hero-section-container {
-    margin-bottom: 326px;
+.hero-section__container {
+    margin-bottom: 416px;
 
     @media screen and (min-width: 744px) {
-        margin-bottom: 429px;
+        margin-bottom: 609px;
     }
 
     @media screen and (min-width: 1280px) {
-        margin-bottom: 87px;
+        margin-bottom: 175px;
     }
 }
 
@@ -78,13 +77,13 @@
 }
 
 .hero-section__icon-love-heart {
-    display: none;
-
+    width: 12px;
+    height: 10px;
+    margin-left: -5px;
+    margin-bottom: -5px;
     @media screen and (min-width: 744px) {
-        display: block;
-        position: absolute;
-        bottom: 6.5px;
-        right: 105px;
+        width: 14px;
+        height: 12px;
     }
 }
 
@@ -102,6 +101,7 @@
     }
 }
 
+//hero-section__content-container
 .hero-section__content-container {
     padding-left: 0;
     padding-right: 0;
@@ -122,7 +122,7 @@
 }
 
 .hero-section__content {
-    width: 370px;
+    max-width: 370px;
     padding: 30px;
     background: #FFFFFF;
     border-radius: 8px;
@@ -131,16 +131,19 @@
 .hero-section__content-text {
     font-family: 'Golos Text', sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 16px;
     line-height: 150%;
     letter-spacing: -0.01em;
     color: var(--text-color);
     margin-bottom: 20px;
-}
 
-.hero-section__content-text span {
-    font-weight: 600;
+    @media screen and (min-width: 744px) {
+        font-weight: 600;
+    }
+    @media screen and (min-width: 1280) {
+        font-weight: 400;
+    }
 }
 
 .hero-section__content-button {
@@ -152,7 +155,7 @@
     letter-spacing: -0.06em;
     color: var(--text-color-white);
 
-    width: 310px;
+    width: 100%;
     height: 46px;
     display: flex;
     justify-content: center;
@@ -160,7 +163,6 @@
     background-color: #795BDA;
     border: 1px solid transparent;
     border-radius: 150px;
-    margin-bottom: 20px;
     cursor: pointer;
 
     &:hover {
@@ -170,66 +172,4 @@
 
 .hero-section__content-button-icon {
     margin-left: 12px;
-}
-
-.hero-section__content-list {
-    display: flex;
-}
-
-.hero-section__content-list-item {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-.hero-section__content-list-item:not(:last-child) {
-    margin-right: 21px;
-}
-
-.hero-section__content-list-item-span {
-    font-family: 'Golos Text', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: rgba(34, 43, 64, 0.4);
-
-    width: 46px;
-    height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(34, 43, 64, 0.4);
-    ;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.hero-section__content-list-item-span span {
-    font-size: 14px;
-}
-
-.hero-section__content-list-item:nth-child(2) .hero-section__content-list-item-span {
-    align-items: baseline;
-    padding-top: 10px;
-}
-
-.hero-section__content-list-item-text {
-    font-family: 'Golos Text', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 120%;
-    letter-spacing: -0.05em;
-    color: rgba(34, 43, 64, 0.4);
-}
-
-.hero-section__content-list-item:nth-child(1) .hero-section__content-list-item-text {
-    width: 70px;
-}
-
-.hero-section__content-list-item:nth-child(2) .hero-section__content-list-item-text {
-    width: 103px;
 }
