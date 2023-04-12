@@ -28,7 +28,7 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        margin-left: 268px;
+        margin-left: 217px;
 
         &__item:not(:last-child) {
             margin-right: 30px;
@@ -90,8 +90,9 @@
     .icon-login {
         margin-right: 8px;
     }
+
     &:hover {
-        background: rgba(121, 91, 218, 0.2);
+        background-color: rgba(121, 91, 218, 0.2);
     }
 }
 
@@ -107,7 +108,8 @@
     height: 32px;
     background-color: #795BDA;
     margin-left: 8px;
+
     &:hover {
-        background: #694fbf;
+        background-color: #694fbf;
     }
 }
