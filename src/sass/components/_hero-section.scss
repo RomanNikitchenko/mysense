@@ -25,7 +25,7 @@
 
     @media screen and (min-width: 744px) {
         background-image: url(../images/hero-tablet.jpg);
-        background-position: center;
+        background-position: 50% 220px;
         background-size: cover;
 
         @media (min-device-pixel-ratio: 2),
@@ -76,12 +76,14 @@
 }
 
 .hero-section__icon-love-heart {
-    display: none;
+    width: 12px;
+    height: 10px;
+    margin-left: -5px;
+    margin-bottom: -5px;
+
     @media screen and (min-width: 744px) {
-        display: block;
-        position: absolute;
-        bottom: 6.5px;
-        right: 105px;
+        width: 14px;
+        height: 12px;
     }
 }
 
@@ -99,6 +101,7 @@
     }
 }
 
+//hero-section__content-container
 .hero-section__content-container {
     padding-left: 0;
     padding-right: 0;
@@ -118,7 +121,7 @@
 }
 
 .hero-section__content{
-    width: 370px;
+    max-width: 370px;
     padding: 30px;
     background: #FFFFFF;
     border-radius: 8px;
@@ -148,7 +151,7 @@
     letter-spacing: -0.06em;
     color: var(--text-color-white);
 
-    width: 310px;
+    width: 100%;
     height: 46px;
     display: flex;
     justify-content: center;
@@ -170,6 +173,11 @@
 
 .hero-section__content-list{
     display: flex;
+    margin-left: -21px;
+    margin-top: -21px;
+    @media screen and (max-width: 325px) {
+        flex-wrap: wrap;
+    }
 }
 
 .hero-section__content-list-item{
@@ -177,11 +185,10 @@
     padding: 0;
     display: flex;
     align-items: center;
+    margin-left: 21px;
+    margin-top: 21px;
 }
 
-.hero-section__content-list-item:not(:last-child){
-    margin-right: 21px;
-}
 
 .hero-section__content-list-item-span {
     font-family: 'Golos Text', sans-serif;
@@ -192,7 +199,7 @@
     letter-spacing: -0.05em;
     color: rgba(34, 43, 64, 0.4);
 
-    width: 46px;
+    min-width: 46px;
     height: 46px;
     display: flex;
     align-items: center;
@@ -222,9 +229,9 @@
 }
 
 .hero-section__content-list-item:nth-child(1) .hero-section__content-list-item-text{
-    width: 70px;
+    width: 100%;
 }
 
 .hero-section__content-list-item:nth-child(2) .hero-section__content-list-item-text{
-    width: 103px;
+    width: 100%;
 }
