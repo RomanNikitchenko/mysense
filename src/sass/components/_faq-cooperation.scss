@@ -1,0 +1,145 @@
+
+
+.faq__title {
+    position: relative;
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+    max-width: 615px;
+    margin-bottom: 42px;
+}
+.faq-section__icon-heart {
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    right: 97px;
+}
+.item__wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 32px 0;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.item__wrap::before,
+.item__wrap::after {
+    content: '';
+    width: 19px;
+    height: 2px;
+    background: #222B40;
+    position: absolute;
+    top: 50%;
+    transition: all 0.3s ease 0s;
+}
+.item__wrap::before {
+    transform: rotate(90deg);
+    right: 0;
+}
+.item__wrap::after {
+    transform: rotate(0deg);
+    right: 0px;
+}
+.block__title.active::before {
+    background: transparent;
+}
+  
+.block__title.active::after {
+    transform: rotate(45deg);
+}
+.item__content {
+    border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+}
+.item__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+    color: #222B40;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #222B40;
+    border-radius: 50%;
+}
+.item__title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    margin-left: 150px;
+
+}
+.item__text {
+    margin-left: 186px;
+    // display: none;
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .faq__title {
+        font-size: 42px;
+        max-width: 463px;
+    }
+    .item__title {
+        font-size: 24px;
+    }
+    .item__title {
+        margin-left: 40px;
+    }
+    .item__text {
+        margin-left: 76px;
+    }
+  }
+  @media screen and (max-width: 744px) {
+    .faq__title {
+        font-size: 34px;
+        max-width: 463px;
+    }
+    .faq-section__icon-heart {
+        bottom: 4px;
+        right: 56px;
+        width: 10px;
+        height: 8px;
+    }
+    .item__title {
+        font-size: 16px;
+        max-width: 238px;
+    }
+    .item__title {
+        margin-left: 30px;
+    }
+    .item__text {
+        margin-left: 66px;
+    }
+  }
+
+  //анимация для контента блока <div class="item__text">
+  .item__text {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.5s ease;
+  }
+
+  .item__text.active {
+      max-height: 1000px;
+      /* здесь может быть любое достаточно большое значение */
+  }
+
+  .item__wrap.rotated::before {
+      transform: rotate(0deg);
+      right: 0;
+  }
