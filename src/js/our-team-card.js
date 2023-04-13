@@ -24,8 +24,8 @@ const teamMembers = [
     priceValue: '300',
     priceUnit: 'грн/час',
     iconSrc: HelloImg,
-    status: true,
-    friendly: true,
+    status: false,
+    friendly: false,
     photoSources: [
       {
         media: '(min-width: 1280px)',

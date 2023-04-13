@@ -1,0 +1,197 @@
+.purple {
+    padding: 80px 0;
+    background: #795BDA;
+    color: #FFFFFF;
+}
+.purple__body {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+.purple__left-block {
+}
+.purple__title {
+    position: relative;
+    font-weight: 500;
+    position: relative;
+    font-size: 56px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    max-width: 464px;
+}
+.purple-section__icon-heart {
+    position: absolute;
+    bottom: 6px;
+    right: 292px;
+}
+.purple__center-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 246px;
+    padding-top: 8px;
+}
+.purple__subtitle {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+}
+.purple__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+    padding: 16px 24px;
+    background: #FFFFFF;
+    height: 46px;
+    border-radius: 23px;
+    border: none;
+    &:hover {
+        background: rgb(222, 212, 255);
+    }
+}
+.purple__right-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 203px;
+    padding-top: 8px;
+    p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.01em;
+        max-width: 160px;
+    }
+}
+.right-block__subtitle {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    
+}
+.purple__images {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    li {
+        img {
+            width: 46px;
+        }
+        .two {
+            transform: translateX(-10px);
+        }
+        .three {
+            transform: translateX(-20px);
+        }
+    }
+}
+.purple__btn-390 {
+    display: none;
+}
+@media screen and (max-width: 1280px) {
+    .purple__title {
+        font-size: 42px;
+        max-width: 100%;
+    }
+    .purple-section__icon-heart {
+        right: 458px;
+        bottom: 4px;
+    }
+    .purple__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .purple__left-block {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    .purple__center-block {
+        max-width: 285px;
+        margin-top: 30px;
+        grid-column-start: 2;
+        p {
+            margin: 0;
+        }
+    }
+    .purple__right-block {
+        margin-top: 30px;
+        max-width: 220px;
+        grid-column-start: 1;
+        grid-row-start: 3;
+        grid-row-end: 5;
+        p {
+            max-width: 100%;     
+            margin: 20px 0;
+        }
+    }
+    .purple__btn {
+        max-width: 226px;
+    }
+}
+@media screen and (max-width: 744px) {
+    .purple__title {
+        font-size: 34px;
+    }
+    .purple-section__icon-heart {
+        width: 10px;
+        height: 8px;
+        bottom: 4px;
+        right: 25px;
+    }
+    .purple__body {
+        display: flex;
+        flex-direction: column;
+    }
+    .purple__common-blocks {
+        display: flex;
+    }
+    .purple__center-block {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        .purple__subtitle {
+            font-size: 22px;
+        }
+    }
+    .purple__right-block {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-right: 20px;
+        .right-block__subtitle {
+            font-size: 22px;
+        }
+    }
+    .purple__btn {
+        display: none;
+    }
+    .purple__btn-390 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        color: #222B40;
+        padding: 16px 24px;
+        background: #FFFFFF;
+        height: 46px;
+        border-radius: 23px;
+        border: none;
+        width: 100%;
+        margin-top: 40px;
+        &:hover {
+            background: rgb(222, 212, 255);
+        }
+    }
+}
