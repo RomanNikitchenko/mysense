@@ -1,1 +1,0 @@
-{"mappings":"gfAAAA,EAAA,S","sources":["src/js/cooperation.js"],"sourcesContent":["import './languageToggle';\nimport './card-slider';\nimport './mobile-menu';\nimport './faq';\n"],"names":["parcelRequire"],"version":3,"file":"cooperation.d3c4a81e.js.map"}
