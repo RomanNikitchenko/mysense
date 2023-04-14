@@ -51,6 +51,7 @@ p {
 .hero-section__content-list,
 .user-manual__list,
 .our-team__list,
-.our-team__specialties {
+.our-team__specialties,
+.advantages {
   @extend %list;
 }
