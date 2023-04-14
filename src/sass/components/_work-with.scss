@@ -1,15 +1,17 @@
-.cooperation-with-us-section{
+.work-with-section {
     padding-top: 80px;
     padding-bottom: 89px;
+
     @media screen and (min-width: 744px) {
         padding-bottom: 86px;
     }
+
     @media screen and (min-width: 1280px) {
         padding-bottom: 66px;
     }
 }
 
-.cooperation-with-us-section__title {
+.work-with-section__title {
     font-family: 'Golos Text', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -30,31 +32,34 @@
     }
 }
 
-.cooperation-with-us-section__container{
+.work-with-section__container {
     padding-left: 15px;
     padding-right: 15px;
+
     @media screen and (min-width: 1280px) {
         padding-left: 80px;
         padding-right: 80px;
     }
 }
 
-.advantages{
+.advantages {
     display: flex;
     flex-wrap: wrap;
     margin-top: -10px;
+
     @media screen and (min-width: 744px) {
         margin-top: -20px;
         margin-left: -20px;
     }
 }
 
-.advantages__item{
+.advantages__item {
     width: 100%;
     margin-top: 10px;
     background-color: var(--text-color-card);
     border-radius: 8px;
     padding: 20px 0 20px 20px;
+
     @media screen and (min-width: 744px) {
         margin-top: 20px;
         margin-left: 20px;
@@ -63,11 +68,13 @@
 
 
 .advantages__item:nth-child(1) {
-    .advantages__description{
+    .advantages__description {
         max-width: 282px;
+
         @media screen and (min-width: 744px) {
             max-width: 200px;
         }
+
         @media screen and (min-width: 1280px) {
             max-width: 307px;
         }
@@ -77,9 +84,11 @@
 .advantages__item:nth-child(2) {
     .advantages__description {
         max-width: 295px;
+
         @media screen and (min-width: 744px) {
             max-width: 209px;
         }
+
         @media screen and (min-width: 1280px) {
             max-width: 320px;
         }
@@ -89,9 +98,11 @@
 .advantages__item:nth-child(3) {
     .advantages__description {
         max-width: 250px;
+
         @media screen and (min-width: 744px) {
             max-width: 177px;
         }
+
         @media screen and (min-width: 1280px) {
             max-width: 320px;
         }
@@ -101,9 +112,11 @@
 .advantages__item:nth-child(4) {
     .advantages__description {
         max-width: 255px;
+
         @media screen and (min-width: 744px) {
             max-width: 290px;
         }
+
         @media screen and (min-width: 1280px) {
             max-width: 392px;
         }
@@ -113,13 +126,16 @@
 .advantages__item:nth-child(5) {
     .advantages__description {
         max-width: 285px;
+
         @media screen and (min-width: 744px) {
             max-width: 320px;
         }
+
         @media screen and (min-width: 1280px) {
             max-width: 469px;
         }
     }
+
     .advantages__title--mobile-tablet {
         @media screen and (min-width: 744px) {
             max-width: 158px;
@@ -133,17 +149,21 @@
         max-width: 232px;
         padding: 20px 0 11px 20px;
     }
+
     .advantages__item:nth-child(2) {
         max-width: 225px;
         padding: 20px 0 11px 20px;
     }
+
     .advantages__item:nth-child(3) {
         max-width: 215px;
         padding: 20px 0 11px 20px;
     }
+
     .advantages__item:nth-child(4) {
         max-width: 348px;
     }
+
     .advantages__item:nth-child(5) {
         max-width: 346px;
     }
@@ -154,23 +174,27 @@
         max-width: 360px;
         padding: 20px 0 20px 20px;
     }
+
     .advantages__item:nth-child(2) {
         max-width: 360px;
         padding: 20px 0 20px 20px;
     }
+
     .advantages__item:nth-child(3) {
         max-width: 360px;
         padding: 20px 0 20px 20px;
     }
+
     .advantages__item:nth-child(4) {
         max-width: 550px;
     }
+
     .advantages__item:nth-child(5) {
         max-width: 550px;
     }
 }
 
-.advantages__title{
+.advantages__title {
     font-family: 'Golos Text', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -238,6 +262,7 @@
     line-height: 150%;
     letter-spacing: -0.01em;
     color: var(--text-color);
+
     @media screen and (min-width: 1280px) {
         font-size: 16px;
     }
@@ -246,9 +271,11 @@
 .advantages__item:nth-child(4) .advantages__description,
 .advantages__item:nth-child(5) .advantages__description {
     font-size: 12px;
+
     @media screen and (min-width: 744px) {
         font-size: 14px;
     }
+
     @media screen and (min-width: 1280px) {
         font-size: 16px;
     }
