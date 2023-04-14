@@ -1,0 +1,239 @@
+.filter {
+    padding: 40px 0;
+}
+.filter__body {
+ display: flex;
+ justify-content: space-between;
+}
+.filter__title {
+    h1 {
+        font-weight: 500;
+        font-size: 56px;
+        line-height: 110%;
+    }
+}
+.filter__inputs {
+    display: flex;
+}
+.input__search {
+    max-width: 490px;
+    min-width: 350px;
+    input {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        color: rgba(34, 43, 64, 0.5);
+        width: 100%;
+        height: 46px;
+        background: rgba(34, 43, 64, 0.05);
+        border: 1px solid #F3F3F3;
+        border-radius: 23px;
+        padding: 16px 24px;
+    }
+}
+.input__select {
+ display: flex;
+}
+.__select {
+    position: relative;
+    display: flex;
+    width: 190px;
+    height: 46px;
+    margin: 0 auto;
+  
+    z-index: 1;
+    
+    &[data-state="active"] {
+      .__select__title {
+        &::before {
+          transform: translate(-3px, -50%) rotate(-45deg);
+        }
+  
+        &::after {
+          transform: translate(3px, -50%) rotate(45deg);
+        }
+      }
+      
+      .__select__content {
+        border-width: 1px;
+        
+        border-color: rgba(#c7ccd1, 1);
+      }
+      
+      .__select__label {
+        max-height: 40px;
+        
+        border-width: 1px;
+        
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
+  .__select__title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 46px;
+    padding: 16px 24px;
+  
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+
+    border-radius: 5px;
+    border: solid 1px #f3f3f3;
+    border-radius: 23px;
+    background: rgba(34, 43, 64, 0.05);
+    cursor: pointer;
+    
+    z-index: 2;
+  
+    &::before,
+    &::after {
+      content: "";
+  
+      position: absolute;
+      top: 50%;
+      right: 16px;
+  
+      display: block;
+      width: 10px;
+      height: 2px;
+  
+      transition: all 0.3s ease-out;
+  
+      background-color: #91959F;
+  
+      transform: translate(-3px, -50%) rotate(45deg);
+    }
+    &::after {
+      transform: translate(3px, -50%) rotate(-45deg);
+    }
+  
+    &:hover {
+      border-color: #795bda;
+  
+      &::before,
+      &::after {
+        background-color: #795bda;
+      }
+    }
+  }
+  
+  .__select__content {
+    position: absolute;
+    top: 45px;
+    left: 3px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 3px);
+  
+    background-color: #F3F3F3;
+  
+    border: 1px solid rgba(#c7ccd1, 0);
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top: none;
+    
+    transition: all 0.3s ease-out;
+  
+    z-index: 1;
+  }
+  .__select__input {
+    display: none;
+    pointer-events: none;
+  
+    &:checked + label {
+    //   background-color: #dedede;
+      
+      &::after {
+        content: attr(data-value);
+      }
+    }
+    &:disabled + label {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  }
+  .__select__label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 46px;
+    max-height: 0;
+    padding: 0 16px;
+   
+    
+    transition: all 0.2s ease-out;
+  
+    cursor: pointer;
+  
+    & + input + & {
+      border-top: 0 solid #C7CCD160;
+    }
+  
+    &::before {
+      content: attr(data-value);
+      
+      transition: all 0.2s ease-out;
+      
+      opacity: 0;
+    }
+    &::after {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      
+      display: flex;
+      align-items: center;
+      width: 200px;
+      height: 40px;
+      padding: 8px 16px;
+      
+      color: #333333;
+      
+      z-index: -1;
+    }
+  }
+
+@media screen and (max-width: 1280px) {
+  .filter__body {
+    flex-wrap: wrap;
+  }
+  .filter__title {
+    h1 {
+        font-size: 43px;
+    }
+}
+  .filter__inputs {
+    margin-top: 20px;
+  } 
+  .input__search {
+    min-width: 300px;
+  }
+  .__select {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 744px) {
+  .filter__inputs {
+    flex-wrap: wrap;
+  }
+  .input__search {
+    min-width: 350px;
+  }
+  .input__select {
+    margin-top: 5px;
+  }
+  .__select {
+    width: 175px;
+  }
+}

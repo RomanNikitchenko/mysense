@@ -104,5 +104,10 @@
 <symbol id="icon-arrow-r-grey" viewBox="0 0 32 32">
 <path fill="none" stroke="#b5b5b5" style="stroke: var(--color1, #b5b5b5)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.5556" d="M0 16h28.444M28.444 16l-14.222 14.222M28.444 16l-14.222-14.222"></path>
 </symbol>
+
+<!-- Страница стати -->
+<symbol id="icon-select-arrow" viewBox="0 0 59 32">
+<path fill="none" stroke="#91959f" style="stroke: var(--color1, #91959f)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="5.3333" d="M5.333 5.333l24 21.333 24-21.333"></path>
+</symbol>
 </defs>
 </svg>
