@@ -1,35 +1,41 @@
-.user-manual{
-    padding: 80px 0 140px;
+.user-manual {
+    padding: 80px 0 0;
     overflow: hidden;
 }
 
-.user-manual__container{
-    height: 616px;
+.user-manual__container {
+    height: 619px;
     position: relative;
 
     @media screen and (min-width: 744px) {
-        height: 479px;
+        height: 433px;
         padding-left: 40px;
         padding-right: 40px;
     }
+
     @media screen and (min-width: 1280px) {
-        height: 585px;
+        height: 535px;
         padding-left: 80px;
         padding-right: 80px;
     }
 }
 
-.user-manual__thumb{
+.user-manual__thumb {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
+
     @media screen and (min-width: 744px) {
         margin-bottom: 40px;
     }
+    @media screen and (min-width: 1280px) {
+        margin-bottom: 29px;
+        align-items: flex-start;
+    }
 }
 
-.user-manual__title{
+.user-manual__title {
     position: relative;
     font-family: 'Golos Text';
     font-style: normal;
@@ -38,50 +44,60 @@
     line-height: 110%;
     letter-spacing: -0.06em;
     color: var(--text-color);
-    width: 273px;
+    width: 217px;
 
     @media screen and (min-width: 744px) {
         font-size: 42px;
         width: 407px;
     }
+
     @media screen and (min-width: 1280px) {
         font-size: 56px;
         width: 540px;
     }
+
+    span {
+        color: var(--accent-color);
+    }
 }
 
-.user-manual__icon-love-heart{
+.user-manual__icon-love-heart {
     width: 10px;
     height: 8px;
     margin-left: -3px;
     margin-bottom: -1px;
+
     @media screen and (min-width: 744px) {
         width: 14px;
         height: 12px;
         margin-left: -2px;
         margin-bottom: -2px;
     }
+
     @media screen and (min-width: 1280px) {
         margin-left: -9px;
         margin-bottom: -5px;
     }
 }
 
-.user-manual__icon-next{
+.user-manual__icon-next {
     @media screen and (min-width: 1280px) {
-        width: 18.78px;
-        height: 18.78px;
+        width: 12px;
+        height: 12px;
     }
 }
+
 .user-manual-section__icon-heart {
     display: block;
     position: absolute;
     bottom: 5px;
     right: -4px;
+
     @media screen and (max-width: 1280px) {
         bottom: 5px;
         right: 11px;
     }
+
     @media screen and (max-width: 744px) {
         bottom: 3px;
         right: 155px;
@@ -89,31 +105,51 @@
         height: 8px;
     }
 }
-.user-manual__button{
+
+.user-manual__text{
+    display: none;
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: var(--text-color);
+    max-width: 255px;
+    margin-top: 13px;
+
+    @media screen and (min-width: 1280px) {
+        display: block;
+    }
+}
+
+.user-manual__button {
     width: 46px;
     height: 46px;
-    background-color: rgba(121, 91, 218, 0.1);
+    background-color: rgba(121, 91, 218, 0);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid transparent;
     margin-bottom: 6px;
     cursor: pointer;
+    border: 1px solid rgba(34, 43, 64, 0.2);
+
     @media screen and (min-width: 1280px) {
-        width: 72px;
-        height: 72px;
-        margin-bottom: 12px;
+        width: 46px;
+        height: 46px;
+        margin-bottom: 0px;
+        margin-top: 16px;
     }
-    
+
     &:hover {
         background-color: #795bda33;
     }
 }
 
 
-
-.user-manual__list{
+//user-manual__list
+.user-manual__list {
     padding: 0 20px;
     display: flex;
     position: absolute;
@@ -121,9 +157,11 @@
     left: 0;
     transform: translateX(0);
     transition: transform 250ms ease-in-out;
+
     @media screen and (min-width: 744px) {
         padding: 0 40px;
     }
+
     @media screen and (min-width: 1280px) {
         padding: 0 80px;
     }
@@ -134,48 +172,56 @@
     border-radius: 8px;
     padding-top: 20px;
     overflow: hidden;
-    width: 350px;   
+    width: 350px;
 
     @media screen and (min-width: 744px) {
         display: flex;
         align-items: flex-end;
+        justify-content: space-between;
         width: 664px;
         padding: 20px 0 20px 20px;
     }
+
     @media screen and (min-width: 1280px) {
         width: 1120px;
     }
 }
 
-.user-manual__item:not(:last-child){
+.user-manual__item:not(:last-child) {
     margin-right: 20px;
+
     @media screen and (min-width: 744px) {
         margin-right: 40px;
     }
+
     @media screen and (min-width: 1280px) {
         margin-right: 20px;
     }
 }
 
-.user-manual__card{
+.user-manual__card {
     margin: 0 20px;
     margin-bottom: 40px;
+
     @media screen and (min-width: 744px) {
         margin: 0;
         width: 304px;
     }
+
     @media screen and (min-width: 1280px) {
         width: 380px;
     }
 }
 
-.user-manual__step-number{
-    margin-bottom: 30px;
+.user-manual__step-number {
+    margin-bottom: 20px;
+
     @media screen and (min-width: 744px) {
-        margin-bottom: 177px;
+        margin-bottom: 103px;
     }
+
     @media screen and (min-width: 1280px) {
-        margin-bottom: 245px;
+        margin-bottom: 189px;
     }
 }
 
@@ -195,7 +241,7 @@
     border-radius: 100px;
 }
 
-.card__title{
+.card__title {
     font-family: 'Golos Text';
     font-style: normal;
     font-weight: 600;
@@ -203,14 +249,18 @@
     line-height: 110%;
     letter-spacing: -0.06em;
     color: var(--text-color);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    max-width: 204px;
+
     @media screen and (min-width: 744px) {
         font-weight: 500;
         font-size: 32px;
         line-height: 100%;
         letter-spacing: -0.05em;
         margin-bottom: 25px;
+        max-width: 300px;
     }
+
     @media screen and (min-width: 744px) {
         font-weight: 500;
         font-size: 32px;
@@ -220,7 +270,7 @@
     }
 }
 
-.card__text{
+.card__text {
     font-family: 'Golos Text';
     font-style: normal;
     font-weight: 500;
@@ -228,14 +278,21 @@
     line-height: 150%;
     letter-spacing: -0.01em;
     color: var(--text-color);
+
     @media screen and (min-width: 1280px) {
         font-size: 16px;
     }
 }
 
-.user-manual__image{
+.user-manual__image {
+    @media screen and (max-width: 743px) {
+        max-height: 266px;
+        max-width: 326px;
+        margin-left: auto;
+        margin-right: auto;
+    }
     @media screen and (min-width: 1280px) {
         margin-left: auto;
-        margin-bottom: -20px;
+        margin-bottom: -16px;
     }
 }
