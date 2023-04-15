@@ -114,7 +114,6 @@ const articles = [
 /////
 
 const textInput = document.querySelector('#textInput');
-const countryList = document.querySelector('.art-list');
 const itemsFilter = document.querySelectorAll('.item-filter');
 const sortLikes = document.querySelector('.sort-likes');
 const sortDate = document.querySelector('.sort-date');
@@ -141,22 +140,6 @@ itemsFilter.forEach(item => {
   });
 });
 
-//функция фильтер
-const getFilterChange = () => {
-  const normalizedFilter = description.toLowerCase();
-
-  return articles.filter(
-    item =>
-      item.title.toLowerCase().includes(normalizedFilter) ||
-      item.speaker.toLowerCase().includes(normalizedFilter)
-  );
-};
-
-visibleFilter = getFilterChange();
-console.log(visibleFilter);
-
-/////
-
 //функции сортировка
 
 //сортировка по лайкам
@@ -174,7 +157,7 @@ sortLikes.addEventListener('click', () => {
   return console.log(visibleFilter);
 });
 
-//сортировка по по дате
+//сортировка по дате
 sortDate.addEventListener('click', () => {
   if (reverseDate === 'asc') {
     visibleFilter.sort((a, b) => {
@@ -196,3 +179,17 @@ sortDate.addEventListener('click', () => {
 
   return console.log(visibleFilter);
 });
+
+//функция фильтер
+const getFilterChange = () => {
+  const normalizedFilter = description.toLowerCase();
+
+  return articles.filter(
+    item =>
+      item.title.toLowerCase().includes(normalizedFilter) ||
+      item.speaker.toLowerCase().includes(normalizedFilter)
+  );
+};
+
+visibleFilter = getFilterChange();
+console.log(visibleFilter);
