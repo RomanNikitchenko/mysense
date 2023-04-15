@@ -1,20 +1,45 @@
 <section class="filter">
   <div class="filter__container container">
     <div class="filter__body">
+
       <div class="filter__title">
         <h1>Статті</h1>
       </div>
+
       <div class="filter__inputs">
-        <div class="input__search">
+
+        <label>
+          <input type="text" name="filter" id="textInput" />
+        </label>
+
+        <ul class="list-sort">
+          <li class="item-filter">избавиться</li>
+          <li class="item-filter">научиться</li>
+          <li class="item-filter">развить</li>
+          <li class="item-filter">общаться</li>
+          <li class="item-filter">перестать</li>
+        </ul>
+
+        <ul class="sort-section">
+          <li class="sort-likes">Сортировать по лайкам</button>
+          <li class="sort-date">Сортировать по дате</button>
+        </ul>
+
+        <ul class="art-list"></ul>
+
+        <!--/////-->
+
+        <!-- <div class="input__search">
           <input
             type="search"
             placeholder="Знайти статтю або автора"
             id="site-search"
             name="search"
           />
-        </div>
+        </div> -->
+
         <div class="input__select">
-          <div class="__select-container">
+          <!-- <div class="__select-container">
             <div class="__select" data-state="">
               <div class="__select__title"></div>
               <div class="__select__content">
@@ -57,9 +82,8 @@
                 ></label>
               </div>
             </div>
-          </div>
-
-          <div class="select-block">
+          </div> -->
+          <!-- <div class="select-block">
             <div class="__select" data-state="">
               <div class="__select__title"></div>
               <div class="__select__content">
@@ -114,7 +138,7 @@
                 ></label>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
