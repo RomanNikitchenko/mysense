@@ -8,25 +8,23 @@ import createCardslist from './articles-createCardslist';
   const sortDate = document.querySelector('.sort-date');
 
   let description = '';
-  let visibleFilter = [];
-  let reverseLikes = 'desc';
-  let reverseDate = 'desc';
   let totalCards = 3;
+  let visiblefilter = [];
+  let visiblehits = null;
   let sortingEnabledByLikes = false;
   let sortingEnabledByDate = false;
 
   const getFilterChange = async () => {
     try {
-      const articles = await fetchCard();
-      const normalizedFilter = description.toLowerCase();
-
-      return articles.filter(item => {
-        return (
-          item.title.toLowerCase().includes(normalizedFilter) ||
-          item.speaker.toLowerCase().includes(normalizedFilter) ||
-          item.tag.join(' ').toLowerCase().includes(normalizedFilter)
-        );
-      });
+      const { data, hits } = await fetchCard(
+        description,
+        totalCards,
+        sortingEnabledByLikes,
+        sortingEnabledByDate
+      );
+      visiblefilter = data;
+      visiblehits = hits;
+      return;
     } catch (error) {
       console.log('Ошибка', error);
     }
@@ -36,14 +34,8 @@ import createCardslist from './articles-createCardslist';
   textInput.addEventListener('input', async event => {
     totalCards = 3;
     description = event.currentTarget.value;
-    visibleFilter = await getFilterChange();
-    if (sortingEnabledByLikes) {
-      sortByLikes();
-    }
-    if (sortingEnabledByDate) {
-      sortByDate();
-    }
-    createCardslist(visibleFilter.slice(0, totalCards));
+    await getFilterChange();
+    createCardslist(visiblefilter);
     checkLoadMoreButton();
   });
 
@@ -52,63 +44,51 @@ import createCardslist from './articles-createCardslist';
     item.addEventListener('click', async event => {
       totalCards = 3;
       description = event.currentTarget.innerHTML;
-      visibleFilter = await getFilterChange();
-      if (sortingEnabledByLikes) {
-        sortByLikes();
-      }
-      if (sortingEnabledByDate) {
-        sortByDate();
-      }
-      createCardslist(visibleFilter.slice(0, totalCards));
+      await getFilterChange();
+      createCardslist(visiblefilter);
       checkLoadMoreButton();
     });
   });
 
-  //сортировка по лайкам
-  function sortByLikes() {
+  // сортировка по лайкам
+  const sortByLikes = async () => {
     sortingEnabledByLikes = true;
     sortingEnabledByDate = false;
 
-    if (reverseLikes === 'desc') {
-      visibleFilter.sort((a, b) => b.likes - a.likes);
-    }
+    await getFilterChange();
 
-    createCardslist(visibleFilter.slice(0, totalCards));
-  }
+    createCardslist(visiblefilter);
+  };
+
   sortLikes.addEventListener('click', sortByLikes);
 
   //сортировка по дате
-  function sortByDate() {
+  const sortByDate = async () => {
     sortingEnabledByLikes = false;
     sortingEnabledByDate = true;
 
-    if (reverseDate === 'desc') {
-      visibleFilter.sort((a, b) => {
-        const dateA = new Date(b.date);
-        const dateB = new Date(a.date);
-        return dateA - dateB; //сортировка по убывающей дате
-      });
-    }
+    await getFilterChange();
 
-    createCardslist(visibleFilter.slice(0, totalCards));
-  }
+    createCardslist(visiblefilter);
+  };
   sortDate.addEventListener('click', sortByDate);
 
   /////
 
   const loadMoreButton = document.querySelector('.articles__btn');
 
-  loadMoreButton.addEventListener('click', () => {
+  loadMoreButton.addEventListener('click', async () => {
     totalCards += 3;
 
-    createCardslist(visibleFilter.slice(0, totalCards));
+    await getFilterChange();
+
+    createCardslist(visiblefilter);
 
     checkLoadMoreButton();
   });
 
   function checkLoadMoreButton() {
-    console.log('checkLoadMoreButton');
-    if (visibleFilter.length <= totalCards) {
+    if (visiblehits <= totalCards) {
       loadMoreButton.style.display = 'none';
     } else {
       loadMoreButton.style.display = 'block';
@@ -118,8 +98,8 @@ import createCardslist from './articles-createCardslist';
   /////
 
   (async () => {
-    visibleFilter = await getFilterChange();
-    createCardslist(visibleFilter.slice(0, totalCards));
+    await getFilterChange();
+    createCardslist(visiblefilter);
     checkLoadMoreButton();
   })();
 })();

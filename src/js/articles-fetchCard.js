@@ -126,11 +126,43 @@ const articles = [
   },
 ];
 
-export default async function fetchCard() {
+export default async function fetchCard(
+  description = '',
+  totalCards = 3,
+  sortingEnabledByLikes = false,
+  sortingEnabledByDate = false
+) {
   const response = await articles;
+
   if (!response) {
     throw new Error(response.status);
   } else {
-    return response;
+    const normalizedFilter = description.toLowerCase();
+
+    const filterCards = response.filter(item => {
+      return (
+        item.title.toLowerCase().includes(normalizedFilter) ||
+        item.speaker.toLowerCase().includes(normalizedFilter) ||
+        item.tag.join(' ').toLowerCase().includes(normalizedFilter)
+      );
+    });
+
+    if (sortingEnabledByLikes) {
+      filterCards.sort((a, b) => {
+        return b.likes - a.likes;
+      });
+    }
+
+    if (sortingEnabledByDate) {
+      filterCards.sort((a, b) => {
+        const dateA = new Date(b.date);
+        const dateB = new Date(a.date);
+        return dateA - dateB; //сортировка по убывающей дате
+      });
+    }
+
+    const cards = filterCards.slice(0, totalCards);
+
+    return { data: cards, hits: filterCards.length };
   }
 }
