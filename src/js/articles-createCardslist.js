@@ -14,7 +14,7 @@ export default function createCardslist(Items) {
       return `
             <li class="articles__card-column">
                     <div class="card__block-top">
-                        <img src="${image} alt="${title}">
+                        <img src="${image}" alt="${title}">
                         <div class="card__name">
                             <h4>${speaker}</h4>
                             <p>ХХ років практики</p>
