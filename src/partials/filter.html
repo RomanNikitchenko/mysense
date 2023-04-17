@@ -1,146 +1,50 @@
 <section class="filter">
   <div class="filter__container container">
     <div class="filter__body">
-
       <div class="filter__title">
         <h1>Статті</h1>
       </div>
 
       <div class="filter__inputs">
-
-        <label>
-          <input type="text" name="filter" id="textInput" />
-        </label>
-
-        <ul class="list-sort">
-          <li class="item-filter">всі статті</li>
-          <li class="item-filter">Як позбутися</li>
-          <li class="item-filter">Як розвинути</li>
-          <li class="item-filter">Як спілкуватися</li>
-          <li class="item-filter">Як навчитися</li>
-          <li class="item-filter">Як перестати</li>
-        </ul>
-
-        <ul class="sort-section">
-          <li class="sort-likes">Сортировать по лайкам</button>
-          <li class="sort-date">Сортировать по дате</button>
-        </ul>
-
-        <ul class="art-list"></ul>
-
-        <!--/////-->
-
-        <!-- <div class="input__search">
+        <div class="input__search">
           <input
-            type="search"
+            type="text"
             placeholder="Знайти статтю або автора"
-            id="site-search"
-            name="search"
+            id="textInput"
+            name="filter"
           />
-        </div> -->
-
-        <div class="input__select">
-          <!-- <div class="__select-container">
-            <div class="__select" data-state="">
-              <div class="__select__title"></div>
-              <div class="__select__content">
-                <input
-                  id="singleSelect0"
-                  class="__select__input"
-                  type="radio"
-                  name="singleSelect"
-                  checked
-                />
-                <label
-                  for="singleSelect0"
-                  tabindex="0"
-                  class="__select__label"
-                  data-value="Найновіші"
-                ></label>
-                <input
-                  id="singleSelect1"
-                  class="__select__input"
-                  type="radio"
-                  name="singleSelect"
-                />
-                <label
-                  for="singleSelect1"
-                  tabindex="0"
-                  class="__select__label"
-                  data-value="Давні статті"
-                ></label>
-                <input
-                  id="singleSelect2"
-                  class="__select__input"
-                  type="radio"
-                  name="singleSelect"
-                />
-                <label
-                  for="singleSelect2"
-                  tabindex="0"
-                  class="__select__label"
-                  data-value="За алфавітом"
-                ></label>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="select-block">
-            <div class="__select" data-state="">
-              <div class="__select__title"></div>
-              <div class="__select__content">
-                <input
-                  id="singleSelect3"
-                  class="__select__input"
-                  type="radio"
-                  name="singleSelect2"
-                  checked
-                />
-                <label
-                  for="singleSelect3"
-                  tabindex="0"
-                  class="__select__label"
-                  data-value="Усі статті"
-                ></label>
-                <input
-                  id="singleSelect4"
-                  class="__select__input"
-                  type="radio"
-                  name="singleSelect2"
-                />
-                <label
-                  for="singleSelect4"
-                  tabindex="0"
-                  class="__select__label"
-                  data-value="Фільтрувати по автору"
-                ></label>
-                <input
-                  id="singleSelect5"
-                  class="__select__input"
-                  type="radio"
-                  name="singleSelect2"
-                />
-                <label
-                  for="singleSelect5"
-                  tabindex="0"
-                  class="__select__label"
-                  data-value="Фільтрувати по даті"
-                ></label>
-                <input
-                  id="singleSelect6"
-                  class="__select__input"
-                  type="radio"
-                  name="singleSelect2"
-                />
-                <label
-                  for="singleSelect6"
-                  tabindex="0"
-                  class="__select__label"
-                  data-value="Фільтрувати по темі"
-                ></label>
-              </div>
-            </div>
-          </div> -->
         </div>
+
+        <div class="filter-menu">
+          <div class="filter-toggle">
+            <span class="filter-value">всі статті</span>
+            <svg class="filter-icon-arrow" width="11" height="6">
+              <use href="./images/symbol-defs.svg#Arrow"></use>
+            </svg>
+          </div>
+          <ul class="list-filter">
+            <li class="item-filter">всі статті</li>
+            <li class="item-filter">Як позбутися</li>
+            <li class="item-filter">Як розвинути</li>
+            <li class="item-filter">Як спілкуватися</li>
+            <li class="item-filter">Як навчитися</li>
+            <li class="item-filter">Як перестати</li>
+          </ul>
+        </div>
+
+        <div class="sort-menu">
+          <div class="sort-toggle">
+            <span class="sort-value">Сортувати</span>
+            <svg class="sort-icon-arrow" width="11" height="6">
+              <use href="./images/symbol-defs.svg#Arrow"></use>
+            </svg>
+          </div>
+          <ul class="sort-section">
+            <li class="item-sort sort-likes">за лайками</li>
+            <li class="item-sort sort-date">за датою</li>
+          </ul>
+        </div>
+        <!-- ! -->
       </div>
     </div>
   </div>

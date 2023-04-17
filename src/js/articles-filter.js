@@ -1,5 +1,6 @@
 import fetchCard from './articles-fetchCard';
 import createCardslist from './articles-createCardslist';
+import changeContentIfInputEmpty from './changeContentIfInputEmpty';
 
 (() => {
   const textInput = document.querySelector('#textInput');
@@ -8,7 +9,7 @@ import createCardslist from './articles-createCardslist';
   const sortDate = document.querySelector('.sort-date');
 
   let description = '';
-  let totalCards = 3;
+  let totalCards = 6;
   let visiblefilter = [];
   let visiblehits = null;
   let sortingEnabledByLikes = false;
@@ -32,18 +33,20 @@ import createCardslist from './articles-createCardslist';
 
   //поиск в инпут
   textInput.addEventListener('input', async event => {
-    totalCards = 3;
+    totalCards = 6;
     description = event.currentTarget.value;
     await getFilterChange();
     createCardslist(visiblefilter);
     checkLoadMoreButton();
+    changeContentIfInputEmpty();
   });
 
   //поиск в меню по ключевым словам
   itemsFilter.forEach(item => {
     item.addEventListener('click', async event => {
-      totalCards = 3;
+      totalCards = 6;
       description = event.currentTarget.innerHTML;
+      textInput.value = event.currentTarget.innerHTML;
       await getFilterChange();
       createCardslist(visiblefilter);
       checkLoadMoreButton();
