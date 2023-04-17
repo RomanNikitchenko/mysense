@@ -52,6 +52,9 @@ p {
 .user-manual__list,
 .our-team__list,
 .our-team__specialties,
-.advantages {
+.advantages,
+.articles__cards-wrap,
+.list-filter,
+.sort-section {
   @extend %list;
 }
