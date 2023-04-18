@@ -7,8 +7,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
 }
-.purple__left-block {
-}
+
 .purple__title {
     position: relative;
     font-weight: 500;
@@ -16,7 +15,7 @@
     font-size: 56px;
     line-height: 110%;
     letter-spacing: -0.06em;
-    max-width: 458px;
+    max-width: 485px;
 }
 .purple-section__icon-heart {
     position: absolute;
@@ -105,7 +104,10 @@
 @media screen and (max-width: 1280px) {
     .purple__title {
         font-size: 42px;
-        width: 350px;
+        max-width: 100%;
+    }
+    .purple-section__icon-heart {
+        right: 98px;
     }
     .purple__body {
         display: grid;
@@ -147,8 +149,8 @@
     .purple-section__icon-heart {
         width: 10px;
         height: 8px;
-        top: 137px;
-        right: 154px;
+        top: 138px;
+        right: 139px;
     }
     .purple__body {
         display: flex;
