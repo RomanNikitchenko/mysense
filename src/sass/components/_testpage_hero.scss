@@ -1,0 +1,124 @@
+.testpage {
+}
+.testpage__lines-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.test__line {
+    height: 3px;
+    border-top: 3px solid rgba(34, 43, 64, 0.1);
+    margin: 40px 0;
+    span {
+        display: none;
+        padding-top: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+        color: #795BDA;
+    }
+}
+.active {
+    border-top: 3px solid rgba(121, 91, 218, 1);
+    span {
+        display: block;
+    }
+}
+.testpage__title {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 90%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    margin-bottom: 40px;
+}
+.icon-arrow-top-right {
+
+}
+.testpage__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.test__card-wrap {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 160px;
+    max-height: 200px;
+    transition: all 0.3s ease 0s;
+    &:hover {
+        cursor: pointer;
+        background: rgba(121, 91, 218, 1);
+        .test__card-title {
+            color: #fff;
+        }
+        .person-purple {
+            fill: #FF5C8D;
+        }
+    }
+}
+.card__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.test__card-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 99px;
+}
+.test__card__icon {
+    display: flex;
+    align-items: center;
+    span {
+        font-family: 'Inter Tight';
+        // font-weight: 600;
+        font-size: 14px;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        max-width: 104px;
+        color: #fff;
+    }
+}
+.person-purple {
+    margin-right: 9px;
+    fill: #795BDA;
+}
+
+@media screen and (max-width:1280px) {
+    // .card-title__center {
+    //     margin-bottom: 74px;
+    // }
+    .test__card-title {
+        font-size: 22px;
+    }
+    
+}
+@media screen and (max-width: 744px) {
+    .test__card-title {
+        font-size: 22px;
+    }
+    .testpage__cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        display: grid;
+    }
+    .testpage__title {
+        font-size: 34px;
+    }
+    .test__card-title {
+        margin-bottom: 62px;
+    }
+    
+}
+
