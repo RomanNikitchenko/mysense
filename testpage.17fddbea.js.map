@@ -1,0 +1,1 @@
+{"mappings":"oeAAAA,EAAA,S","sources":["src/js/testpage.js"],"sourcesContent":["import './mobile-menu';\nimport './languageToggle';\n"],"names":["parcelRequire"],"version":3,"file":"testpage.17fddbea.js.map"}
