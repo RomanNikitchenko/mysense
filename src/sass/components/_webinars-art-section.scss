@@ -175,6 +175,117 @@
 
 }
 
+.filter{
+    @media screen and (min-width: 744px) {
+        padding: 40px 0 60px 0;
+    }
+}
+
+.filter__body {
+    align-items: flex-end;
+}
+
+//////////<h1 class="filter__title">Вебінари</h1>
+.filter__title{
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+    @media screen and (min-width: 1280px) {
+        font-size: 56px;
+    }
+}
+
+.filter__inputs{
+    @media screen and (min-width: 744px) {
+        margin-top: 25px;
+    }
+    @media screen and (min-width: 1280px) {
+        margin-top: 0;
+    }
+}
+
+.input__search {
+    @media screen and (min-width: 1280px) {
+        width: 492px;;
+    }
+}
+
+.filter-menu {
+    @media screen and (min-width: 1280px) {
+        width: 153px;
+    }
+}
+
+.sort-menu {
+    @media screen and (min-width: 1280px) {
+        width: 153px;
+    }
+}
+
+//////////<h2 class="meeting-title">Найближчі вебінари</h2>
+.meeting-title{
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #222B40;
+    margin-bottom: 20px;
+    @media screen and (min-width: 744px) {
+        font-size: 24px;
+        line-height: 110%;
+        letter-spacing: -0.06em;
+        margin-bottom: 30px;
+    }
+}
+.meeting__title{
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+    @media screen and (min-width: 744px) {
+        font-size: 32px;
+        line-height: 100%;
+        letter-spacing: -0.05em;
+    }
+}
+.spicer-name{
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    margin-bottom: 8px;
+    @media screen and (min-width: 744px) {
+        font-size: 22px;
+    }
+    @media screen and (min-width: 744px) {
+        font-size: 24px;
+    }
+}
+.experience__spicer {
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    color: rgba(34, 43, 64, 0.4);
+    @media screen and (min-width: 744px) {
+        font-size: 12px;
+    }
+}
+///////////<h2 class="articles__title">Вебінари у записі</h2>
 .articles__title{
     margin-bottom: 20px;
     font-family: 'Golos Text', sans-serif;
@@ -191,5 +302,18 @@
         line-height: 110%;
         letter-spacing: -0.06em;
         color: #222B40;
+    }
+}
+
+.articles{
+    padding: 0 0 10px;
+    @media screen and (min-width: 744px) {
+        padding: 0;
+    }
+}
+
+.articles__btn{
+    @media screen and (min-width: 1280px) {
+        margin: 40px auto 0;
     }
 }
