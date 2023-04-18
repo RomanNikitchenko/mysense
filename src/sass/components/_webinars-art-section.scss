@@ -177,12 +177,19 @@
 
 .articles__title{
     margin-bottom: 20px;
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #222B40;
 
     @media screen and (min-width: 744px) {
         margin-bottom: 30px;
-    }
-
-    @media screen and (min-width: 1280px) {
-        margin-bottom: 30px;
+        font-size: 24px;
+        line-height: 110%;
+        letter-spacing: -0.06em;
+        color: #222B40;
     }
 }

@@ -1,4 +1,4 @@
 import './languageToggle';
 import './mobile-menu';
-import './articles-filter';
-import './articles-drop-down-menu';
+import './webinars/filter';
+import './webinars/drop-down-menu';
