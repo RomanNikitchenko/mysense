@@ -134,7 +134,7 @@
 @media screen and (max-width: 1280px) {
     .articles__title {
         font-size: 42px;
-        max-width: 258px;
+        max-width: 280px;
     }
     .articles-section__icon-heart {
         position: absolute;
@@ -147,12 +147,11 @@
     .articles__title {
         position: relative;
         font-size: 34px;
-        max-width: 210px;
     }
     .articles-section__icon-heart {
         position: absolute;
-        bottom: 4px;
-        right: 45px;
+        bottom: 3px;
+        right: 98px;
     }
     .articles__cards-wrap {
         overflow-x: scroll;
@@ -164,6 +163,9 @@
     }
 }
 @media screen and (max-width: 744px) {
+    .articles__title {
+        max-width: 227px;
+    }
     .articles-section__icon-heart {
         position: absolute;
         width: 10px;
