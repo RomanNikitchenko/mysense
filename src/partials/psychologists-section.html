@@ -1,10 +1,15 @@
 <section class="psychologists-section">
-  <div class="container psychologists-section-container">
+  <div class="container">
+
+    <!-- psychologists-section__search  -->
     <div class="flex-wrapper">
+
       <h1 class="psychologists-section__title">Психологи</h1>
-      <div class="search-filter-wrapper">
+
+      <div class="psychologists-section__search">
+
         <input
-          class="search-input"
+          class="psychologists-section__search-input"
           type="text"
           name="filter"
           placeholder="Знайти психолога по імені"
@@ -36,52 +41,168 @@
       </div>
     </div>
 
-    <div>
-      <div>
-        <h2>Фільтри</h2>
-        <ul>
-          <li>
-            <h3>Тип тепрії</h3>
-            <ul>
-              <li>
-                <button class="button" type="button">Особиста</button>
+    <div class="psychologists-section__gallery">
+      <div class="psychologists-section__filter-menu">
+        <h2>Фільтри
+          <svg width="26" height="26">
+            <use href="./images/symbol-defs.svg#close_40px"></use>
+          </svg>
+        </h2>
+
+          <div class="psychologists-section__filter-themes">
+            <h3 class="psychologists-section__filter-themes-title">Тип тепрії
+              <svg width="16" height="7">
+                <use href="./images/symbol-defs.svg#Arrow"></use>
+              </svg>
+            </h3>
+            <ul class="psychologists-section__filter-list">
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">
+                  <svg width="24" height="24">
+                    <use href="./images/symbol-defs.svg#icon-filter-Icons-1"></use>
+                  </svg>
+                  Особиста</button>
               </li>
-              <li>
-                <button class="button" type="button">Парна</button>
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">
+                  <svg width="24" height="24">
+                    <use href="./images/symbol-defs.svg#icon-filter-Icons-2"></use>
+                  </svg>
+                  Парна
+                </button>
               </li>
-              <li>
-                <button class="button" type="button">Дитяча</button>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h3>Теми</h3>
-            <ul>
-              <li>
-                <button class="button" type="button">Дипресія</button>
-              </li>
-              <li>
-                <button class="button" type="button">Стрес</button>
-              </li>
-              <li>
-                <button class="button" type="button">Смуток</button>
-              </li>
-              <li>
-                <button class="button" type="button">Гнів</button>
-              </li>
-              <li>
-                <button class="button" type="button">Вигорання</button>
-              </li>
-              <li>
-                <button class="button" type="button">Стосунки</button>
-              </li>
-              <li>
-                <button class="button" type="button">Самотність</button>
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">
+                  <svg width="24" height="24">
+                    <use href="./images/symbol-defs.svg#icon-filter-Icons-3"></use>
+                  </svg>
+                  Дитяча
+                </button>
               </li>
             </ul>
-          </li>
-        </ul>
+          </div>
+
+          <div class="psychologists-section__filter-themes">
+            <h3 class="psychologists-section__filter-themes-title">Теми
+              <svg width="16" height="7">
+                <use href="./images/symbol-defs.svg#Arrow"></use>
+              </svg>
+            </h3>
+            <ul class="psychologists-section__filter-list">
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">
+                  Дипресія
+                  <svg width="24" height="24">
+                    <use href="./images/symbol-defs.svg#icon-filter-Icons-3"></use>
+                  </svg>
+                </button>
+              </li>
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">
+                  Стрес
+                  <svg width="24" height="24">
+                    <use href="./images/symbol-defs.svg#icon-filter-Icons-3"></use>
+                  </svg>
+                </button>
+              </li>
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">
+                  Смуток
+                  <svg width="24" height="24">
+                    <use href="./images/symbol-defs.svg#icon-filter-Icons-3"></use>
+                  </svg>
+                </button>
+              </li>
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">
+                  Гнів
+                  <svg width="24" height="24">
+                    <use href="./images/symbol-defs.svg#icon-filter-Icons-3"></use>
+                  </svg>
+                </button>
+              </li>
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">
+                  Вигорання
+                  <svg width="24" height="24">
+                    <use href="./images/symbol-defs.svg#icon-filter-Icons-3"></use>
+                  </svg>
+                </button>
+              </li>
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">
+                  Стосунки
+                  <svg width="24" height="24">
+                    <use href="./images/symbol-defs.svg#icon-filter-Icons-3"></use>
+                  </svg>
+                </button>
+              </li>
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">
+                  Самотність
+                  <svg width="24" height="24">
+                    <use href="./images/symbol-defs.svg#icon-filter-Icons-3"></use>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="psychologists-section__filter-themes">
+            <h3 class="psychologists-section__filter-themes-title">Мова
+              <svg width="16" height="7">
+                <use href="./images/symbol-defs.svg#Arrow"></use>
+              </svg>
+            </h3>
+            <ul class="psychologists-section__filter-list">
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">Українська</button>
+              </li>
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">Англійська</button>
+              </li>
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">Російська</button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="psychologists-section__filter-themes">
+            <h3 class="psychologists-section__filter-themes-title">Стать
+              <svg width="16" height="7">
+                <use href="./images/symbol-defs.svg#Arrow"></use>
+              </svg>
+            </h3>
+            <ul class="psychologists-section__filter-list">
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">Чоловіча</button>
+              </li>
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">Жіноча</button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="psychologists-section__filter-themes">
+            <h3 class="psychologists-section__filter-themes-title">Ціна
+              <svg width="16" height="7">
+                <use href="./images/symbol-defs.svg#Arrow"></use>
+              </svg>
+            </h3>
+            <ul class="psychologists-section__filter-list">
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">400-799грн</button>
+              </li>
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">800-1 199грн</button>
+              </li>
+              <li class="psychologists-section__filter-item">
+                <button class="button psychologists-section__filter-btn" type="button">1 200+</button>
+              </li>
+            </ul>
+          </div>
       </div>
     </div>
+
   </div>
 </section>
