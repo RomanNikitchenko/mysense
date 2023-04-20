@@ -1,7 +1,7 @@
 import * as bodyScrollLock from 'body-scroll-lock';
 
 const beckdropMobileMenuFilter = document.querySelector(
-  '.psychologists-section__beckdrop'
+  '.js-menu-container-filter'
 );
 const openMenuBtnFilter = document.querySelector('.js-open-menu-filter');
 const closeMenuBtnFilter = document.querySelector('.js-close-menu-filter');

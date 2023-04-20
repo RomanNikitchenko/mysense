@@ -155,6 +155,10 @@
         margin: 0;
     }
 
+    @media screen and (min-width: 1280px) {
+        padding: 12px 20px;
+    }
+
     h2 {
         font-style: normal;
         font-weight: 500;
@@ -165,6 +169,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+        margin-bottom: 12px;
         @media screen and (min-width: 1280px) {
             display: none;
         }
@@ -175,9 +182,11 @@
             justify-content: center;
             padding: 0;
             margin: 0;
+            margin-right: -8px;
             border: 1px solid transparent;
             border-radius: 50%;
-            background: #FFFFFF;
+            background-color: #FFFFFF;
+            transition: color background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
             &:hover {
                 background-color: #795bda26;
             }
@@ -185,10 +194,6 @@
     }
 
     .psychologists-section__filter-themes{
-        border-top: 1px solid rgba(34, 43, 64, 0.1);
-        padding-top: 20px;
-        margin-top: 20px;
-
         .psychologists-section__filter-themes-title {
             font-style: normal;
             font-weight: 500;
@@ -196,40 +201,102 @@
             line-height: 150%;
             letter-spacing: -0.01em;
             color: #222B40;
-            margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            cursor: pointer;
+
+            &:hover .psychologists-section__filter-themes-button {
+                background-color: #F3F3F3;
+            }
         }
 
-        .psychologists-section__filter-themes-title svg {
+        .psychologists-section__filter-themes-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            margin: 0;
+            border: 1px solid transparent;
+            background-color: transparent;
+            border-radius: 50%;
+            transition: color background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            margin-right: -10px;
+        }
+
+
+        .psychologists-section__filter-themes-button svg {
             transform: rotate(180deg);
             transition: transform 0.5s ease;
         }
 
-        .psychologists-section__filter-themes-title.rotated svg {
+        .psychologists-section__filter-themes-button.rotated svg {
             transform: rotate(0deg);
         }
     }
 
+    .psychologists-section__filter-themes:not(:last-child) {
+        border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+    }
+
+    //from theme-menu-handler.js
     .psychologists-section__filter-list {
         overflow: hidden;
         max-height: 0;
         transition: max-height 0.5s ease;
+    //
 
         .psychologists-section__filter-item {
             margin-bottom: 4px;
         }
     }
 
-    .psychologists-section__filter-btn{
-        background: #FFFFFF;
+    // psychologists-section__filter-btn
+
+    .psychologists-section__filter-btn {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+
+        background-color: #FFFFFF;
         border-radius: 100px;
         width: 100%;
         border: 1px solid transparent;
-        border: 1px solid red;
         height: 32px;
+        padding: 0 8px;
         display: flex;
         align-items: center;
+        cursor: pointer;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover {
+            background-color: #F3F3F3;
+        }
+
+        .psychologists-section__filter-icon-state {
+            margin-right: 8px;
+        }
+
+        .psychologists-section__filter-icon-chose {
+            margin-left: auto;
+            opacity: 0;
+            transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    }
+
+    .psychologists-section__filter-btn.active {
+        background-color: rgba(121, 91, 218, 0.1);
+
+        .psychologists-section__filter-icon-chose {
+            opacity: 1;
+        }
     }
 }
