@@ -93,6 +93,12 @@
             .icon__crds {
                 fill: #FF5C8D;
             }
+            .icon-family-cart-2,
+            .icon-family-cart-3 {
+                // stroke: #FF5C8D;
+                fill: #795BDA;
+            }
+           
         } 
     }
 }
@@ -111,7 +117,18 @@
     .icon__crds  {
         fill: #795BDA;
     }
+    .icon-family-cart-2,
+    .icon-family-cart-3 {
+        stroke: #795BDA;
+        fill: #fff;
+    }
+    .icon-life-cart-2,
+    .icon-life-cart-3 {
+        stroke-width: 0.3px;
+    }
 }
+
+
 
   //анимация для контента блока <div class="item__card">
   .item__card {
@@ -132,7 +149,7 @@
 .request-item__wrap.rotated {
     background: #fff;
     border-radius: 8px;
-    padding: 28px 25px;
+    padding: 32px 25px;
 }
 
 @media screen and (max-width: 1280px) {
@@ -173,5 +190,11 @@
     }
     .card__link-btn {
         min-height: 180px;
+    }
+    .request-item__wrap {
+        padding: 21px 25px;
+    }
+    .request-item__wrap.rotated {
+        padding: 21px 25px;
     }
 }
