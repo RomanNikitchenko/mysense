@@ -17,13 +17,13 @@
     font-size: 56px;
     line-height: 110%;
     letter-spacing: -0.06em;
-    max-width: 330px;
+    max-width: 375px;
     margin-bottom: 30px;
 }
 .step-section__icon-heart {
     position: absolute;
     bottom: 5px;
-    right: -4px;
+    right: 94px;
 }
 .step_block {
  display: flex;
@@ -163,7 +163,7 @@
         max-width: 249px;
     }
     .step-section__icon-heart {
-        right: -7px;
+        right: -18px;
     }
     .step-item {
         max-width: 100%;
@@ -182,6 +182,15 @@
 }
 
 @media screen and (max-width: 744px) {
+    .step__title {
+        max-width: 204px;
+        font-size: 34px;
+    }
+    .step-section__icon-heart {
+        right: -12px;
+        width: 10px;
+        height: 8px;
+    }
     .step__text-mobile {
         display: block;
         font-weight: 600;
