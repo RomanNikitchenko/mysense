@@ -15,6 +15,7 @@
     backdrop-filter: blur(10px);
     z-index: 999;
     // overflow-y: scroll;
+    overflow: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     transform: translateX(-100%);
