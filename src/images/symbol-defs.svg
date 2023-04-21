@@ -360,5 +360,11 @@
 <path fill="#795bda" style="fill: var(--color1, #795bda)" d="M13.999 15.826c2.431 0 4.4-2.15 4.4-4.781 0-2.592-1.969-4.651-4.4-4.651-2.421 0-4.41 2.089-4.4 4.671 0.010 2.622 1.969 4.761 4.4 4.761zM13.999 14.068c-1.386 0-2.561-1.316-2.561-3.003-0.010-1.647 1.165-2.913 2.561-2.913 1.406 0 2.561 1.246 2.561 2.893 0 1.688-1.165 3.023-2.561 3.023zM7.732 25.168h12.526c1.738 0 2.571-0.552 2.571-1.738 0-2.762-3.445-6.439-8.829-6.439s-8.839 3.676-8.839 6.439c0 1.185 0.834 1.738 2.571 1.738zM7.42 23.41c-0.241 0-0.331-0.080-0.331-0.261 0-1.537 2.481-4.4 6.911-4.4 4.42 0 6.901 2.863 6.901 4.4 0 0.181-0.090 0.261-0.331 0.261h-13.148z"></path>
 </symbol>
 
+<symbol id="icon-fixed-arrow-next" viewBox="0 0 32 32">
+<path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.4286" d="M1.143 16h27.429M28.571 16l-13.714 13.714M28.571 16l-13.714-13.714"></path>
+</symbol>
+<symbol id="icon-fixed-arrow-prew" viewBox="0 0 32 32">
+<path fill="none" stroke="#795bda" style="stroke: var(--color2, #795bda)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.4286" d="M32 16h-27.429M4.571 16l13.714 13.714M4.571 16l13.714-13.714"></path>
+</symbol>
 </defs>
 </svg>
