@@ -1,5 +1,4 @@
-.testpage {
-}
+
 .testpage__lines-block {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -35,30 +34,31 @@
     color: #222B40;
     margin-bottom: 40px;
 }
-.icon-arrow-top-right {
-
-}
 .testpage__cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
 .test__card-wrap {
+    border: none;
     background: #fff;
     border-radius: 8px;
     padding: 20px;
     min-height: 160px;
     max-height: 200px;
     transition: all 0.3s ease 0s;
-    &:hover {
+    &:hover,
+    &:focus {
         cursor: pointer;
         background: rgba(121, 91, 218, 1);
-        .test__card-title {
-            color: #fff;
-        }
-        .person-purple {
-            fill: #FF5C8D;
-        }
+        .card__link {
+            .test__card-title {
+                color: #fff;
+            }
+            .person-purple {
+                fill: #FF5C8D;
+            }
+    }
     }
 }
 .card__link {
@@ -88,6 +88,7 @@
         letter-spacing: -0.01em;
         max-width: 104px;
         color: #fff;
+        text-align: left;
     }
 }
 .person-purple {
