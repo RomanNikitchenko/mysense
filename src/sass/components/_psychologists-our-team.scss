@@ -1,0 +1,221 @@
+.our-team__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-bottom: 30px;
+    @media screen and (min-width: 1280px) {
+        margin-bottom: 40px;
+    }
+    @media screen and (min-width: 1280px) {
+        margin-bottom: 30px;
+        width: 860px
+    }
+}
+
+.our-team__item {
+    background-color: var(--text-color-card);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-bottom: 20px;
+    flex-basis: calc(100% / 1 - 20px);
+    
+    @media screen and (min-width: 744px) {
+        flex-basis: calc(100% / 2 - 20px);
+    }
+
+    @media screen and (min-width: 1280px) {
+        flex-basis: calc(100% / 3 - 20px);
+    }
+}
+
+.our-team__photo {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.our-team__caption {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.our-team__name {
+    margin-bottom: 8px;
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: var(--text-color);
+    display: flex;
+
+    .our-team__status {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+
+    .our-team__status.online {
+        background-color: #56F08B;
+        /* зеленый цвет для онлайн-статуса */
+    }
+
+    .our-team__status.offline {
+        background-color: #f05656;
+        /* красный цвет для оффлайн-статуса */
+    }
+}
+
+.our-team__experience {
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.05em;
+    color: rgba(34, 43, 64, 0.4);
+}
+
+.our-team__specialties {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: -8px;
+
+    .our-team__specialty {
+        font-family: 'Golos Text';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: var(--text-color);
+        margin-top: 8px;
+    }
+
+    .our-team__specialty:nth-child(1),
+    .our-team__specialty:nth-child(2),
+    .our-team__specialty:nth-child(3) {
+        padding-right: 12px;
+        margin-right: 12px;
+        border-right: 1px solid rgba(34, 43, 64, 0.1);
+    }
+
+    .our-team__specialty:nth-child(4) {
+        padding-right: 12px;
+        margin-right: 12px;
+    }
+
+    @media screen and (min-width: 744px) {
+        .our-team__specialty:nth-child(3) {
+            border-right: none;
+        }
+        .our-team__specialty:nth-child(4) {
+            border-right: 1px solid rgba(34, 43, 64, 0.1);
+        }
+    }
+}
+
+.our-team__price {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    color: var(--text-color);
+
+    .our-team__price-value {
+        font-size: 32px;
+        line-height: 100%;
+    }
+
+    .our-team__price-unit {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+.our-team__buttons {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.our-team__session-button {
+    font-family: 'Golos Text', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    color: var(--text-color-white);
+    background-color: var(--accent-color);
+    border: 1px solid transparent;
+    border-radius: 150px;
+    cursor: pointer;
+    padding: 0;
+    width: 100%;
+    max-width: 262px;
+    height: 46px;
+    margin-right: 4px;
+    // margin-left: auto;
+
+    @media screen and (min-width: 744px) {
+        max-width: 232px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        max-width: 175px;
+    }
+
+
+    &:hover {
+        background-color: #7155cd;
+    }
+}
+
+.our-team__session-button.not--friendly {
+    max-width: 312px;
+    // margin-right: auto;
+
+    @media screen and (min-width: 744px) {
+        max-width: 282px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        max-width: 225px;
+    }
+}
+
+.our-team__details-button {
+    // margin-right: auto;
+    display: none;
+    width: 100%;
+    max-width: 46px;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    background-color: var(--accent-color);
+    border-radius: 150px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #7155cd;
+    }
+
+    .our-team__icon-Hello {
+        max-width: 14px;
+        height: 14px;
+    }
+}
+
+.our-team__details-button.friendly {
+    display: flex;
+}
