@@ -23,5 +23,6 @@
     if (!e.matches) return;
     beckdropMobileMenuFilter.classList.remove('is-open');
     openMenuBtnFilter.setAttribute('aria-expanded', false);
+    body.classList.remove('modal-is-open');
   });
 })();
