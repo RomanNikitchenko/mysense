@@ -37,6 +37,12 @@
         transform: translateX(0);
         margin-right: 20px;
     }
+
+    .psychologists-modal-wrap{
+        width: 100%;
+        min-height: 100%;
+        margin: auto;
+    }
 }
 
 .psychologists-section__beckdrop.is-open {
