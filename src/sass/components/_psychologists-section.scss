@@ -159,7 +159,8 @@
     border-radius: 8px;
     max-width: 350px;
     margin: auto;
-    overflow-y: scroll;
+
+    // overflow-y: auto;
 
     @media screen and (min-width: 744px) {
         margin: 0;
