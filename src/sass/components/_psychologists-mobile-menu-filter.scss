@@ -15,7 +15,7 @@
     left: 0;
 
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     
     padding: 60px 20px;
     background-color: rgba(34, 43, 64, 0.2);
@@ -47,6 +47,10 @@
 
 .psychologists-section__beckdrop.is-open {
     transform: translateX(0);
+}
+
+.psychologists-section__filter-menu {
+    overflow-y: auto;
 }
 
 .modal-is-open {
