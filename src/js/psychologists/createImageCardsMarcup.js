@@ -1,21 +1,22 @@
 const gallery = document.querySelector('.our-team__list');
 
-export default function createImageCardsMarcup(Items) {
-  const listCards = Items.map(
-    ({
-      photoSources,
-      photoSrc,
-      alt,
-      name,
-      experience,
-      specialties,
-      priceValue,
-      priceUnit,
-      iconSrc,
-      status,
-      friendly,
-    }) =>
-      `
+export default function createImageCardsMarcup({ visiblefilter, change }) {
+  const listCards = visiblefilter
+    .map(
+      ({
+        photoSources,
+        photoSrc,
+        alt,
+        name,
+        experience,
+        specialties,
+        priceValue,
+        priceUnit,
+        iconSrc,
+        status,
+        friendly,
+      }) =>
+        `
               <li class="our-team__item">
                   <figure class="our-team__photo">
                       <picture>
@@ -28,8 +29,8 @@ export default function createImageCardsMarcup(Items) {
                       </picture>
                       <figcaption class="our-team__caption">
                           <h3 class="our-team__name">${name}<span class="our-team__status ${
-        status ? 'online' : 'offline'
-      }"></span></h3>
+          status ? 'online' : 'offline'
+        }"></span></h3>
                           <p class="our-team__experience">${experience}</p>
                       </figcaption>
                   </figure>
@@ -57,7 +58,12 @@ export default function createImageCardsMarcup(Items) {
                       </button>
                   </div>
               </li>`
-  ).join('');
+    )
+    .join('');
 
-  gallery.innerHTML = listCards;
+  if (change) {
+    gallery.innerHTML = listCards;
+  } else {
+    gallery.insertAdjacentHTML('beforeend', listCards);
+  }
 }
