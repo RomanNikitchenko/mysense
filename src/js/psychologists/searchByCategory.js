@@ -41,8 +41,8 @@ import createImageCardsMarcup from './createImageCardsMarcup';
       visiblefilter = data;
       visiblehits = hits;
 
-      console.log(visiblefilter);
-      console.log(visiblehits);
+      // console.log(visiblefilter);
+      // console.log(visiblehits);
       return;
     } catch (error) {
       console.log('Ошибка', error);

@@ -2,7 +2,6 @@ const sortToggle = document.querySelector('.sort-toggle');
 const sortList = document.querySelector('.sort-list');
 const sortValue = document.querySelector('.sort-value');
 const sortButton = document.querySelectorAll('.sort-button');
-console.log(sortButton);
 
 sortToggle.addEventListener('click', () => {
   sortToggle.classList.toggle('rotated');
@@ -21,9 +20,7 @@ sortList.addEventListener('click', event => {
 
   sortToggle.classList.toggle('rotated');
 
-  sortButton.forEach(item => {
-    return item.classList.remove('active');
-  });
+  sortButton.forEach(item => item.classList.remove('active'));
 
   event.target.classList.add('active');
 

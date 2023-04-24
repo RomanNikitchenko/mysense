@@ -32,6 +32,15 @@
     }
 }
 
+.our-team__img{
+    filter: blur(5px);
+    transition: filter 400ms;
+}
+
+.our-team__img.loaded {
+    filter: blur(0);
+}
+
 .our-team__photo {
     margin: 0;
     margin-bottom: 20px;
