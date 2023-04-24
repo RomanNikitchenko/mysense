@@ -102,7 +102,8 @@
 .filter-icon-arrow {
     stroke: #222B40;
     scale: 1;
-    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1), scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(180deg);
+    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1), scale 250ms cubic-bezier(0.4, 0, 0.2, 1), transform .3s ease-in-out;
 }
 
 .sort-toggle,
@@ -337,5 +338,52 @@
         max-width: 130px;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+// dropDownMenu.js добавляет rotated
+.sort-toggle.rotated .sort-icon-arrow {
+    transform: rotate(0deg);
+}
+
+ .sort-list {
+    width: 173px;
+    position: absolute;
+    overflow: hidden;
+    max-height: 0;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    transition: max-height .3s ease-in-out;
+}
+
+.sort-item{
+    padding: 0 10px;
+}
+
+.sort-item:not(:last-child) {
+    padding-top: 10px;
+    margin-bottom: 8px;
+}
+
+.sort-item:not(:first-child) {
+    padding-bottom: 10px;
+}
+
+.sort-button {
+    height: 32px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: color .3s ease-in-out, background-color .3s ease-in-out;
+
+    &:hover {
+        background-color: #F3F3F3;
+    }
+
+    &.active{
+        background-color: rgba(121, 91, 218, 0.1);
+        color: #795BDA;
     }
 }

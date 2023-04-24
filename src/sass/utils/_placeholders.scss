@@ -56,6 +56,7 @@ p {
 .articles__cards-wrap,
 .list-filter,
 .sort-section,
-.psychologists-section__filter-list {
+.psychologists-section__filter-list,
+.sort-list {
   @extend %list;
 }

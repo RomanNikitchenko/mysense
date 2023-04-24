@@ -53,6 +53,8 @@ import changeContentIfInputEmpty from './changeContentIfInputEmpty';
     });
   });
 
+  /////
+
   // сортировка по лайкам
   const sortByLikes = async () => {
     sortingEnabledByLikes = true;

@@ -6,6 +6,9 @@ export default async function fetchCardByValues({
   selectedPriceRanges,
   selectedLanguages,
   selectedTherapys,
+  sortingEnabledByPrice,
+  sortingEnabledByExperience,
+  reversed,
   page,
   totalCards,
   description = '',
@@ -30,6 +33,28 @@ export default async function fetchCardByValues({
     const filterCards = filteredEmployees.filter(item => {
       return item.name.toLowerCase().includes(normalizedFilter);
     });
+
+    if (sortingEnabledByPrice) {
+      filterCards.sort((a, b) => {
+        if (reversed) {
+          return a.priceValue - b.priceValue;
+        }
+        if (!reversed) {
+          return b.priceValue - a.priceValue;
+        }
+      });
+    }
+
+    if (sortingEnabledByExperience) {
+      filterCards.sort((a, b) => {
+        if (reversed) {
+          return a.experienceValue - b.experienceValue;
+        }
+        if (!reversed) {
+          return b.experienceValue - a.experienceValue;
+        }
+      });
+    }
 
     const cards = filterCards.slice(page, totalCards);
 
@@ -71,7 +96,7 @@ function filterEmployeesByAllSkills({
       }
     }
 
-    //по price
+    //по language
     const hasSelectedLanguages = selectedLanguages.every(language =>
       item.languages.includes(language)
     );

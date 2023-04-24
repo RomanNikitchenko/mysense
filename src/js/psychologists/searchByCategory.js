@@ -2,10 +2,6 @@ import fetchCardByValues from './fetchCardByValues';
 import createImageCardsMarcup from './createImageCardsMarcup';
 
 (() => {
-  const textInput = document.querySelector(
-    '.psychologists-section__search-input'
-  );
-
   let description = '';
 
   let selectedSpecialties = [];
@@ -13,6 +9,10 @@ import createImageCardsMarcup from './createImageCardsMarcup';
   let selectedPriceRanges = [];
   let selectedLanguages = [];
   let selectedTherapys = [];
+
+  let sortingEnabledByPrice = false;
+  let sortingEnabledByExperience = false;
+  let reversed = false;
 
   let page = 0;
   let totalCards = 6;
@@ -31,6 +31,9 @@ import createImageCardsMarcup from './createImageCardsMarcup';
         selectedPriceRanges,
         selectedLanguages,
         selectedTherapys,
+        sortingEnabledByPrice,
+        sortingEnabledByExperience,
+        reversed,
         page,
         totalCards,
       });
@@ -47,12 +50,17 @@ import createImageCardsMarcup from './createImageCardsMarcup';
   };
 
   //поиск в инпут
+  const textInput = document.querySelector(
+    '.psychologists-section__search-input'
+  );
+
   textInput.addEventListener('input', async event => {
     description = event.currentTarget.value.trim();
     await getFilterChange();
     change = true;
     createImageCardsMarcup({ visiblefilter, change });
   });
+  //
 
   //по specialties
   const dataButtonValueSpecialties = document.querySelectorAll(
@@ -86,6 +94,7 @@ import createImageCardsMarcup from './createImageCardsMarcup';
       checkLoadMoreButton();
     });
   });
+  //
 
   //по gender
   const dataButtonValueGender = document.querySelectorAll(
@@ -117,6 +126,7 @@ import createImageCardsMarcup from './createImageCardsMarcup';
       checkLoadMoreButton();
     });
   });
+  //
 
   ///по price
   const dataButtonValuePrice = document.querySelectorAll(
@@ -150,6 +160,7 @@ import createImageCardsMarcup from './createImageCardsMarcup';
       checkLoadMoreButton();
     });
   });
+  //
 
   //по Language
   const dataButtonValueLanguage = document.querySelectorAll(
@@ -183,6 +194,7 @@ import createImageCardsMarcup from './createImageCardsMarcup';
       checkLoadMoreButton();
     });
   });
+  //
 
   //по therapy
   const dataButtonValueTherapy = document.querySelectorAll(
@@ -216,6 +228,38 @@ import createImageCardsMarcup from './createImageCardsMarcup';
       checkLoadMoreButton();
     });
   });
+  //
+
+  // сортировка
+  const dataSort = document.querySelector('.sort-list');
+
+  const sortByDateAttributeValue = async e => {
+    page = 0;
+    totalCards = 6;
+
+    if (!e.target.classList.contains('sort-button')) return;
+    reversed = !reversed;
+
+    if (e.target.dataset.sort === 'price') {
+      sortingEnabledByPrice = true;
+      sortingEnabledByExperience = false;
+    }
+
+    if (e.target.dataset.sort === 'experience') {
+      sortingEnabledByPrice = false;
+      sortingEnabledByExperience = true;
+    }
+
+    await getFilterChange();
+
+    change = true;
+    createImageCardsMarcup({ visiblefilter, change });
+
+    checkLoadMoreButton();
+  };
+
+  dataSort.addEventListener('click', sortByDateAttributeValue);
+  //
 
   // loadMoreButton
   const loadMoreButton = document.querySelector('.load-more');
@@ -231,7 +275,9 @@ import createImageCardsMarcup from './createImageCardsMarcup';
 
     checkLoadMoreButton();
   });
+  //
 
+  //скрываем кнопку
   function checkLoadMoreButton() {
     if (visiblehits <= totalCards) {
       loadMoreButton.style.display = 'none';
