@@ -38,7 +38,19 @@
             .icon__crds {
                 fill: #FF5C8D;
             }
+        }
+        .consern_cart-2 {
+            background: url('../images/svg-mysense/family-cart-2-pink.svg') center / cover no-repeat;
         } 
+        .consern_cart-3 {
+            background: url('../images/svg-mysense/family-cart-3-pink.svg') center / cover no-repeat;
+        } 
+        .consern_cart-5 {
+            background: url('../images/svg-mysense/others-cart-4-pink.svg') center / cover no-repeat;
+        }
+        .consern_cart-6 {
+            background: url('../images/svg-mysense/life-cart-3-pink.svg') center / cover no-repeat;
+        }
     }
 }
 .consern__card-title {
@@ -50,8 +62,6 @@
     text-align: left;
     margin-right: 10px;
 }
-.icon-arrow-top-right {
-}
 .consern__card__icon {
     display: flex;
     align-items: center;
@@ -59,6 +69,32 @@
         fill: #795BDA;
     }
 }
+
+.consern_cart-2 {
+    background: url('../images/svg-mysense/family-cart-2.svg') center / cover no-repeat;
+    width: 40px;
+    height: 27px;
+}
+.consern_cart-3 {
+    background: url('../images/svg-mysense/family-cart-3.svg') center / cover no-repeat;
+    width: 26px;
+    height: 23px;
+}
+.consern_cart-5 {
+    background: url('../images/svg-mysense/others-cart-4.svg') center / cover no-repeat;
+    width: 38px;
+    height: 34px;
+}
+.consern_cart-6 {
+    background: url('../images/svg-mysense/life-cart-3.svg') center / cover no-repeat;
+    width: 31px;
+    height: 31px;
+}
+
+
+
+
+
 
 @media screen and (max-width: 1280px) {
     .consern__cards {
