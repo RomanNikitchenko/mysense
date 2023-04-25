@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "body-scroll-lock": "^4.0.0-beta.0",
-    "modern-normalize": "^1.1.0"
+    "modern-normalize": "^1.1.0",
+    "vanilla-lazyload": "^17.8.3"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
