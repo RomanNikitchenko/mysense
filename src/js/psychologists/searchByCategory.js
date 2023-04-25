@@ -41,8 +41,8 @@ import createImageCardsMarcup from './createImageCardsMarcup';
       visiblefilter = data;
       visiblehits = hits;
 
-      // console.log(visiblefilter);
-      // console.log(visiblehits);
+      console.log(visiblefilter);
+      console.log(visiblehits);
       return;
     } catch (error) {
       console.log('Ошибка', error);
@@ -55,10 +55,15 @@ import createImageCardsMarcup from './createImageCardsMarcup';
   );
 
   textInput.addEventListener('input', async event => {
+    page = 0;
+    totalCards = 6;
+
     description = event.currentTarget.value.trim();
     await getFilterChange();
     change = true;
     createImageCardsMarcup({ visiblefilter, change });
+
+    checkLoadMoreButton();
   });
   //
 
