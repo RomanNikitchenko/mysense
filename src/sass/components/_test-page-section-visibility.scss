@@ -1,19 +1,30 @@
-.state,
-.requests,
-.consern,
-.category,
-.fixed__box {
-    opacity: 1;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+// .state,
+// .requests,
+// .consern,
+// .category,
+// .fixed__box {
+//     opacity: 1;
+//     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+//         visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+// }
 
-.state--is-hidden,
-.requests--is-hidden,
-.consern--is-hidden,
-.category--is-hidden,
-.fixed__box--is-category {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+// .state--is-hidden,
+// .requests--is-hidden,
+// .consern--is-hidden,
+// .category--is-hidden,
+// .fixed__box--is-category {
+//     opacity: 0;
+//     visibility: hidden;
+//     pointer-events: none;
+// }
+
+.test__card-wrap.is-active {
+    background: #795bda;
+
+    & .test__card-title {
+        color: #fff;
+    }
+
+    & .person-purple {
+        fill: #ff5c8d;}
 }
