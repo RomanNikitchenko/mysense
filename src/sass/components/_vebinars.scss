@@ -55,15 +55,13 @@
     margin-bottom: 60px;
 }
 .card__meeting {
-    background:  url('../images/man.jpg') no-repeat right #FFFFFF;
+    background: #FFFFFF;                  
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
     margin: 15px 0;
 }
-.card__meeting-women {
-    background:  url('../images/women.jpg') no-repeat right #FFFFFF;
-}
+
 .meeting__left-block {
     padding: 30px 20px 20px 20px;
     display: flex;
@@ -149,7 +147,13 @@
 }
 .meeting__image {
     max-width: 266px;
-    display: none;
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 0 8px 8px 0;
+    }
+
 }
 .vebinars__btn-390 {
     display: none;
@@ -266,18 +270,6 @@
     .meeting__spicer {
         margin: 8px 0 20px;
     }
-    .card__meeting {
-        background:  url('../images/man-mobile.jpg') no-repeat right #FFFFFF;
-        border-radius: 8px;
-        justify-content: space-between;
-        display: flex;
-    }
-    .card__meeting-women {
-        background:  url('../images/women-mobile.jpg') no-repeat right #FFFFFF;
-        border-radius: 8px;
-        justify-content: space-between;
-        display: flex;
-    }
     .vebinars-title-h2 {
         font-size: 42px;
     }
@@ -301,6 +293,9 @@
     .meeting__image {
         max-width: 100%;
         display: block;
+    }
+    .meeting__image img {
+        border-radius: 0;
     }
     .meeting__left-block {
         padding: 30px 0px 20px 20px;
