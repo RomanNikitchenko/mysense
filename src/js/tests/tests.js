@@ -20,15 +20,16 @@ const sectionRequests = document.querySelector('.requests');
 const sectionConsern = document.querySelector('.consern');
 const sectionCategory = document.querySelector('.category');
 
-sectionState.style.display = 'none';
-sectionRequests.style.display = 'none';
-sectionConsern.style.display = 'none';
-sectionCategory.style.display = 'none';
-fixedBox.style.display = 'none';
+sectionState.classList.add('visually-hidden');
+sectionRequests.classList.add('visually-hidden');
+sectionConsern.classList.add('visually-hidden');
+sectionCategory.classList.add('visually-hidden');
+fixedBox.classList.add('visually-hidden');
 
 let myself = false;
 let family = false;
 let child = false;
+
 let page = 0;
 
 testCardWrapBtn.forEach(item => {
@@ -60,45 +61,97 @@ testCardWrapBtn.forEach(item => {
 
     item.classList.add('is-active');
 
-    fixedBox.style.display = 'flex';
+    fixedBox.classList.remove('visually-hidden');
   });
 });
 
+/////
+
 const fixedButtonPrew = document.querySelector('.fixed__button-prew');
+
+fixedButtonPrew.addEventListener('click', () => {
+  if (page === 1) {
+    page -= 1;
+
+    testpageContainer.classList.remove('visually-hidden');
+
+    if (myself) {
+      sectionState.classList.add('visually-hidden');
+      return;
+    }
+
+    if (family) {
+      sectionConsern.classList.add('visually-hidden');
+      return;
+    }
+
+    if (child) {
+      sectionCategory.classList.add('visually-hidden');
+      return;
+    }
+  }
+
+  if (page === 2) {
+    page -= 1;
+
+    if (myself) {
+      sectionRequests.classList.add('visually-hidden');
+      sectionState.classList.remove('visually-hidden');
+      return;
+    }
+
+    if (family) {
+      sectionConsern.classList.add('visually-hidden');
+      return;
+    }
+
+    if (child) {
+      sectionCategory.classList.add('visually-hidden');
+      return;
+    }
+  }
+});
+
+/////
+
 const fixedButtonNext = document.querySelector('.fixed__button-next');
 
 fixedButtonNext.addEventListener('click', () => {
   if (page === 0) {
     page += 1;
 
-    testpageContainer.style.display = 'none';
+    testpageContainer.classList.add('visually-hidden');
 
     if (myself) {
-      sectionState.style.display = 'block';
+      sectionState.classList.remove('visually-hidden');
       return;
     }
     if (family) {
-      sectionConsern.style.display = 'block';
+      sectionConsern.classList.remove('visually-hidden');
       return;
     }
     if (child) {
-      sectionCategory.style.display = 'block';
+      sectionCategory.classList.remove('visually-hidden');
       return;
     }
   }
 
   if (page === 1) {
+    page += 1;
+
     if (myself) {
-      sectionState.style.display = 'none';
-      sectionRequests.style.display = 'block';
+      sectionState.classList.add('visually-hidden');
+      sectionRequests.classList.remove('visually-hidden');
       return;
     }
     if (family) {
-      sectionConsern.style.display = 'block';
+      page = 1;
+      sectionConsern.classList.remove('visually-hidden');
       return;
     }
     if (child) {
-      sectionCategory.style.display = 'block';
+      page = 1;
+      sectionCategory.classList.remove('visually-hidden');
       return;
     }
   }
