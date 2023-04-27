@@ -1,3 +1,4 @@
+import checkArrayAndDisableButton from './checkArrayAndDisableButton';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 //section
@@ -60,16 +61,6 @@ testCardWrapBtn.forEach(item => {
 /////
 
 /////
-function checkArrayAndDisableButton(array) {
-  if (!array.length) {
-    disabled = true;
-  } else {
-    disabled = false;
-  }
-}
-/////
-
-/////
 const fixedButtonNext = document.querySelector('.fixed__button-next');
 
 fixedButtonNext.addEventListener('click', () => {
@@ -91,12 +82,12 @@ fixedButtonNext.addEventListener('click', () => {
     }
     if (family) {
       sectionConsern.classList.remove('visually-hidden');
-      checkArrayAndDisableButton(consern);
+      disabled = checkArrayAndDisableButton(consern, disabled);
       return;
     }
     if (child) {
       sectionCategory.classList.remove('visually-hidden');
-      checkArrayAndDisableButton(category);
+      disabled = checkArrayAndDisableButton(category, disabled);
       return;
     }
   }
@@ -106,7 +97,7 @@ fixedButtonNext.addEventListener('click', () => {
       page += 1;
       sectionState.classList.add('visually-hidden');
       sectionRequests.classList.remove('visually-hidden');
-      checkArrayAndDisableButton(MyRequests);
+      disabled = checkArrayAndDisableButton(MyRequests, disabled);
       return;
     }
     if (family) {
@@ -241,7 +232,7 @@ dataButtonMyRequests.forEach(item => {
 
     console.log(MyRequests);
 
-    checkArrayAndDisableButton(MyRequests);
+    disabled = checkArrayAndDisableButton(MyRequests, disabled);
   });
 });
 //
@@ -270,7 +261,7 @@ dataButtonConsern.forEach(item => {
 
     console.log(consern);
 
-    checkArrayAndDisableButton(consern);
+    disabled = checkArrayAndDisableButton(consern, disabled);
   });
 });
 //
@@ -301,7 +292,7 @@ dataButtonCategory.forEach(item => {
 
     console.log(category);
 
-    checkArrayAndDisableButton(category);
+    disabled = checkArrayAndDisableButton(category, disabled);
   });
 });
 //
