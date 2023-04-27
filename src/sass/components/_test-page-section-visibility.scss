@@ -12,7 +12,8 @@
     overflow: hidden;
 }
 
-.test__card-wrap.is-active {
+//testpage
+.testpage .test__card-wrap.is-active {
     background: #795bda;
 
     & .test__card-title {
@@ -23,8 +24,8 @@
         fill: #ff5c8d;}
 }
 
-
-.card__link-btn.is-active {
+//state
+.state .card__link-btn.is-active {
     background: #795bda;
 
     & .state__card-title {
@@ -33,5 +34,44 @@
 
     & .icon__crds {
         fill: #ff5c8d;
+    }
+}
+
+//consern
+.requests .card__link-btn.is-active {
+    background: #795bda;
+
+    & .state__card-title {
+        color: #fff;
+    }
+
+    & .icon__crds {
+        fill: #ff5c8d;
+    }
+}
+
+//consern
+.consern .card__link-btn.is-active {
+    background: #795bda;
+
+    & .consern__card-title {
+        color: #fff;
+    }
+
+    & .icon__crds {
+        fill: #ff5c8d;
+    }
+}
+
+//child
+.category .card__link-btn.is-active {
+    background: #795bda;
+
+    & .category__card-title {
+        color: #fff;
+    }
+
+    & .category__card-old span {
+        color: #ff5c8d;
     }
 }

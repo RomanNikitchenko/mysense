@@ -17,8 +17,12 @@ let myself = false;
 let family = false;
 let child = false;
 
-let MyRequests = [];
 let myState = [];
+let MyRequests = [];
+
+let consern = [];
+
+let category = [];
 
 let disabled = false;
 
@@ -60,6 +64,57 @@ testCardWrapBtn.forEach(item => {
 /////
 
 /////
+function checkArrayAndDisableButton(array) {
+  if (!array.length) {
+    disabled = true;
+  } else {
+    disabled = false;
+  }
+}
+/////
+
+/////
+const fixedButtonNext = document.querySelector('.fixed__button-next');
+
+fixedButtonNext.addEventListener('click', () => {
+  console.log(disabled);
+  if (disabled) return;
+  console.log('qwe');
+
+  if (page === 0) {
+    page += 1;
+
+    testpageContainer.classList.add('visually-hidden');
+
+    if (myself) {
+      sectionState.classList.remove('visually-hidden');
+      return;
+    }
+    if (family) {
+      sectionConsern.classList.remove('visually-hidden');
+      checkArrayAndDisableButton(consern);
+      return;
+    }
+    if (child) {
+      sectionCategory.classList.remove('visually-hidden');
+      checkArrayAndDisableButton(consern);
+      return;
+    }
+  }
+
+  if (page === 1) {
+    if (myself) {
+      page += 1;
+      sectionState.classList.add('visually-hidden');
+      sectionRequests.classList.remove('visually-hidden');
+      checkArrayAndDisableButton(MyRequests);
+      return;
+    }
+  }
+});
+/////
+
+/////
 const fixedButtonPrew = document.querySelector('.fixed__button-prew');
 
 fixedButtonPrew.addEventListener('click', () => {
@@ -87,85 +142,17 @@ fixedButtonPrew.addEventListener('click', () => {
   }
 
   if (page === 2) {
-    page -= 1;
-
     if (myself) {
+      page -= 1;
       sectionRequests.classList.add('visually-hidden');
       sectionState.classList.remove('visually-hidden');
       return;
     }
-
-    if (family) {
-      sectionConsern.classList.add('visually-hidden');
-      return;
-    }
-
-    if (child) {
-      sectionCategory.classList.add('visually-hidden');
-      return;
-    }
   }
 });
 /////
 
-/////
-const fixedButtonNext = document.querySelector('.fixed__button-next');
-
-function checkArrayAndDisableButton() {
-  if (!MyRequests.length) {
-    disabled = true;
-  } else {
-    disabled = false;
-  }
-}
-
-fixedButtonNext.addEventListener('click', () => {
-  console.log(disabled);
-  if (disabled) return;
-  console.log('qwe');
-
-  if (page === 0) {
-    page += 1;
-
-    testpageContainer.classList.add('visually-hidden');
-
-    if (myself) {
-      sectionState.classList.remove('visually-hidden');
-      return;
-    }
-    if (family) {
-      sectionConsern.classList.remove('visually-hidden');
-      return;
-    }
-    if (child) {
-      sectionCategory.classList.remove('visually-hidden');
-      return;
-    }
-  }
-
-  if (page === 1) {
-    page += 1;
-
-    if (myself) {
-      sectionState.classList.add('visually-hidden');
-      sectionRequests.classList.remove('visually-hidden');
-      checkArrayAndDisableButton();
-      return;
-    }
-    if (family) {
-      page = 1;
-      sectionConsern.classList.remove('visually-hidden');
-      return;
-    }
-    if (child) {
-      page = 1;
-      sectionCategory.classList.remove('visually-hidden');
-      return;
-    }
-  }
-});
-/////
-
+//myself
 //по my-state
 const dataButtonMyState = document.querySelectorAll('[data-button-my-state]');
 
@@ -195,7 +182,6 @@ const dataButtonMyRequests = document.querySelectorAll(
 
 dataButtonMyRequests.forEach(item => {
   const stateCardTitle = item.firstElementChild.innerHTML;
-
   item.setAttribute('data-button-my-Requests', stateCardTitle);
 
   item.addEventListener('click', () => {
@@ -213,7 +199,68 @@ dataButtonMyRequests.forEach(item => {
 
     console.log(MyRequests);
 
-    checkArrayAndDisableButton();
+    checkArrayAndDisableButton(MyRequests);
   });
 });
+//
+//
+
+//family
+//по consern
+const dataButtonConsern = document.querySelectorAll('.consern .card__link-btn');
+
+dataButtonConsern.forEach(item => {
+  const consernCardTitle = item.firstElementChild.innerHTML;
+  item.setAttribute('data-button-consern', consernCardTitle);
+
+  item.addEventListener('click', () => {
+    const dataValue = item.getAttribute('data-button-consern');
+
+    //если есть удаляем если нет добавляем
+    if (consern.includes(dataValue)) {
+      consern = consern.filter(value => value !== dataValue);
+    } else {
+      consern.push(dataValue);
+    }
+
+    //добавляем клас ввыбраным кнопкам
+    item.classList.toggle('is-active');
+
+    console.log(consern);
+
+    checkArrayAndDisableButton(consern);
+  });
+});
+//
+//
+
+//child
+//по category
+const dataButtonCategory = document.querySelectorAll(
+  '.category .card__link-btn'
+);
+
+dataButtonCategory.forEach(item => {
+  const categoryCardTitle = item.firstElementChild.innerHTML;
+  item.setAttribute('data-button-category', categoryCardTitle);
+
+  item.addEventListener('click', () => {
+    const dataValue = item.getAttribute('data-button-category');
+
+    //если есть удаляем если нет добавляем
+    if (category.includes(dataValue)) {
+      category = category.filter(value => value !== dataValue);
+    } else {
+      category.push(dataValue);
+    }
+
+    //добавляем клас ввыбраным кнопкам
+    item.classList.toggle('is-active');
+
+    console.log(category);
+
+    checkArrayAndDisableButton(category);
+  });
+});
+//
 //
