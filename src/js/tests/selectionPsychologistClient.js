@@ -2,6 +2,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 //section
 const testpageContainer = document.querySelector('.testpage__container');
+const testpageTitle = document.querySelector('.testpage__title');
+const testpageCards = document.querySelector('.testpage__cards');
 const testCardWrapBtn = document.querySelectorAll('.test__card-wrap');
 const fixedBox = document.querySelector('.fixed__box');
 const sectionState = document.querySelector('.state');
@@ -87,7 +89,9 @@ fixedButtonNext.addEventListener('click', () => {
   if (page === 0) {
     page += 1;
 
-    testpageContainer.classList.add('visually-hidden');
+    // testpageContainer.classList.add('visually-hidden');
+    testpageTitle.classList.add('visually-hidden');
+    testpageCards.classList.add('visually-hidden');
 
     if (myself) {
       sectionState.classList.remove('visually-hidden');
@@ -100,7 +104,7 @@ fixedButtonNext.addEventListener('click', () => {
     }
     if (child) {
       sectionCategory.classList.remove('visually-hidden');
-      checkArrayAndDisableButton(consern);
+      checkArrayAndDisableButton(category);
       return;
     }
   }
@@ -142,7 +146,9 @@ fixedButtonPrew.addEventListener('click', () => {
   if (page === 1) {
     page -= 1;
 
-    testpageContainer.classList.remove('visually-hidden');
+    // testpageContainer.classList.remove('visually-hidden');
+    testpageTitle.classList.remove('visually-hidden');
+    testpageCards.classList.remove('visually-hidden');
 
     if (myself) {
       sectionState.classList.add('visually-hidden');
