@@ -1,3 +1,5 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 //section
 const testpageContainer = document.querySelector('.testpage__container');
 const testCardWrapBtn = document.querySelectorAll('.test__card-wrap');
@@ -77,9 +79,10 @@ function checkArrayAndDisableButton(array) {
 const fixedButtonNext = document.querySelector('.fixed__button-next');
 
 fixedButtonNext.addEventListener('click', () => {
-  console.log(disabled);
-  if (disabled) return;
-  console.log('qwe');
+  if (disabled) {
+    Notify.info('Зробіть свій вибір.');
+    return;
+  }
 
   if (page === 0) {
     page += 1;
@@ -110,6 +113,22 @@ fixedButtonNext.addEventListener('click', () => {
       checkArrayAndDisableButton(MyRequests);
       return;
     }
+  }
+
+  //нужно вынести отдельно в функцию
+  if (myself) {
+    Notify.success('myself');
+    return;
+  }
+
+  if (family) {
+    Notify.success('family');
+    return;
+  }
+
+  if (child) {
+    Notify.success('child');
+    return;
   }
 });
 /////
