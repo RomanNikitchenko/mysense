@@ -1,7 +1,6 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 //section
-const testpageContainer = document.querySelector('.testpage__container');
 const testpageTitle = document.querySelector('.testpage__title');
 const testpageCards = document.querySelector('.testpage__cards');
 const testCardWrapBtn = document.querySelectorAll('.test__card-wrap');
@@ -10,12 +9,7 @@ const sectionState = document.querySelector('.state');
 const sectionRequests = document.querySelector('.requests');
 const sectionConsern = document.querySelector('.consern');
 const sectionCategory = document.querySelector('.category');
-
-sectionState.classList.add('visually-hidden');
-sectionRequests.classList.add('visually-hidden');
-sectionConsern.classList.add('visually-hidden');
-sectionCategory.classList.add('visually-hidden');
-fixedBox.classList.add('visually-hidden');
+const testResult = document.querySelector('.result');
 
 let myself = false;
 let family = false;
@@ -23,9 +17,7 @@ let child = false;
 
 let myState = [];
 let MyRequests = [];
-
 let consern = [];
-
 let category = [];
 
 let disabled = false;
@@ -117,22 +109,27 @@ fixedButtonNext.addEventListener('click', () => {
       checkArrayAndDisableButton(MyRequests);
       return;
     }
+    if (family) {
+      page += 1;
+      sectionConsern.classList.add('visually-hidden');
+      testResult.classList.remove('visually-hidden');
+      return;
+    }
+    if (child) {
+      page += 1;
+      sectionCategory.classList.add('visually-hidden');
+      testResult.classList.remove('visually-hidden');
+      return;
+    }
   }
 
-  //нужно вынести отдельно в функцию
-  if (myself) {
-    Notify.success('myself');
-    return;
-  }
-
-  if (family) {
-    Notify.success('family');
-    return;
-  }
-
-  if (child) {
-    Notify.success('child');
-    return;
+  if (page === 2) {
+    if (myself) {
+      page += 1;
+      sectionRequests.classList.add('visually-hidden');
+      testResult.classList.remove('visually-hidden');
+      return;
+    }
   }
 });
 /////
@@ -146,7 +143,6 @@ fixedButtonPrew.addEventListener('click', () => {
   if (page === 1) {
     page -= 1;
 
-    // testpageContainer.classList.remove('visually-hidden');
     testpageTitle.classList.remove('visually-hidden');
     testpageCards.classList.remove('visually-hidden');
 
@@ -171,6 +167,27 @@ fixedButtonPrew.addEventListener('click', () => {
       page -= 1;
       sectionRequests.classList.add('visually-hidden');
       sectionState.classList.remove('visually-hidden');
+      return;
+    }
+    if (family) {
+      page -= 1;
+      sectionConsern.classList.remove('visually-hidden');
+      testResult.classList.add('visually-hidden');
+      return;
+    }
+    if (child) {
+      page -= 1;
+      sectionCategory.classList.remove('visually-hidden');
+      testResult.classList.add('visually-hidden');
+      return;
+    }
+  }
+
+  if (page === 3) {
+    if (myself) {
+      page -= 1;
+      sectionRequests.classList.remove('visually-hidden');
+      testResult.classList.add('visually-hidden');
       return;
     }
   }
