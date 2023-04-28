@@ -1,6 +1,9 @@
+import checkArrayAndDisableButton from './checkArrayAndDisableButton';
+import toggleActiveClass from './toggleActiveClass';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 //section
+const testLine = document.querySelectorAll('.test__line');
 const testpageTitle = document.querySelector('.testpage__title');
 const testpageCards = document.querySelector('.testpage__cards');
 const testCardWrapBtn = document.querySelectorAll('.test__card-wrap');
@@ -92,11 +95,13 @@ fixedButtonNext.addEventListener('click', () => {
     if (family) {
       sectionConsern.classList.remove('visually-hidden');
       checkArrayAndDisableButton(consern);
+      disabled = checkArrayAndDisableButton(consern, disabled);
       return;
     }
     if (child) {
       sectionCategory.classList.remove('visually-hidden');
       checkArrayAndDisableButton(category);
+      disabled = checkArrayAndDisableButton(category, disabled);
       return;
     }
   }
@@ -107,18 +112,21 @@ fixedButtonNext.addEventListener('click', () => {
       sectionState.classList.add('visually-hidden');
       sectionRequests.classList.remove('visually-hidden');
       checkArrayAndDisableButton(MyRequests);
+      disabled = checkArrayAndDisableButton(MyRequests, disabled);
       return;
     }
     if (family) {
       page += 1;
       sectionConsern.classList.add('visually-hidden');
       testResult.classList.remove('visually-hidden');
+      toggleActiveClass(testLine, testResult, 2);
       return;
     }
     if (child) {
       page += 1;
       sectionCategory.classList.add('visually-hidden');
       testResult.classList.remove('visually-hidden');
+      toggleActiveClass(testLine, testResult, 2);
       return;
     }
   }
@@ -128,6 +136,7 @@ fixedButtonNext.addEventListener('click', () => {
       page += 1;
       sectionRequests.classList.add('visually-hidden');
       testResult.classList.remove('visually-hidden');
+      toggleActiveClass(testLine, testResult, 2);
       return;
     }
   }
@@ -173,12 +182,14 @@ fixedButtonPrew.addEventListener('click', () => {
       page -= 1;
       sectionConsern.classList.remove('visually-hidden');
       testResult.classList.add('visually-hidden');
+      toggleActiveClass(testLine, sectionConsern, 1);
       return;
     }
     if (child) {
       page -= 1;
       sectionCategory.classList.remove('visually-hidden');
       testResult.classList.add('visually-hidden');
+      toggleActiveClass(testLine, sectionCategory, 1);
       return;
     }
   }
@@ -188,6 +199,7 @@ fixedButtonPrew.addEventListener('click', () => {
       page -= 1;
       sectionRequests.classList.remove('visually-hidden');
       testResult.classList.add('visually-hidden');
+      toggleActiveClass(testLine, sectionRequests, 1);
       return;
     }
   }
@@ -242,6 +254,7 @@ dataButtonMyRequests.forEach(item => {
     console.log(MyRequests);
 
     checkArrayAndDisableButton(MyRequests);
+    disabled = checkArrayAndDisableButton(MyRequests, disabled);
   });
 });
 //
@@ -271,6 +284,7 @@ dataButtonConsern.forEach(item => {
     console.log(consern);
 
     checkArrayAndDisableButton(consern);
+    disabled = checkArrayAndDisableButton(consern, disabled);
   });
 });
 //
@@ -302,6 +316,7 @@ dataButtonCategory.forEach(item => {
     console.log(category);
 
     checkArrayAndDisableButton(category);
+    disabled = checkArrayAndDisableButton(category, disabled);
   });
 });
 //
