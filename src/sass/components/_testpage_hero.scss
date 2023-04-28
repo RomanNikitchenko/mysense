@@ -47,8 +47,7 @@
     min-height: 160px;
     max-height: 200px;
     transition: all 0.3s ease 0s;
-    &:hover,
-    &:focus {
+    &:hover {
         cursor: pointer;
         background: rgba(121, 91, 218, 1);
         .card__link {
