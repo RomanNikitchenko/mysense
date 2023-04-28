@@ -107,16 +107,18 @@ fixedButtonNext.addEventListener('click', () => {
     if (family) {
       page += 1;
       sectionConsern.classList.add('visually-hidden');
-      testResult.classList.remove('visually-hidden');
       fixedButtonNext.classList.add('visually-hidden');
+      testResult.classList.remove('visually-hidden');
+      fixedButtonLoadMore.classList.remove('visually-hidden');
       toggleActiveClass(testLine, testResult, 2);
       return;
     }
     if (child) {
       page += 1;
       sectionCategory.classList.add('visually-hidden');
-      testResult.classList.remove('visually-hidden');
       fixedButtonNext.classList.add('visually-hidden');
+      testResult.classList.remove('visually-hidden');
+      fixedButtonLoadMore.classList.remove('visually-hidden');
       toggleActiveClass(testLine, testResult, 2);
       return;
     }
@@ -126,8 +128,9 @@ fixedButtonNext.addEventListener('click', () => {
     if (myself) {
       page += 1;
       sectionRequests.classList.add('visually-hidden');
-      testResult.classList.remove('visually-hidden');
       fixedButtonNext.classList.add('visually-hidden');
+      testResult.classList.remove('visually-hidden');
+      fixedButtonLoadMore.classList.remove('visually-hidden');
       toggleActiveClass(testLine, testResult, 2);
       return;
     }
@@ -173,16 +176,18 @@ fixedButtonPrew.addEventListener('click', () => {
     if (family) {
       page -= 1;
       sectionConsern.classList.remove('visually-hidden');
-      testResult.classList.add('visually-hidden');
       fixedButtonNext.classList.remove('visually-hidden');
+      testResult.classList.add('visually-hidden');
+      fixedButtonLoadMore.classList.add('visually-hidden');
       toggleActiveClass(testLine, sectionConsern, 1);
       return;
     }
     if (child) {
       page -= 1;
       sectionCategory.classList.remove('visually-hidden');
-      testResult.classList.add('visually-hidden');
       fixedButtonNext.classList.remove('visually-hidden');
+      testResult.classList.add('visually-hidden');
+      fixedButtonLoadMore.classList.add('visually-hidden');
       toggleActiveClass(testLine, sectionCategory, 1);
       return;
     }
@@ -192,9 +197,10 @@ fixedButtonPrew.addEventListener('click', () => {
     if (myself) {
       page -= 1;
       sectionRequests.classList.remove('visually-hidden');
-      testResult.classList.add('visually-hidden');
-      toggleActiveClass(testLine, sectionRequests, 1);
       fixedButtonNext.classList.remove('visually-hidden');
+      testResult.classList.add('visually-hidden');
+      fixedButtonLoadMore.classList.add('visually-hidden');
+      toggleActiveClass(testLine, sectionRequests, 1);
       return;
     }
   }
@@ -203,9 +209,12 @@ fixedButtonPrew.addEventListener('click', () => {
 
 //myself
 //по my-state
-const dataButtonMyState = document.querySelectorAll('[data-button-my-state]');
+const dataButtonState = document.querySelectorAll('.state .card__link-btn');
 
-dataButtonMyState.forEach(item => {
+dataButtonState.forEach(item => {
+  const MyRequestsCardTitle = item.firstElementChild.innerHTML;
+  item.setAttribute('data-button-my-state', MyRequestsCardTitle);
+
   item.addEventListener('click', () => {
     const dataValue = item.getAttribute('data-button-my-state');
 
@@ -230,8 +239,8 @@ const dataButtonMyRequests = document.querySelectorAll(
 );
 
 dataButtonMyRequests.forEach(item => {
-  const stateCardTitle = item.firstElementChild.innerHTML;
-  item.setAttribute('data-button-my-Requests', stateCardTitle);
+  const MyRequestsCardTitle = item.firstElementChild.innerHTML;
+  item.setAttribute('data-button-my-Requests', MyRequestsCardTitle);
 
   item.addEventListener('click', () => {
     const dataValue = item.getAttribute('data-button-my-Requests');
