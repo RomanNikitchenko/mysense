@@ -63,16 +63,6 @@ testCardWrapBtn.forEach(item => {
 /////
 
 /////
-function checkArrayAndDisableButton(array) {
-  if (!array.length) {
-    disabled = true;
-  } else {
-    disabled = false;
-  }
-}
-/////
-
-/////
 const fixedButtonNext = document.querySelector('.fixed__button-next');
 
 fixedButtonNext.addEventListener('click', () => {
