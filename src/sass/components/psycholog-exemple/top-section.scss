@@ -95,7 +95,7 @@
         margin-left: 4px;
     }
 }
-button {
+.write-btn {
     display: flex;
     border: none;
     background: transparent;
@@ -261,6 +261,7 @@ button {
         line-height: 150%;
         letter-spacing: -0.01em;
         color: #222B40;
+        display: flex;
         span {
             font-weight: 500;
             margin-left: 60px;
@@ -339,6 +340,7 @@ button {
     color: #fff;
     padding: 9px 18px 10px;
     border-radius: 20px;
+    border: none;
     &:hover {
         cursor: pointer;
         background: #6c52c4;
@@ -350,6 +352,7 @@ button {
     padding: 9px 18px 10px;
     border-radius: 20px;
     display: block;
+    border: none;
 
     font-weight: 500;
     font-size: 14px;
@@ -377,6 +380,92 @@ button {
         }
     }
 }
+.articles__cards-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+.articles__card-column {
+    flex: 1 1 360px;
+    background: #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease 0s;
+    &:hover {
+        box-shadow: 0 2 10 2 rgba(34, 43, 64, 0.1);
+        transform: translateY(-3px);
+    }
+}
+.card__name {
+    h4 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        margin-bottom: 4px;
+    }
+    p {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.4);
+    }
+}
+.card__block-title {
+    a {
+        display: block;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 110%;
+        letter-spacing: -0.06em;
+        color: #222B40;
+        padding: 20px;
+    }
+    p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        // letter-spacing: -0.05em;
+        color: #222B40;
+        padding: 0 20px 20px;
+    }
+    img  {
+        border-radius: 8px 8px 0 0 ;
+    }
+}
+.card__block-statistic {
+    padding: 0 20px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.statistic_left {
+    display: flex;
+    align-items: center;
+    .card__likes {
+        margin-left: 20px;
+    }
+}
+
+.card__date {
+    text-align: right;
+    span {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+        color: rgba(34, 43, 64, 0.4);
+    }
+}
+
+
+
+
+
+
 
 
 @media screen and (max-width: 1280px) {
@@ -395,19 +484,19 @@ button {
     .card__info h3:after {
         right: 30px;
     }
-    button .hello {
+    .card__price {
+        font-size: 22px;
+    }
+    .write-btn .button {
+        padding: 10px;
+        font-size: 12px;
+    }
+    .write-btn .hello {
         padding: 10px;
         img {
             width: 12px;
             height: 12px;
         }
-    }
-    .card__price {
-        font-size: 22px;
-    }
-    button .button {
-        padding: 10px;
-        font-size: 12px;
     }
     .wrap__main {
         display: grid;
@@ -421,13 +510,73 @@ button {
     .skill-box {
         width: 100%;
     }
+    .item__title {
+        font-size: 20px;
+    }
+    .edu__list li span {
+        font-size: 14px;
+        margin-left: 30px;
+    }
     .platform__title-block {
         flex-wrap: wrap;
     }
     .controls__block {
         margin-top: 12px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .switch_btns {
+        margin-right: 0; 
+    }
+    .articles__card-last {
+        display: none;
+    }
+    .articles__cards-wrap {
+        grid-template-columns: 1fr 1fr;
+    }
+    .card__block-title a {
+        font-size: 20px;
+    }
+    .card__block-title p {
+        font-size: 12px;
+        line-height: 130%;
     }
 }
+
+
+
 @media screen and (max-width: 744px) {
-    
+    .wrap__main {
+        display: flex;
+        flex-direction: column;
+    }
+    .grey_bg {
+        max-width: 80%;
+    }
+    .write-btn .button {
+        padding: 16px;
+        font-size: 14px;
+    }
+    .write-btn .hello {
+        padding: 16px;
+        img {
+            width: 16px;
+            height: 16px;
+        }
+    }
+    .item__title {
+        font-size: 16px;
+    }
+    .edu__list li {
+        font-size: 14px;
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .articles__cards-wrap {
+        grid-template-columns: 1fr;
+    }
+
 }
