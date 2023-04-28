@@ -83,7 +83,7 @@
     justify-content: space-between;
     min-height: 200px;
     transition: all 0.3s ease 0s;
-    &:hover, &:focus {
+    &:hover {
         cursor: pointer;
         background: #795BDA;
         .state__card-title {
