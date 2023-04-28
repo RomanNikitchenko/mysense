@@ -1,0 +1,223 @@
+.psycholog {
+    padding-top: 40px;
+}
+.wrap__main {
+    display: grid;
+    grid-template-columns: 265px 1fr;
+    gap: 20px;
+}
+.psycholog__side-bar {
+    width: 265px;
+    height: 360px;
+    background: #dedce3;
+}
+
+.psycholog__content {
+    h2 {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 100%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+    }
+}
+.psycholog__skills {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+.skill-box {
+    background: #fff;
+    width: 194px;
+    height: 147px;
+    border-radius: 8px;
+    padding: 30px;
+    span {
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 90%;
+        letter-spacing: -0.05em;
+        color: #795BDA;
+        margin-bottom: 10px;
+        display: block;
+    }
+    p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+    }
+}
+.psycholog__descr {
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: #222B40; 
+    }
+}
+
+.education {
+    margin-top: 60px;
+    h2 {
+        margin-bottom: 20px;
+    }
+}
+.education__items {
+    background: #fff;
+    padding: 15px 30px;
+    border-radius: 8px;
+}
+.item__wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+.item__wrap::before,
+.item__wrap::after {
+    content: '';
+    width: 19px;
+    height: 2px;
+    background: #222B40;
+    position: absolute;
+    top: 50%;
+    transition: all 0.3s ease 0s;
+}
+.item__wrap::before {
+    transform: rotate(90deg);
+    right: 0;
+}
+.item__wrap::after {
+    transform: rotate(0deg);
+    right: 0px;
+}
+.block__title.active::before {
+    background: transparent;
+}
+  
+.block__title.active::after {
+    transform: rotate(45deg);
+}
+.item__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+}
+.item__content {
+    border-radius: 8px;
+}
+
+.edu__list {
+    list-style: none;
+    padding-left: 0;
+    border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    li {
+        margin-bottom: 20px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        span {
+            font-weight: 500;
+            margin-left: 60px;
+        }
+    }
+}
+//фнимация для контента блока <div class="item__text">
+.item__text {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+}
+
+.item__text.active {
+    max-height: 1000px;
+    /* здесь может быть любое достаточно большое значение */
+}
+
+.item__wrap.rotated::before {
+    transform: rotate(0deg);
+    right: 0;
+}
+
+.edu__state {
+    margin-top: 60px;
+    h2 {
+        margin-bottom: 20px;
+    }
+}
+.states__block {
+}
+.state__item {
+    display: inline-flex;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin: 4px 2px;
+    span {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        margin-left: 12px;
+        margin-bottom: 2px;
+    }
+   
+}
+.icon-cloud-drizzle {
+    fill: #795BDA;
+}
+
+.platform__content {
+    margin-top: 60px;
+}
+.platform__title-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+        margin-bottom: 20px;
+    }
+}
+.controls__block {
+    display: flex;
+    align-items: center;
+}
+.switch_btns {
+}
+.vebinars-btn {
+}
+.posts {
+}
+.arrow__btns {
+    display: flex;
+    align-items: center;
+    .arrow-prew,
+    .arrow-next {
+        border: none;
+        padding: 0;
+        margin: 2px;
+        img {
+            padding: 17px;
+            border: 1.5px solid #222B40;
+            border-radius: 50%;
+        }
+    }
+}
