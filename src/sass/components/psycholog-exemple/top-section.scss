@@ -6,12 +6,138 @@
     grid-template-columns: 265px 1fr;
     gap: 20px;
 }
-.psycholog__side-bar {
-    width: 265px;
-    height: 360px;
-    background: #dedce3;
+.psycholog__card-wrap {
+    background: #ffffff;
+    border-radius: 8px;
+}
+.card__img {
+    img {
+        border-radius: 8px 8px 0 0;    
+    }
+}
+.grey_bg {
+    position: relative;
+    background: #EDEBF2;
+    border-radius: 16px;
+    padding: 10px 20px;
+    max-width: 225px;
+    transform: translateY(-18px);
+    margin: 0 auto;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        right: -6px;
+        top: -6px;
+        background: #EDEBF2;
+    } 
+    &::after {
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        right: -8px;
+        top: -12px;
+        background: #EDEBF2;
+    }
+    span {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        max-width: 185px;
+        display: block;
+    }
+}
+.card__info {
+    padding: 0 20px 20px;
+    h3 {
+        position: relative;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 110%;
+        letter-spacing: -0.06em;
+        color: #222B40;
+        margin-bottom: 8px;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            right: 42px;
+            top: 0px;
+            background: #56F08B;
+        }
+    }
+    p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.4);
+        margin-bottom: 20px;
+    }
+}
+.card__price {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    margin-bottom: 15px;
+    span {
+        font-size: 16px;
+        margin-left: 4px;
+    }
+}
+button {
+    display: flex;
+    border: none;
+    background: transparent;
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+    .button {
+        background: #795BDA;
+        padding: 16px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        color: #FFFFFF;
+        border-radius: 25px;
+        width: 100%;
+        &:hover {
+            background: #694ebe;
+            cursor: pointer;
+        }
+    }
+    .hello {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #795BDA;
+        padding: 16px;
+        border-radius: 50%;
+        margin-left: 4px;
+        img {
+            width: 14px;
+            height: 14px;
+        }
+        &:hover {
+            background: #694ebe;
+            cursor: pointer;
+        }
+    }
 }
 
+
+/*------------------------------*/
 .psycholog__content {
     h2 {
         font-weight: 500;
@@ -20,6 +146,9 @@
         letter-spacing: -0.05em;
         color: #222B40;
     }
+}
+.psycholog__content-wrapper {
+    overflow: hidden;
 }
 .psycholog__skills {
     margin-top: 20px;
@@ -161,8 +290,7 @@
         margin-bottom: 20px;
     }
 }
-.states__block {
-}
+
 .state__item {
     display: inline-flex;
     align-items: center;
@@ -192,19 +320,47 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    h2 {
-        margin-bottom: 20px;
-    }
 }
 .controls__block {
     display: flex;
     align-items: center;
 }
 .switch_btns {
+    display: flex;
+    align-items: center;
+    height: 46px;
+    background: rgba(121, 91, 218, 0.1);
+    border-radius: 23px;
+    padding: 5px;
+    margin-right: 189px;
 }
 .vebinars-btn {
+    background: #795BDA;
+    color: #fff;
+    padding: 9px 18px 10px;
+    border-radius: 20px;
+    &:hover {
+        cursor: pointer;
+        background: #6c52c4;
+    }
 }
 .posts {
+    background: transparent;
+    color: #795BDA;
+    padding: 9px 18px 10px;
+    border-radius: 20px;
+    display: block;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    &:hover {
+        cursor: pointer;
+        background: #6c52c4;
+        color: #fff;
+    }
 }
 .arrow__btns {
     display: flex;
@@ -220,4 +376,58 @@
             border-radius: 50%;
         }
     }
+}
+
+
+@media screen and (max-width: 1280px) {
+    .psycholog__content {
+        width: 100%;
+    }
+    .grey_bg {
+        max-width: 192px;
+        span {
+            font-size: 12px;
+        }
+    }
+    .card__info h3 {
+        font-size: 18px;
+    }
+    .card__info h3:after {
+        right: 30px;
+    }
+    button .hello {
+        padding: 10px;
+        img {
+            width: 12px;
+            height: 12px;
+        }
+    }
+    .card__price {
+        font-size: 22px;
+    }
+    button .button {
+        padding: 10px;
+        font-size: 12px;
+    }
+    .wrap__main {
+        display: grid;
+        grid-template-columns: 208px 1fr;
+        gap: 20px;
+    }
+    .psycholog__skills {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    .skill-box {
+        width: 100%;
+    }
+    .platform__title-block {
+        flex-wrap: wrap;
+    }
+    .controls__block {
+        margin-top: 12px;
+    }
+}
+@media screen and (max-width: 744px) {
+    
 }
