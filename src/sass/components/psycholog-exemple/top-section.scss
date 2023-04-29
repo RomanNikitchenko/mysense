@@ -147,7 +147,67 @@
         color: #222B40;
     }
 }
+.psycholog__video {
+    display: flex;
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    img {
+        max-width: 417px;
+        width: 100%;
+        border-radius: 8px 0 0 8px;
+    }
+}
+.info_video {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    padding: 90px 0 90px 90px;
+}
+.head-video {
+    max-width: 134px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    padding: 9px 18px 10px;
+    border: 1px solid #222B40;
+    border-radius: 20px;
+}
+.name-doc {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 90%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+}
+.year-work {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    color: rgba(34, 43, 64, 0.4);
+}
+.play__video {
+    position: absolute;
+    background: none;
+    border: none;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+
+
 .psycholog__content-wrapper {
+    margin-top: 60px;
     overflow: hidden;
 }
 .psycholog__skills {
@@ -461,8 +521,85 @@
     }
 }
 
+/*------------------------*/
+.rewiev {
+    margin-top: 40px;
+}
+.rewiev__title-block {
+    display: flex;
+    align-items: center;
+    h2 {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 100%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+    }
+}
+.rewiev-count {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+    color: #222B40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
 
+    width: 36px;
+    height: 36px;
+    border: 1px solid #222B40;
+    border-radius: 50%;
+}
+.rewiev__box {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.rewievs__img {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    img {
+        width: 46px;
+        height: 46px;
+    }
+    .rewiev__name {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        margin-left: 10px;
+    }
+}
+.rewiev__text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.05em;
+    color: #000000;
+}
+.more__rewievs {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    color: #795BDA;
 
+    margin-top: 20px;
+    background: rgba(121, 91, 218, 0.1);
+    padding: 16px 24px;
+    border: none;
+    border-radius: 23px;
+    &:hover {
+        cursor: pointer;
+        background: rgba(121, 91, 218, 0.2);
+    }
+}
 
 
 
@@ -498,6 +635,31 @@
             height: 12px;
         }
     }
+    .psycholog__video img {
+        max-width: 218px;
+        object-fit: cover;
+    }
+    .info_video {
+        padding: 47px 0 47px 47px;
+    }
+    .head-video {
+        max-width: 75px;
+        padding: 5px 9px 6px;
+        font-size: 8px;
+    }
+    .name-doc {
+        font-size: 20px;
+    }
+    .year-work {
+        font-size: 12px;
+    }
+    .play__video {
+        top: calc(50% - 26px);
+        left: calc(50% - 26px);
+        width: 52px;
+        height: 52px;
+    }
+    
     .wrap__main {
         display: grid;
         grid-template-columns: 208px 1fr;
@@ -513,9 +675,12 @@
     .item__title {
         font-size: 20px;
     }
+    .edu-date {
+        width: 220px;
+    }
     .edu__list li span {
         font-size: 14px;
-        margin-left: 30px;
+        margin-left: 18px;
     }
     .platform__title-block {
         flex-wrap: wrap;
@@ -542,8 +707,15 @@
         font-size: 12px;
         line-height: 130%;
     }
+    .rewiev__title-block {
+        h2 {
+            font-size: 24px;
+        }
+    }
+    .rewiev__text {
+        font-size: 12px;
+    }
 }
-
 
 
 @media screen and (max-width: 744px) {
@@ -568,15 +740,74 @@
     .item__title {
         font-size: 16px;
     }
+    .info_video {
+        padding: 47px 0 47px 43px;
+    }
+    .psycholog__video img {
+        max-width: 176px;
+    }
+    .head-video {
+        max-width: 59px;
+        padding: 5px 7px 5px;
+        font-size: 6px;
+    }
+    .name-doc {
+        font-size: 16px;
+    }
+    .year-work {
+        font-size: 10px;
+    }
+
     .edu__list li {
         font-size: 14px;
         span {
             font-size: 12px;
         }
     }
-
+    .state__item {
+        padding: 7px 14px;
+        span {
+            font-size: 14px;
+            margin-left: 10px;
+        }
+    }
+    .icon-cloud-drizzle {
+        width: 18px;
+    }
     .articles__cards-wrap {
         grid-template-columns: 1fr;
+    }
+    .rewiev__title-block h2 {
+        font-size: 20px;
+    }
+    .rewiev-count {
+        font-size: 11px;
+        margin-left: 7px;
+    
+        width: 25px;
+        height: 25px;
+    }
+    .rewievs__wpar {
+        display: flex;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+    }
+    .rewievs__img {
+        img {
+            width: 35px;
+            height: 35px;
+        }
+        .rewiev__name {
+            font-size: 12px;
+        }
+    }
+    .rewiev__text {
+        font-size: 10px;
+    }
+    .rewiev__box {
+        flex: 0 0 90%;
+        scroll-snap-align: center;
     }
 
 }
