@@ -333,3 +333,59 @@
         width: 186px;
     }
 }
+
+//js
+.result__container {
+    position: relative;
+    padding-bottom: 500px;
+    overflow: hidden;
+    @media screen and (min-width: 744px) {
+        padding-bottom: 780px;
+    }
+    @media screen and (min-width: 1280px) {
+        padding-bottom: 360px;
+    }
+}
+
+.user-manual__list {
+    display: flex;
+    position: absolute;
+    padding-left: 20px;
+    padding-right: 20px;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+
+    @media screen and (min-width: 744px) {
+        padding: 0 40px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        padding: 0 80px;
+    }
+}
+
+.user-manual__item {
+    width: 350px;
+
+    @media screen and (min-width: 744px) {
+        width: 644px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 1100px;
+    }
+}
+
+.user-manual__item:not(:last-child) {
+    margin-right: 20px;
+
+    @media screen and (min-width: 744px) {
+        margin-right: 60px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-right: 120px;
+    }
+}
