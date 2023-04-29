@@ -14,6 +14,6 @@ itemWraps.forEach(itemWrap => {
   });
 });
 
-itemWraps[0].classList.toggle('rotated');
-const itemText = itemWraps[0].nextElementSibling;
-itemText.style.maxHeight = itemText.scrollHeight + 'px';
+// itemWraps[0].classList.toggle('rotated');
+// const itemText = itemWraps[0].nextElementSibling;
+// itemText.style.maxHeight = itemText.scrollHeight + 'px';

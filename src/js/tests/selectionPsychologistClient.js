@@ -142,6 +142,8 @@ fixedButtonNext.addEventListener('click', () => {
 const fixedButtonPrew = document.querySelector('.fixed__button-prew');
 
 fixedButtonPrew.addEventListener('click', () => {
+  disabled = false;
+
   if (page === 1) {
     page -= 1;
 
@@ -206,16 +208,19 @@ fixedButtonPrew.addEventListener('click', () => {
 /////
 
 /////
-const toggleArrayElement = async (item, data, array) => {
+const toggleArrayElement = (item, data, array) => {
   const title = item.firstElementChild.innerHTML;
   item.setAttribute(data, title);
 
-  item.addEventListener('click', () => {
+  item.addEventListener('click', async () => {
     const dataValue = item.getAttribute(data);
 
-    //если есть удаляем если нет добавляем
-    if (array.includes(dataValue)) {
-      array = array.filter(value => value !== dataValue);
+    // Получаем индекс элемента в массиве
+    const index = array.indexOf(dataValue);
+
+    // Если элемент уже есть в массиве, удаляем его
+    if (index !== -1) {
+      array.splice(index, 1);
     } else {
       array.push(dataValue);
     }
