@@ -142,8 +142,6 @@ fixedButtonNext.addEventListener('click', () => {
 const fixedButtonPrew = document.querySelector('.fixed__button-prew');
 
 fixedButtonPrew.addEventListener('click', () => {
-  disabled = false;
-
   if (page === 1) {
     page -= 1;
 
@@ -207,29 +205,42 @@ fixedButtonPrew.addEventListener('click', () => {
 });
 /////
 
-//myself
-//по my-state
-const dataButtonState = document.querySelectorAll('.state .card__link-btn');
-
-dataButtonState.forEach(item => {
-  const MyRequestsCardTitle = item.firstElementChild.innerHTML;
-  item.setAttribute('data-button-my-state', MyRequestsCardTitle);
+/////
+const toggleArrayElement = async (item, data, array) => {
+  const title = item.firstElementChild.innerHTML;
+  item.setAttribute(data, title);
 
   item.addEventListener('click', () => {
-    const dataValue = item.getAttribute('data-button-my-state');
+    const dataValue = item.getAttribute(data);
 
     //если есть удаляем если нет добавляем
-    if (myState.includes(dataValue)) {
-      myState = myState.filter(value => value !== dataValue);
+    if (array.includes(dataValue)) {
+      array = array.filter(value => value !== dataValue);
     } else {
-      myState.push(dataValue);
+      array.push(dataValue);
     }
 
     //добавляем клас ввыбраным кнопкам
     item.classList.toggle('is-active');
 
-    console.log(myState);
+    console.log(array);
+
+    if (
+      data === 'data-button-my-Requests' ||
+      data === 'data-button-consern' ||
+      data === 'data-button-category'
+    ) {
+      disabled = checkArrayAndDisableButton(array, disabled);
+    }
   });
+};
+/////
+
+//myself
+//по my-state
+const dataButtonState = document.querySelectorAll('.state .card__link-btn');
+dataButtonState.forEach(item => {
+  toggleArrayElement(item, 'data-button-my-state', myState);
 });
 //
 
@@ -237,59 +248,17 @@ dataButtonState.forEach(item => {
 const dataButtonMyRequests = document.querySelectorAll(
   '.requests .card__link-btn'
 );
-
 dataButtonMyRequests.forEach(item => {
-  const MyRequestsCardTitle = item.firstElementChild.innerHTML;
-  item.setAttribute('data-button-my-Requests', MyRequestsCardTitle);
-
-  item.addEventListener('click', () => {
-    const dataValue = item.getAttribute('data-button-my-Requests');
-
-    //если есть удаляем если нет добавляем
-    if (MyRequests.includes(dataValue)) {
-      MyRequests = MyRequests.filter(value => value !== dataValue);
-    } else {
-      MyRequests.push(dataValue);
-    }
-
-    //добавляем клас ввыбраным кнопкам
-    item.classList.toggle('is-active');
-
-    console.log(MyRequests);
-
-    disabled = checkArrayAndDisableButton(MyRequests, disabled);
-  });
+  toggleArrayElement(item, 'data-button-my-Requests', MyRequests);
 });
-//
 //
 
 //family
 //по consern
 const dataButtonConsern = document.querySelectorAll('.consern .card__link-btn');
-
 dataButtonConsern.forEach(item => {
-  const consernCardTitle = item.firstElementChild.innerHTML;
-  item.setAttribute('data-button-consern', consernCardTitle);
-
-  item.addEventListener('click', () => {
-    const dataValue = item.getAttribute('data-button-consern');
-
-    //если есть удаляем если нет добавляем
-    if (consern.includes(dataValue)) {
-      consern = consern.filter(value => value !== dataValue);
-    } else {
-      consern.push(dataValue);
-    }
-
-    //добавляем клас ввыбраным кнопкам
-    item.classList.toggle('is-active');
-
-    console.log(consern);
-
-    disabled = checkArrayAndDisableButton(consern, disabled);
-  });
+  toggleArrayElement(item, 'data-button-consern', consern);
 });
-//
 //
 
 //child
@@ -297,28 +266,7 @@ dataButtonConsern.forEach(item => {
 const dataButtonCategory = document.querySelectorAll(
   '.category .card__link-btn'
 );
-
 dataButtonCategory.forEach(item => {
-  const categoryCardTitle = item.firstElementChild.innerHTML;
-  item.setAttribute('data-button-category', categoryCardTitle);
-
-  item.addEventListener('click', () => {
-    const dataValue = item.getAttribute('data-button-category');
-
-    //если есть удаляем если нет добавляем
-    if (category.includes(dataValue)) {
-      category = category.filter(value => value !== dataValue);
-    } else {
-      category.push(dataValue);
-    }
-
-    //добавляем клас ввыбраным кнопкам
-    item.classList.toggle('is-active');
-
-    console.log(category);
-
-    disabled = checkArrayAndDisableButton(category, disabled);
-  });
+  toggleArrayElement(item, 'data-button-category', category);
 });
-//
 //
