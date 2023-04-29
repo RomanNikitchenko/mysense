@@ -14,6 +14,8 @@ const sectionConsern = document.querySelector('.consern');
 const sectionCategory = document.querySelector('.category');
 const testResult = document.querySelector('.result');
 
+const fixedButtonLoadMore = document.querySelector('.fixed__button-load-more');
+
 let myself = false;
 let family = false;
 let child = false;
@@ -84,13 +86,11 @@ fixedButtonNext.addEventListener('click', () => {
     }
     if (family) {
       sectionConsern.classList.remove('visually-hidden');
-      checkArrayAndDisableButton(consern);
       disabled = checkArrayAndDisableButton(consern, disabled);
       return;
     }
     if (child) {
       sectionCategory.classList.remove('visually-hidden');
-      checkArrayAndDisableButton(category);
       disabled = checkArrayAndDisableButton(category, disabled);
       return;
     }
@@ -101,21 +101,24 @@ fixedButtonNext.addEventListener('click', () => {
       page += 1;
       sectionState.classList.add('visually-hidden');
       sectionRequests.classList.remove('visually-hidden');
-      checkArrayAndDisableButton(MyRequests);
       disabled = checkArrayAndDisableButton(MyRequests, disabled);
       return;
     }
     if (family) {
       page += 1;
       sectionConsern.classList.add('visually-hidden');
+      fixedButtonNext.classList.add('visually-hidden');
       testResult.classList.remove('visually-hidden');
+      fixedButtonLoadMore.classList.remove('visually-hidden');
       toggleActiveClass(testLine, testResult, 2);
       return;
     }
     if (child) {
       page += 1;
       sectionCategory.classList.add('visually-hidden');
+      fixedButtonNext.classList.add('visually-hidden');
       testResult.classList.remove('visually-hidden');
+      fixedButtonLoadMore.classList.remove('visually-hidden');
       toggleActiveClass(testLine, testResult, 2);
       return;
     }
@@ -125,7 +128,9 @@ fixedButtonNext.addEventListener('click', () => {
     if (myself) {
       page += 1;
       sectionRequests.classList.add('visually-hidden');
+      fixedButtonNext.classList.add('visually-hidden');
       testResult.classList.remove('visually-hidden');
+      fixedButtonLoadMore.classList.remove('visually-hidden');
       toggleActiveClass(testLine, testResult, 2);
       return;
     }
@@ -171,14 +176,18 @@ fixedButtonPrew.addEventListener('click', () => {
     if (family) {
       page -= 1;
       sectionConsern.classList.remove('visually-hidden');
+      fixedButtonNext.classList.remove('visually-hidden');
       testResult.classList.add('visually-hidden');
+      fixedButtonLoadMore.classList.add('visually-hidden');
       toggleActiveClass(testLine, sectionConsern, 1);
       return;
     }
     if (child) {
       page -= 1;
       sectionCategory.classList.remove('visually-hidden');
+      fixedButtonNext.classList.remove('visually-hidden');
       testResult.classList.add('visually-hidden');
+      fixedButtonLoadMore.classList.add('visually-hidden');
       toggleActiveClass(testLine, sectionCategory, 1);
       return;
     }
@@ -188,7 +197,9 @@ fixedButtonPrew.addEventListener('click', () => {
     if (myself) {
       page -= 1;
       sectionRequests.classList.remove('visually-hidden');
+      fixedButtonNext.classList.remove('visually-hidden');
       testResult.classList.add('visually-hidden');
+      fixedButtonLoadMore.classList.add('visually-hidden');
       toggleActiveClass(testLine, sectionRequests, 1);
       return;
     }
@@ -198,9 +209,12 @@ fixedButtonPrew.addEventListener('click', () => {
 
 //myself
 //по my-state
-const dataButtonMyState = document.querySelectorAll('[data-button-my-state]');
+const dataButtonState = document.querySelectorAll('.state .card__link-btn');
 
-dataButtonMyState.forEach(item => {
+dataButtonState.forEach(item => {
+  const MyRequestsCardTitle = item.firstElementChild.innerHTML;
+  item.setAttribute('data-button-my-state', MyRequestsCardTitle);
+
   item.addEventListener('click', () => {
     const dataValue = item.getAttribute('data-button-my-state');
 
@@ -225,8 +239,8 @@ const dataButtonMyRequests = document.querySelectorAll(
 );
 
 dataButtonMyRequests.forEach(item => {
-  const stateCardTitle = item.firstElementChild.innerHTML;
-  item.setAttribute('data-button-my-Requests', stateCardTitle);
+  const MyRequestsCardTitle = item.firstElementChild.innerHTML;
+  item.setAttribute('data-button-my-Requests', MyRequestsCardTitle);
 
   item.addEventListener('click', () => {
     const dataValue = item.getAttribute('data-button-my-Requests');
@@ -243,7 +257,6 @@ dataButtonMyRequests.forEach(item => {
 
     console.log(MyRequests);
 
-    checkArrayAndDisableButton(MyRequests);
     disabled = checkArrayAndDisableButton(MyRequests, disabled);
   });
 });
@@ -273,7 +286,6 @@ dataButtonConsern.forEach(item => {
 
     console.log(consern);
 
-    checkArrayAndDisableButton(consern);
     disabled = checkArrayAndDisableButton(consern, disabled);
   });
 });
@@ -305,7 +317,6 @@ dataButtonCategory.forEach(item => {
 
     console.log(category);
 
-    checkArrayAndDisableButton(category);
     disabled = checkArrayAndDisableButton(category, disabled);
   });
 });
