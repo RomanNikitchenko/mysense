@@ -57,6 +57,9 @@ p {
 .list-filter,
 .sort-section,
 .psychologists-section__filter-list,
-.sort-list {
+.sort-list,
+.sign-for-session__session-type-items,
+.sign-for-session__session-date-status-list,
+.sign-for-session__time-options {
   @extend %list;
 }
