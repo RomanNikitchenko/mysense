@@ -1,6 +1,15 @@
 .sign-for-session {
     margin-top: 20px;
 }
+
+.sign-for-session__container {
+    @media screen and (min-width: 1280px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
 //block sign-for-session__psychologist
 .sign-for-session__psychologist {
     display: flex;
@@ -90,10 +99,15 @@
 .sign-for-session__booking-section {
     background-color: #FFFFFF;
     border-radius: 8px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 744px) {
+        margin-bottom: 20px;
+    }
     @media screen and (min-width: 1280px) {
         width: 740px;
         padding-left: 30px;
         padding-right: 30px;
+        margin-bottom: 0px;
     }
 }
 
@@ -426,3 +440,173 @@
         }
     }
 }
+
+//session-info
+.session-info {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 20px;
+    @media screen and (min-width: 744px) {
+        padding: 30px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 360px;
+    }
+
+    .session-info__title {
+        font-family: 'Golos Text';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        margin-bottom: 18px;
+        @media screen and (min-width: 744px) {
+            margin-bottom: 35.5px;
+        }
+    
+        @media screen and (min-width: 1280px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    .flex-wrapper {
+        @media screen and (min-width: 744px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    
+        @media screen and (min-width: 1280px) {
+            display: block;
+        }
+        .session-info__list {
+            margin-bottom: 20px;
+
+            @media screen and (min-width: 744px) {
+                width: 302px;
+                padding-right: 30px;
+                border-right: 1px solid rgba(34, 43, 64, 0.1);
+            }
+
+            @media screen and (min-width: 1280px) {
+                width: 300px;
+                padding-right: 0;
+                border-right: none;
+            }
+
+            .session-info__item {
+                display: flex;
+                justify-content: space-between;
+
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+
+                .session-info__label,
+                .session-info__value {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 140%;
+                    letter-spacing: -0.05em;
+                    color: #222B40;
+                }
+
+                .session-info__value {
+                    font-weight: 600;
+                    span {
+                        font-weight: 500;
+                        font-size: 24px;
+                        line-height: 100%;
+                    }
+                }
+            }
+
+            .session-info__item--is-hidden {
+                display: none;
+                @media screen and (min-width: 744px) {
+                    display: flex;
+                    margin-top: 35.5px;
+                    height: 37px;
+                }
+                @media screen and (min-width: 1280px) {
+                    display: none;
+                    height:auto;
+                }
+            }
+        }
+        .form {
+            width: 316px;
+            height: 242;
+            background-color: #F3F3F3;
+            @media screen and (min-width: 744px) {
+                width: 272px;
+                height: 181px;
+            }
+            @media screen and (min-width: 1280px) {
+                width: 300px;
+                height: 218px;
+            }
+        }
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////
+
+//js 
+// .sort-icon-arrow {
+//     stroke: #222B40;
+//     transform: rotate(0deg);
+//     transition: transform .3s ease-in-out;
+// }
+
+// .sort-toggle.rotated .sort-icon-arrow {
+//     transform: rotate(180deg);
+// }
+
+// .sort-list {
+//     z-index: 1;
+//     width: 173px;
+//     position: absolute;
+//     overflow: hidden;
+//     max-height: 0;
+//     background-color: #FFFFFF;
+//     border-radius: 8px;
+//     transition: max-height .3s ease-in-out;
+// }
+
+// .sort-item {
+//     padding: 0 10px;
+// }
+
+// .sort-item:not(:last-child) {
+//     padding-top: 10px;
+//     margin-bottom: 8px;
+// }
+
+// .sort-item:not(:first-child) {
+//     padding-bottom: 10px;
+// }
+
+// .sort-button {
+//     height: 32px;
+//     width: 100%;
+//     background-color: #FFFFFF;
+//     border-radius: 100px;
+//     border: 1px solid transparent;
+//     cursor: pointer;
+//     transition: color .3s ease-in-out, background-color .3s ease-in-out;
+
+//     &:hover {
+//         background-color: #F3F3F3;
+//     }
+
+//     &.active {
+//         background-color: rgba(121, 91, 218, 0.1);
+//         color: #795BDA;
+//     }
+// }

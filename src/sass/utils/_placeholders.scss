@@ -60,6 +60,7 @@ p {
 .sort-list,
 .sign-for-session__session-type-items,
 .sign-for-session__session-date-status-list,
-.sign-for-session__time-options {
+.sign-for-session__time-options,
+.session-info__list {
   @extend %list;
 }
