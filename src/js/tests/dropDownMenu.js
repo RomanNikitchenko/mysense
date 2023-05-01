@@ -1,30 +1,31 @@
-const sortToggle = document.querySelector('.sort-toggle');
-const sortList = document.querySelector('.sort-list');
-const sortValue = document.querySelector('.sort-value');
-const sortButton = document.querySelectorAll('.sort-button');
+const formPaymentMethod = document.querySelector('.form__payment-method');
+const paymentCard = document.querySelector('.payment-card');
+const paymentCardList = document.querySelector('.payment-card-list');
+const paymentCardValue = document.querySelector('.payment-card__value');
+const paymentCardButton = document.querySelectorAll('.payment-card-button');
 
-sortToggle.addEventListener('click', () => {
-  sortToggle.classList.toggle('rotated');
+formPaymentMethod.addEventListener('click', () => {
+  paymentCard.classList.toggle('rotated');
 
-  if (sortList.style.maxHeight) {
-    sortList.style.maxHeight = null;
+  if (paymentCardList.style.maxHeight) {
+    paymentCardList.style.maxHeight = null;
   } else {
-    sortList.style.maxHeight = sortList.scrollHeight + 'px';
+    paymentCardList.style.maxHeight = paymentCardList.scrollHeight + 'px';
   }
 });
 
-sortList.addEventListener('click', event => {
+paymentCardList.addEventListener('click', event => {
   event.preventDefault();
 
-  if (!event.target.classList.contains('sort-button')) return;
+  if (!event.target.classList.contains('payment-card-button')) return;
 
-  sortToggle.classList.toggle('rotated');
+  paymentCard.classList.toggle('rotated');
 
-  sortButton.forEach(item => item.classList.remove('active'));
+  paymentCardButton.forEach(item => item.classList.remove('active'));
 
   event.target.classList.add('active');
 
-  sortValue.textContent = event.target.textContent;
+  paymentCardValue.textContent = event.target.textContent;
 
-  sortList.style.maxHeight = null;
+  paymentCardList.style.maxHeight = null;
 });
