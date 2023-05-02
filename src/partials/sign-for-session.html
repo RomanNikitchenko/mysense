@@ -23,9 +23,24 @@
         <h3 class="sign-for-session__subtitle">Оберіть тип сесії</h3>
         <div class="sign-for-session__session-type-list">
           <ul class="sign-for-session__session-type-items">
-            <li class="sign-for-session__session-type-item">Особиста</li>
-            <li class="sign-for-session__session-type-item">Парна</li>
-            <li class="sign-for-session__session-type-item">Дитяча</li>
+            <li class="sign-for-session__session-type-item">
+              <svg class="sign-for-session__icon" width="24" height="24">
+                <use href="./images/symbol-defs.svg#personal"></use>
+              </svg>
+              Особиста
+            </li>
+            <li class="sign-for-session__session-type-item">
+              <svg class="sign-for-session__icon" width="24" height="24">
+                <use href="./images/symbol-defs.svg#couple"></use>
+              </svg>
+              Парна
+            </li>
+            <li class="sign-for-session__session-type-item">
+              <svg class="sign-for-session__icon" width="24" height="24">
+                <use href="./images/symbol-defs.svg#Children"></use>
+              </svg>
+              Дитяча
+            </li>
           </ul>
           <p class="sign-for-session__session-type-note">
             Оберіть, для кого теба провести психологічну сесію
@@ -90,6 +105,23 @@
     </div>
 
     <div class="session-info">
+      
+        <div class="sign-for-session__psychologist hidden-mobile">
+          <div class="sign-for-session__image-wrapper">
+            <div class="sign-for-session__image-wrapper-border">
+              <img
+                src="./images/our-team-desktop.jpg"
+                class="sign-for-session__image"
+                alt="Фото Іван Виговський"
+              />
+            </div>
+          </div>
+          <div class="sign-for-session__info">
+            <h2 class="sign-for-session__name">Іван Виговський</h2>
+            <p class="sign-for-session__experience">5 років практики</p>
+          </div>
+        </div>
+
         <h2 class="session-info__title">Інформація про сесію</h2>
         <div class="flex-wrapper">
             <ul class="session-info__list">
@@ -144,43 +176,16 @@
                 </li>
               </ul>
                 
-              <button class="button" type="submit">Перейти до оплати</button>
+              <button class="button form__button-payment" type="submit">Перейти до оплати</button>
             </Form>
+
+            <div class="session-info__item session-info__item--is-hidden">
+                <p class="session-info__label">Вартість</p>
+                <p class="session-info__value"><span>300</span> грн</p>
+            </div>
+
         </div>
     </div>
-      <!-- <form class="search-form" id="search-form">
-        <input
-          type="text"
-          name="searchQuery"
-          autocomplete="off"
-          placeholder="Введіть промокод"
-        />
-        <p>Спосіб оплати</p>
-
-        <div class="sort-menu">
-          <button type="button" class="sort-toggle">
-            <span class="sort-value">Сортувати</span>
-            <svg class="sort-icon-arrow" width="11" height="6">
-              <use href="./images/symbol-defs.svg#Arrow"></use>
-            </svg>
-          </button>
-
-          <ul class="sort-list">
-            <li class="sort-item">
-              <button class="sort-button" type="button" data-sort="price">
-                за ціною
-              </button>
-            </li>
-            <li class="sort-item">
-              <button class="sort-button" type="button" data-sort="experience">
-                за досвідом
-              </button>
-            </li>
-          </ul>
-        </div>
-
-        <button type="submit">Search</button>
-      </form> -->
     </div>
   </div>
 </section>

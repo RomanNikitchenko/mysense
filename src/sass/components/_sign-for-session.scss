@@ -26,7 +26,9 @@
 
     @media screen and (min-width: 1280px) {
         padding: 0;
-        margin: 0;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(34, 43, 64, 0.1);
     }
 
     &.hidden-desktop {
@@ -199,6 +201,19 @@
                 border-radius: 100px;
                 margin-left: 4px;
                 flex-basis: calc(100% / 3 - 4px);
+
+                @media screen and (min-width: 744px) {
+                    justify-content: flex-start;
+                }
+
+                .sign-for-session__icon {
+                    display: none;
+
+                    @media screen and (min-width: 744px) {
+                        display: block;
+                        margin: 0 8px;
+                    }
+                }
             }
         }
 
@@ -627,13 +642,60 @@
                     }
                 }
             }
+
+            .form__button-payment {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 100%;
+                letter-spacing: -0.06em;
+                color: #FFFFFF;
+
+                background: #795BDA;
+                border-radius: 150px;
+                height: 46px;
+                border: transparent;
+            }
+        }
+
+        .session-info__item--is-hidden {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+
+            @media screen and (min-width: 744px) {
+                display: none;
+            }
+
+            @media screen and (min-width: 1280px) {
+                display: flex;
+            }
+
+            .session-info__label,
+            .session-info__value {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 140%;
+                letter-spacing: -0.05em;
+                color: #222B40;
+            }
+
+            .session-info__value {
+                font-weight: 600;
+
+                span {
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 100%;
+                }
+            }
         }
     }
 }
 
 //payment-card
 .payment-card {
-
     width: 100%;
     display: flex;
     align-items: center;
