@@ -393,14 +393,15 @@
     margin-right: 189px;
 }
 .vebinars-btn {
-    background: #795BDA;
-    color: #fff;
+    background: transparent;
+    color: #795BDA;
     padding: 9px 18px 10px;
     border-radius: 20px;
     border: none;
     &:hover {
         cursor: pointer;
         background: #6c52c4;
+        color: #fff;
     }
 }
 .posts {
@@ -946,4 +947,51 @@
         scroll-snap-align: center;
     }
 
+}
+
+//js
+.platform__content.show-webinars {
+    .vebinars-btn {
+        background: #6c52c4;
+        color: #fff;    
+    }
+    .articles__cards-wrap {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+    
+        visibility: hidden;
+        pointer-events: none;
+    
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+}
+
+.platform__content.show-posts {
+    .posts {
+        background: #6c52c4;
+        color: #fff;
+    }
+    .meeting__cards-wrap {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+
+        visibility: hidden;
+        pointer-events: none;
+
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
 }
