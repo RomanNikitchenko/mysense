@@ -62,6 +62,8 @@ p {
 .sign-for-session__session-date-status-list,
 .sign-for-session__time-options,
 .session-info__list,
-.payment-card-list {
+.payment-card-list,
+.articles__list,
+.meeting__list {
   @extend %list;
 }

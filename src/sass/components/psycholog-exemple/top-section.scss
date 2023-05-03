@@ -393,14 +393,15 @@
     margin-right: 189px;
 }
 .vebinars-btn {
-    background: #795BDA;
-    color: #fff;
+    background: transparent;
+    color: #795BDA;
     padding: 9px 18px 10px;
     border-radius: 20px;
     border: none;
     &:hover {
         cursor: pointer;
         background: #6c52c4;
+        color: #fff;
     }
 }
 .posts {
@@ -422,14 +423,24 @@
         color: #fff;
     }
 }
-.arrow__btns {
+.arrow__btns,
+.arrow__btns-meeting {
     display: flex;
     align-items: center;
     .arrow-prew,
-    .arrow-next {
+    .arrow-next,
+    .arrow-prew-meeting,
+    .arrow-next-meeting {
         border: none;
         padding: 0;
         margin: 2px;
+        cursor: pointer;
+
+        &:hover {
+            border-radius: 50%;
+            background-color:  rgba(34, 43, 64, 0.1);
+        }
+
         img {
             padding: 17px;
             border: 1.5px solid #222B40;
@@ -800,9 +811,9 @@
     .switch_btns {
         margin-right: 0; 
     }
-    .articles__card-last {
-        display: none;
-    }
+    // .articles__card-last {
+    //     display: none;
+    // }
     .articles__cards-wrap {
         grid-template-columns: 1fr 1fr;
     }
@@ -946,4 +957,153 @@
         scroll-snap-align: center;
     }
 
+}
+
+//js
+.platform__content.show-webinars {
+    .vebinars-btn {
+        background: #6c52c4;
+        color: #fff;    
+    }
+    .articles__cards-wrap,
+    .arrow__btns {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+    
+        visibility: hidden;
+        pointer-events: none;
+    
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+}
+
+.platform__content.show-posts {
+    .posts {
+        background: #6c52c4;
+        color: #fff;
+    }
+    .meeting__cards-wrap,
+    .arrow__btns-meeting {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+
+        visibility: hidden;
+        pointer-events: none;
+
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+}
+
+//js articles
+.platform__content.show-posts {
+    position: relative;
+    padding-bottom: 500px;
+    padding-bottom: 420px;
+
+    @media screen and (min-width: 744px) {
+        overflow: hidden;
+        padding-bottom: 410px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        padding-bottom: 470px;
+    }
+}
+
+.articles__list {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+}
+
+.articles__item {
+    width: 290px;
+
+    @media screen and (min-width: 744px) {
+        width: 100%;
+        width: 208px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 100%;
+        min-width: 265px;
+    }
+}
+
+.articles__item:not(:last-child) {
+    margin-right: 10px;
+
+    @media screen and (min-width: 744px) {
+        margin-right: 20px;
+    }
+    @media screen and (min-width: 1280px) {
+        margin-right: 20px ;
+    }
+}
+
+//js meeting
+.platform__content.show-webinars {
+    position: relative;
+    padding-bottom: 645px;
+
+    @media screen and (min-width: 744px) {
+        overflow: hidden;
+        padding-bottom: 670px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        padding-bottom: 275px;
+    }
+}
+
+.meeting__list {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+}
+
+.meeting__item {
+    width: 290px;
+
+    @media screen and (min-width: 744px) {
+        width: 100%;
+        width: 430px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 100%;
+        min-width: 835px;
+    }
+}
+
+.meeting__item:not(:last-child) {
+    margin-right: 10px;
+
+    @media screen and (min-width: 744px) {
+        margin-right: 20px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-right: 20px;
+    }
 }
