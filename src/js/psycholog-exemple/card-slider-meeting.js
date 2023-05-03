@@ -1,8 +1,8 @@
 (() => {
-  const nextButton = document.querySelector('.arrow-next');
-  const prevButton = document.querySelector('.arrow-prew');
-  const items = document.querySelectorAll('.articles__item');
-  const list = document.querySelector('.articles__list');
+  const nextButton = document.querySelector('.arrow-next-meeting');
+  const prevButton = document.querySelector('.arrow-prew-meeting');
+  const items = document.querySelectorAll('.meeting__item');
+  const list = document.querySelector('.meeting__list');
 
   let currentIndex = 0;
   let isAnimating = false;
@@ -25,7 +25,7 @@
         currentIndex++;
       }
     } else if (width >= 744) {
-      transformValue -= 228;
+      transformValue -= 450;
 
       if (currentIndex === items.length - 1) {
         currentIndex = 0;
@@ -61,7 +61,7 @@
     if (width >= 1280) {
       transformValue += 285;
     } else if (width >= 744) {
-      transformValue += 228;
+      transformValue += 450;
     } else {
       transformValue += 300;
     }
@@ -72,7 +72,7 @@
         transformValue = -(items.length - 1) * 285;
       } else if (width >= 744) {
         currentIndex = items.length - 1;
-        transformValue = -(items.length - 1) * 228;
+        transformValue = -(items.length - 1) * 450;
       } else {
         currentIndex = items.length - 1;
         transformValue = -(items.length - 1) * 300;
@@ -97,7 +97,7 @@
     if (width >= 1280) {
       transformValue = -currentIndex * 285;
     } else if (width >= 744) {
-      transformValue = -currentIndex * 228;
+      transformValue = -currentIndex * 450;
     } else {
       transformValue = -currentIndex * 300;
     }

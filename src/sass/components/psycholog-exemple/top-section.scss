@@ -423,11 +423,14 @@
         color: #fff;
     }
 }
-.arrow__btns {
+.arrow__btns,
+.arrow__btns-meeting {
     display: flex;
     align-items: center;
     .arrow-prew,
-    .arrow-next {
+    .arrow-next,
+    .arrow-prew-meeting,
+    .arrow-next-meeting {
         border: none;
         padding: 0;
         margin: 2px;
@@ -801,9 +804,9 @@
     .switch_btns {
         margin-right: 0; 
     }
-    .articles__card-last {
-        display: none;
-    }
+    // .articles__card-last {
+    //     display: none;
+    // }
     .articles__cards-wrap {
         grid-template-columns: 1fr 1fr;
     }
@@ -955,7 +958,8 @@
         background: #6c52c4;
         color: #fff;    
     }
-    .articles__cards-wrap {
+    .articles__cards-wrap,
+    .arrow__btns {
         position: absolute;
         width: 1px;
         height: 1px;
@@ -978,7 +982,8 @@
         background: #6c52c4;
         color: #fff;
     }
-    .meeting__cards-wrap {
+    .meeting__cards-wrap,
+    .arrow__btns-meeting {
         position: absolute;
         width: 1px;
         height: 1px;
@@ -993,5 +998,105 @@
         clip-path: inset(100%);
         clip: rect(0 0 0 0);
         overflow: hidden;
+    }
+}
+
+//js articles
+.platform__content.show-posts {
+    position: relative;
+    padding-bottom: 500px;
+    padding-bottom: 420px;
+
+    @media screen and (min-width: 744px) {
+        overflow: hidden;
+        padding-bottom: 410px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        padding-bottom: 470px;
+    }
+}
+
+.articles__list {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+}
+
+.articles__item {
+    width: 290px;
+
+    @media screen and (min-width: 744px) {
+        width: 100%;
+        width: 208px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 100%;
+        min-width: 265px;
+    }
+}
+
+.articles__item:not(:last-child) {
+    margin-right: 10px;
+
+    @media screen and (min-width: 744px) {
+        margin-right: 20px;
+    }
+    @media screen and (min-width: 1280px) {
+        margin-right: 20px ;
+    }
+}
+
+//js meeting
+.platform__content.show-webinars {
+    position: relative;
+    padding-bottom: 645px;
+
+    @media screen and (min-width: 744px) {
+        overflow: hidden;
+        padding-bottom: 670px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        padding-bottom: 470px;
+    }
+}
+
+.meeting__list {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+}
+
+.meeting__item {
+    width: 290px;
+
+    @media screen and (min-width: 744px) {
+        width: 100%;
+        width: 430px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 100%;
+        min-width: 265px;
+    }
+}
+
+.meeting__item:not(:last-child) {
+    margin-right: 10px;
+
+    @media screen and (min-width: 744px) {
+        margin-right: 20px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-right: 20px;
     }
 }
