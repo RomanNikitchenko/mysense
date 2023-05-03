@@ -434,6 +434,13 @@
         border: none;
         padding: 0;
         margin: 2px;
+        cursor: pointer;
+
+        &:hover {
+            border-radius: 50%;
+            background-color:  rgba(34, 43, 64, 0.1);
+        }
+
         img {
             padding: 17px;
             border: 1.5px solid #222B40;
@@ -1062,7 +1069,7 @@
     }
 
     @media screen and (min-width: 1280px) {
-        padding-bottom: 470px;
+        padding-bottom: 275px;
     }
 }
 
@@ -1085,7 +1092,7 @@
 
     @media screen and (min-width: 1280px) {
         width: 100%;
-        min-width: 265px;
+        min-width: 835px;
     }
 }
 

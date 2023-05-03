@@ -16,7 +16,7 @@
     const width = window.innerWidth;
 
     if (width >= 1280) {
-      transformValue -= 285;
+      transformValue -= 855;
 
       if (currentIndex === items.length - 1) {
         currentIndex = 0;
@@ -59,7 +59,7 @@
     const width = window.innerWidth;
 
     if (width >= 1280) {
-      transformValue += 285;
+      transformValue += 855;
     } else if (width >= 744) {
       transformValue += 450;
     } else {
@@ -69,7 +69,7 @@
     if (currentIndex === 0) {
       if (width >= 1280) {
         currentIndex = items.length - 1;
-        transformValue = -(items.length - 1) * 285;
+        transformValue = -(items.length - 1) * 855;
       } else if (width >= 744) {
         currentIndex = items.length - 1;
         transformValue = -(items.length - 1) * 450;
@@ -95,7 +95,7 @@
     const width = window.innerWidth;
 
     if (width >= 1280) {
-      transformValue = -currentIndex * 285;
+      transformValue = -currentIndex * 855;
     } else if (width >= 744) {
       transformValue = -currentIndex * 450;
     } else {
