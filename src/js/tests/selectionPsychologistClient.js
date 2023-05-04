@@ -1,6 +1,8 @@
 import checkArrayAndDisableButton from './checkArrayAndDisableButton';
 import toggleActiveClass from './toggleActiveClass';
+import getFilterChange from './getFilterChange';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 (() => {
   //section
   const testLine = document.querySelectorAll('.test__line');
@@ -230,7 +232,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
       //добавляем клас ввыбраным кнопкам
       item.classList.toggle('is-active');
 
-      console.log(array);
+      console.log('array', array);
 
       if (
         data === 'data-button-my-Requests' ||
@@ -239,6 +241,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
       ) {
         disabled = checkArrayAndDisableButton(array, disabled);
       }
+
+      await getFilterChange(array);
     });
   };
   /////
