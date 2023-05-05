@@ -1,6 +1,7 @@
 import fetchCardByValues from './fetchCardByValues';
 
-const getFilterChange = async array => {
+const getFilterChange = async (array = []) => {
+  console.log(array);
   try {
     const { data, hits } = await fetchCardByValues({
       array,

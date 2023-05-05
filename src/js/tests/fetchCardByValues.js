@@ -16,12 +16,11 @@ export default async function fetchCardByValues({ array }) {
 }
 
 function filterEmployeesByAllSkills({ response, array }) {
-  if (!array.length) {
-    return array;
+  if (array.length === 0) {
+    return []; // возвращает пустой массив, если переданный массив пустой
   }
 
   return response.filter(item => {
-    console.log('qwe');
     //по specialties
     const hasSelectedSkills = array.every(skill =>
       item.specialties.includes(skill)
