@@ -27,7 +27,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
   let child = false;
 
   let myState = [];
-  let MyRequests = [];
+  let myRequests = [];
   let consern = [];
   let category = [];
 
@@ -117,8 +117,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         page += 1;
         sectionState.classList.add('visually-hidden');
         sectionRequests.classList.remove('visually-hidden');
-        disabled = checkArrayAndDisableButton(MyRequests, disabled);
-        await getFilterChange([...psychiatristFor, ...myState, ...MyRequests]);
+        disabled = checkArrayAndDisableButton(myRequests, disabled);
+        await getFilterChange([...psychiatristFor, ...myState, ...myRequests]);
         return;
       }
       if (family) {
@@ -258,7 +258,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         await getFilterChange([...psychiatristFor, ...myState]);
       }
       if (data === 'data-button-my-Requests') {
-        await getFilterChange([...psychiatristFor, ...myState, ...MyRequests]);
+        await getFilterChange([...psychiatristFor, ...myState, ...myRequests]);
       }
 
       //family
@@ -287,7 +287,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
     '.requests .card__link-btn'
   );
   dataButtonMyRequests.forEach(item => {
-    toggleArrayElement(item, 'data-button-my-Requests', MyRequests);
+    toggleArrayElement(item, 'data-button-my-Requests', myRequests);
   });
   //
 

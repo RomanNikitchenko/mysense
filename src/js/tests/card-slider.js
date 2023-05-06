@@ -1,6 +1,5 @@
 (() => {
   const button = document.querySelector('.fixed__button-load-more');
-  const items = document.querySelectorAll('.user-manual__item');
   const list = document.querySelector('.user-manual__list');
 
   let currentIndex = 0;
@@ -8,6 +7,8 @@
   let transformValue = 0;
 
   const handleButtonClick = e => {
+    const items = document.querySelectorAll('.user-manual__item');
+
     if (!e.currentTarget.classList.contains('fixed__button-load-more')) return;
 
     if (isAnimating) return;
