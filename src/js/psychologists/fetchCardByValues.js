@@ -1,16 +1,16 @@
 import { teamMembers } from './teamMembers';
 
 export default async function fetchCardByValues({
-  selectedSpecialties,
-  selectedGender,
-  selectedPriceRanges,
-  selectedLanguages,
-  selectedTherapys,
-  sortingEnabledByPrice,
-  sortingEnabledByExperience,
-  reversed,
-  page,
-  totalCards,
+  selectedSpecialties = [],
+  selectedGender = [],
+  selectedPriceRanges = [],
+  selectedLanguages = [],
+  selectedTherapys = [],
+  sortingEnabledByPrice = false,
+  sortingEnabledByExperience = false,
+  reversed = false,
+  page = 0,
+  totalCards = 6,
   description = '',
 }) {
   const response = await teamMembers;

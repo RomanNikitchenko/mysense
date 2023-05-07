@@ -64,6 +64,9 @@ p {
 .session-info__list,
 .payment-card-list,
 .articles__list,
-.meeting__list {
+.meeting__list,
+.result__cards,
+.user-manual__list,
+.psychologists-slider-section__list {
   @extend %list;
 }

@@ -1,6 +1,8 @@
 import checkArrayAndDisableButton from './checkArrayAndDisableButton';
 import toggleActiveClass from './toggleActiveClass';
+import getFilterChange from './getFilterChange';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 (() => {
   //section
   const testLine = document.querySelectorAll('.test__line');
@@ -18,12 +20,14 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
     '.fixed__button-load-more'
   );
 
+  let psychiatristFor = [];
+
   let myself = false;
   let family = false;
   let child = false;
 
   let myState = [];
-  let MyRequests = [];
+  let myRequests = [];
   let consern = [];
   let category = [];
 
@@ -33,7 +37,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
   /////
   testCardWrapBtn.forEach(item => {
-    item.addEventListener('click', e => {
+    item.addEventListener('click', async e => {
       for (let i = 0; i < testCardWrapBtn.length; i += 1) {
         if (testCardWrapBtn[i].classList.contains('is-active')) {
           testCardWrapBtn[i].classList.remove('is-active');
@@ -41,23 +45,30 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         }
       }
 
+      psychiatristFor = [];
+
       if (e.currentTarget.dataset.for === 'myself') {
         myself = true;
         family = false;
         child = false;
+        psychiatristFor.push('myself');
       }
 
       if (e.currentTarget.dataset.for === 'family') {
         myself = false;
         family = true;
         child = false;
+        psychiatristFor.push('family');
       }
 
       if (e.currentTarget.dataset.for === 'child') {
         myself = false;
         family = false;
         child = true;
+        psychiatristFor.push('child');
       }
+
+      await getFilterChange([...psychiatristFor]);
 
       item.classList.add('is-active');
 
@@ -69,7 +80,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
   /////
   const fixedButtonNext = document.querySelector('.fixed__button-next');
 
-  fixedButtonNext.addEventListener('click', () => {
+  fixedButtonNext.addEventListener('click', async () => {
     if (disabled) {
       Notify.info('Зробіть свій вибір.');
       return;
@@ -84,16 +95,19 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
       if (myself) {
         sectionState.classList.remove('visually-hidden');
+        await getFilterChange([...psychiatristFor, ...myState]);
         return;
       }
       if (family) {
         sectionConsern.classList.remove('visually-hidden');
         disabled = checkArrayAndDisableButton(consern, disabled);
+        await getFilterChange([...psychiatristFor, ...consern]);
         return;
       }
       if (child) {
         sectionCategory.classList.remove('visually-hidden');
         disabled = checkArrayAndDisableButton(category, disabled);
+        await getFilterChange([...psychiatristFor, ...category]);
         return;
       }
     }
@@ -103,7 +117,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         page += 1;
         sectionState.classList.add('visually-hidden');
         sectionRequests.classList.remove('visually-hidden');
-        disabled = checkArrayAndDisableButton(MyRequests, disabled);
+        disabled = checkArrayAndDisableButton(myRequests, disabled);
+        await getFilterChange([...psychiatristFor, ...myState, ...myRequests]);
         return;
       }
       if (family) {
@@ -211,7 +226,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
   /////
   const toggleArrayElement = (item, data, array) => {
-    const title = item.firstElementChild.innerHTML;
+    const title = item.firstElementChild.innerHTML.trim();
     item.setAttribute(data, title);
 
     item.addEventListener('click', async () => {
@@ -230,14 +245,30 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
       //добавляем клас ввыбраным кнопкам
       item.classList.toggle('is-active');
 
-      console.log(array);
-
       if (
         data === 'data-button-my-Requests' ||
         data === 'data-button-consern' ||
         data === 'data-button-category'
       ) {
         disabled = checkArrayAndDisableButton(array, disabled);
+      }
+
+      //myself
+      if (data === 'data-button-my-state') {
+        await getFilterChange([...psychiatristFor, ...myState]);
+      }
+      if (data === 'data-button-my-Requests') {
+        await getFilterChange([...psychiatristFor, ...myState, ...myRequests]);
+      }
+
+      //family
+      if (data === 'data-button-consern') {
+        await getFilterChange([...psychiatristFor, ...consern]);
+      }
+
+      //child
+      if (data === 'data-button-category') {
+        await getFilterChange([...psychiatristFor, ...category]);
       }
     });
   };
@@ -256,7 +287,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
     '.requests .card__link-btn'
   );
   dataButtonMyRequests.forEach(item => {
-    toggleArrayElement(item, 'data-button-my-Requests', MyRequests);
+    toggleArrayElement(item, 'data-button-my-Requests', myRequests);
   });
   //
 
@@ -279,4 +310,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
     toggleArrayElement(item, 'data-button-category', category);
   });
   //
+
+  (async () => {
+    await getFilterChange([...psychiatristFor]);
+  })();
 })();
