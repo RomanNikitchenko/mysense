@@ -1,12 +1,17 @@
 .psychologists-slider-section {
     padding: 20px 0;
     overflow-x: scroll;
+    @media screen and (min-width: 744px) {
+        padding: 40px 0;
+    }
 }
 
 .psychologists-slider-section__container {
     position: relative;
     padding-bottom: 64px;
-    left: 0;
+    @media screen and (min-width: 1280px) {
+        padding-bottom: 84px;
+    }
 }
 
 //psychologists-slider-section__list
@@ -21,11 +26,18 @@
 .psychologists-slider-section__item {
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     &:not(:last-child) {
         margin-right: 7px;
-        padding-right: 5px;
+        @media screen and (min-width: 1280px) {
+            margin-right: 25px;
+        }
     }
+}
+
+.psychologists-slider-section__item--active .psychologists-slider-section__image-wrapper{
+    border: 2px solid #795BDA;
 }
 
 .psychologists-slider-section__image-wrapper {
@@ -36,42 +48,34 @@
     min-width: 64px;
     min-height: 64px;
     border: 2px solid #795BDA;
+    border: 1px solid rgba(34, 43, 64, 0.2);
+    @media screen and (min-width: 1280px) {
+        min-width: 84px;
+        min-height: 84px;
+        &:hover {
+            border: 2px solid #795BDA;
+        }
+    }
 }
 
 .psychologists-slider-section__image-wrapper-border {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 54.86px;
-    height: 54.86px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
     background-color: #795BDA;
     overflow: hidden;
+    @media screen and (min-width: 1280px) {
+        min-width: 72px;
+        min-height: 72px;
+    }
 }
 
 .psychologists-slider-section__image {
     width: 72px;
-}
-
-.psychologists-slider-section__info {
-    margin-left: 10px;
-}
-
-.psychologists-slider-section__name {
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 150%;
-        letter-spacing: -0.01em;
-        color: #795BDA;
-}
-
-.psychologists-slider-section__price {
-    font-family: 'Golos Text';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 120%;
-    letter-spacing: -0.05em;
-    color: rgba(34, 43, 64, 0.4);
+    @media screen and (min-width: 1280px) {
+        width: 98px;
+    }
 }
