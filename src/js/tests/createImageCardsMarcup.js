@@ -42,6 +42,7 @@ export default function createImageCardsMarkup({ data, hits }) {
       const itemId = card.getAttribute('data-result-id');
       const item = findItemById(itemId, data);
       localStorage.setItem('item', JSON.stringify(item));
+      localStorage.setItem('items', JSON.stringify({ data, itemId }));
       window.location.assign('psycholog-exemple.html');
     });
   });

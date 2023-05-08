@@ -9,7 +9,7 @@ export default async function fetchCardByValues({ array }) {
     const filteredEmployees = await filterEmployeesByAllSkills({
       response,
       array,
-    });
+    }).slice(0, 8);
 
     return { data: filteredEmployees, hits: filteredEmployees.length };
   }
