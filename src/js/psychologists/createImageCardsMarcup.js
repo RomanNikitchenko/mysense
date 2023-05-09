@@ -77,6 +77,7 @@ export default function createImageCardsMarcup({ visiblefilter, change }) {
                           <img class="our-team__icon-Hello" src="${iconSrc}" alt="icon Hello">
                       </button>
                   </div>
+                  <a href="./psycholog-exemple.html" class="link">Переглянути профіль</a>
               </li>`
     )
     .join('');

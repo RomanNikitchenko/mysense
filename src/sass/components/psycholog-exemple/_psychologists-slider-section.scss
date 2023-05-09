@@ -3,14 +3,20 @@
     overflow-x: scroll;
     @media screen and (min-width: 744px) {
         padding: 40px 0;
+        overflow-x: visible;
+        position: static;
     }
 }
 
 .psychologists-slider-section__container {
     position: relative;
     padding-bottom: 64px;
+    @media screen and (min-width: 744px) {
+        position: static;
+        padding-bottom: 0;
+    }
     @media screen and (min-width: 1280px) {
-        padding-bottom: 84px;
+        position: static;
     }
 }
 
@@ -20,6 +26,11 @@
     align-items: center;
     white-space: nowrap;
     position: absolute;
+    @media screen and (min-width: 744px) {
+        position: static;
+        white-space: normal;
+        justify-content: space-between;
+    }
 }
 
 

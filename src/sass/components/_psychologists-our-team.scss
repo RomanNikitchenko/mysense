@@ -1,7 +1,7 @@
 .our-team__list {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    // align-items: flex-start;
     margin-top: -20px;
     margin-left: -20px;
     margin-bottom: 30px;
@@ -21,6 +21,8 @@
     margin-top: 20px;
     margin-left: 20px;
     padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
     flex-basis: calc(100% / 1 - 20px);
     
     @media screen and (min-width: 744px) {
@@ -62,6 +64,8 @@
     color: var(--text-color);
     display: flex;
 
+    display: none;
+
     .our-team__status {
         width: 8px;
         height: 8px;
@@ -83,10 +87,10 @@
     font-family: 'Golos Text';
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 140%;
     letter-spacing: -0.05em;
-    color: rgba(34, 43, 64, 0.4);
+    color: rgb(34, 43, 64);
 }
 
 .our-team__specialties {
@@ -95,6 +99,7 @@
     margin-left: 20px;
     margin-bottom: 20px;
     margin-top: -8px;
+    display: none;
 
     .our-team__specialty {
         font-family: 'Golos Text';
@@ -105,29 +110,32 @@
         letter-spacing: -0.05em;
         color: var(--text-color);
         margin-top: 8px;
-    }
-
-    .our-team__specialty:nth-child(1),
-    .our-team__specialty:nth-child(2),
-    .our-team__specialty:nth-child(3) {
         padding-right: 12px;
         margin-right: 12px;
         border-right: 1px solid rgba(34, 43, 64, 0.1);
     }
 
-    .our-team__specialty:nth-child(4) {
-        padding-right: 12px;
-        margin-right: 12px;
-    }
+    // .our-team__specialty:nth-child(1),
+    // .our-team__specialty:nth-child(2),
+    // .our-team__specialty:nth-child(3) {
+    //     padding-right: 12px;
+    //     margin-right: 12px;
+    //     border-right: 1px solid rgba(34, 43, 64, 0.1);
+    // }
 
-    @media screen and (min-width: 744px) {
-        .our-team__specialty:nth-child(3) {
-            border-right: none;
-        }
-        .our-team__specialty:nth-child(4) {
-            border-right: 1px solid rgba(34, 43, 64, 0.1);
-        }
-    }
+    // .our-team__specialty:nth-child(4) {
+    //     padding-right: 12px;
+    //     margin-right: 12px;
+    // }
+
+    // @media screen and (min-width: 744px) {
+    //     .our-team__specialty:nth-child(3) {
+    //         border-right: none;
+    //     }
+    //     .our-team__specialty:nth-child(4) {
+    //         border-right: 1px solid rgba(34, 43, 64, 0.1);
+    //     }
+    // }
 }
 
 .our-team__price {
@@ -138,6 +146,7 @@
     font-weight: 500;
     letter-spacing: -0.05em;
     color: var(--text-color);
+    margin-top: auto;
 
     .our-team__price-value {
         font-size: 32px;
