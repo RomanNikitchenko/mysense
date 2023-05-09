@@ -26,16 +26,6 @@
         letter-spacing: -0.06em;
         color: #222B40;
         margin-bottom: 8px;
-        &::after {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            right: 42px;
-            top: 0px;
-            background: #56F08B;
-        }
     }
     p {
         font-weight: 500;
@@ -282,35 +272,57 @@
         letter-spacing: -0.01em;
         color: #222B40;
         display: flex;
+        .edu-date {
+            width: 140px;
+        }
         span {
             font-weight: 500;
-            margin-left: 60px;
+            margin-left: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            img {
+                width: 24px;
+                height: 24px;
+            }
         }
     }
 }
+.seans-block {
+    margin-bottom: 50px;
+}
+.person-seans {
+    fill: #795BDA;
+}
 .edu__wrap {
     display: flex;
+    padding: 10px;
     p {
         font-weight: 500;
         font-size: 14px;
         line-height: 120%;
         letter-spacing: -0.05em;
         color: rgba(34, 43, 64, 0.4);
+        max-width: 334px;
     }
 }
 .send-info {
+    white-space: nowrap;
     font-weight: 600;
     font-size: 14px;
     line-height: 100%;
     letter-spacing: -0.06em;
     color: #795BDA;
-    padding: 9px 16px;
+    padding: 16px 24px;
     background: rgba(121, 91, 218, 0.1);
-    border-radius: 23px;
+    border-radius: 25px;
     border: none;
     cursor: pointer;
-    display: flex;
+    text-align: center;
     align-items: center;
+    margin-right: 30px;
+    height: 46px;
     &:hover {
         background: rgba(121, 91, 218, 0.15);
     }
@@ -627,9 +639,122 @@
 .vebinars__btn-390 {
     display: none;
 }
+/*----------- work__schedule --------------*/
+
+.work__schedule {
+    margin-top: 50px;
+}
+.work__schedule-wrapper {
+    background: #fff;
+    margin-top: 20px;
+}
+.work__schedule-controls {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+.work__schedule-date {
+    span {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        color: #222B40;
+    }
+}
+.work__schedule-arrows {
+    display: flex;
+    margin-left: 20px;
+    .btn__schedule {
+        background: rgba(34, 43, 64, 0.05);
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 2px;
+        border: none;
+        &:hover {
+            cursor: pointer;
+            background: rgba(34, 43, 64, 0.1);
+        }
+    }
+    img {
+        width: 12px;
+        height: 12px;
+    }
+}
+.work__schedule_exemple {
+   
+}
+.booked {
+    background: #E7E9ED;
+    border: 1px solid rgba(34, 43, 64, 0.05);
+    a {
+        display: none;
+    }
+}
+.not__work {
+    background: rgba(249, 168, 192, 0.3);
+    border: 1px solid #F0CDD9;
+    padding:-1px;
+    a {
+        display: none;
+    }
+}
+.cell__time {
+    background: transparent;
+    border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+}
+th, td {
+    a {
+        text-decoration: none;
+        color: #795BDA;
+        font-size: 24px;
+        padding: 4px 42px;
+    }
+}
+th {
+    border-top: 1px solid rgba(34, 43, 64, 0.1);
+    border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    width: 105px;
+    height: 50px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    text-align: center;
+    span {
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.4);
+    }
+}
+th:not(:last-child) {
+    border-right: 1px solid rgba(34, 43, 64, 0.1);
+}
+td {
+    border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    width: 105px;
+    height: 40px;
+    text-align: center;
+    background: rgba(121, 91, 218, 0.1);
+
+}
+td:not(:last-child) {
+    border-right: 1px solid rgba(34, 43, 64, 0.1);
+}
 
 
-/*------------------------*/
+/*--------- rewiev ---------------*/
 .rewiev {
     margin-top: 40px;
 }
@@ -790,6 +915,16 @@
         font-size: 14px;
         margin-left: 18px;
     }
+    .edu__wrap {
+        flex-direction: column;
+        p {
+            margin-top: 15px;
+        }
+        .send-info {
+            width: 100%;
+        }
+    }
+
     .platform__title-block {
         flex-wrap: wrap;
     }
