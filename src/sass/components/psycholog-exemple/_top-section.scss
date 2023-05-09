@@ -16,46 +16,8 @@
         border-radius: 8px 8px 0 0;    
     }
 }
-.grey_bg {
-    position: relative;
-    background: #EDEBF2;
-    border-radius: 16px;
-    padding: 10px 20px;
-    max-width: 225px;
-    transform: translateY(-18px);
-    margin: 0 auto;
-    &::before {
-        content: '';
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        right: -6px;
-        top: -6px;
-        background: #EDEBF2;
-    } 
-    &::after {
-        content: '';
-        position: absolute;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        right: -8px;
-        top: -12px;
-        background: #EDEBF2;
-    }
-    span {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 150%;
-        letter-spacing: -0.01em;
-        color: #222B40;
-        max-width: 185px;
-        display: block;
-    }
-}
 .card__info {
-    padding: 0 20px 20px;
+    padding: 20px;
     h3 {
         position: relative;
         font-weight: 500;
@@ -77,10 +39,10 @@
     }
     p {
         font-weight: 500;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 140%;
         letter-spacing: -0.05em;
-        color: rgba(34, 43, 64, 0.4);
+        color: rgb(34, 43, 64);
         margin-bottom: 20px;
     }
 }
@@ -326,7 +288,35 @@
         }
     }
 }
-//фнимация для контента блока <div class="item__text">
+.edu__wrap {
+    display: flex;
+    p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.4);
+    }
+}
+.send-info {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    color: #795BDA;
+    padding: 9px 16px;
+    background: rgba(121, 91, 218, 0.1);
+    border-radius: 23px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    &:hover {
+        background: rgba(121, 91, 218, 0.15);
+    }
+}
+
+//анимация для контента блока <div class="item__text">
 .item__text {
     overflow: hidden;
     max-height: 0;
