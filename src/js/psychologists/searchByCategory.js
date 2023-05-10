@@ -1,5 +1,8 @@
 import fetchCardByValues from './fetchCardByValues';
 import createImageCardsMarcup from './createImageCardsMarcup';
+const filteredQueryParagraphNumber = document.querySelectorAll(
+  '.filtered-query__paragraph--number'
+);
 
 (() => {
   let description = '';
@@ -40,6 +43,10 @@ import createImageCardsMarcup from './createImageCardsMarcup';
 
       visiblefilter = data;
       visiblehits = hits;
+
+      filteredQueryParagraphNumber.forEach(
+        item => (item.textContent = `${visiblehits} психлогів`)
+      );
 
       // console.log(visiblefilter);
       // console.log(visiblehits);
@@ -290,6 +297,56 @@ import createImageCardsMarcup from './createImageCardsMarcup';
       loadMoreButton.style.display = 'block';
     }
   }
+
+  //сбросываем фильтер
+  const dataButtonReset = document.querySelectorAll('[data-button-reset]');
+  const sortValue = document.querySelector('.sort-value');
+
+  dataButtonReset.forEach(item => {
+    item.addEventListener('click', async () => {
+      description = '';
+
+      selectedSpecialties = [];
+      selectedGender = [];
+      selectedPriceRanges = [];
+      selectedLanguages = [];
+      selectedTherapys = [];
+
+      sortingEnabledByPrice = false;
+      sortingEnabledByExperience = false;
+      reversed = false;
+
+      page = 0;
+      totalCards = 6;
+
+      visiblefilter = [];
+      visiblehits = null;
+
+      change = true;
+
+      dataButtonValueSpecialties.forEach(item =>
+        item.classList.remove('active')
+      );
+
+      const items = [
+        dataButtonValueGender,
+        dataButtonValuePrice,
+        dataButtonValueLanguage,
+        dataButtonValueTherapy,
+      ];
+
+      items.forEach(elements =>
+        elements.forEach(item => item.classList.remove('active'))
+      );
+
+      sortValue.textContent = 'Сортувати';
+
+      await getFilterChange();
+      createImageCardsMarcup({ visiblefilter, change });
+      checkLoadMoreButton();
+    });
+  });
+  //
 
   (async () => {
     await getFilterChange();

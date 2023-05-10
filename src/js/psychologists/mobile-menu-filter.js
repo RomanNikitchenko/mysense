@@ -5,6 +5,9 @@
   );
   const openMenuBtnFilter = document.querySelector('.js-open-menu-filter');
   const closeMenuBtnFilter = document.querySelector('.js-close-menu-filter');
+  const filteredQueryButtonDone = document.querySelector(
+    '.filtered-query__button--done'
+  );
 
   const toggleMenu = () => {
     const isMenuOpenFilter =
@@ -16,6 +19,7 @@
 
   openMenuBtnFilter.addEventListener('click', toggleMenu);
   closeMenuBtnFilter.addEventListener('click', toggleMenu);
+  filteredQueryButtonDone.addEventListener('click', toggleMenu);
 
   // Закрываем мобильное меню на более широких экранах
   // в случае изменения ориентации устройства.
