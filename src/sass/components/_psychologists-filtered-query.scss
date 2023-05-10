@@ -1,0 +1,156 @@
+.psychologists-filtered-query {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    bottom: 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px -10px 20px -10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px 8px 0px 0px;
+    max-width: 350px;
+    margin: auto;
+
+    z-index: 1001;
+
+    margin-top: 20px;
+
+    @media screen and (min-width: 744px) {
+        max-width: none;
+        width: 100%;
+    }
+
+    @media screen and (min-width: 1280px) {
+        max-width: 350px;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(121, 91, 218, 0.1);
+        border-radius: 150px;
+        margin-bottom: 20px;
+    }
+
+    &.psychologists-filtered-query--decktop {
+        display: none;
+
+        @media screen and (min-width: 1280px) {
+            display: flex;
+        }
+    }
+
+    &.psychologists-filtered-query--mobile {
+        @media screen and (min-width: 1280px) {
+            display: none;
+        }
+    }
+
+    .filtered-query__buttons {
+        display: flex;
+        width: 100%;
+        max-width: 194px;
+
+        @media screen and (min-width: 1280px) {
+            width: 100%;
+            max-width: 46px;
+        }
+
+        .filtered-query__button {
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 150px;
+            padding: 0;
+            margin: 0;
+            border: transparent;
+
+            &.filtered-query__button--reset {
+                background-color: rgba(121, 91, 218, 0.1);
+                width: 100%;
+                max-width: 46px;
+                margin-right: 8px;
+                cursor: pointer;
+
+                @media screen and (min-width: 1280px) {
+                    margin: 0;
+                    background-color: white;
+                    
+                    &:hover,
+                    &:focus {
+                        background-color: #f3f3f3;
+                    }
+                }
+            }   
+            
+            &.filtered-query__button--done {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 100%;
+                letter-spacing: -0.06em;
+                color: #FFFFFF;
+                background-color: #795BDA;
+                width: 100%;
+                max-width: 140px;
+                cursor: pointer;
+
+                &:hover,
+                &:focus {
+                    background-color: #6c51c7;
+                }
+
+                @media screen and (min-width: 1280px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .filtered-query__content{
+        display: flex;
+        align-items: center;
+
+        .filtered-query__images {
+            display: none;
+            margin-right: 15px;
+
+            @media screen and (min-width: 744px) {
+                display: flex;
+            }
+    
+            .small-image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                min-width: 46px;
+                height: 46px;
+                border: 2px solid #F3F3F3;
+                background-color: rgba(121, 91, 218, 0.1);
+                border-radius: 50%;
+            }
+    
+            .small-image:not(:first-child) {
+                margin-left: -13px;
+            }
+        }
+
+        .filtered-query__paragraphs {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 140%;
+            letter-spacing: -0.05em;
+            color: rgba(34, 43, 64, 0.4);
+            width: 96px;
+
+            .filtered-query__paragraph--number {
+                font-weight: 700;
+            }
+        }
+    }
+}

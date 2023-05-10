@@ -1,7 +1,7 @@
-import { teamMembers } from './teamMembers';
+import { fakeAPI } from '../fakeAPI/fakeAPI';
 
 export default async function fetchCardByValues({ array }) {
-  const response = await teamMembers;
+  const response = await fakeAPI;
 
   if (!response) {
     console.log('Ошибка !response');
