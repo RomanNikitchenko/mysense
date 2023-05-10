@@ -639,6 +639,7 @@
 .vebinars__btn-390 {
     display: none;
 }
+
 /*----------- work__schedule --------------*/
 
 .work__schedule {
@@ -686,6 +687,7 @@
     }
 }
 .work__schedule_exemple {
+    width: 100%;
    
 }
 .booked {
@@ -700,7 +702,8 @@
     border: 1px solid #F0CDD9;
     padding:-1px;
     a {
-        display: none;
+        // display: none;
+        visibility: hidden;
     }
 }
 .cell__time {
@@ -711,13 +714,18 @@
     line-height: 140%;
     letter-spacing: -0.05em;
     color: #222B40;
+    padding: 0 10px;
 }
 th, td {
     a {
         text-decoration: none;
-        color: #795BDA;
+        color: transparent;
         font-size: 24px;
         padding: 4px 42px;
+
+        &:hover {
+            color: #795BDA;
+        }
     }
 }
 th {
@@ -746,13 +754,53 @@ td {
     width: 105px;
     height: 40px;
     text-align: center;
-    background: rgba(121, 91, 218, 0.1);
+    background: transparent;
+    &:hover {
+        background: rgba(121, 91, 218, 0.1);
+    }
 
 }
 td:not(:last-child) {
     border-right: 1px solid rgba(34, 43, 64, 0.1);
 }
-
+.designations {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.available, .busy {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    span {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        vertical-align: middle;
+    }
+}
+.busy {
+    span {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 10px;
+        border: 1px solid rgba(34, 43, 64, 0.05);
+        background: #E7E9ED;
+        vertical-align: middle;
+    }
+  
+}
 
 /*--------- rewiev ---------------*/
 .rewiev {
@@ -988,6 +1036,19 @@ td:not(:last-child) {
     .meeting__spicer {
         margin: 8px 0 20px;
     }
+    th a, td a {
+        padding: 4px 12px;
+    }
+    th {
+        font-size: 11px;
+        span {
+            font-size: 10px;
+        }
+    }
+    .cell__time {
+        font-size: 11px;
+    }
+
 }
 
 
@@ -1082,7 +1143,21 @@ td:not(:last-child) {
         flex: 0 0 90%;
         scroll-snap-align: center;
     }
-
+    .schedule-block_wrap {
+        overflow-x: scroll;
+    }
+    th {
+        font-size: 12px;
+        span {
+            font-size: 12px;
+        }
+    }
+    th a, td a {
+        padding: 4px 22px;
+    }
+    .designations {
+        grid-template-columns: 1fr;
+    }
 }
 
 //js
