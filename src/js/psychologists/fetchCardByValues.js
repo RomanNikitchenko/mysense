@@ -59,7 +59,7 @@ export default async function fetchCardByValues({
 
     const cards = filterCards.slice(page, totalCards);
 
-    return { data: cards, hits: filterCards.length };
+    return { dataAll: filterCards, data: cards, hits: filterCards.length };
   }
 }
 

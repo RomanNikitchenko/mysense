@@ -1,5 +1,6 @@
 import fetchCardByValues from './fetchCardByValues';
 import createImageCardsMarcup from './createImageCardsMarcup';
+import viewProfile from './viewProfile';
 const filteredQueryParagraphNumber = document.querySelectorAll(
   '.filtered-query__paragraph--number'
 );
@@ -20,14 +21,41 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
   let page = 0;
   let totalCards = 6;
 
+  let visiblefilterAll = [];
   let visiblefilter = [];
   let visiblehits = null;
 
   let change = false;
 
+  /////получаем из локального хранилища
+  const load = key => {
+    try {
+      const serializedState = localStorage.getItem(key);
+      return serializedState === null ? undefined : JSON.parse(serializedState);
+    } catch (error) {
+      console.error('Get state error: ', error.message);
+    }
+  };
+
+  if (load('filterValues')) {
+    const serializedState = load('filterValues');
+    description = serializedState.description;
+    selectedSpecialties = serializedState.selectedSpecialties;
+    selectedGender = serializedState.selectedGender;
+    selectedPriceRanges = serializedState.selectedPriceRanges;
+    selectedLanguages = serializedState.selectedLanguages;
+    selectedTherapys = serializedState.selectedTherapys;
+    sortingEnabledByPrice = serializedState.sortingEnabledByPrice;
+    sortingEnabledByExperience = serializedState.sortingEnabledByExperience;
+    reversed = serializedState.reversed;
+    page = serializedState.page;
+    totalCards = serializedState.totalCards;
+  }
+  /////
+
   const getFilterChange = async () => {
     try {
-      const { data, hits } = await fetchCardByValues({
+      const { dataAll, data, hits } = await fetchCardByValues({
         description,
         selectedSpecialties,
         selectedGender,
@@ -41,15 +69,34 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
         totalCards,
       });
 
+      visiblefilterAll = dataAll.slice(0, 8);
       visiblefilter = data;
       visiblehits = hits;
+
+      /////записываем в локальное хранилище
+      const filterData = {};
+
+      filterData.description = description;
+      filterData.selectedSpecialties = selectedSpecialties;
+      filterData.selectedGender = selectedGender;
+      filterData.selectedPriceRanges = selectedPriceRanges;
+      filterData.selectedLanguages = selectedLanguages;
+      filterData.selectedTherapys = selectedTherapys;
+      filterData.sortingEnabledByPrice = sortingEnabledByPrice;
+      filterData.sortingEnabledByExperience = sortingEnabledByExperience;
+      filterData.reversed = reversed;
+      filterData.page = page;
+      filterData.totalCards = totalCards;
+
+      const formDataJSON = JSON.stringify(filterData);
+
+      localStorage.setItem('filterValues', formDataJSON);
+      /////
 
       filteredQueryParagraphNumber.forEach(
         item => (item.textContent = `${visiblehits} психлогів`)
       );
 
-      // console.log(visiblefilter);
-      // console.log(visiblehits);
       return;
     } catch (error) {
       console.log('Ошибка', error);
@@ -61,6 +108,10 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
     '.psychologists-section__search-input'
   );
 
+  if (description) {
+    textInput.value = description;
+  }
+
   textInput.addEventListener('input', async event => {
     page = 0;
     totalCards = 6;
@@ -71,6 +122,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
     createImageCardsMarcup({ visiblefilter, change });
 
     checkLoadMoreButton();
+    viewProfile(visiblefilterAll);
   });
   //
 
@@ -80,6 +132,11 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
   );
 
   dataButtonValueSpecialties.forEach(item => {
+    const dataValueAll = item.getAttribute('data-button-value');
+    if (selectedSpecialties.includes(dataValueAll)) {
+      item.classList.add('active');
+    }
+
     item.addEventListener('click', async () => {
       const dataValue = item.getAttribute('data-button-value');
 
@@ -104,6 +161,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
       createImageCardsMarcup({ visiblefilter, change });
 
       checkLoadMoreButton();
+      viewProfile(visiblefilterAll);
     });
   });
   //
@@ -114,6 +172,11 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
   );
 
   dataButtonValueGender.forEach(item => {
+    const dataValueAll = item.getAttribute('data-button-value-gender');
+    if (selectedGender.includes(dataValueAll)) {
+      item.classList.add('active');
+    }
+
     item.addEventListener('click', async () => {
       const dataValue = item.getAttribute('data-button-value-gender');
 
@@ -136,6 +199,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
       createImageCardsMarcup({ visiblefilter, change });
 
       checkLoadMoreButton();
+      viewProfile(visiblefilterAll);
     });
   });
   //
@@ -146,6 +210,11 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
   );
 
   dataButtonValuePrice.forEach(item => {
+    const dataValueAll = item.getAttribute('data-button-value-price');
+    if (selectedPriceRanges.includes(dataValueAll)) {
+      item.classList.add('active');
+    }
+
     item.addEventListener('click', async () => {
       const dataValue = item.getAttribute('data-button-value-price');
 
@@ -170,6 +239,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
       createImageCardsMarcup({ visiblefilter, change });
 
       checkLoadMoreButton();
+      viewProfile(visiblefilterAll);
     });
   });
   //
@@ -180,6 +250,11 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
   );
 
   dataButtonValueLanguage.forEach(item => {
+    const dataValueAll = item.getAttribute('data-button-value-language');
+    if (selectedLanguages.includes(dataValueAll)) {
+      item.classList.add('active');
+    }
+
     item.addEventListener('click', async () => {
       const dataValue = item.getAttribute('data-button-value-language');
 
@@ -204,6 +279,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
       createImageCardsMarcup({ visiblefilter, change });
 
       checkLoadMoreButton();
+      viewProfile(visiblefilterAll);
     });
   });
   //
@@ -214,6 +290,11 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
   );
 
   dataButtonValueTherapy.forEach(item => {
+    const dataValueAll = item.getAttribute('data-button-value-therapy');
+    if (selectedTherapys.includes(dataValueAll)) {
+      item.classList.add('active');
+    }
+
     item.addEventListener('click', async () => {
       const dataValue = item.getAttribute('data-button-value-therapy');
 
@@ -238,12 +319,22 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
       createImageCardsMarcup({ visiblefilter, change });
 
       checkLoadMoreButton();
+      viewProfile(visiblefilterAll);
     });
   });
   //
 
   // сортировка
   const dataSort = document.querySelector('.sort-list');
+  const sortValue = document.querySelector('.sort-value');
+
+  if (sortingEnabledByPrice) {
+    sortValue.textContent = 'за ціною';
+  }
+
+  if (sortingEnabledByExperience) {
+    sortValue.textContent = 'за досвідом';
+  }
 
   const sortByDateAttributeValue = async e => {
     page = 0;
@@ -268,6 +359,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
     createImageCardsMarcup({ visiblefilter, change });
 
     checkLoadMoreButton();
+    viewProfile(visiblefilterAll);
   };
 
   dataSort.addEventListener('click', sortByDateAttributeValue);
@@ -286,6 +378,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
     createImageCardsMarcup({ visiblefilter, change });
 
     checkLoadMoreButton();
+    viewProfile(visiblefilterAll);
   });
   //
 
@@ -300,7 +393,6 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
 
   //сбросываем фильтер
   const dataButtonReset = document.querySelectorAll('[data-button-reset]');
-  const sortValue = document.querySelector('.sort-value');
 
   dataButtonReset.forEach(item => {
     item.addEventListener('click', async () => {
@@ -324,6 +416,8 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
 
       change = true;
 
+      textInput.value = '';
+
       dataButtonValueSpecialties.forEach(item =>
         item.classList.remove('active')
       );
@@ -344,6 +438,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
       await getFilterChange();
       createImageCardsMarcup({ visiblefilter, change });
       checkLoadMoreButton();
+      viewProfile(visiblefilterAll);
     });
   });
   //
@@ -353,5 +448,6 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
     change = true;
     createImageCardsMarcup({ visiblefilter, change });
     checkLoadMoreButton();
+    viewProfile(visiblefilterAll);
   })();
 })();

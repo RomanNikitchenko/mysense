@@ -20,7 +20,7 @@
     overflow: hidden;
     margin-top: 20px;
     margin-left: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     flex-basis: calc(100% / 1 - 20px);
@@ -64,7 +64,7 @@
     color: var(--text-color);
     display: flex;
 
-    display: none;
+    // display: none;
 
     .our-team__status {
         width: 8px;
@@ -237,4 +237,20 @@
 
 .our-team__details-button.friendly {
     display: flex;
+}
+
+.our-team__link {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    text-decoration-line: underline;
+    color: #222B40;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    &:hover {
+            color: #7155cd;
+        }
 }
