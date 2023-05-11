@@ -1,5 +1,9 @@
 import fetchCardByValues from './fetchCardByValues';
 import createImageCardsMarcup from './createImageCardsMarcup';
+import viewProfile from './viewProfile';
+const filteredQueryParagraphNumber = document.querySelectorAll(
+  '.filtered-query__paragraph--number'
+);
 
 (() => {
   let description = '';
@@ -17,14 +21,41 @@ import createImageCardsMarcup from './createImageCardsMarcup';
   let page = 0;
   let totalCards = 6;
 
+  let visiblefilterAll = [];
   let visiblefilter = [];
   let visiblehits = null;
 
   let change = false;
 
+  /////получаем из локального хранилища
+  const load = key => {
+    try {
+      const serializedState = localStorage.getItem(key);
+      return serializedState === null ? undefined : JSON.parse(serializedState);
+    } catch (error) {
+      console.error('Get state error: ', error.message);
+    }
+  };
+
+  if (load('filterValues')) {
+    const serializedState = load('filterValues');
+    description = serializedState.description;
+    selectedSpecialties = serializedState.selectedSpecialties;
+    selectedGender = serializedState.selectedGender;
+    selectedPriceRanges = serializedState.selectedPriceRanges;
+    selectedLanguages = serializedState.selectedLanguages;
+    selectedTherapys = serializedState.selectedTherapys;
+    sortingEnabledByPrice = serializedState.sortingEnabledByPrice;
+    sortingEnabledByExperience = serializedState.sortingEnabledByExperience;
+    reversed = serializedState.reversed;
+    page = serializedState.page;
+    totalCards = serializedState.totalCards;
+  }
+  /////
+
   const getFilterChange = async () => {
     try {
-      const { data, hits } = await fetchCardByValues({
+      const { dataAll, data, hits } = await fetchCardByValues({
         description,
         selectedSpecialties,
         selectedGender,
@@ -38,11 +69,34 @@ import createImageCardsMarcup from './createImageCardsMarcup';
         totalCards,
       });
 
+      visiblefilterAll = dataAll.slice(0, 8);
       visiblefilter = data;
       visiblehits = hits;
 
-      // console.log(visiblefilter);
-      // console.log(visiblehits);
+      /////записываем в локальное хранилище
+      const filterData = {};
+
+      filterData.description = description;
+      filterData.selectedSpecialties = selectedSpecialties;
+      filterData.selectedGender = selectedGender;
+      filterData.selectedPriceRanges = selectedPriceRanges;
+      filterData.selectedLanguages = selectedLanguages;
+      filterData.selectedTherapys = selectedTherapys;
+      filterData.sortingEnabledByPrice = sortingEnabledByPrice;
+      filterData.sortingEnabledByExperience = sortingEnabledByExperience;
+      filterData.reversed = reversed;
+      filterData.page = page;
+      filterData.totalCards = totalCards;
+
+      const formDataJSON = JSON.stringify(filterData);
+
+      localStorage.setItem('filterValues', formDataJSON);
+      /////
+
+      filteredQueryParagraphNumber.forEach(
+        item => (item.textContent = `${visiblehits} психлогів`)
+      );
+
       return;
     } catch (error) {
       console.log('Ошибка', error);
@@ -54,6 +108,10 @@ import createImageCardsMarcup from './createImageCardsMarcup';
     '.psychologists-section__search-input'
   );
 
+  if (description) {
+    textInput.value = description;
+  }
+
   textInput.addEventListener('input', async event => {
     page = 0;
     totalCards = 6;
@@ -64,6 +122,7 @@ import createImageCardsMarcup from './createImageCardsMarcup';
     createImageCardsMarcup({ visiblefilter, change });
 
     checkLoadMoreButton();
+    viewProfile(visiblefilterAll);
   });
   //
 
@@ -73,6 +132,11 @@ import createImageCardsMarcup from './createImageCardsMarcup';
   );
 
   dataButtonValueSpecialties.forEach(item => {
+    const dataValueAll = item.getAttribute('data-button-value');
+    if (selectedSpecialties.includes(dataValueAll)) {
+      item.classList.add('active');
+    }
+
     item.addEventListener('click', async () => {
       const dataValue = item.getAttribute('data-button-value');
 
@@ -97,6 +161,7 @@ import createImageCardsMarcup from './createImageCardsMarcup';
       createImageCardsMarcup({ visiblefilter, change });
 
       checkLoadMoreButton();
+      viewProfile(visiblefilterAll);
     });
   });
   //
@@ -107,6 +172,11 @@ import createImageCardsMarcup from './createImageCardsMarcup';
   );
 
   dataButtonValueGender.forEach(item => {
+    const dataValueAll = item.getAttribute('data-button-value-gender');
+    if (selectedGender.includes(dataValueAll)) {
+      item.classList.add('active');
+    }
+
     item.addEventListener('click', async () => {
       const dataValue = item.getAttribute('data-button-value-gender');
 
@@ -129,6 +199,7 @@ import createImageCardsMarcup from './createImageCardsMarcup';
       createImageCardsMarcup({ visiblefilter, change });
 
       checkLoadMoreButton();
+      viewProfile(visiblefilterAll);
     });
   });
   //
@@ -139,6 +210,11 @@ import createImageCardsMarcup from './createImageCardsMarcup';
   );
 
   dataButtonValuePrice.forEach(item => {
+    const dataValueAll = item.getAttribute('data-button-value-price');
+    if (selectedPriceRanges.includes(dataValueAll)) {
+      item.classList.add('active');
+    }
+
     item.addEventListener('click', async () => {
       const dataValue = item.getAttribute('data-button-value-price');
 
@@ -163,6 +239,7 @@ import createImageCardsMarcup from './createImageCardsMarcup';
       createImageCardsMarcup({ visiblefilter, change });
 
       checkLoadMoreButton();
+      viewProfile(visiblefilterAll);
     });
   });
   //
@@ -173,6 +250,11 @@ import createImageCardsMarcup from './createImageCardsMarcup';
   );
 
   dataButtonValueLanguage.forEach(item => {
+    const dataValueAll = item.getAttribute('data-button-value-language');
+    if (selectedLanguages.includes(dataValueAll)) {
+      item.classList.add('active');
+    }
+
     item.addEventListener('click', async () => {
       const dataValue = item.getAttribute('data-button-value-language');
 
@@ -197,6 +279,7 @@ import createImageCardsMarcup from './createImageCardsMarcup';
       createImageCardsMarcup({ visiblefilter, change });
 
       checkLoadMoreButton();
+      viewProfile(visiblefilterAll);
     });
   });
   //
@@ -207,6 +290,11 @@ import createImageCardsMarcup from './createImageCardsMarcup';
   );
 
   dataButtonValueTherapy.forEach(item => {
+    const dataValueAll = item.getAttribute('data-button-value-therapy');
+    if (selectedTherapys.includes(dataValueAll)) {
+      item.classList.add('active');
+    }
+
     item.addEventListener('click', async () => {
       const dataValue = item.getAttribute('data-button-value-therapy');
 
@@ -231,12 +319,22 @@ import createImageCardsMarcup from './createImageCardsMarcup';
       createImageCardsMarcup({ visiblefilter, change });
 
       checkLoadMoreButton();
+      viewProfile(visiblefilterAll);
     });
   });
   //
 
   // сортировка
   const dataSort = document.querySelector('.sort-list');
+  const sortValue = document.querySelector('.sort-value');
+
+  if (sortingEnabledByPrice) {
+    sortValue.textContent = 'за ціною';
+  }
+
+  if (sortingEnabledByExperience) {
+    sortValue.textContent = 'за досвідом';
+  }
 
   const sortByDateAttributeValue = async e => {
     page = 0;
@@ -261,6 +359,7 @@ import createImageCardsMarcup from './createImageCardsMarcup';
     createImageCardsMarcup({ visiblefilter, change });
 
     checkLoadMoreButton();
+    viewProfile(visiblefilterAll);
   };
 
   dataSort.addEventListener('click', sortByDateAttributeValue);
@@ -279,6 +378,7 @@ import createImageCardsMarcup from './createImageCardsMarcup';
     createImageCardsMarcup({ visiblefilter, change });
 
     checkLoadMoreButton();
+    viewProfile(visiblefilterAll);
   });
   //
 
@@ -291,10 +391,63 @@ import createImageCardsMarcup from './createImageCardsMarcup';
     }
   }
 
+  //сбросываем фильтер
+  const dataButtonReset = document.querySelectorAll('[data-button-reset]');
+
+  dataButtonReset.forEach(item => {
+    item.addEventListener('click', async () => {
+      description = '';
+
+      selectedSpecialties = [];
+      selectedGender = [];
+      selectedPriceRanges = [];
+      selectedLanguages = [];
+      selectedTherapys = [];
+
+      sortingEnabledByPrice = false;
+      sortingEnabledByExperience = false;
+      reversed = false;
+
+      page = 0;
+      totalCards = 6;
+
+      visiblefilter = [];
+      visiblehits = null;
+
+      change = true;
+
+      textInput.value = '';
+
+      dataButtonValueSpecialties.forEach(item =>
+        item.classList.remove('active')
+      );
+
+      const items = [
+        dataButtonValueGender,
+        dataButtonValuePrice,
+        dataButtonValueLanguage,
+        dataButtonValueTherapy,
+      ];
+
+      items.forEach(elements =>
+        elements.forEach(item => item.classList.remove('active'))
+      );
+
+      sortValue.textContent = 'Сортувати';
+
+      await getFilterChange();
+      createImageCardsMarcup({ visiblefilter, change });
+      checkLoadMoreButton();
+      viewProfile(visiblefilterAll);
+    });
+  });
+  //
+
   (async () => {
     await getFilterChange();
     change = true;
     createImageCardsMarcup({ visiblefilter, change });
     checkLoadMoreButton();
+    viewProfile(visiblefilterAll);
   })();
 })();

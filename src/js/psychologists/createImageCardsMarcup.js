@@ -24,6 +24,7 @@ export default function createImageCardsMarcup({ visiblefilter, change }) {
   const listCards = visiblefilter
     .map(
       ({
+        id,
         photoSources,
         photoSrc,
         alt,
@@ -37,7 +38,7 @@ export default function createImageCardsMarcup({ visiblefilter, change }) {
         friendly,
       }) =>
         `
-              <li class="our-team__item">
+              <li class="our-team__item" data-item-id="${id}">
                   <figure class="our-team__photo">
                       <picture>
                           ${photoSources
@@ -77,6 +78,7 @@ export default function createImageCardsMarcup({ visiblefilter, change }) {
                           <img class="our-team__icon-Hello" src="${iconSrc}" alt="icon Hello">
                       </button>
                   </div>
+                  <a href="./psycholog-exemple.html" class="our-team__link">Переглянути профіль</a>
               </li>`
     )
     .join('');
