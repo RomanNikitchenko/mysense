@@ -48,7 +48,6 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
     sortingEnabledByPrice = serializedState.sortingEnabledByPrice;
     sortingEnabledByExperience = serializedState.sortingEnabledByExperience;
     reversed = serializedState.reversed;
-    page = serializedState.page;
     totalCards = serializedState.totalCards;
   }
   /////
@@ -69,7 +68,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
         totalCards,
       });
 
-      visiblefilterAll = dataAll.slice(0, 8);
+      visiblefilterAll = dataAll;
       visiblefilter = data;
       visiblehits = hits;
 
@@ -85,7 +84,6 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
       filterData.sortingEnabledByPrice = sortingEnabledByPrice;
       filterData.sortingEnabledByExperience = sortingEnabledByExperience;
       filterData.reversed = reversed;
-      filterData.page = page;
       filterData.totalCards = totalCards;
 
       const formDataJSON = JSON.stringify(filterData);
