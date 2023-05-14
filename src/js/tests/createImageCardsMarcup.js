@@ -6,9 +6,11 @@ export default function createImageCardsMarkup({ data, hits }) {
 
   const liCards = [];
 
+  const limitData = data.slice(0, 8);
+
   //создаем список ul в котором li имеют внутри ul c 4 li
-  for (let i = 0; i < data.length; i += 4) {
-    const sliceData = data.slice(i, i + 4);
+  for (let i = 0; i < limitData.length; i += 4) {
+    const sliceData = limitData.slice(i, i + 4);
     const ulCards = sliceData
       .map(item => {
         return `<li class="result__card-wrap" data-result-id="${item.id}">
@@ -29,6 +31,8 @@ export default function createImageCardsMarkup({ data, hits }) {
   }
 
   userManualList.innerHTML = liCards.join('');
+
+  /////
 
   const resultCards = document.querySelectorAll('.result__card-wrap');
 

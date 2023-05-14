@@ -1,5 +1,6 @@
 .psychologists-slider-section {
     padding: 20px 0;
+    padding-bottom: 36px;
     overflow-x: scroll;
     @media screen and (min-width: 744px) {
         padding: 40px 0;
@@ -37,12 +38,13 @@
 .psychologists-slider-section__item {
     display: flex;
     align-items: center;
+    flex-direction: column;
     cursor: pointer;
 
     &:not(:last-child) {
         margin-right: 7px;
-        @media screen and (min-width: 1280px) {
-            margin-right: 25px;
+        @media screen and (min-width: 744px) {
+            margin-right: 0px;
         }
     }
 }
@@ -89,4 +91,24 @@
     @media screen and (min-width: 1280px) {
         width: 98px;
     }
+}
+
+.psychologists-slider-section__info {
+    p {
+        letter-spacing: -.05em;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 120%;
+        margin-top: 4px;
+        @media screen and (min-width: 744px) {
+            font-size: 8px;
+        }
+        @media screen and (min-width: 1280px) {
+            font-size: 12px;
+        }
+    }
+}
+
+.psychologists-slider-section__item--active .psychologists-slider-section__info {
+    color: #795BDA;
 }

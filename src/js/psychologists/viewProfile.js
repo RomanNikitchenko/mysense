@@ -1,7 +1,7 @@
 export default function viewProfile(visiblefilterAll) {
   const items = document.querySelectorAll('.our-team__item');
 
-  const data = visiblefilterAll.slice(0, 8);
+  const data = visiblefilterAll.slice(0, 9);
 
   //   получаем по id объект с массива
   function findItemById(id, data) {
