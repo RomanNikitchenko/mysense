@@ -10,7 +10,7 @@ export default async function fetchCardByValues({
   sortingEnabledByExperience = false,
   reversed = false,
   page = 0,
-  totalCards = 6,
+  totalCards = 9,
   description = '',
 }) {
   const response = await fakeAPI;

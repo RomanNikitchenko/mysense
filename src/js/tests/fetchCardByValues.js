@@ -11,7 +11,7 @@ export default async function fetchCardByValues({ array }) {
       array,
     });
 
-    const limitedQuantity = filteredEmployees.slice(0, 9);
+    const limitedQuantity = filteredEmployees.slice(0, 8);
 
     return {
       data: limitedQuantity,

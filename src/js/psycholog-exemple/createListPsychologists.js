@@ -16,8 +16,6 @@
 
   const { data, itemId } = load('items');
 
-  console.log(data);
-
   const listCards = data
     .map(
       ({ alt, photoSrc, id, name }) => `
