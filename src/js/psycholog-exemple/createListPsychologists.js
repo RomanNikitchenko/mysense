@@ -18,13 +18,13 @@
 
   const listCards = data
     .map(
-      ({ alt, photoSrc, id }) => `
+      ({ alt, photoSrc, id, name }) => `
               <li class="psychologists-slider-section__item ${
                 id === itemId
                   ? 'psychologists-slider-section__item--active'
                   : ''
               }" data-psychologist-id="${id}">
-                  <div class="psychologists-slider-section__image-wrapper">
+                <div class="psychologists-slider-section__image-wrapper">
                   <div class="psychologists-slider-section__image-wrapper-border">
                       <img
                       src=${photoSrc}
@@ -32,7 +32,11 @@
                       alt=${alt}
                       />
                   </div>
-                  </div>
+                </div>
+                </div>
+                <div class="psychologists-slider-section__info">
+                  <p>${name}</p>
+                </div>    
               </li>
           `
     )

@@ -19,7 +19,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
   let reversed = false;
 
   let page = 0;
-  let totalCards = 6;
+  let totalCards = 9;
 
   let visiblefilterAll = [];
   let visiblefilter = [];
@@ -112,7 +112,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
 
   textInput.addEventListener('input', async event => {
     page = 0;
-    totalCards = 6;
+    totalCards = 9;
 
     description = event.currentTarget.value.trim();
     await getFilterChange();
@@ -139,7 +139,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
       const dataValue = item.getAttribute('data-button-value');
 
       page = 0;
-      totalCards = 6;
+      totalCards = 9;
 
       //если есть удаляем если нет добавляем
       if (selectedSpecialties.includes(dataValue)) {
@@ -179,7 +179,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
       const dataValue = item.getAttribute('data-button-value-gender');
 
       page = 0;
-      totalCards = 6;
+      totalCards = 9;
 
       // если есть удаляем, если нет - добавляем
       if (selectedGender.includes(dataValue)) {
@@ -217,7 +217,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
       const dataValue = item.getAttribute('data-button-value-price');
 
       page = 0;
-      totalCards = 6;
+      totalCards = 9;
 
       // если есть удаляем, если нет - добавляем
       if (selectedPriceRanges.includes(dataValue)) {
@@ -257,7 +257,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
       const dataValue = item.getAttribute('data-button-value-language');
 
       page = 0;
-      totalCards = 6;
+      totalCards = 9;
 
       // если есть удаляем, если нет - добавляем
       if (selectedLanguages.includes(dataValue)) {
@@ -297,7 +297,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
       const dataValue = item.getAttribute('data-button-value-therapy');
 
       page = 0;
-      totalCards = 6;
+      totalCards = 9;
 
       // если есть удаляем, если нет - добавляем
       if (selectedTherapys.includes(dataValue)) {
@@ -336,7 +336,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
 
   const sortByDateAttributeValue = async e => {
     page = 0;
-    totalCards = 6;
+    totalCards = 9;
 
     if (!e.target.classList.contains('sort-button')) return;
     reversed = !reversed;
@@ -368,7 +368,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
 
   loadMoreButton.addEventListener('click', async () => {
     page = totalCards;
-    totalCards += 3;
+    totalCards += 9;
 
     await getFilterChange();
 
@@ -407,7 +407,7 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
       reversed = false;
 
       page = 0;
-      totalCards = 6;
+      totalCards = 9;
 
       visiblefilter = [];
       visiblehits = null;

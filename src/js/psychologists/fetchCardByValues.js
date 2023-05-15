@@ -1,4 +1,3 @@
-// import { teamMembers } from './teamMembers';
 import { fakeAPI } from '../fakeAPI/fakeAPI';
 
 export default async function fetchCardByValues({
@@ -11,7 +10,7 @@ export default async function fetchCardByValues({
   sortingEnabledByExperience = false,
   reversed = false,
   page = 0,
-  totalCards = 6,
+  totalCards = 9,
   description = '',
 }) {
   const response = await fakeAPI;
