@@ -1178,6 +1178,50 @@
       </div>
     </div> 
 
+    <div class="choose__day">
+      <h3 class="choose__day-title">Виберіть дату сесії </h3>
+      <p>Не обовʼязково</p>
+      <div class="choose__day-box">
+        <div class="month-controls">
+          <div class="month">Березень 2023</div>
+          <div class="controls__arrows">
+            <button><img src="./images/svg-mysense/arrow_btns-prew.svg" alt=""></button>
+            <button><img src="./images/svg-mysense/arrow_btns-next.svg" alt=""></button>
+          </div>
+        </div>
+        <ul class="week__list">
+          <li>
+            <span>Пн</span>
+            <button class="num_active">13</button>
+          </li>
+          <li>
+            <span>Вт</span>
+            <button>14</button>
+          </li>
+          <li>
+            <span>Ср</span>
+            <button>15</button>
+          </li>
+          <li>
+            <span>Чт</span>
+            <button>16</button>
+          </li>
+          <li>
+            <span>Пт</span>
+            <button class="no_active">17</button>
+          </li>
+          <li>
+            <span>Сб</span>
+            <button class="no_active">18</button>
+          </li>
+          <li>
+            <span>Нд</span>
+            <button class="no_active">19</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <div class="choose__time">
       <h3 class="choose__time-title">Оберіть зручний час (за Києвом) </h3>
       <p>Не обовʼязково</p>
@@ -1202,13 +1246,44 @@
       </div>
     </div>
 
+    <div class="form">
+      <input class="form__input" type="text" name="promo" id="promo" placeholder="Введіть промокод">
+      
+      <button type="button" class="form__payment-method">
+        <p class="form__payment-text">Спосіб оплати</p>
+
+        <div class="payment-card">
+          <img class="payment-card__visa" src="./images/visa.png" alt="visa">
+          <span class="payment-card__value">Карта Monobank</span>
+          <svg class="payment-card__icon">
+            <use href="./images/symbol-defs.svg#Arrow"></use>
+          </svg>
+        </div>
+      </button>
+    
+      <ul class="payment-card-list">
+        <li class="payment-card-item">
+          <button class="payment-card-button" type="button">
+            Карта Monobank
+          </button>
+        </li>
+        <li class="payment-card-item">
+          <button class="payment-card-button" type="button">
+            Карта Privatbank
+          </button>
+        </li>
+      </ul>
+      <div class="session-info__item session-info__item--is-hidden">
+        <p class="session-info__label">Вартість</p>
+        <p class="session-info__value"><span>300</span> грн</p>
+      </div>
+      <button class="button form__button-payment" type="submit">Запланувати сессію</button>
+    </div>
+
   </form>
 </div>
+
 </section>
-
-
-
-
 
 
 

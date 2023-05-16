@@ -989,6 +989,7 @@ td:not(:last-child) {
         background: rgba(121, 91, 218, 0.2);
     }
 }
+
 .session__registration {
     position: fixed;
     top: 0;
@@ -1000,6 +1001,7 @@ td:not(:last-child) {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-y: scroll;
 }
 .reg__session {
     position: relative;
@@ -1007,6 +1009,8 @@ td:not(:last-child) {
     border-radius: 8px;
     width: 520px;
     padding: 30px;
+    margin-top: 30%;
+    margin-bottom: 2%;
 }
 .close {
     position: absolute;
@@ -1063,9 +1067,6 @@ td:not(:last-child) {
     }
 
 }
-.states__block {
-
-}
 .type__session-body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -1094,6 +1095,89 @@ td:not(:last-child) {
         }
     }
 }
+
+.choose__day {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(34, 43, 64, 0.1);
+    p {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.4);
+    }
+}
+.choose__day-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: #222B40;
+    margin-bottom: 10px;
+}
+.choose__day-box {
+    background: #F3F3F3;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.month-controls {
+    display: flex;
+    justify-content: space-between;
+}
+.month {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+}
+.controls__arrows {
+    button {
+        border: none;
+        background: none;
+    }
+}
+.week__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    li {
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+        align-items: center;
+    }
+    span {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.4);
+        margin-bottom: 8px;
+    }
+    button {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+        border: none;
+        border-radius: 20px;
+        padding: 7px 10px;
+        background: transparent;
+    }
+    .num_active {
+        background: #795BDA;
+        color: #fff; 
+    }
+    .no_active {
+        color: rgba(34, 43, 64, 0.3);
+    }
+}
+
 
 .choose__time {
     border-top: 1px solid rgba(34, 43, 64, 0.1);
@@ -1146,6 +1230,235 @@ td:not(:last-child) {
 }
 
     
+/*--------------------- payment form -----------------------*/
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+
+    @media screen and (min-width: 744px) {
+       
+    }
+
+    @media screen and (min-width: 1280px) {
+        
+    }
+
+    .form__input {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid #222B40;
+        cursor: pointer;
+        transition: border-bottom 250ms ease-in-out;
+    
+        @media screen and (min-width: 1280px) {
+            margin-bottom: 20px;
+        }
+
+        &:hover,
+        &:focus {
+            border-bottom: 1px solid #795BDA;
+        }
+
+        &:hover::placeholder,
+        &:focus::placeholder {
+            color: #795BDA;
+        }
+        
+
+        &::placeholder {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 100%;
+            letter-spacing: -0.01em;
+            color: rgba(34, 43, 64, 0.4);
+            transition: color 250ms ease-in-out;
+        }
+    }
+
+    .form__payment-method {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        margin-bottom: 30px;
+        background-color: transparent;
+        border: none;
+
+        &:hover .form__payment-text,
+        &:focus .form__payment-text {
+            color: #795BDA;
+        }
+
+        &:hover .payment-card,
+        &:focus .payment-card {
+            border-bottom: 1px solid #795BDA;
+        }
+
+        .form__payment-text {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 100%;
+            letter-spacing: -0.01em;
+            color: rgba(34, 43, 64, 0.4);
+            margin-bottom: 14px;
+            transition: color 250ms ease-in-out;
+
+            @media screen and (min-width: 1280px) {
+                margin-bottom: 12px;
+            }
+
+            @media screen and (min-width: 1280px) {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .form__button-payment {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        color: #FFFFFF;
+
+        background: #795BDA;
+        border-radius: 150px;
+        height: 46px;
+        border: transparent;
+    }
+}
+
+.session-info__item--is-hidden {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: flex-end;
+
+    @media screen and (min-width: 744px) {
+     
+    }
+
+    @media screen and (min-width: 1280px) {
+        display: flex;
+    }
+
+    .session-info__label,
+    .session-info__value {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+        margin-right: 20px;
+    }
+
+    .session-info__value {
+        font-weight: 600;
+
+        span {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 100%;
+        }
+    }
+}
+
+
+//payment-card
+.payment-card {
+width: 100%;
+display: flex;
+align-items: center;
+border: none;
+border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+padding: 0;
+padding-bottom: 10px;
+transition: border-bottom 250ms ease-in-out;
+
+.payment-card__visa {
+width: 32.86px;
+height: 11.22px;
+margin-right: 10px;
+}
+
+.payment-card__value {
+font-family: 'Golos Text';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 100%;
+letter-spacing: -0.01em;
+color: #222B40;
+}
+}
+
+.payment-card__icon {
+width: 11px;
+height: 6px;
+transform: rotate(0deg) scale(1.0);
+transition: transform 250ms ease-in-out;
+margin-left: auto;
+}
+
+.payment-card.rotated .payment-card__icon {
+transform: rotate(180deg) scale(1.1);
+}
+
+.payment-card-list {
+z-index: 1;
+width: 173px;
+position: relative;
+top: -30px;
+overflow: hidden;
+max-height: 0;
+background-color: #FFFFFF;
+border-radius: 8px;
+transition: max-height .3s ease-in-out;
+}
+
+.payment-card-item {
+padding: 0 10px;
+
+&:not(:last-child) {
+padding-top: 10px;
+margin-bottom: 8px;
+}
+
+&:not(:first-child) {
+padding-bottom: 10px;
+}
+}
+
+.payment-card-button {
+height: 32px;
+width: 100%;
+background-color: #FFFFFF;
+border-radius: 100px;
+border: 1px solid transparent;
+cursor: pointer;
+transition: color .3s ease-in-out, background-color .3s ease-in-out;
+
+&:hover {
+background-color: #F3F3F3;
+}
+
+&.active {
+background-color: rgba(121, 91, 218, 0.1);
+color: #795BDA;
+}
+}
+
+
+
+
+
 /*================================================================================================*/
 /*====================================== Media queries ===========================================*/
 /*================================================================================================*/
@@ -1433,6 +1746,25 @@ td:not(:last-child) {
     }
     .designations {
         grid-template-columns: 1fr;
+    }
+
+
+    .reg__session {
+        width: 370px;
+    }
+    .type__session-body {
+        grid-template-columns: 1fr 1fr;
+    }
+    .type__session-item {
+        margin: 4px;
+        padding: 10px 16px;
+        justify-content: center;
+    }
+    .choose__time-body {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .controls__arrows button {
+        margin-left: 10px;
     }
 }
 
