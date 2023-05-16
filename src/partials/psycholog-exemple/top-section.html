@@ -9,6 +9,9 @@
           <div class="card__info">
             <h3>Іван Виговський</h3>
             <p>3 роки практики</p>
+            <div class="grey__skills">
+              Психолог, психотерапевт в Гештальт-підході, травматерапевт
+            </div>
             <div class="card__price">900<span>грн/год</span></div>
 
             <button class="write-btn">
@@ -20,7 +23,9 @@
           </div>
         </div>
       </aside>
+
       <div class="psycholog__content">
+
         <div class="psycholog__video">
           <img src="./images/psycholog-video.jpg" alt="" />
           <div class="info_video">
@@ -33,26 +38,64 @@
           </button>
         </div>
 
-        <div class="psycholog__content-wrapper">
-          <h2>Про психолога</h2>
-          <div class="psycholog__skills">
-            <div class="skill-box">
-              <span>23</span>
-              <p>Сеанси провів на платформі</p>
+        <div class="edu__state">
+          <h2>З ким я працюю</h2>
+          <div class="states__block seans-block">
+            <div class="state__item">
+              <svg class="person-seans" width="22" height="22">
+                <use href="./images/symbol-defs.svg#icon-user-circle"></use>
+              </svg>
+              <span>Дорослі</span>
             </div>
-            <div class="skill-box">
-              <span>19</span>
-              <p>Позитивних відгуків</p>
+            <div class="state__item">
+              <svg class="person-seans" width="25" height="22">
+                <use href="./images/symbol-defs.svg#icon-face-child"></use>
+              </svg>
+              <span>Діти</span>
             </div>
-            <div class="skill-box">
-              <span>3</span>
-              <p>Профільні статті</p>
-            </div>
-            <div class="skill-box">
-              <span>2</span>
-              <p>Ексспертні вебінари</p>
+            <div class="state__item">
+              <svg class="person-seans" width="28" height="22">
+                <use href="./images/symbol-defs.svg#icon-test-person-purple"></use>
+              </svg>
+              <span>Пари (Сімʼї)</span>
             </div>
           </div>
+          <h2>З чим я працюю</h2>
+          <div class="states__block">
+            <div class="state__item">
+               <img src="./images/svg-mysense/1.svg" alt="">
+              <span>Депресія, стрес</span>
+            </div>
+            <div class="state__item">
+              <img src="./images/svg-mysense/2.svg" alt="">
+              <span>Залежність (алкогольна, наркотична, ігрова і т.д.)</span>
+            </div>
+            <div class="state__item">
+              <img src="./images/svg-mysense/3.svg" alt="">
+              <span>Хронічні болі</span>
+            </div>
+            <div class="state__item">
+              <img src="./images/svg-mysense/4.svg" alt="">
+              <span>Тяжке захворювання</span>
+            </div>
+            <div class="state__item">
+              <img src="./images/svg-mysense/5.svg" alt="">
+              <span>Розлад харчової поведінки</span>
+            </div>
+            <div class="state__item">
+              <img src="./images/svg-mysense/6.svg" alt="">
+              <span>Постійні конфлікти/охолодження стосунків</span>
+            </div>
+            <div class="state__item">
+              <img src="./images/svg-mysense/7.svg" alt="">
+              <span>Відносини на відстані </span>
+            </div>
+            <div class="state__item">
+              <img src="./images/svg-mysense/8.svg" alt="">
+              <span>Інше</span>
+            </div>
+          </div>
+          <h2 class="psycholog__head" >Про мене</h2>
           <div class="psycholog__descr">
             <p>
               Близько 10 років я працював управлінцем. Мені подобалася моя
@@ -75,8 +118,253 @@
           </div>
         </div>
 
+        <!-- Work schedule -->
+        <div class="work__schedule">
+          <h2>Робочий графік</h2>
+          <div class="work__schedule-wrapper">
+            <div class="work__schedule-controls">
+              <div class="work__schedule-date">
+                <span>3 квітня</span> - <span>9 квітня</span>
+              </div>
+              <div class="work__schedule-arrows">
+                <button class="btn__schedule" ><img src="./images/svg-mysense/arrow_btns-prew.svg" alt=""></button>
+                <button class="btn__schedule" ><img src="./images/svg-mysense/arrow_btns-next.svg" alt=""></button>
+              </div>
+            </div>
+            <div class="work__schedule-weeks">
+              <button class="days day_active">
+                <span class="day__week">Пн</span>
+                <div class="num__day">3 <span class="show-month">квітня</span></div>
+              </button>
+               <button class="days">
+                <span class="day__week">Вт</span>
+                <div class="num__day">4 <span>квітня</span></div>
+              </button>
+              <button class="days">
+                <span class="day__week">Ср</span>
+                <div class="num__day">5 <span>квітня</span></div>
+              </button>
+              <button class="days">
+                <span class="day__week">Чт</span>
+                <div class="num__day">6 <span>квітня</span></div>
+              </button>
+              <button class="days">
+                <span class="day__week">Пт</span>
+                <div class="num__day">7 <span>квітня</span></div>
+              </button>
+              <button class="days">
+                <span class="day__week">Сб</span>
+                <div class="num__day">8 <span>квітня</span></div>
+              </button>
+              <button class="days">
+                <span class="day__week">Нд</span>
+                <div class="num__day">9 <span>квітня</span></div>
+              </button>
+            </div>
+
+            <div class="hours__work">
+              <h3 class="hours__work-title">Доступний час (за Києвом)</h3>
+              <div class="hours__work-body">
+                <button class="hour-btn"><span>7:00 - 7:50</span></button>
+                <button class="hour-btn"><span>8:00 - 8:50</span></button>
+                <button class="hour-btn"><span>9:00 - 9:50</span></button>
+                <button class="hour-btn"><span>10:00 - 10:50</span></button>
+                <button class="hour-btn"><span>11:00 - 11:50</span></button>
+                <button class="hour-btn"><span>12:00 - 12:50</span></button>
+                <button class="hour-btn"><span>13:00 - 13:50</span></button>
+                <button class="hour-btn"><span>14:00 - 14:50</span></button>
+                <button class="hour-btn"><span>15:00 - 15:50</span></button>
+                <button class="hour-btn"><span>16:00 - 16:50</span></button>
+                <button class="hour-btn"><span>17:00 - 17:50</span></button>
+                <button class="hour-btn"><span>18:00 - 18:50</span></button>
+                <button class="hour-btn"><span>19:00 - 19:50</span></button>
+                <button class="hour-btn"><span>20:00 - 20:50</span></button>
+                <button class="hour-btn"><span>21:00 - 21:50</span></button>
+                <button class="hour-btn"><span>22:00 - 22:50</span></button>
+                <button class="hour-btn"><span>23:00 - 23:50</span></button>
+              </div>
+            </div>
+
+          </div>
+            <!-- <div class="schedule-block_wrap">
+              <table class="work__schedule_exemple" >
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Понеділок<br><span>3 квітня</span></th>
+                    <th>Вівторок<br><span>4 квітня</span></th>
+                    <th>Середа<br><span>5 квітня</span></th>
+                    <th>Четвер<br><span>6 квітня</span></th>
+                    <th>П'ятниця<br><span>7 квітня</span></th>
+                    <th>Субота<br><span>8 квітня</span></th>
+                    <th>Неділя<br><span>9 квітня</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="cell__time">9:00</td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                  </tr>
+                  <tr>
+                    <td class="cell__time">10:00</td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                  </tr>
+                  <tr>
+                    <td class="cell__time">11:00</td>
+                    <td><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                  </tr>
+                  <tr>
+                    <td class="cell__time">12:00</td>
+                    <td><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                  </tr>
+                  <tr>
+                    <td class="cell__time">13:00</td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                  </tr>
+                  <tr>
+                    <td class="cell__time">14:00</td>
+                    <td><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                  </tr>
+                  <tr>
+                    <td class="cell__time">15:00</td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                  </tr>
+                  <tr>
+                    <td class="cell__time">16:00</td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                  </tr>
+                  <tr>
+                    <td class="cell__time">17:00</td>
+                    <td><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                  </tr>
+                  <tr>
+                    <td class="cell__time">18:00</td>
+                    <td><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                  </tr>
+                  <tr>
+                    <td  class="cell__time">19:00</td>
+                    <td><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                  </tr>
+                  <tr>
+                    <td  class="cell__time">20:00</td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td class="booked"><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                    <td class="not__work" ><a href="#">+</a></td>
+                  </tr>
+                  <tr>
+                    <td  class="cell__time">21:00</td>
+                    <td><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td><a href="#">+</a></td>
+                    <td class="not__work"><a href="#">+</a></td>
+                    <td class="not__work"><a href="#">+</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div> -->
+
+          <!-- <div class="designations">
+            <div class="available"><span></span>Доступно для бронювання</div>
+            <div class="busy"><span></span>Зайнято</div>
+          </div> -->
+        </div>    
+
+        <div class="psycholog__content-wrapper">
+          <h2>Статистика</h2>
+          <div class="psycholog__skills">
+            <div class="skill-box">
+              <span>23</span>
+              <p>Сеанси провів на платформі</p>
+            </div>
+            <div class="skill-box">
+              <span>19</span>
+              <p>Позитивних відгуків</p>
+            </div>
+            <div class="skill-box">
+              <span>3</span>
+              <p>Профільні статті</p>
+            </div>
+            <div class="skill-box">
+              <span>2</span>
+              <p>Ексспертні вебінари</p>
+            </div>
+          </div>
+        </div>
+
         <div class="education">
-          <h2>Освіта</h2>
+          <h2>Моя освіта</h2>
           <div class="education__items item">
             <div class="item__content">
               <div class="item__wrap">
@@ -85,14 +373,14 @@
               <div class="item__text">
                 <ul class="edu__list">
                   <li>
-                    <div class="edu-date">2007 — 2012</div>
+                    <div class="edu-date">2012</div>
                     <span
                       >ДНУ ім. Олеся Гончара - диплом спеціаліста за
                       спеціальністю "Психологія"<img src="./images/ok.svg" alt=""></span
                     >
                   </li>
                   <li>
-                    <div class="edu-date">2013 — 2014</div>
+                    <div class="edu-date">2014</div>
                     <span
                       >Lions Quest - "Соціальні та емоційні компетентності ХХІ
                       століття"<img src="./images/ok.svg" alt=""></span>
@@ -107,14 +395,14 @@
               <div class="item__text">
                 <ul class="edu__list">
                   <li>
-                    <div class="edu-date">2007 — 2012</div>
+                    <div class="edu-date">2012</div>
                     <span
                       >ДНУ ім. Олеся Гончара - диплом спеціаліста за
                       спеціальністю "Психологія"<img src="./images/ok.svg" alt=""></span
                     >
                   </li>
                   <li>
-                    <div class="edu-date">2013 — 2014</div>
+                    <div class="edu-date">2014</div>
                     <span
                       >Lions Quest - "Соціальні та емоційні компетентності ХХІ
                       століття"<img src="./images/ok.svg" alt=""></span>
@@ -136,82 +424,7 @@
             </div>
           </div>
         </div>
-
-        <div class="edu__state">
-          <h2>Типи сеансів</h2>
-          <div class="states__block seans-block">
-            <div class="state__item">
-              <svg class="person-seans" width="22" height="22">
-                <use href="./images/symbol-defs.svg#icon-user-circle"></use>
-              </svg>
-              <span>Особиста</span>
-            </div>
-            <div class="state__item">
-              <svg class="person-seans" width="28" height="22">
-                <use href="./images/symbol-defs.svg#icon-test-person-purple"></use>
-              </svg>
-              <span>Парна (Сімейна)</span>
-            </div>
-            <div class="state__item">
-              <svg class="person-seans" width="25" height="22">
-                <use href="./images/symbol-defs.svg#icon-face-child"></use>
-              </svg>
-              <span>Дитяча</span>
-            </div>
-          </div>
-          <h2>Стани з якими працює</h2>
-          <div class="states__block">
-            <div class="state__item">
-              <svg class="icon-cloud-drizzle" width="26" height="26">
-                <use href="./images/symbol-defs.svg#icon-cloud-drizzle"></use>
-              </svg>
-              <span>Дипресія</span>
-            </div>
-            <div class="state__item">
-              <svg class="icon-cloud-drizzle" width="26" height="26">
-                <use href="./images/symbol-defs.svg#icon-cloud-drizzle"></use>
-              </svg>
-              <span>Тривога</span>
-            </div>
-            <div class="state__item">
-              <svg class="icon-cloud-drizzle" width="26" height="26">
-                <use href="./images/symbol-defs.svg#icon-cloud-drizzle"></use>
-              </svg>
-              <span>Стрес</span>
-            </div>
-            <div class="state__item">
-              <svg class="icon-cloud-drizzle" width="26" height="26">
-                <use href="./images/symbol-defs.svg#icon-cloud-drizzle"></use>
-              </svg>
-              <span>Смуток</span>
-            </div>
-            <div class="state__item">
-              <svg class="icon-cloud-drizzle" width="26" height="26">
-                <use href="./images/symbol-defs.svg#icon-cloud-drizzle"></use>
-              </svg>
-              <span>Гнів</span>
-            </div>
-            <div class="state__item">
-              <svg class="icon-cloud-drizzle" width="26" height="26">
-                <use href="./images/symbol-defs.svg#icon-cloud-drizzle"></use>
-              </svg>
-              <span>Вигорання</span>
-            </div>
-            <div class="state__item">
-              <svg class="icon-cloud-drizzle" width="26" height="26">
-                <use href="./images/symbol-defs.svg#icon-cloud-drizzle"></use>
-              </svg>
-              <span>Стосунки </span>
-            </div>
-            <div class="state__item">
-              <svg class="icon-cloud-drizzle" width="26" height="26">
-                <use href="./images/symbol-defs.svg#icon-cloud-drizzle"></use>
-              </svg>
-              <span>Самотність</span>
-            </div>
-          </div>
-        </div>
-
+  
         <div class="platform__content">
           <!-- button -->
           <div class="platform__title-block">
@@ -863,174 +1076,6 @@
           </div>
         </div>
 
-        <!-- Work schedule -->
-        <div class="work__schedule">
-          <h2>Робочий графік</h2>
-          <div class="work__schedule-wrapper">
-            <div class="work__schedule-controls">
-              <div class="work__schedule-date">
-                <span>3 квітня</span> - <span>9 квітня</span>
-              </div>
-              <div class="work__schedule-arrows">
-                <button class="btn__schedule" ><img src="./images/svg-mysense/arrow_btns-prew.svg" alt=""></button>
-                <button class="btn__schedule" ><img src="./images/svg-mysense/arrow_btns-next.svg" alt=""></button>
-              </div>
-            </div>
-            <div class="schedule-block_wrap">
-              <table class="work__schedule_exemple" >
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Понеділок<br><span>3 квітня</span></th>
-                    <th>Вівторок<br><span>4 квітня</span></th>
-                    <th>Середа<br><span>5 квітня</span></th>
-                    <th>Четвер<br><span>6 квітня</span></th>
-                    <th>П'ятниця<br><span>7 квітня</span></th>
-                    <th>Субота<br><span>8 квітня</span></th>
-                    <th>Неділя<br><span>9 квітня</span></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="cell__time">9:00</td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                  </tr>
-                  <tr>
-                    <td class="cell__time">10:00</td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                  </tr>
-                  <tr>
-                    <td class="cell__time">11:00</td>
-                    <td><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                  </tr>
-                  <tr>
-                    <td class="cell__time">12:00</td>
-                    <td><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                  </tr>
-                  <tr>
-                    <td class="cell__time">13:00</td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                  </tr>
-                  <tr>
-                    <td class="cell__time">14:00</td>
-                    <td><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                  </tr>
-                  <tr>
-                    <td class="cell__time">15:00</td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                  </tr>
-                  <tr>
-                    <td class="cell__time">16:00</td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                  </tr>
-                  <tr>
-                    <td class="cell__time">17:00</td>
-                    <td><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                  </tr>
-                  <tr>
-                    <td class="cell__time">18:00</td>
-                    <td><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                  </tr>
-                  <tr>
-                    <td  class="cell__time">19:00</td>
-                    <td><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                  </tr>
-                  <tr>
-                    <td  class="cell__time">20:00</td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td class="booked"><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                    <td class="not__work" ><a href="#">+</a></td>
-                  </tr>
-                  <tr>
-                    <td  class="cell__time">21:00</td>
-                    <td><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td><a href="#">+</a></td>
-                    <td class="not__work"><a href="#">+</a></td>
-                    <td class="not__work"><a href="#">+</a></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="designations">
-            <div class="available"><span></span>Доступно для бронювання</div>
-            <div class="busy"><span></span>Зайнято</div>
-          </div>
-        </div>    
-
         <div class="rewiev">
           <div class="rewiev__title-block">
             <h2>Відгуки про психолога</h2>
@@ -1095,7 +1140,77 @@
       </div>
     </div>
   </div>
+
+  <!-- Запис на сесію -->
+<div class="session__registration">
+  <form action="" class="reg__session" >
+    <a href="#" class="close">x</a>
+    <div class="reg__session-title">Запис на сесію</div>
+    <div class="reg__session-name">
+      <img src="./images/register-session/psycholog.png" alt="">
+      <div class="name__doc-body">
+        <div class="name__doc">Іван Виговський</div>
+        <span>5 років практики</span>
+      </div>
+    </div>
+
+    <div class="type__session">
+      <h2>Оберіть тип сесії</h2>
+      <div class="type__session-body">
+        <button class="type__session-item">
+          <svg class="person-seans" width="22" height="22">
+            <use href="./images/symbol-defs.svg#icon-user-circle"></use>
+          </svg>
+          <span>Дорослі</span>
+        </button>
+        <button class="type__session-item">
+          <svg class="person-seans" width="28" height="22">
+            <use href="./images/symbol-defs.svg#icon-test-person-purple"></use>
+          </svg>
+          <span>Пари (Сімʼї)</span>
+        </button>
+        <button class="type__session-item">
+          <svg class="person-seans" width="25" height="22">
+            <use href="./images/symbol-defs.svg#icon-face-child"></use>
+          </svg>
+          <span>Діти</span>
+        </button>
+      </div>
+    </div> 
+
+    <div class="choose__time">
+      <h3 class="choose__time-title">Оберіть зручний час (за Києвом) </h3>
+      <p>Не обовʼязково</p>
+      <div class="choose__time-body">
+        <button class="choose__time-btn"><span>7:00 - 7:50</span></button>
+        <button class="choose__time-btn"><span>8:00 - 8:50</span></button>
+        <button class="choose__time-btn"><span>9:00 - 9:50</span></button>
+        <button class="choose__time-btn"><span>10:00 - 10:50</span></button>
+        <button class="choose__time-btn"><span>11:00 - 11:50</span></button>
+        <button class="choose__time-btn"><span>12:00 - 12:50</span></button>
+        <button class="choose__time-btn"><span>13:00 - 13:50</span></button>
+        <button class="choose__time-btn"><span>14:00 - 14:50</span></button>
+        <button class="choose__time-btn"><span>15:00 - 15:50</span></button>
+        <button class="choose__time-btn"><span>16:00 - 16:50</span></button>
+        <button class="choose__time-btn"><span>17:00 - 17:50</span></button>
+        <button class="choose__time-btn"><span>18:00 - 18:50</span></button>
+        <button class="choose__time-btn"><span>19:00 - 19:50</span></button>
+        <button class="choose__time-btn"><span>20:00 - 20:50</span></button>
+        <button class="choose__time-btn"><span>21:00 - 21:50</span></button>
+        <button class="choose__time-btn"><span>22:00 - 22:50</span></button>
+        <button class="choose__time-btn"><span>23:00 - 23:50</span></button>
+      </div>
+    </div>
+
+  </form>
+</div>
 </section>
+
+
+
+
+
+
 
 <script>
   const itemWraps = document.querySelectorAll('.item__wrap');

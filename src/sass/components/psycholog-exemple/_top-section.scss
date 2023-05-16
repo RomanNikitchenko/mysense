@@ -29,10 +29,22 @@
     }
     p {
         font-weight: 500;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 140%;
         letter-spacing: -0.05em;
         color: rgb(34, 43, 64);
+        margin-bottom: 10px;
+    }
+    .grey__skills {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.7);
+
+        background: rgba(34, 43, 64, 0.05);
+        border-radius: 10px;
+        padding: 10px;
         margin-bottom: 20px;
     }
 }
@@ -190,6 +202,9 @@
         color: #222B40;
     }
 }
+.psycholog__head {
+    margin-top: 40px;
+}
 .psycholog__descr {
     background: #fff;
     border-radius: 8px;
@@ -273,7 +288,7 @@
         color: #222B40;
         display: flex;
         .edu-date {
-            width: 140px;
+            width: 70px;
         }
         span {
             font-weight: 500;
@@ -357,8 +372,12 @@
     align-items: center;
     background: #FFFFFF;
     border-radius: 8px;
-    padding: 8px 16px;
+    padding: 8px 20px;
     margin: 4px 2px;
+    img {
+        width: 36px;
+        height: 36px;
+    }
     span {
         font-weight: 600;
         font-size: 16px;
@@ -368,7 +387,6 @@
         margin-left: 12px;
         margin-bottom: 2px;
     }
-   
 }
 .icon-cloud-drizzle {
     fill: #795BDA;
@@ -652,12 +670,13 @@
 .work__schedule-controls {
     display: flex;
     align-items: center;
-    padding: 30px;
+    justify-content: space-between;
+    padding: 30px 32px 10px;
 }
 .work__schedule-date {
     span {
         font-weight: 600;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 100%;
         letter-spacing: -0.06em;
         color: #222B40;
@@ -686,6 +705,95 @@
         height: 12px;
     }
 }
+.work__schedule-weeks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 10px;
+}
+.days {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2px;
+    background: rgba(34, 43, 64, 0.05);
+    padding: 8px 32px;
+    border-radius: 15px;
+    border: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.day__week {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    margin-right: 8px;
+    color: rgba(34, 43, 64, 0.4);
+}
+.day_active {
+    background: #795BDA;
+    color: #fff;
+    padding: 8px 16px;
+    .num__day, .day__week {
+        color: #fff;
+    }
+}
+.num__day {
+    display: flex;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    span {
+        display: none;
+    }
+    .show-month {
+        display: block;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        margin-left: 3px;
+    }
+}
+.hours__work {
+    padding: 30px;
+}
+.hours__work-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: #222B40;
+    margin-bottom: 20px;
+}
+.hours__work-body {
+}
+.hour-btn {
+    border: none;
+    background: #F3F3F3;
+    border-radius: 20px;
+    margin: 2px;
+    width: 120px;
+    padding: 6px 0;
+    span {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+    }
+    &:hover {
+        background: rgba(121, 91, 218, 0.1);
+        cursor: pointer;
+    span {
+        color: #795BDA;
+    }
+    }
+}
+
 .work__schedule_exemple {
     width: 100%;
    
@@ -881,14 +989,172 @@ td:not(:last-child) {
         background: rgba(121, 91, 218, 0.2);
     }
 }
+.session__registration {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(34, 43, 64, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.reg__session {
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 8px;
+    width: 520px;
+    padding: 30px;
+}
+.close {
+    position: absolute;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+    font-size: 30px;
+    top: 15px;
+    right: 15px;
+}
+.reg__session-title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    margin-bottom: 30px;
+}
+.reg__session-name {
+    border-top: 1px solid rgba(34, 43, 64, 0.1);
+    border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    img {
+        width: 72px;
+        margin-right: 15px;
+    }
+}
+.name__doc-body {
+    span {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.9);
+    }
+}
+.name__doc {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+}
+.type__session {
+    margin-top: 30px;
+    h2 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        margin-bottom: 20px;
+    }
 
+}
+.states__block {
 
+}
+.type__session-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.type__session-item {
+    border: none;
+    background: #F3F3F3;
+    border-radius: 30px;
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    margin: 2px;
+    cursor: pointer;
+    span {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+        margin-left: 12px;
+    }
+    &:focus {
+        background: rgba(121, 91, 218, 0.1);
+        span {
+            color: #795BDA;
+        }
+    }
+}
 
+.choose__time {
+    border-top: 1px solid rgba(34, 43, 64, 0.1);
+    margin-top: 30px;
+    padding-top: 30px;
+    h3 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+    }
+    p {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.4);
+        margin-top: 10px;
+    }
+}
+
+.choose__time-body {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+}
+.choose__time-btn {
+    border: none;
+    background: #F3F3F3;
+    border-radius: 20px;
+    width: 100%;
+    padding: 6px 0;
+    cursor: pointer;
+    span {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+    }
+    &:focus {
+        background: rgba(121, 91, 218, 0.1);
+        span {
+            color: #795BDA;
+        }
+    }
+
+}
+
+    
+/*================================================================================================*/
+/*====================================== Media queries ===========================================*/
+/*================================================================================================*/
 
 
 @media screen and (max-width: 1280px) {
     .psycholog__content {
         width: 100%;
+        overflow: hidden;
     }
     .grey_bg {
         max-width: 192px;
@@ -945,6 +1211,7 @@ td:not(:last-child) {
         display: grid;
         grid-template-columns: 208px 1fr;
         gap: 20px;
+       
     }
     .psycholog__skills {
         grid-template-columns: 1fr 1fr;
@@ -1048,9 +1315,18 @@ td:not(:last-child) {
     .cell__time {
         font-size: 11px;
     }
-
+    .work__schedule-weeks {
+        overflow-x: scroll;
+    }
+    .states__block {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .hour-btn {
+        width: 116px;
+    }
 }
-
 
 @media screen and (max-width: 744px) {
     .wrap__main {
