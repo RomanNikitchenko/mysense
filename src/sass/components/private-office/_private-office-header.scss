@@ -1,0 +1,33 @@
+.page-header__button.login, 
+.page-header__button.choose-person,
+.site-nav__item:nth-child(6),
+.site-nav__item:nth-child(7) {
+    display: none;
+}
+
+.page-header__logo--padding-top {
+    .logo__header-icon {
+        width: 103.24;
+        height: 19.19;
+    }
+}
+
+.language-menu {
+    margin-right: 8px;
+}
+
+.page-header__private-office-menu {
+    display: flex;
+
+    .page-header__button {
+        width: 40px;
+        height: 40px;
+        border: 1px solid red;
+        overflow: hidden;
+
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+
+}
