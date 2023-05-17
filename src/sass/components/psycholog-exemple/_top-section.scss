@@ -1002,6 +1002,8 @@ td:not(:last-child) {
     align-items: center;
     justify-content: center;
     overflow-y: scroll;
+
+    display: none;
 }
 .reg__session {
     position: relative;
@@ -1095,6 +1097,52 @@ td:not(:last-child) {
         }
     }
 }
+
+.warning_message {
+    padding: 40px 64px;
+    background: #F3F3F3;
+    border-radius: 10px;
+    margin-top: 30px;
+    display: none;
+}
+.no_available_dates {
+    text-align: center;
+    h3 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        margin-bottom: 20px;
+    }
+    p {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;
+        text-align: center;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.4);
+        margin: 0 auto 20px;
+        max-width: 180px;
+    }
+    button {
+        border: none;
+        padding: 16px 24px;
+        background: #795BDA;
+        border-radius: 25px;
+
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        color: #FFFFFF;
+    }
+}
+.comfortable_time {
+    display: none;
+}
+
 
 .choose__day {
     margin-top: 30px;
@@ -1456,6 +1504,184 @@ color: #795BDA;
 }
 
 
+.session_booked-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(34, 43, 64, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+    
+}
+.session_booked {
+    max-width: 412px;
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 30px;
+    h3 {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 100%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+    }
+}
+.session_booked-close {
+    width: 15px;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+}
+.session_booked-body {
+    p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+    }
+    button {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        color: #FFFFFF;
+
+        background: #795BDA;
+        border-radius: 30px;
+        padding: 16px 24px;
+        border: none;
+        margin-top: 20px;
+    }
+
+}
+.session_booked-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 30px;
+    border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    padding-bottom: 15px;
+    li {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        margin-bottom: 5px;
+        span {
+            text-align: right;
+            font-weight: 600;
+        }
+    }
+}
+.questionnaire_wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(34, 43, 64, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+}
+.questionnaire_body {
+    width: 440px;
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 30px;
+    h3  {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 100%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+        margin-bottom: 20px;
+    }
+}
+.questionnaire-close {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    width: 15px;
+}
+.questionnaire__form {
+    button {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        color: #FFFFFF;
+
+        padding: 16px 24px;
+        background: #795BDA;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        &:hover {
+            background: #6d52c6;
+        }
+    }
+
+}
+.block-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.user-box {
+    display: grid;
+    flex-direction: column;
+    margin-bottom: 20px;
+    label {
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: rgba(34, 43, 64, 0.4);
+        margin-bottom: 8px;
+    }
+    input, select {
+        border: none;
+        border-bottom: 1px solid #222B40;
+        padding-bottom: 5px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        &:focus {
+            outline: 0;
+            outline-offset: 0;
+            border-bottom: 1px solid #253968;  
+            
+        }
+    }
+    input::placeholder {
+        font-weight: 400;
+        color: rgba(34, 43, 64, 0.5);
+    }
+    option {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+    }
+}
 
 
 
@@ -1766,6 +1992,29 @@ color: #795BDA;
     .controls__arrows button {
         margin-left: 10px;
     }
+    .session_booked {
+        max-width: 370px;
+        h3 {
+            font-size: 28px;
+        }
+    }
+    .session_booked-close {
+        top: 39px;
+    }
+    .questionnaire_body {
+        width: 370px;
+        h3 {
+            font-size: 25px;
+        }
+    }
+    .block-input {
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+
+
+
+
 }
 
 //js
