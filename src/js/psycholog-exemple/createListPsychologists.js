@@ -33,10 +33,11 @@
                       />
                   </div>
                 </div>
-                </div>
+  
                 <div class="psychologists-slider-section__info">
                   <p>${name}</p>
-                </div>    
+                </div>   
+                 
               </li>
           `
     )
