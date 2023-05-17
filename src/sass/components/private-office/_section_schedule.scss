@@ -1,0 +1,204 @@
+
+.schedule-block_wrap {
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 835px;
+}
+.work__schedule_exemple {
+   width: 100%;
+   border-collapse: collapse;
+}
+.controls__wrap {
+    display: flex;
+    align-items: center;
+}
+.work__schedule-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 32px;
+    .list__btn {
+        background: rgba(121, 91, 218, 0.1);
+        border-radius: 30px;
+        border: none;
+        padding: 8px 16px;
+        color: #795BDA;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        &:hover {
+            background: rgba(121, 91, 218, 0.2);
+            cursor: pointer;
+        }
+    }
+}
+.work__schedule-date {
+    span {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        color: #222B40;
+    }
+}
+.work__schedule-arrows {
+    display: flex;
+    margin-left: 20px;
+    .btn__schedule {
+        background: rgba(34, 43, 64, 0.05);
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 2px;
+        border: none;
+        &:hover {
+            cursor: pointer;
+            background: rgba(34, 43, 64, 0.1);
+        }
+    }
+    img {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.cell__time {
+    background: transparent;
+    border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    padding: 0 10px;
+}
+th, td {
+    a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+    }
+}
+.td_active {
+    background: #D5CAF9 url('../images/add.png') no-repeat;
+    background-position: center;
+    border: 1px solid #D5CAF9;
+}
+th {
+    border-top: 1px solid rgba(34, 43, 64, 0.1);
+    border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    width: 105px;
+    height: 50px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    text-align: center;
+    span {
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.4);
+    }
+}
+th:not(:last-child) {
+    border-right: 1px solid rgba(34, 43, 64, 0.1);
+}
+td {
+    border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    width: 105px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+td:not(:last-child) {
+    border-right: 1px solid rgba(34, 43, 64, 0.1);
+}
+.schedule__info {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    padding: 20px;
+}
+
+// Картка клієнта для переносу
+.card__client {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06), 0px 10px 20px -8px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    max-width: 180px;
+    padding: 10px;
+}
+.card__client-name {
+    display: flex;
+    align-items: center;
+    img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+}
+.name__client {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    color: #795BDA;
+}
+.card__client-info {
+
+}
+.info__list {
+    list-style: none;
+    padding-left: 0;
+    li {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+}
+.card__client-btns {
+    .btns__list {
+        list-style: none;
+        padding-left: 0;
+        li {
+            border-top: 1px solid rgba(34, 43, 64, 0.1);
+            button {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 100%;
+                letter-spacing: -0.06em;
+                color: #795BDA;
+                padding: 10px 0;
+                border: none;
+                background: transparent;
+                display: block;
+                margin: 0 auto;
+                cursor: pointer;
+            }
+            .cancel_btn, .abolition {
+                color: #FF5C8D;
+            }
+        }
+    }
+    .abolition_list {
+        display: none;
+    }
+}
