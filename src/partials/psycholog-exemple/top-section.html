@@ -1178,6 +1178,19 @@
       </div>
     </div> 
 
+    <div class="warning_message">
+      <div class="no_available_dates">
+        <h3>У данного спеціаліста немає вільних дат на найближчий місяць</h3>
+        <p>Ви можете персонально домовитись з психологом у чаті</p>
+        <button>Домовитись про сесію в чаті</button>
+      </div>
+      <div class="no_available_dates comfortable_time">
+        <h3>Для того, щоб підібрати комфортний час для усіх — звʼяжіться з терапевтом, щоб домовитись про час консультації</h3>
+        <p>Ви можете персонально домовитись з психологом у чаті</p>
+        <button>Домовитись про сесію в чаті</button>
+      </div>
+    </div>
+
     <div class="choose__day">
       <h3 class="choose__day-title">Виберіть дату сесії </h3>
       <p>Не обовʼязково</p>
@@ -1281,6 +1294,79 @@
     </div>
 
   </form>
+</div>
+
+<!-- Сеанc заброньовано -->
+<div class="session_booked-wrap"> 
+  <div class="session_booked">
+    <div class="session_booked-close"><img src="./images/svg-mysense/close.svg" alt=""></div>
+    <h3>Сеанc заброньовано</h3>
+    <div class="session_booked-body">
+      <ul class="session_booked-list">
+        <li>Психолог<span>Іван Виговський</span></li>
+        <li>Тривалість<span>50 хв</span></li>
+        <li>Тип<span>Особиста</span></li>
+        <li>Дата<span>13 березня</span></li>
+        <li>Час<span>9:00 - 9:50</span></li>
+      </ul>
+      <p>Для того, щоб психолог краще підготувався до сенасу пропонуємо заповнити невелику анкету</p>
+      <button>Заповнити анкету</button>
+    </div>
+  </div>
+</div>
+
+<!-- Анкета для психолога -->
+<div class="questionnaire_wrap">
+  <div class="questionnaire_body">
+    <div class="questionnaire-close"><img src="./images/svg-mysense/close.svg" alt=""></div>
+    <h3>Анкета для психолога</h3>
+    <form action="" class="questionnaire__form">
+      <div class="block-input">
+        <div class="user-box">
+          <label>Вік</label>
+          <input required="true" name="" placeholder="Вкажіть ваш вік" type="text">
+      </div>
+      <div class="user-box">
+        <label>Сімейний стан</label>
+        <select name="select">
+          <!--Supplement an id here instead of using 'name'-->
+          <option value="value1" selected>Одружений(на)</option>
+          <option value="value2" >Не одружений(на)</option>
+          <option value="value3">Розлучений(на)</option>
+        </select>
+    </div>
+      </div>
+      <div class="user-box">
+        <label>Чи є у вас досвід роботи з психологом?</label>
+        <select name="select2">
+          <!--Supplement an id here instead of using 'name'-->
+          <option value="value1" selected>Так, є!</option>
+          <option value="value2" >Ні, немає!</option>
+        </select>
+       </div>
+       <div class="user-box">
+        <label>Коли був останній сеанс?</label>
+        <select name="select3">
+          <!--Supplement an id here instead of using 'name'-->
+          <option value="value1" selected>Більше року тому</option>
+          <option value="value2" >Менше року назад</option>
+        </select>
+       </div>
+       <div class="user-box">
+        <label>Скільки всього було сеансів?</label>
+        <select name="select3">
+          <!--Supplement an id here instead of using 'name'-->
+          <option value="value1" selected >Менше 10</option>
+          <option value="value2" >Більше 10</option>
+        </select>
+       </div>
+       <div class="user-box">
+        <label>Опишіть коротко вашу проблему</label>
+        <input required="true" name="" placeholder="Ваша проблема" type="text">
+       </div>
+       <button>Відправити анкету</button>
+    </form>
+  </div>
 </div>
 
 </section>
