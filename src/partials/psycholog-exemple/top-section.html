@@ -85,19 +85,28 @@
               <img src="./images/svg-mysense/5.svg" alt="" />
               <span>Розлад харчової поведінки</span>
             </div>
-            <div class="state__item">
-              <img src="./images/svg-mysense/6.svg" alt="" />
-              <span>Постійні конфлікти/охолодження стосунків</span>
-            </div>
-            <div class="state__item">
-              <img src="./images/svg-mysense/7.svg" alt="" />
-              <span>Відносини на відстані </span>
-            </div>
-            <div class="state__item">
-              <img src="./images/svg-mysense/8.svg" alt="" />
-              <span>Інше</span>
-            </div>
+
+            <span id="dots"></span>
+            <span id="more">
+              <div class="state__item">
+                <img src="./images/svg-mysense/6.svg" alt="" />
+                <span>Постійні конфлікти/охолодження стосунків</span>
+              </div>
+              <div class="state__item">
+                <img src="./images/svg-mysense/7.svg" alt="" />
+                <span>Відносини на відстані </span>
+              </div>
+              <div class="state__item state__item-last">
+                <img src="./images/svg-mysense/8.svg" alt="" />
+                <span>Інше</span>
+              </div>
+            </span>
           </div>
+          <button onclick="myreadMoreFunction()" id="myReadBtn">
+            <svg class="myReadBtn__icon">
+              <use href="./images/symbol-defs.svg#Arrow"></use>
+            </svg>
+          </button>
           <h2 class="psycholog__head">Про мене</h2>
           <div class="psycholog__descr">
             <p>
@@ -123,7 +132,7 @@
 
         <!-- Work schedule -->
         <div class="work__schedule">
-          <h2>Робочий графік</h2>
+          <h2>Графік вільних годин</h2>
           <div class="work__schedule-wrapper">
             <div class="work__schedule-controls">
               <div class="work__schedule-date">
@@ -281,7 +290,6 @@
                   <p>
                     Ви можете отримати копії дипломів та сертиифікатів психолога
                     на електронну пошту, щоб переконатися у достовірості
-                    вказаної іннформаціїї про освіту психологаа
                   </p>
                 </div>
               </div>
@@ -1264,4 +1272,19 @@
       }
     });
   });
+</script>
+<script>
+  function myreadMoreFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    moreText.style.display = "inline";
+  }
+}
 </script>
