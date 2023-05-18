@@ -1,9 +1,16 @@
 <section class="private-office-section">
   <div class="container private-office-section-container">
     <div class="flex-wrapper">
-        <div class="private-office">
-            
+
+        <div class="private-office js-menu-container-private-office" id="mobile-menu-private-office">
             <div class="private-office__block">
+
+                <button type="button" class="private-office__close-menu">
+                    <svg width="26" height="26">
+                        <use href="./images/symbol-defs.svg#close_40px"></use>
+                    </svg>
+                </button>
+
                 <div class="private-office__image-wrapper">
                     <div class="private-office__image-wrapper-border">
                         <img
@@ -13,9 +20,11 @@
                         />
                     </div>
                 </div>
+
                 <div class="private-office__info">
                   <h1 class="private-office__title">Іван Виговський</h1>
                 </div> 
+
             </div>
 
             <ul class="private-office__list">
@@ -27,22 +36,30 @@
                 <li class="private-office__list-item">Мої статті та вебінари</li>
             </ul>
 
-            <div class="private-office__block">
-                <div class="private-office__person">
-                    <img
-                        src="./images/our-team-desktop.jpg"
-                        class="private-office__image"
-                        alt="Фото Ярина Перекотиполе"
-                        />
+            <div class="private-office__exit">
+                <button class="private-office__exit-button">Вийти</button>
+            </div>
+
+
+            <div class="private-office__block-session">
+                <div class="private-office__person-session">
+                    <div class="private-office__image-session-border">
+                        <img
+                            src="./images/our-team-desktop.jpg"
+                            class="private-office__image-session"
+                            alt="Фото Ярина Перекотиполе"
+                            />
+                    </div>
                     <p>Ярина Перекотиполе</p>
                 </div>
                 <button type="button" class="private-office__button private-office__button--start-session">
                     Розпочати сессію
-                    <svg width="14" height="14">
-                    <use href="./images/symbol-defs.svg#test"></use>
+                    <svg width="12" height="12" class="private-office__icon">
+                        <use href="./images/symbol-defs.svg#test"></use>
                     </svg>
                 </button>
             </div>
         </div>
+
     </div>
 </section>
