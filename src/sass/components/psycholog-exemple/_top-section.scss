@@ -388,8 +388,23 @@
         margin-bottom: 2px;
     }
 }
+
 .icon-cloud-drizzle {
     fill: #795BDA;
+}
+#more {
+    display: none;
+}
+#myReadBtn {
+    border: none;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 9px 16px 7px;
+    margin-top: 5px;
+    .myReadBtn__icon {
+        width: 24px;
+        height: 12px;
+    }
 }
 
 .platform__content {
