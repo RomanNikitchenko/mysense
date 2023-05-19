@@ -11,6 +11,19 @@ import * as bodyScrollLock from 'body-scroll-lock';
     '.private-office__close-menu'
   );
 
+  function visuallyHidden() {
+    const width = window.innerWidth;
+
+    if (width > 1280) {
+      openMenuBtnPrivate.classList.add('active');
+      return;
+    }
+
+    beckdropMobileMenunPrivate.classList.add('visually-hidden');
+  }
+
+  visuallyHidden();
+
   const toggleMenu = () => {
     const width = window.innerWidth;
 
@@ -20,6 +33,8 @@ import * as bodyScrollLock from 'body-scroll-lock';
       openMenuBtnPrivate.getAttribute('aria-expanded') === 'true' || false;
     openMenuBtnPrivate.setAttribute('aria-expanded', !isMenuOpen);
     beckdropMobileMenunPrivate.classList.toggle('is-open');
+    beckdropMobileMenunPrivate.classList.toggle('visually-hidden');
+    openMenuBtnPrivate.classList.toggle('active');
 
     if (width <= 744) {
       const scrollLockMethod = !isMenuOpen
@@ -37,6 +52,8 @@ import * as bodyScrollLock from 'body-scroll-lock';
   window.matchMedia('(min-width: 1280px)').addEventListener('change', e => {
     if (!e.matches) return;
     beckdropMobileMenunPrivate.classList.remove('is-open');
+    beckdropMobileMenunPrivate.classList.remove('visually-hidden');
+    openMenuBtnPrivate.classList.add('active');
     openMenuBtnPrivate.setAttribute('aria-expanded', false);
     bodyScrollLock.enableBodyScroll(document.body);
   });
@@ -46,6 +63,8 @@ import * as bodyScrollLock from 'body-scroll-lock';
     .addEventListener('change', e => {
       if (!e.matches) return;
       beckdropMobileMenunPrivate.classList.remove('is-open');
+      beckdropMobileMenunPrivate.classList.add('visually-hidden');
+      openMenuBtnPrivate.classList.remove('active');
       openMenuBtnPrivate.setAttribute('aria-expanded', false);
       bodyScrollLock.enableBodyScroll(document.body);
     });
@@ -53,6 +72,8 @@ import * as bodyScrollLock from 'body-scroll-lock';
   window.matchMedia('(max-width: 743px)').addEventListener('change', e => {
     if (!e.matches) return;
     beckdropMobileMenunPrivate.classList.remove('is-open');
+    beckdropMobileMenunPrivate.classList.add('visually-hidden');
+    openMenuBtnPrivate.classList.remove('active');
     openMenuBtnPrivate.setAttribute('aria-expanded', false);
     bodyScrollLock.enableBodyScroll(document.body);
   });

@@ -23,12 +23,23 @@
     .page-header__button {
         width: 40px;
         height: 40px;
-        border: 1px solid rgb(151, 132, 132);
         overflow: hidden;
+        border: 1px solid transparent;
+        background-color: transparent;
 
         &:not(:last-child) {
             margin-right: 8px;
         }
     }
 
+    .page-header__button-user--image {
+        img {
+            width: 52px;
+        }
+    }
+
+    .page-header__button-user--image.active {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
+        border: 2px solid #795BDA;
+    }
 }
