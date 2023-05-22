@@ -6,6 +6,7 @@ function setPaddingRight() {
   const sliderSectionList = document.querySelector(
     '.psychologists-slider-section__list'
   );
+
   let width = window.innerWidth;
   let paddingRight;
 
