@@ -14,7 +14,7 @@ import ourTeam4Mobil2x from '../../images/ourTeam4Mobil2x.jpg';
 import ourTeam4Tablet2x from '../../images/ourTeam4Tablet2x.jpg';
 import ourTeam4Desktop2x from '../../images/ourTeam4Desktop2x.jpg';
 
-import HelloImg from '../../images/Hello.png';
+import HelloImg from '../../images/15hv.png';
 
 export const teamMembers = [
   {

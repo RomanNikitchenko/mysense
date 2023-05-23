@@ -157,9 +157,7 @@ function createImageCardsMarcup(Items) {
                             <img src="${photoSrc}" alt="${alt}" />
                         </picture>
                         <figcaption class="our-team__caption">
-                            <h3 class="our-team__name">${name}<span class="our-team__status ${
-        status ? 'online' : 'offline'
-      }"></span></h3>
+                            <h3 class="our-team__name">${name}</h3>
                             <p class="our-team__experience">${experience}</p>
                         </figcaption>
                     </figure>
@@ -180,9 +178,7 @@ function createImageCardsMarcup(Items) {
                           !friendly ? 'not--friendly' : ''
                         }">Записатись на сессію</button>
 
-                        <button type="button" class="our-team__details-button ${
-                          friendly ? 'friendly' : ''
-                        }">
+                        <button type="button" tooltip="Записатись на безкоштовне знайомство 15 хв" class="our-team__details-button ${friendly ? 'friendly' : ''}">
                             <img class="our-team__icon-Hello" src="${iconSrc}" alt="icon Hello">
                         </button>
                     </div>

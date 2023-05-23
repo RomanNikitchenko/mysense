@@ -413,7 +413,7 @@
 }
 .edu__wrap {
     display: flex;
-    padding: 10px;
+    padding: 20px 0;
     p {
         font-weight: 500;
         font-size: 14px;
@@ -982,7 +982,6 @@
         background: #E7E9ED;
         vertical-align: middle;
     }
-  
 }
 
 /*--------- rewiev ---------------*/
@@ -1493,7 +1492,6 @@
     align-items: flex-end;
 
     @media screen and (min-width: 744px) {
-     
     }
 
     @media screen and (min-width: 1280px) {

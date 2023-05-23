@@ -72,9 +72,8 @@ export default function createImageCardsMarcup({ visiblefilter, change }) {
                         !friendly ? 'not--friendly' : ''
                       }">Записатись на сессію</button>
 
-                      <button type="button" class="our-team__details-button ${
-                        friendly ? 'friendly' : ''
-                      }">
+                      <button type="button" tooltip="Записатись на безкоштовне знайомство 15 хв" class="our-team__details-button 
+                      ${friendly ? 'friendly' : ''}">
                           <img class="our-team__icon-Hello" src="${iconSrc}" alt="icon Hello">
                       </button>
                   </div>
