@@ -6,8 +6,8 @@
     max-width: 835px;
 }
 .work__schedule_exemple {
-   width: 100%;
-   border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 .controls__wrap {
     display: flex;
@@ -131,6 +131,67 @@ td:not(:last-child) {
     color: #222B40;
     padding: 20px;
 }
+/*-----------------------*/
+.work__schedule_mobile {
+    display: none;
+    padding: 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+.schedule_mobile-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    overflow-x: scroll;
+    padding: 10px 0;
+    margin: 0;
+    border-top: 1px solid rgba(34, 43, 64, 0.1);
+    border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    li {
+        background: rgba(34, 43, 64, 0.05);
+        border-radius: 30px;
+        padding: 10px 9px;
+        margin: 0 5px;
+        span {
+            display: none;
+        }
+    }
+    .active_day {
+        display: flex;
+        justify-content: space-around;
+        background: #795BDA;
+        border-radius: 30px;
+        padding: 8px 16px;
+        min-width: 102px;
+
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        color: #FFFFFF;
+        span {
+            display: block;
+            margin-left: 6px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+    }
+}
+.table__schedule_mobile {
+    tbody {
+        width: 100%;
+        tr {
+            .cell__time {
+                width: 70px;
+            }
+            td {
+                width: 100%;
+                text-align: left;
+                padding-left: 20px;
+            }
+        }
+    }
+}
 
 // Картка клієнта для переносу
 .card__client {
@@ -139,6 +200,8 @@ td:not(:last-child) {
     border-radius: 8px;
     max-width: 180px;
     padding: 10px;
+    
+    display: none;
 }
 .card__client-name {
     display: flex;
@@ -200,5 +263,26 @@ td:not(:last-child) {
     }
     .abolition_list {
         display: none;
+    }
+}
+
+@media screen and (max-width:744px) {
+    .schedule-block_wrap {
+        max-width: 100%;
+    }
+    .work__schedule_exemple {
+        display: none;
+    }
+    .work__schedule_mobile {
+        display: block;
+    }
+    .work__schedule-date {
+        width: 130px;
+    }
+    .work__schedule-arrows {
+        margin-left: 7px;
+    }
+    .work__schedule-controls {
+        padding: 20px;
     }
 }
