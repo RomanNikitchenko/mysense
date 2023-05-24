@@ -235,16 +235,6 @@
         height: 8px;
         border-radius: 50%;
     }
-
-    .our-team__status.online {
-        background-color: #56F08B;
-        /* зеленый цвет для онлайн-статуса */
-    }
-
-    .our-team__status.offline {
-        background-color: #f05656;
-        /* красный цвет для оффлайн-статуса */
-    }
 }
 
 .our-team__experience{
@@ -390,3 +380,92 @@
 .our-team__details-button.friendly{
     display: flex;
 }
+
+/* START TOOLTIP STYLES */
+[tooltip] {
+    position: relative; /* opinion 1 */
+}
+
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+    text-transform: none; /* opinion 2 */
+    font-size: .9em; /* opinion 3 */
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    display: none;
+    opacity: 0;
+}
+[tooltip]::before {
+    content: '';
+    border: 5px solid transparent; /* opinion 4 */
+    z-index: 1001; /* absurdity 1 */
+}
+[tooltip]::after {
+    content: attr(tooltip); /* magic! */
+    text-align: center;
+    /* 
+    Let the content set the size of the tooltips 
+    but this will also keep them from being obnoxious
+    */
+    width: 110px;
+    height: 47px;
+    font-size: 10px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 4px 8px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06), 0px 10px 20px -8px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    color: #222B40;
+    z-index: 1000; /* absurdity 2 */
+}
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+    display: block;
+}
+
+/* don't show empty tooltips */
+[tooltip='']::before,
+[tooltip='']::after {
+    display: none !important;
+}
+[tooltip][flow^="down"]::before {
+    top: 100%;
+    border-top-width: 0;
+    border-bottom-color: #333;
+}
+[tooltip][flow^="down"]::after {
+    top: calc(100% + 5px);
+}
+[tooltip][flow^="down"]::before,
+[tooltip][flow^="down"]::after {
+    left: 50%;
+    transform: translate(-50%, .5em);
+}
+
+/* KEYFRAMES */
+@keyframes tooltips-vert {
+    to {
+        opacity: 1;
+        transform: translate( 0, -100%);
+    }
+}
+
+/* FX All The Things */ 
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^="up"]:hover::before,
+[tooltip][flow^="up"]:hover::after,
+[tooltip][flow^="down"]:hover::before,
+[tooltip][flow^="down"]:hover::after {
+    animation: tooltips-vert 300ms ease-out forwards;
+}
+
