@@ -90,9 +90,42 @@
         text-align: left;
     }
 }
-.person-purple {
-    margin-right: 9px;
-    fill: #795BDA;
+// .person-purple {
+//     margin-right: 9px;
+//     fill: #795BDA;
+// }
+.icon__bg_1 {
+    background: url('../images/test-icons/Human.svg');
+    width: 48px;
+    height: 48px;
+}
+.icon__bg_2 {
+    background: url('../images/test-icons/Falmiy.svg');
+    width: 48px;
+    height: 48px;
+}
+.icon__bg_3 {
+    background: url('../images/test-icons/baby.svg');
+    width: 48px;
+    height: 48px;
+}
+.test__card-wrap:hover .icon__bg_1,
+.test__card-wrap:focus .icon__bg_1  {
+    background: url('../images/test-icons/Human-pink.svg');
+    width: 48px;
+    height: 48px;
+}
+.test__card-wrap:hover .icon__bg_2,
+.test__card-wrap:focus .icon__bg_2 {
+    background: url('../images/test-icons/Falmiy-pink.svg');
+    width: 48px;
+    height: 48px;
+} 
+.test__card-wrap:hover .icon__bg_3,
+.test__card-wrap:focus .icon__bg_3   {
+    background: url('../images/test-icons/baby-pink.svg');
+    width: 48px;
+    height: 48px;
 }
 
 .fixed__box {
