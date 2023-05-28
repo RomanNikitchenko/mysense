@@ -32,11 +32,6 @@
         background: #795BDA;
         .state__card-title {
             color: #fff;
-        }
-        .state__card__icon {
-            .icon__crds {
-                fill: #FF5C8D;
-            }
         } 
     }
 }
@@ -49,15 +44,91 @@
     text-align: left;
     margin-right: 10px;
 }
-.icon-arrow-top-right {
-}
+
 .state__card__icon {
     display: flex;
     align-items: center;
-    .icon__crds  {
-        fill: #795BDA;
-    }
+    width: 48px;
+    height: 48px;
 }
+.state__icon_1 {
+    background: url('../images/test-icons/cloud.sun.rain.svg');
+}
+.state__icon_2 {
+    background: url('../images/test-icons/Heart.Flash.svg');
+}
+.state__icon_3 {
+    background: url('../images/test-icons/Cloud.Moon.svg');
+}
+.state__icon_4 {
+    background: url('../images/test-icons/Cloud.Rain.svg');
+}
+.state__icon_5 {
+    background: url('../images/test-icons/eye.trianglebadge.exclamationmark.svg');
+}
+.state__icon_6 {
+    background: url('../images/test-icons/pulse.svg');
+}
+.state__icon_7 {
+    background: url('../images/test-icons/brain.head.profile.svg');
+}
+.state__icon_8 {
+    background: url('../images/test-icons/cross.case.svg');
+}
+.state__icon_9 {
+    background: url('../images/test-icons/bubble.left.and.bubble.right.svg');
+}
+.state__icon_10 {
+    background: url('../images/test-icons/person.crop.circle.badge.xmark.svg');
+}
+.state__icon_11 {
+    background: url('../images/test-icons/cloud.heavyrain.svg');
+}
+.card__link-btn:hover .state__icon_1,
+.card__link-btn:focus .state__icon_1 {
+    background: url('../images/test-icons/cloud.sun.rain-pink.svg');
+}
+.card__link-btn:hover .state__icon_2,
+.card__link-btn:focus .state__icon_2 {
+    background: url('../images/test-icons/Heart.Flash-pink.svg');
+}
+.card__link-btn:hover .state__icon_3,
+.card__link-btn:focus .state__icon_3 {
+    background: url('../images/test-icons/Cloud.Moon-pink.svg');
+}
+.card__link-btn:hover .state__icon_4,
+.card__link-btn:focus .state__icon_4 {
+    background: url('../images/test-icons/Cloud.Rain-pink.svg');
+}
+.card__link-btn:hover .state__icon_5,
+.card__link-btn:focus .state__icon_5 {
+    background: url('../images/test-icons/eye.trianglebadge.exclamationmark-pink.svg');
+}
+.card__link-btn:hover .state__icon_6,
+.card__link-btn:focus .state__icon_6 {
+    background: url('../images/test-icons/pulse-pink.svg');
+}
+.card__link-btn:hover .state__icon_7,
+.card__link-btn:focus .state__icon_7 {
+    background: url('../images/test-icons/brain.head.profile-pink.svg');
+}
+.card__link-btn:hover .state__icon_8,
+.card__link-btn:focus .state__icon_8 {
+    background: url('../images/test-icons/cross.case-pink.svg');
+}
+.card__link-btn:hover .state__icon_9,
+.card__link-btn:focus .state__icon_9 {
+    background: url('../images/test-icons/bubble.left.and.bubble.right-pink.svg');
+}
+.card__link-btn:hover .state__icon_10,
+.card__link-btn:focus .state__icon_10 {
+    background: url('../images/test-icons/person.crop.circle.badge.xmark-pink.svg');
+}
+.card__link-btn:hover .state__icon_11,
+.card__link-btn:focus .state__icon_11 {
+    background: url('../images/test-icons/cloud.heavyrain-pink.svg');
+}
+
 
 @media screen and (max-width: 1280px) {
     .state__cards {

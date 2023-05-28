@@ -46,7 +46,7 @@
 .block__title.active::before {
     background: transparent;
 }
-  
+
 .block__title.active::after {
     transform: rotate(45deg);
 }
@@ -89,78 +89,389 @@
         .state__card-title {
             color: #fff;
         }
-        .state__card__icon {
-            .icon__crds {
-                fill: #FF5C8D;
-            }
-            .icon-family-cart-2,
-            .icon-family-cart-3 {
-                // stroke: #FF5C8D;
-                fill: #795BDA;
-            }
-           
-        }
-        .family-cart-2 {
-            background: url('../images/svg-mysense/family-cart-2-pink.svg') no-repeat center / cover;
-        } 
-        .family-cart-3 {
-            background: url('../images/svg-mysense/family-cart-3-pink.svg') no-repeat center / cover;
-        }
-        .relations-cart-2 {
-            background: url('../images/svg-mysense/relations-cart-2-pink.svg') no-repeat center / cover;
-        } 
-        .relations-cart-3 {
-            background: url('../images/svg-mysense/relations-cart-3-pink.svg') no-repeat center / cover;
-        }
-        .relations-cart-8 {
-            background: url('../images/svg-mysense/relations-cart-8-pink.svg') no-repeat center / cover;
-        }
-        .others-cart-1 {
-            background: url('../images/svg-mysense/others-cart-1-pink.svg') no-repeat center / cover;
-        }
-        .others-cart-2 {
-            background: url('../images/svg-mysense/others-cart-2-pink.svg') no-repeat center / cover;
-        }
-         .others-cart-3 {
-            background: url('../images/svg-mysense/others-cart-3-pink.svg') no-repeat center / cover;
-        }
-        .others-cart-4 {
-            background: url('../images/svg-mysense/others-cart-4-pink.svg') no-repeat center / cover;
-        }
-        .others-cart-5 {
-            background: url('../images/svg-mysense/others-cart-5-pink.svg') no-repeat center / cover;
-        }
-        .others-cart-6 {
-            background: url('../images/svg-mysense/others-cart-6-pink.svg') no-repeat center / cover;
-        }
-        .others-cart-7 {
-            background: url('../images/svg-mysense/others-cart-7-pink.svg') no-repeat center / cover;
-        }
-        .others-cart-8 {
-            background: url('../images/svg-mysense/others-cart-8-pink.svg') no-repeat center / cover;
-        }
-        .others-cart-9 {
-            background: url('../images/svg-mysense/others-cart-9-pink.svg') no-repeat center / cover;
-        }
-        .life-cart-2 {
-            background: url('../images/svg-mysense/life-cart-2-pink.svg') no-repeat center / cover;
-        }
-        .life-cart-3 {
-            background: url('../images/svg-mysense/life-cart-3-pink.svg') no-repeat center / cover;
-        }
-        .life-cart-6 {
-            background: url('../images/svg-mysense/life-cart-6-pink.svg') no-repeat center / cover;
-        }
-        .war-cart-2 {
-            background: url('../images/svg-mysense/war-cart-2-pink.svg') no-repeat center / cover;
-        }
-        .war-cart-3 {
-            background: url('../images/svg-mysense/war-cart-3-pink.svg') no-repeat center / cover;
-        }
     }
-  
-   
 }
+.state__card__icon {
+    width: 48px;
+    height: 48px;
+}
+.health__icon_1 {
+    background: url('../images/test-icons/Depresion.svg');
+}
+.health__icon_2 {
+    background: url('../images/test-icons/Panic-attacks.svg');
+}
+.health__icon_3 {
+    background: url('../images/test-icons/HeadAlarm.svg');
+}
+.health__icon_4 {
+    background: url('../images/test-icons/moon.stars.svg');
+}
+.health__icon_5 {
+    background: url('../images/test-icons/HeadFire.svg');
+}
+.health__icon_6 {
+    background: url('../images/test-icons/alco.svg');
+}
+.health__icon_7 {
+    background: url('../images/test-icons/cross.case.svg');
+}
+.health__icon_8 {
+    background: url('../images/test-icons/pizza.svg');
+}
+.health__icon_9 {
+    background: url('../images/test-icons/person.wave.2.svg');
+}
+.health__icon_10 {
+    background: url('../images/test-icons/brain.svg');
+}
+.card__link-btn:hover .health__icon_1,
+.card__link-btn:focus .health__icon_1 {
+    background: url('../images/test-icons/Depresion-pink.svg');
+}
+.card__link-btn:hover .health__icon_2,
+.card__link-btn:focus .health__icon_2 {
+    background: url('../images/test-icons/Panic-attacks-pink.svg');
+}
+.card__link-btn:hover .health__icon_3,
+.card__link-btn:focus .health__icon_3 {
+    background: url('../images/test-icons/HeadAlarm-pink.svg');
+}
+.card__link-btn:hover .health__icon_4,
+.card__link-btn:focus .health__icon_4 {
+    background: url('../images/test-icons/moon.stars-pink.svg');
+}
+.card__link-btn:hover .health__icon_5,
+.card__link-btn:focus .health__icon_5 {
+    background: url('../images/test-icons/HeadFire-pink.svg');
+}
+.card__link-btn:hover .health__icon_6,
+.card__link-btn:focus .health__icon_6 {
+    background: url('../images/test-icons/alco-pink.svg');
+}
+.card__link-btn:hover .health__icon_7,
+.card__link-btn:focus .health__icon_7 {
+    background: url('../images/test-icons/cross.case-pink.svg');
+}
+.card__link-btn:hover .health__icon_8,
+.card__link-btn:focus .health__icon_8 {
+    background: url('../images/test-icons/pizza-pink.svg');
+}
+.card__link-btn:hover .health__icon_9,
+.card__link-btn:focus .health__icon_9 {
+    background: url('../images/test-icons/person.wave.2-pink.svg');
+}
+.card__link-btn:hover .health__icon_10,
+.card__link-btn:focus .health__icon_10 {
+    background: url('../images/test-icons/brain-pink.svg');
+}
+
+.family-cart-1 {
+    background: url('../images/test-icons/Heart.Snow.svg');
+}
+.family-cart-2 {
+    background: url('../images/test-icons/Human.BokenHear.svg');
+}
+.family-cart-3 {
+    background: url('../images/test-icons/Heart.Broken.svg');
+}
+.family-cart-4 {
+    background: url('../images/test-icons/Fist.svg');
+}
+.family-cart-5 {
+    background: url('../images/test-icons/person.crop.circle.svg');
+}
+.family-cart-6 {
+    background: url('../images/test-icons/baby.svg');
+}
+.family-cart-7 {
+    background: url('../images/test-icons/person.2.circle.svg');
+}
+.family-cart-8 {
+    background: url('../images/test-icons/Human.Conect.svg');
+}
+.family-cart-9 {
+    background: url('../images/test-icons/pegancy.svg');
+}
+.card__link-btn:hover .family-cart-1,
+.card__link-btn:focus .family-cart-1 {
+    background: url('../images/test-icons/Heart.Snow-pink.svg');
+}
+.card__link-btn:hover .family-cart-2,
+.card__link-btn:focus .family-cart-2 {
+    background: url('../images/test-icons//HumanBokenHear-pink.svg');
+}
+.card__link-btn:hover .family-cart-3,
+.card__link-btn:focus .family-cart-3 {
+    background: url('../images/test-icons/Heart.Broken-pink.svg');
+}
+.card__link-btn:hover .family-cart-4,
+.card__link-btn:focus .family-cart-4 {
+    background: url('../images/test-icons/Fist-pink.svg');
+}
+.card__link-btn:hover .family-cart-5,
+.card__link-btn:focus .family-cart-5 {
+    background: url('../images/test-icons/person.crop.circle-pink.svg');
+}
+.card__link-btn:hover .family-cart-6,
+.card__link-btn:focus .family-cart-6 {
+    background: url('../images/test-icons/baby-pink.svg');
+}
+.card__link-btn:hover .family-cart-7,
+.card__link-btn:focus .family-cart-7 {
+    background: url('../images/test-icons/person.2.circle-pink.svg');
+}
+.card__link-btn:hover .family-cart-8,
+.card__link-btn:focus .family-cart-8 {
+    background: url('../images/test-icons/HumanConect-pink.svg');
+}
+.card__link-btn:hover .family-cart-9,
+.card__link-btn:focus .family-cart-9 {
+    background: url('../images/test-icons/pegancy-pink.svg');
+}
+
+.relations-cart-1 {
+    background: url('../images/test-icons/Person.Cloud.svg');
+}
+.relations-cart-2 {
+    background: url('../images/test-icons/shareplay.svg');
+}
+.relations-cart-3 {
+    background: url('../images/test-icons/battery.low.svg');
+}
+.relations-cart-4 {
+    background: url('../images/test-icons/hand.thumbsdown.svg');
+}
+.relations-cart-5 {
+    background: url('../images/test-icons/head.minds.svg');
+}
+.relations-cart-6 {
+    background: url('../images/test-icons/chart.line.uptrend.xyaxis.svg');
+}
+.relations-cart-7 {
+    background: url('../images/test-icons/Lasso.svg');
+}
+.relations-cart-8 {
+    background: url('../images/test-icons/LGBT.svg');
+}
+.relations-cart-9 {
+    background: url('../images/test-icons/exclamationmark.bubble.svg');
+}
+.relations-cart-10 {
+    background: url('../images/test-icons/laptopcomputer.svg');
+}
+.card__link-btn:hover .relations-cart-1,
+.card__link-btn:focus .relations-cart-1 {
+    background: url('../images/test-icons/Person.Cloud-pink.svg');
+}
+.card__link-btn:hover .relations-cart-2,
+.card__link-btn:focus .relations-cart-2 {
+    background: url('../images/test-icons/shareplay-pink.svg');
+}
+.card__link-btn:hover .relations-cart-3,
+.card__link-btn:focus .relations-cart-3 {
+    background: url('../images/test-icons/battery.low-pink.svg');
+}
+.card__link-btn:hover .relations-cart-4,
+.card__link-btn:focus .relations-cart-4 {
+    background: url('../images/test-icons/hand.thumbsdown-pink.svg');
+}
+.card__link-btn:hover .relations-cart-5,
+.card__link-btn:focus .relations-cart-5 {
+    background: url('../images/test-icons/head.minds-pink.svg');
+}
+.card__link-btn:hover .relations-cart-6,
+.card__link-btn:focus .relations-cart-6 {
+    background: url('../images/test-icons/chart.line.uptrend.xyaxis-pink.svg');
+}
+.card__link-btn:hover .relations-cart-7,
+.card__link-btn:focus .relations-cart-7 {
+    background: url('../images/test-icons/Lasso-pink.svg');
+}
+.card__link-btn:hover .relations-cart-8,
+.card__link-btn:focus .relations-cart-8 {
+    background: url('../images/test-icons/LGBT-pink.svg');
+}
+.card__link-btn:hover .relations-cart-9,
+.card__link-btn:focus .relations-cart-9 {
+    background: url('../images/test-icons/exclamationmark.bubble-pink.svg');
+}
+.card__link-btn:hover .relations-cart-10,
+.card__link-btn:focus .relations-cart-10 {
+    background: url('../images/test-icons/laptopcomputer-pink.svg');
+}
+
+.others-cart-1 {
+    background: url('../images/test-icons/Handshake.svg');
+}
+.others-cart-2 {
+    background: url('../images/test-icons/person.2.circle.svg');
+}
+.others-cart-3 {
+    background: url('../images/test-icons/rose.svg');
+}
+.others-cart-4 {
+    background: url('../images/test-icons/male.female.svg');
+}
+.others-cart-5 {
+    background: url('../images/test-icons/LGBT.svg');
+}
+.others-cart-6 {
+    background: url('../images/test-icons/bubble.left.and.bubble.right.svg');
+}
+.others-cart-7 {
+    background: url('../images/test-icons/quote.bubble.svg');
+}
+.others-cart-8 {
+    background: url('../images/test-icons/Human.arrows.svg');
+}
+.others-cart-9 {
+    background: url('../images/test-icons/Humans.Cross.svg');
+}
+.card__link-btn:hover .others-cart-1,
+.card__link-btn:focus .others-cart-1 {
+    background: url('../images/test-icons/Handshake-pink.svg');
+}
+.card__link-btn:hover .others-cart-2,
+.card__link-btn:focus .others-cart-2 {
+    background: url('../images/test-icons/person.2.circle-pink.svg');
+}
+.card__link-btn:hover .others-cart-3,
+.card__link-btn:focus .others-cart-3 {
+    background: url('../images/test-icons/rose-pink.svg');
+}
+.card__link-btn:hover .others-cart-4,
+.card__link-btn:focus .others-cart-4 {
+    background: url('../images/test-icons/male.female-pink.svg');
+}
+.card__link-btn:hover .others-cart-5,
+.card__link-btn:focus .others-cart-5 {
+    background: url('../images/test-icons/LGBT-pink.svg');
+}
+.card__link-btn:hover .others-cart-6,
+.card__link-btn:focus .others-cart-6 {
+    background: url('../images/test-icons/bubble.left.and.bubble.right-pink.svg');
+}
+.card__link-btn:hover .others-cart-7,
+.card__link-btn:focus .others-cart-7 {
+    background: url('../images/test-icons/quote.bubble-pink.svg');
+}
+.card__link-btn:hover .others-cart-8,
+.card__link-btn:focus .others-cart-8 {
+    background: url('../images/test-icons/Human.arrows-pink.svg');
+}
+.card__link-btn:hover .others-cart-9,
+.card__link-btn:focus .others-cart-9 {
+    background: url('../images/test-icons/Humans.Cross-pink.svg');
+}
+
+.life-cart-1 {
+    background: url('../images/test-icons/arrow.2.squarepath.svg');
+}
+.life-cart-2 {
+    background: url('../images/test-icons/person.and.arrow.left.and.arrow.right.svg');
+}
+.life-cart-3 {
+    background: url('../images/test-icons/money.svg');
+}
+.life-cart-4 {
+    background: url('../images/test-icons/move.svg');
+}
+.life-cart-5 {
+    background: url('../images/test-icons/calendar.Clock.svg');
+}
+.life-cart-6 {
+    background: url('../images/test-icons/RIP.svg');
+}
+.life-cart-7 {
+    background: url('../images/test-icons/Person.Cloud.svg');
+}
+.life-cart-8 {
+    background: url('../images/test-icons/person.crop.circle.badge.svg');
+}
+.life-cart-9 {
+    background: url('../images/test-icons/person.crop.circle.badge.exclamationmark.svg');
+}
+.card__link-btn:hover .life-cart-1,
+.card__link-btn:focus .life-cart-1 {
+    background: url('../images/test-icons/arrow.2.squarepath-pink.svg');
+}
+.card__link-btn:hover .life-cart-2,
+.card__link-btn:focus .life-cart-2 {
+    background: url('../images/test-icons/person.and.arrow.left.and.arrow.right-pink.svg');
+}
+.card__link-btn:hover .life-cart-3,
+.card__link-btn:focus .life-cart-3 {
+    background: url('../images/test-icons/money-pink.svg');
+}
+.card__link-btn:hover .life-cart-4,
+.card__link-btn:focus .life-cart-4 {
+    background: url('../images/test-icons/move-pink.svg');
+}
+.card__link-btn:hover .life-cart-5,
+.card__link-btn:focus .life-cart-5 {
+    background: url('../images/test-icons/calendar.Clock-pink.svg');
+}
+.card__link-btn:hover .life-cart-6,
+.card__link-btn:focus .life-cart-6 {
+    background: url('../images/test-icons/RIP-pink.svg');
+}
+.card__link-btn:hover .life-cart-7,
+.card__link-btn:focus .life-cart-7 {
+    background: url('../images/test-icons/Person.Cloud-pink.svg');
+}
+.card__link-btn:hover .life-cart-8,
+.card__link-btn:focus .life-cart-8 {
+    background: url('../images/test-icons/person.crop.circle.badge-pink.svg');
+}
+.card__link-btn:hover .life-cart-9,
+.card__link-btn:focus .life-cart-9 {
+    background: url('../images/test-icons/person.crop.circle.badge.exclamationmark-pink.svg');
+}
+
+.war-cart-1 {
+    background: url('../images/test-icons/arrow.2.squarepath.svg');
+}
+.war-cart-2 {
+    background: url('../images/test-icons/location.circle.svg');
+}
+.war-cart-3 {
+    background: url('../images/test-icons/person.fill.questionmark.svg');
+}
+.war-cart-4 {
+    background: url('../images/test-icons/move.svg');
+}
+.war-cart-5 {
+    background: url('../images/test-icons/RIP.svg');
+}
+.war-cart-6 {
+    background: url('../images/test-icons/cross.case.svg');
+}
+.card__link-btn:hover .war-cart-1,
+.card__link-btn:focus .war-cart-1 {
+    background: url('../images/test-icons/arrow.2.squarepath-pink.svg');
+}
+.card__link-btn:hover .war-cart-2,
+.card__link-btn:focus .war-cart-2 {
+    background: url('../images/test-icons/location.circle-pink.svg');
+}
+.card__link-btn:hover .war-cart-3,
+.card__link-btn:focus .war-cart-3 {
+    background: url('../images/test-icons/person.fill.questionmark-pink.svg');
+}
+.card__link-btn:hover .war-cart-4,
+.card__link-btn:focus .war-cart-4 {
+    background: url('../images/test-icons/move-pink.svg');
+}
+.card__link-btn:hover .war-cart-5,
+.card__link-btn:focus .war-cart-5 {
+    background: url('../images/test-icons/RIP-pink.svg');
+}
+.card__link-btn:hover .war-cart-6,
+.card__link-btn:focus .war-cart-6 {
+    background: url('../images/test-icons/cross.case-pink.svg');
+}
+
 .state__card-title {
     font-weight: 500;
     font-size: 24px;
@@ -186,104 +497,9 @@
         stroke-width: 0.3px;
     }
 }
-.family-cart-2 {
-    background: url('../images/svg-mysense/family-cart-2.svg') no-repeat center / cover;
-    width: 40px;
-    height: 27px;
-}
-.family-cart-3 {
-    background: url('../images/svg-mysense/family-cart-3.svg') no-repeat center / cover;
-    width: 26px;
-    height: 23px;
-}
-.relations-cart-2 {
-    background: url('../images/svg-mysense/relations-cart-2.svg') no-repeat center / cover;
-    width: 48px;
-    height: 28px;
-}
-.relations-cart-3 {
-    background: url('../images/svg-mysense/relations-cart-3.svg') no-repeat center / cover;
-    width: 45px;
-    height: 21px;
-}
-.relations-cart-8 {
-    background: url('../images/svg-mysense/relations-cart-8.svg') no-repeat center / cover;
-    width: 30px;
-    height: 28px;
-}
-
-.others-cart-1 {
-    background: url('../images/svg-mysense/others-cart-1.svg') no-repeat center / cover;
-    width: 38px;
-    height: 28px;
-}
-.others-cart-2 {
-    background: url('../images/svg-mysense/others-cart-2.svg') no-repeat center / cover;
-    width: 31px;
-    height: 31px;
-}
-.others-cart-3 {
-    background: url('../images/svg-mysense/others-cart-3.svg') no-repeat center / cover;
-    width: 23px;
-    height: 37px;
-}
-.others-cart-4 {
-    background: url('../images/svg-mysense/others-cart-4.svg') no-repeat center / cover;
-    width: 34px;
-    height: 30px;
-}
-.others-cart-5 {
-    background: url('../images/svg-mysense/others-cart-5.svg') no-repeat center / cover;
-    width: 30px;
-    height: 28px;
-}.others-cart-6 {
-    background: url('../images/svg-mysense/others-cart-6.svg') no-repeat center / cover;
-    width: 37px;
-    height: 29px;
-}.others-cart-7 {
-    background: url('../images/svg-mysense/others-cart-7.svg') no-repeat center / cover;
-    width: 32px;
-    height: 29px;
-}.others-cart-8 {
-    background: url('../images/svg-mysense/others-cart-8.svg') no-repeat center / cover;
-    width: 48px;
-    height: 36px;
-}.others-cart-9 {
-    background: url('../images/svg-mysense/others-cart-9.svg') no-repeat center / cover;
-    width: 48px;
-    height: 35px;
-}
-
-.life-cart-2 {
-    background: url('../images/svg-mysense/life-cart-2.svg') no-repeat center / cover;
-    width: 41px;
-    height: 28px;
-}
-.life-cart-3 {
-    background: url('../images/svg-mysense/life-cart-3.svg') no-repeat center / cover;
-    width: 31px;
-    height: 31px
-}
-.life-cart-6 {
-    background: url('../images/svg-mysense/life-cart-6.svg') no-repeat center / cover;
-    width: 28px;
-    height: 29px
-}
-
-.war-cart-2 {
-    background: url('../images/svg-mysense/war-cart-2.svg') no-repeat center / cover;
-    width: 31px;
-    height: 31px
-}
-.war-cart-3 {
-    background: url('../images/svg-mysense/war-cart-3.svg') no-repeat center / cover;
-    width: 33px;
-    height: 29px
-}
-
 
   //анимация для контента блока <div class="item__card">
-  .item__card {
+.item__card {
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.5s ease;
