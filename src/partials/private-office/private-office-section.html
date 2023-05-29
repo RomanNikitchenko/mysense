@@ -577,8 +577,81 @@
                 </ul>
             </div>
         </div>
-
+    </div>
+    <!-------- Додати сесію ---------->
+    <div class="add_session__wrap">
+        <div class="add_session">
+            <div class="close"><img src="./images/office/close_popup.svg" alt=""></div>
+            <div class="add_session__title">Додати сесію</div>
+            <div class="add_session__correct">
+                <h4>Оберіть клієнта</h4>
+                <div class="list__client">
+                    <select class="drop_client" id="user_language" onchange="set_lang(this.value)&amp;set_lang_dis();">
+                        <option class="drop_client darina" id="yarina" value="darina" slected="selected">Дарина Приходько</option>
+                        <option class="drop_client yarina" id="yarina" value="yarina">Ярина Перекотиполе</option>
+                        <option class="drop_client maria" id="yarina" value="maria">Марія Соловій</option>
+                        <option class="drop_client kamila" id="kamila" value="Каміла Айс">Каміла Айс</option>
+                    </select>
+                </div>
+                <div class="choose__day">
+                    <h3 class="choose__day-title">Виберіть дату сесії</h3>
+                    <p>Не обовʼязково</p>
+                    <div class="choose__day-box">
+                    <div class="month-controls">
+                        <div class="month">Березень 2023</div>
+                        <div class="controls__arrows">
+                            <button>
+                            <img src="./images/svg-mysense/arrow_btns-prew.svg" alt="" />
+                            </button>
+                            <button>
+                            <img src="./images/svg-mysense/arrow_btns-next.svg" alt="" />
+                            </button>
+                        </div>
+                    </div>
+                    <ul class="week__list">
+                        <li><span>Пн</span><button class="num_active">13</button></li>
+                        <li><span>Вт</span><button>14</button></li>
+                        <li><span>Ср</span><button>15</button></li>
+                        <li><span>Чт</span><button>16</button></li>
+                        <li><span>Пт</span><button class="no_active">17</button></li>
+                        <li><span>Сб</span><button class="no_active weekend">18</button></li>
+                        <li><span>Нд</span><button class="no_active weekend">19</button></li>
+                    </ul>
+                    </div>
+                  </div>
+                <div class="choose__time">
+                <h3 class="choose__time-title">Оберіть зручний час (за Києвом)</h3>
+                <p>Не обовʼязково</p>
+                <div class="choose__time-body">
+                    <button class="choose__time-btn"><span>7:00 - 7:50</span></button>
+                    <button class="choose__time-btn"><span>8:00 - 8:50</span></button>
+                    <button class="choose__time-btn"><span>9:00 - 9:50</span></button>
+                    <button class="choose__time-btn"><span>10:00 - 10:50</span></button>
+                    <button class="choose__time-btn"><span>11:00 - 11:50</span></button>
+                    <button class="choose__time-btn"><span>12:00 - 12:50</span></button>
+                    <button class="choose__time-btn"><span>13:00 - 13:50</span></button>
+                    <button class="choose__time-btn"><span>14:00 - 14:50</span></button>
+                    <button class="choose__time-btn"><span>15:00 - 15:50</span></button>
+                    <button class="choose__time-btn"><span>16:00 - 16:50</span></button>
+                    <button class="choose__time-btn"><span>17:00 - 17:50</span></button>
+                    <button class="choose__time-btn"><span>18:00 - 18:50</span></button>
+                    <button class="choose__time-btn"><span>19:00 - 19:50</span></button>
+                    <button class="choose__time-btn"><span>20:00 - 20:50</span></button>
+                    <button class="choose__time-btn"><span>21:00 - 21:50</span></button>
+                    <button class="choose__time-btn"><span>22:00 - 22:50</span></button>
+                    <button class="choose__time-btn"><span>23:00 - 23:50</span></button>
+                </div>
+                </div>
+                <h4>Дата та час</h4>
+                <div class="correct_date">
+                    <input  class="text" type="button" value="7 квітня, 11:00 — 11:50 за Києвом">
+                    <button class="edit"><img src="./images/office/pensil.svg" alt=""></button>
+                </div>
+                <button class="plan_session">Запланувати сессію<img src="./images/office/arrow_btn.svg" alt=""></button>
+            </div>
+        </div>
     </div>
 </section>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
