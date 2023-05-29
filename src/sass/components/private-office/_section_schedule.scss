@@ -190,11 +190,16 @@
     top: 0;
     background: rgba(34, 43, 64, 0.2);
     backdrop-filter: blur(10px);
-    z-index: 5;
+    z-index: 2000;
 
-    display: none;
+    // display: none;
     align-items: center;
     justify-content: center;
+
+    //
+    padding: 40px 0;
+    overflow: auto;
+    margin: 0 auto;
 }
 .info-card__client {
     position: relative;
