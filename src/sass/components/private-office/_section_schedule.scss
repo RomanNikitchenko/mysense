@@ -190,11 +190,16 @@
     top: 0;
     background: rgba(34, 43, 64, 0.2);
     backdrop-filter: blur(10px);
-    z-index: 1000;
+    z-index: 2000;
 
-    display: none;
+    // display: none;
     align-items: center;
     justify-content: center;
+
+    //
+    padding: 40px 0;
+    overflow: auto;
+    margin: 0 auto;
 }
 .info-card__client {
     position: relative;
@@ -202,7 +207,7 @@
     background: #FFFFFF;
     border-radius: 8px;
     padding: 25px;
-    margin: 50px auto;
+    margin: 0 auto;
     ul {
         list-style: none;
         padding-left: 0;
@@ -835,4 +840,21 @@ td:not(:last-child) {
     .work__schedule-controls {
         padding: 20px;
     }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    visibility: hidden;
+    pointer-events: none;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
