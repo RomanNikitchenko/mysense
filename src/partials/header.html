@@ -52,7 +52,7 @@
         <!-- <svg class="logo__header-icon" width="142" height="24.11">
           <use href="./images/symbol-defs.svg#Layer_1"></use>
         </svg> -->
-        <img src="./images/Mysense-Logo.png" alt="">
+        <img src="./images/Mysense-Logo.png" alt="" />
       </a>
       <!-- навигация по сайту -->
       <ul class="site-nav list">
@@ -106,17 +106,25 @@
 
     <button class="page-header__button choose-person">Обрати психолога</button>
 
+    <!-- page-header__private-office-menu -->
     <div class="page-header__private-office-menu">
       <button class="page-header__button page-header__button--reminder">
         <svg class="icon-login" width="28" height="28">
           <use href="./images/symbol-defs.svg#reminder"></use>
         </svg>
       </button>
-      <button class="page-header__button page-header__button--information">
+
+      <!-- open-modal-information -->
+      <button
+        class="page-header__button page-header__button--information js-open-modal-information"
+        aria-expanded="false"
+        aria-controls="modal-information"
+      >
         <svg class="icon-login" width="28" height="28">
           <use href="./images/symbol-defs.svg#information"></use>
         </svg>
       </button>
+
       <button
         aria-expanded="false"
         aria-controls="mobile-menu-private-office"
@@ -124,6 +132,68 @@
       >
         <img src="./images/our-team-desktop.jpg" alt="Фото Іван Виговський" />
       </button>
+
+      <!-- modal-information -->
+      <div
+        class="modal-information-department visually-hidden"
+        id="modal-information"
+      >
+        <div class="department">
+          <h2>Відділ турботи</h2>
+
+          <!-- close-modal-information -->
+          <button class="close-button js-close-modal-information">
+            <svg
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="contact-info">
+          <p>
+            Ви можете звʼязатись з нами у мессенджерах, або написати на пошту
+          </p>
+
+          <ul class="social-networks-list">
+            <li class="social-networks-item">
+              <a class="social-networks-link" href="" target="_blank">
+                <svg class="icon-Viber" width="16" height="16">
+                  <use href="./images/symbol-defs.svg#icon-Viber"></use>
+                </svg>
+                Viber
+              </a>
+            </li>
+
+            <li class="social-networks-item">
+              <a class="social-networks-link" href="" target="_blank">
+                <svg class="icon-Telegram" width="16" height="16">
+                  <use href="./images/symbol-defs.svg#icon-Telegram"></use>
+                </svg>
+                Telegram
+              </a>
+            </li>
+
+            <li class="social-networks-item">
+              <a class="social-networks-link" href="" target="_blank">
+                <svg class="icon-mail" width="16" height="16">
+                  <use href="./images/symbol-defs.svg#icon-mail"></use>
+                </svg>
+                Пошта
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </header>

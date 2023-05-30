@@ -14,6 +14,14 @@
         max-width: 350px;
     }
 }
+
+.mysession__wrap.visually-hidden {
+    visibility: hidden;
+    pointer-events: none;
+    overflow: hidden;
+    display: none;
+}
+
 .mysession__switch-btns {
     display: flex;
     justify-content: space-between;
@@ -280,6 +288,14 @@
     margin: 0 auto;
     max-width: 835px;
 }
+
+.schedule-block_wrap.visually-hidden {
+    visibility: hidden;
+    pointer-events: none;
+    overflow: hidden;
+    display: none;
+}
+
 .work__schedule_exemple {
     width: 100%;
     border-collapse: collapse;
@@ -843,18 +859,7 @@ td:not(:last-child) {
 }
 
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-
     visibility: hidden;
     pointer-events: none;
-
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
     overflow: hidden;
 }

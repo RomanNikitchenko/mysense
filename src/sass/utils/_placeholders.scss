@@ -68,6 +68,7 @@ p {
 .result__cards,
 .user-manual__list,
 .psychologists-slider-section__list,
-.private-office__list {
+.private-office__list,
+.social-networks-list {
   @extend %list;
 }
