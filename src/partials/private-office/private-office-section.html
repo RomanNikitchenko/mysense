@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="private-office__info">
-                  <h1 class="private-office__title">Іван Виговський</h1>
+                    <h1 class="private-office__title">Іван Виговський</h1>
                 </div> 
 
             </div>
@@ -549,9 +549,12 @@
                                 <h4>Не запланована</h4>
                             </div>
                             <button class="plus_btn"><img src="./images/office/plus.svg" alt=""></button>
+                            <button class="notes_btn btn-edit"><img src="./images/office/edit.svg" alt=""></button>
+                            <button class="notes_btn btn-del"><img src="./images/office/del.svg" alt=""></button>
                         </div>
                         
                     </div>
+
                     <!-- Чат контейнер  -->
                     <div class="chat__body">
                         <div class="chat__container">
@@ -635,18 +638,102 @@
                                             наприклад, ідеї щодо психологічних практи для пацієнта, або щось інше, що допоможе 
                                             йому у роботі
                                         </div>
-                                        <div class="data_block">
+                                        <div class="data_block-notes">
                                             <div class="data">15:10</div>
-                                            <img src="./images/office/pensil.svg" alt="">
-                                            <img src="./images/office/cart.svg" alt="">
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="item-notes">
+                                    <div class="notes__block">
+                                        <div class="notes__message">Тут психолог може записувати те, що стосується пацієнта, 
+                                            наприклад, ідеї щодо психологічних практи для пацієнта, або щось інше, що допоможе 
+                                            йому у роботі
+                                        </div>
+                                        <div class="data_block-notes">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-notes">
+                                    <div class="notes__block">
+                                        <div class="notes__message">Тут психолог може записувати те, що стосується пацієнта, 
+                                            наприклад, ідеї щодо психологічних практи для пацієнта, або щось інше, що допоможе 
+                                            йому у роботі
+                                        </div>
+                                        <div class="data_block-notes">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-
                         <div class="add__notes">
-                            <input type="text" placeholder="Додати нову нотатку"><button type="submit"><img src="./images/office/plus_white.svg" alt=""></button>
+                            <input type="text" placeholder="Додати нову нотатку">
+                            <button type="submit"><img src="./images/office/plus-note.svg" alt=""></button>
+                        </div>
+                    </div>
+
+                    <!-- Завдання контейнер  -->
+                    <div class="task__body">
+                        <div class="task__container">
+                            <div class="date_task">24 лютого</div>
+                            <div class="all-task">
+
+                                <div class="item-task">
+                                    <div class="task__block">
+                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто
+                                        </div>
+                                        <div class="data_block-task">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-task">
+                                    <div class="task__block on_click-bg">
+                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто
+                                        </div>
+                                        <div class="data_block-task on__click-btns">
+                                            <div class="data">15:10</div>
+                                            <div class="btn_on-click">
+                                                <button class="save">Зберегти</button>
+                                                <button class="cancel">Відмінити</button>
+                                            </div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-task">
+                                    <div class="task__block">
+                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто. 
+                                            Сходити з хлопцем в парк, або поїхати за місто
+                                        </div>
+                                        <div class="data_block-task">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="add__task">
+                            <input type="text" placeholder="Додати нову нотатку">
+                            <button type="submit"><img src="./images/office/plus-note.svg" alt=""></button>
                         </div>
                     </div>
                 </div>

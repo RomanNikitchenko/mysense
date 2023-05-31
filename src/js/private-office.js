@@ -5,3 +5,4 @@ import './private-office/mobileMenuPrivate';
 import './private-office/switchBetweenListAndCalendar';
 import './private-office/modalUserInformation';
 import './private-office/modalInformationDepartment';
+import './private-office/modalReminder';
