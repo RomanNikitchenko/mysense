@@ -1,6 +1,5 @@
-import * as bodyScrollLock from 'body-scroll-lock';
-
 (() => {
+  const body = document.querySelector('body');
   const beckdropMobileMenunPrivate = document.querySelector(
     '.js-menu-container-private-office'
   );
@@ -37,10 +36,7 @@ import * as bodyScrollLock from 'body-scroll-lock';
     openMenuBtnPrivate.classList.toggle('active');
 
     if (width <= 744) {
-      const scrollLockMethod = !isMenuOpen
-        ? 'disableBodyScroll'
-        : 'enableBodyScroll';
-      bodyScrollLock[scrollLockMethod](document.body);
+      body.classList.toggle('modal-is-open');
     }
   };
 
@@ -55,7 +51,7 @@ import * as bodyScrollLock from 'body-scroll-lock';
     beckdropMobileMenunPrivate.classList.remove('visually-hidden');
     openMenuBtnPrivate.classList.add('active');
     openMenuBtnPrivate.setAttribute('aria-expanded', false);
-    bodyScrollLock.enableBodyScroll(document.body);
+    body.classList.remove('modal-is-open');
   });
 
   window
@@ -66,7 +62,7 @@ import * as bodyScrollLock from 'body-scroll-lock';
       beckdropMobileMenunPrivate.classList.add('visually-hidden');
       openMenuBtnPrivate.classList.remove('active');
       openMenuBtnPrivate.setAttribute('aria-expanded', false);
-      bodyScrollLock.enableBodyScroll(document.body);
+      body.classList.remove('modal-is-open');
     });
 
   window.matchMedia('(max-width: 743px)').addEventListener('change', e => {
@@ -75,6 +71,6 @@ import * as bodyScrollLock from 'body-scroll-lock';
     beckdropMobileMenunPrivate.classList.add('visually-hidden');
     openMenuBtnPrivate.classList.remove('active');
     openMenuBtnPrivate.setAttribute('aria-expanded', false);
-    bodyScrollLock.enableBodyScroll(document.body);
+    body.classList.remove('modal-is-open');
   });
 })();
