@@ -1,7 +1,7 @@
 <!--верхняя линия хедер-->
 <header class="page-header">
   <div class="container page-header__conteiner">
-    <!-- menu-toggle -->
+    <!-- мобильное меню -->
     <button
       class="menu-toggle js-open-menu"
       aria-expanded="false"
@@ -106,25 +106,32 @@
 
     <button class="page-header__button choose-person">Обрати психолога</button>
 
-    <!-- page-header__private-office-menu -->
+    <!-- Особистий кабінет -->
     <div class="page-header__private-office-menu">
-      <button class="page-header__button page-header__button--reminder">
-        <svg class="icon-login" width="28" height="28">
+      <!-- кнопка открыть модальное окно "Нагадування" -->
+      <button
+        class="page-header__button page-header__button--reminder js-open-modal-reminder"
+        aria-expanded="false"
+        aria-controls="modal-reminder"
+      >
+        <svg width="28" height="28">
           <use href="./images/symbol-defs.svg#reminder"></use>
         </svg>
+        <span>2</span>
       </button>
 
-      <!-- open-modal-information -->
+      <!-- кнопка открыть модальное окно "Відділ турботи" -->
       <button
         class="page-header__button page-header__button--information js-open-modal-information"
         aria-expanded="false"
         aria-controls="modal-information"
       >
-        <svg class="icon-login" width="28" height="28">
+        <svg width="28" height="28">
           <use href="./images/symbol-defs.svg#information"></use>
         </svg>
       </button>
 
+      <!-- открыть модально окно "Особистий кабінет меню" -->
       <button
         aria-expanded="false"
         aria-controls="mobile-menu-private-office"
@@ -133,7 +140,7 @@
         <img src="./images/our-team-desktop.jpg" alt="Фото Іван Виговський" />
       </button>
 
-      <!-- modal-information -->
+      <!-- модальное окно "Відділ турботи" -->
       <div
         class="modal-information-department visually-hidden"
         id="modal-information"
@@ -141,7 +148,7 @@
         <div class="department">
           <h2>Відділ турботи</h2>
 
-          <!-- close-modal-information -->
+          <!-- кнопка закрыть модальное окно "Відділ турботи" -->
           <button class="close-button js-close-modal-information">
             <svg
               fill="currentColor"
@@ -194,6 +201,136 @@
           </ul>
         </div>
       </div>
+
+      <!-- ///// -->
+      <!-- модальное окно "Нагадування" -->
+      <div class="modal-reminder visually-hidden" id="modal-reminder">
+        <div class="reminder">
+          <h2>Нагадування</h2>
+
+          <!-- кнопка закрыть модальное окно "Нагадування" -->
+          <button class="close-button-reminder js-close-modal-reminder">
+            <svg
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="reminder-info">
+          <!-- Коментар -->
+          <div class="reminder-info__content">
+            <div class="reminder-info__comment">
+              <div class="reminder-info__user">
+                <div
+                  class="reminder-info__wrapper reminder-info__wrapper--comment"
+                >
+                  <img
+                    src="./images/darina.png"
+                    alt="Фото Ярина Перекотиполе"
+                  />
+                </div>
+                <h3 class="reminder-info__user-name">Ярина Перекотиполе</h3>
+                <p class="reminder-info__user-comment">
+                  Коментар, учора о 17:10
+                </p>
+              </div>
+              <p class="reminder-info__text">
+                Цікава, стаття, дякую. Це мені дуже допомогло. Тепер буду
+                використовувати це на практиці частіше. А можете ще
+                підсказати...
+              </p>
+            </div>
+          </div>
+
+          <!-- Новини платформи -->
+          <div class="reminder-info__content">
+            <div class="reminder-info__platform-news">
+              <div class="reminder-info__user">
+                <div
+                  class="reminder-info__wrapper reminder-info__wrapper--platform-news"
+                >
+                  <img src="./images/Mysense-Logo.png" alt="" />
+                </div>
+                <p class="reminder-info__user-comment">
+                  Новини платформи, учора о 16:10
+                </p>
+              </div>
+              <p class="reminder-info__text">
+                Цікава, стаття, дякую. Це мені дуже допомогло. Тепер буду
+                використовувати це на практиці частіше. А можете ще
+                підсказати...
+              </p>
+            </div>
+          </div>
+
+          <!-- Повідомлення -->
+          <div class="reminder-info__content">
+            <div class="reminder-info__comment">
+              <div class="reminder-info__user">
+                <div
+                  class="reminder-info__wrapper reminder-info__wrapper--comment"
+                >
+                  <img
+                    src="./images/darina.png"
+                    alt="Фото Ярина Перекотиполе"
+                  />
+                </div>
+                <h3 class="reminder-info__user-name">Ярина Перекотиполе</h3>
+                <p class="reminder-info__user-comment">
+                  Повідомлення, учора о 15:10
+                </p>
+              </div>
+              <p class="reminder-info__text">
+                Добрий день, так, я бачила, дякую, все зроблю 😍
+              </p>
+            </div>
+          </div>
+
+          <!-- Розпочати сесію -->
+          <div
+            class="reminder-info__content reminder-info__content--new-session"
+          >
+            <div class="reminder-info__new-session">
+              <div class="reminder-info__user">
+                <div
+                  class="reminder-info__wrapper reminder-info__wrapper--new-session"
+                >
+                  <img
+                    src="./images/darina.png"
+                    alt="Фото Ярина Перекотиполе"
+                  />
+                </div>
+                <h3
+                  class="reminder-info__user-name reminder-info__user-name--new-session"
+                >
+                  Ярина Перекотиполе
+                </h3>
+                <p
+                  class="reminder-info__user-comment reminder-info__user-comment--new-session"
+                >
+                  Повідомлення, зараз
+                </p>
+              </div>
+              <p class="reminder-info__text reminder-info__text--new-session">
+                Нова сессія почнеться за 2 хвилини
+              </p>
+              <button class="reminder-info__button-new-session" type="button">
+                Розпочати сесію
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ///// -->
     </div>
   </div>
 </header>
