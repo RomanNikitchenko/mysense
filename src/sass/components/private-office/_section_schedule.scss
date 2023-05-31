@@ -34,12 +34,14 @@
     background: rgba(121, 91, 218, 0.1);
     border-radius: 30px;
     padding: 4px;
-    .btn_focus {        
+    display: flex;
+    .btn_focus-session {        
         background: #795BDA;
         font-weight: 500;
         color: #fff;
         border-radius: 30px;
         padding: 8px 16px;
+        width: 110px;
     }
     button {
         font-weight: 600;
@@ -896,6 +898,7 @@ td:not(:last-child) {
 /*-------- Контент справа -----------*/
 .right-block__content {
     width: 100%;
+    overflow-y: scroll;//временно
 }
 .clients__switch-btns {
     display: flex;
@@ -906,20 +909,54 @@ td:not(:last-child) {
 }
 .switch__box {
     button {
-        padding: 0 30px;
         cursor: pointer;
+        width: 100px;
+    }
+    .btn_active-chat {
+        color: #fff;
+        letter-spacing: -.06em;
+        background: #795bda;
+        border: none;
+        border-radius: 30px;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 100%;
     }
 }
-.btn_focus {
-    width: 110px;
-}
+
 .clients__session-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    padding: 0 10px; 
+    .back {
+        border: none;
+        background: rgba(121, 91, 218, 0.1);
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 110%;
+        letter-spacing: -0.01em;
+        color: #795BDA;
+        display: none;
+        img {
+            width: 12px;
+            height: 12px;
+            margin-right: 20px;
+        }
+    }
 }
 .clients__session {
     margin-right: 20px;
+    margin-left: 50px;
     span {
         font-weight: 500;
         font-size: 12px;
@@ -982,8 +1019,7 @@ td:not(:last-child) {
     overflow-y: scroll;
     height: 440px;
 }
-.item-chat {
-}
+
 .person {
     width: 249px;
     background: rgba(34, 43, 64, 0.05);
@@ -1000,7 +1036,7 @@ td:not(:last-child) {
         background: url('../images/office/chat-polygon-grey.svg');
         width: 10px;
         height: 17px;
-        left: -10px;
+        left: -9px;
         bottom: 0;
     }
 }
@@ -1019,7 +1055,7 @@ td:not(:last-child) {
         background: url('../images/office/chat-polygon.svg');
         width: 10px;
         height: 17px;
-        right: -10px;
+        right: -9px;
         bottom: 0;
     }
 }
@@ -1051,6 +1087,9 @@ td:not(:last-child) {
 }
 
 .data_block-right {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
     .data {
         font-weight: 500;
         font-size: 10px;
@@ -1094,18 +1133,46 @@ td:not(:last-child) {
     }
 }
 
-
-
+/*------------- Нотатки ----------------------------*/
+.notes__body {
+    height: 580px;
+}
+.notes__container {
+}
+.date_notes {
+}
+.all-notes {
+    padding: 20px;
+}
+.item-notes {
+}
+.notes__block {
+    background: rgba(34, 43, 64, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+}
+.notes__message {
+}
+.data_block {
+    display: grid;
+    grid-template-columns: 90% 1fr 1fr;
+    img {
+        width: 12px;
+        width: 12px;
+    }
+}
+.data {
+}
+.add__notes {
+}
 
 @media screen and (max-width:1280px) {
-    .btn_focus {
-        width: 80px;
-    }
-    .switch__box button {
-        padding: 0 15px;
+    .btn_active-chat {
+        width: 120px;
     }
     .clients__session {
-        margin-right: 20px;
+        margin-right: 0;
+        margin-left: 20px;
     }
 }
 
@@ -1128,9 +1195,9 @@ td:not(:last-child) {
     .work__schedule-controls {
         padding: 20px;
     }
-
     .messages-block__wrap {
         flex-wrap: wrap;
+        height: 100%;
     }
     .left-block__clients {
         width: 100%;
@@ -1139,6 +1206,25 @@ td:not(:last-child) {
     .clients__switch-btns {
         flex-wrap: wrap-reverse;
     }
+    .clients__session {
+        margin-left: 140px;
+    }
+    .clients__session-wrap { 
+        border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    }
+    .switch__box {
+        margin-top: 10px;
+    }
+    .clients__session-wrap .back {
+        display: flex;
+    }
+    .switch__box .btn_focus-chat {
+        width: 120px;
+    }
+    .clients__session-wrap {
+        padding: 0 10px 14px; 
+    }
+    
 }
 
 
