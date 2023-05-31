@@ -361,10 +361,11 @@
 .block__title.active::before {
     background: transparent;
 }
-  
+
 .block__title.active::after {
     transform: rotate(45deg);
 }
+
 .item__title {
     font-weight: 500;
     font-size: 24px;
@@ -372,6 +373,17 @@
     letter-spacing: -0.06em;
     color: #222B40;
 }
+.allowed {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #6843D1;
+}
+
+
 .item__content {
     border-radius: 8px;
 }
@@ -460,7 +472,12 @@
     transform: rotate(0deg);
     right: 0;
 }
-
+.item__wrap.rotated::after {
+    background: #795BDA;
+}
+.item__title.rotated {
+    color: #795BDA;
+}
 .edu__state {
     margin-top: 60px;
     h2 {

@@ -1820,6 +1820,96 @@ td:not(:last-child) {
 }
 
 
+/*--------- Робочий графік ----------*/
+.work__schedule_body_2 {    
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow-x: hidden;
+}
+.work__schedule_2 {
+    .edit_shedule {
+        background: rgba(121, 91, 218, 0.1);
+        border: 1px solid #D5CAF9;
+        border-collapse: collapse;
+    }
+}
+.bottom_block__grafik {
+    display: flex;
+    width: 100%;
+    margin: 24px 30px;
+    .edit__grafik {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        color: #795BDA;
+        border: none;
+        cursor: pointer;
+        background: rgba(121, 91, 218, 0.1);
+        border-radius: 100px;
+        padding: 8px 16px;
+        &:hover {
+            background: rgba(121, 91, 218, 0.2);
+        }
+    }
+}
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 30px;
+    h4 {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+        margin-right: 10px;
+    }
+}
+.lessons {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    h4 {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+        margin-right: 10px;
+    }
+}
+select {
+    border: none;
+    background: rgba(34, 43, 64, 0.05);
+    border-radius: 150px;
+    padding: 9px 16px;
+    outline: none;
+    option {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+        
+    }
+}
+.question {
+    margin-left: 10px;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer; 
+    background: rgba(34, 43, 64, 0.05);
+    border-radius: 30px;
+    &:hover {
+        background: rgba(34, 43, 64, 0.1);
+    }
+}
+
+
+
+
 @media screen and (max-width:1280px) {
     .btn_active-chat {
         width: 120px;
