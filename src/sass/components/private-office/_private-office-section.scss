@@ -27,6 +27,7 @@
 .flex-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 //private-office
@@ -228,16 +229,21 @@
                 min-height: 32px;
             }
 
-            // @media screen and (min-width: 1280px) {
+            @media screen and (min-width: 1280px) {
                 min-height: 36px;
 
-                &:hover,
-                &:focus {
+                &:hover {
                     background: rgba(121, 91, 218, 0.1);
                     color: #795BDA;
                 }
-            // }
+            }
         }
+
+        .private-office__list-button.is-active {
+            color: #795bda;
+            background: #795bda1a;
+        }
+
     }
 }
 
