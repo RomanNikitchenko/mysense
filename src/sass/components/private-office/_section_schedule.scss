@@ -2,7 +2,7 @@
     position: relative;
     margin-left: 16px;
     width: 850px;
-    overflow-y: auto;
+    // overflow-y: auto;
     @media screen and (max-width: 744px) {
         margin-left: 0;
         
@@ -304,7 +304,10 @@
 .schedule-block_wrap.visually-hidden,
 .messages-block__wrap.visually-hidden,
 .statistic__body.visually-hidden,
-.work__schedule_body_2.visually-hidden {
+.work__schedule_body_2.visually-hidden,
+.chat__body.visually-hidden,
+.notes__body.visually-hidden,
+.task__body.visually-hidden {
     visibility: hidden;
     pointer-events: none;
     overflow: hidden;
@@ -908,7 +911,8 @@ td:not(:last-child) {
 /*-------- Контент справа -----------*/
 .right-block__content {
     width: 100%;
-    overflow-y: scroll;//временно
+
+    // overflow-y: scroll;//временно
 
 }
 .clients__switch-btns {

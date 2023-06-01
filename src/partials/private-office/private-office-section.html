@@ -541,9 +541,9 @@
                     <!-- Верхний блок переключения Чат, Нотатки, Завдання  -->
                     <div class="clients__switch-btns">
                         <div class="switch__box">
-                            <button class="btn_active-chat">Чат</button>
-                            <button>Нотатки</button>
-                            <button>Завдання</button>
+                            <button data-switch-button="Чат" class="btn_active-chat">Чат</button>
+                            <button data-switch-button="Нотатки">Нотатки</button>
+                            <button data-switch-button="Завдання">Завдання</button>
                         </div>
                         <div class="clients__session-wrap">
                             <button class="back"><img src="./images/office/purple-arrow.svg" alt="">Ярина Перекотиполе</button>
@@ -559,7 +559,7 @@
                     </div>
 
                     <!-- Чат контейнер  -->
-                    <div class="chat__body">
+                    <div class="chat__body" data-switch-content="Чат">
                         <div class="chat__container">
                             <div class="date">24 лютого</div>
                             <div class="all-chat">
@@ -686,7 +686,7 @@
                         </div>
                     </div>
                     <!-- Нотатки контейнер  -->
-                    <div class="notes__body">
+                    <div class="notes__body visually-hidden" data-switch-content="Нотатки">
                         <div class="notes__container">
                             <div class="date_notes">24 лютого</div>
                             <div class="all-notes">
@@ -768,7 +768,7 @@
                     </div>
 
                     <!-- Завдання контейнер  -->
-                    <div class="task__body">
+                    <div class="task__body visually-hidden" data-switch-content="Завдання">
                         <div class="task__container">
                             <div class="date_task">24 лютого</div>
                             <div class="all-task">
@@ -819,56 +819,6 @@
                         <div class="add__task">
                             <input type="text" placeholder="Додати нову нотатку">
                             <button type="submit"><img src="./images/office/plus-note.svg" alt=""></button>
-                        </div>
-                    </div>
-                    <!-- Завдання контейнер  -->
-                    <div class="task__body">
-                        <div class="task__container">
-                            <div class="date_task">24 лютого</div>
-                            <div class="all-task">
-
-                                <div class="item-task">
-                                    <div class="task__block">
-                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто
-                                        </div>
-                                        <div class="data_block-task">
-                                            <div class="data">15:10</div>
-                                            <button class="pensil"><span>Зберегти</span></button>
-                                            <button class="cart"><span>Відмінити</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item-task">
-                                    <div class="task__block task__block-active">
-                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто
-                                        </div>
-                                        <div class="data_block-task data_active">
-                                            <div class="data">15:10</div>
-                                            <button class="pensil_active"><span>Зберегти</span></button>
-                                            <button class="cart_active"><span>Відмінити</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item-task">
-                                    <div class="task__block">
-                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто. Сходити з хлопцем 
-                                            в парк, або поїхати за місто
-                                        </div>
-                                        <div class="data_block-task">
-                                            <div class="data">15:10</div>
-                                            <button class="pensil"><span>Зберегти</span></button>
-                                            <button class="cart"><span>Відмінити</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="add__task">
-                            <input type="text" placeholder="Додати нове завдання"><button type="submit"><img src="./images/office/plus_white.svg" alt=""></button>
                         </div>
                     </div>
                 </div>

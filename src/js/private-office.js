@@ -7,3 +7,4 @@ import './private-office/modalUserInformation';
 import './private-office/modalInformationDepartment';
 import './private-office/modalReminder';
 import './private-office/menuNavigation';
+import './private-office/myCustomersSwitchButton';
