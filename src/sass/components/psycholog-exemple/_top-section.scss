@@ -12,8 +12,13 @@
     border-radius: 8px;
 }
 .card__img {
+    overflow: hidden;
+    height: 200px;
     img {
         border-radius: 8px 8px 0 0;    
+        object-fit: cover;
+        object-position: top;
+        width: 100%;
     }
 }
 .card__info {
@@ -218,10 +223,13 @@
     position: relative;
     background: #fff;
     border-radius: 8px;
+    height: 465px;
     img {
         max-width: 417px;
         width: 100%;
         border-radius: 8px 0 0 8px;
+        object-fit: cover;
+        object-position: top;
     }
 }
 .info_video {
