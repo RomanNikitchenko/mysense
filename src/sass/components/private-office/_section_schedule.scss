@@ -9,6 +9,10 @@
     }
 }
 /*--------------- Мои сессии -------------------------*/
+.my-sessions {
+    border: 1px solid red;
+}
+
 .mysession__wrap {
     background: #FFFFFF;
     border-radius: 8px;
@@ -296,7 +300,11 @@
     max-width: 850px;
 }
 
-.schedule-block_wrap.visually-hidden {
+.my-sessions.visually-hidden,
+.schedule-block_wrap.visually-hidden,
+.messages-block__wrap.visually-hidden,
+.statistic__body.visually-hidden,
+.work__schedule_body_2.visually-hidden {
     visibility: hidden;
     pointer-events: none;
     overflow: hidden;
