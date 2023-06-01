@@ -268,7 +268,9 @@
         cursor: pointer;
     }
 }
-
+.hidden {
+    visibility: hidden;
+}
 .psycholog__content-wrapper {
     margin-top: 60px;
     overflow: hidden;
