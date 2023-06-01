@@ -1853,6 +1853,10 @@ td:not(:last-child) {
         }
     }
 }
+.two__select {
+    display: flex;
+    align-items: center;
+}
 .status {
     display: flex;
     align-items: center;
@@ -1897,7 +1901,7 @@ select {
 }
 .question {
     margin-left: 10px;
-    padding: 6px 12px;
+    padding: 10px;
     border: none;
     cursor: pointer; 
     background: rgba(34, 43, 64, 0.05);
@@ -1906,7 +1910,12 @@ select {
         background: rgba(34, 43, 64, 0.1);
     }
 }
-
+.work__schedule_2-mobile {
+    display: none;
+}
+.mob__text {
+    display: none;
+}
 
 
 
@@ -1945,6 +1954,22 @@ select {
         .on__click-btns {
             grid-template-columns: 375px 1fr 1fr !important
         }   
+    }
+    .bottom_block__grafik {
+        flex-wrap: wrap-reverse;
+    }
+    .status {
+        margin-left: 0;
+    }
+    .two__select {
+        border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+        padding-bottom: 20px;
+    }
+    .bottom_block__grafik .edit__grafik {
+        margin-top: 20px;
+    }
+    .bottom_block__grafik {
+        margin: 24px 15px;
     }
 }
 
@@ -2047,7 +2072,7 @@ select {
         .summ {
         margin-top: 18px;
         } 
-    
+    }
     .clients__session-wrap {
         width: 335px;
     }
@@ -2085,7 +2110,52 @@ select {
     .data_block-task {
         grid-template-columns: 75% 1fr 1fr;
     }
-}
+    .work__schedule_2 {
+        display: none;
+    }
+    .work__schedule_2-mobile {
+        display: block;
+    }
+    .two__select {
+        flex-wrap: wrap;
+    }
+    .lessons {
+        margin-left: 0;
+        margin-top: 14px;
+    }
+    .mob__text {
+        display: block;
+        margin-top: 15px;
+        max-width: 340px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: -0.05em;
+        color: rgba(34, 43, 64, 0.4);
+    }
+    #status {
+        width: 260px;
+    }
+    #lessons {
+        width: 188px;
+    }
+    .status {
+        margin-left: 0;
+        border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+        padding-bottom: 14px;
+    }
+    .question {
+        display: none;
+    }
+
+    .edit_shedule_mob {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(121, 91, 218, 0.4);
+        margin: auto;
+    }
 }
 
 
