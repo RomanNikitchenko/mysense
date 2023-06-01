@@ -1286,6 +1286,7 @@
     </form>
   </div>
 </div>
+
 </section>
 
 <script>
@@ -1317,3 +1318,18 @@
   }
 }
 </script>
+<script>
+      const playBtn = document.querySelector('.play__video');
+      const playBtnMove = document.querySelector('.psycholog__video');
+      
+          playBtn.addEventListener("click", function (e) {
+            playBtn.classList.add('hidden');
+            e.stopPropagation();
+          });
+
+          playBtnMove.addEventListener("click", function (e) {
+            playBtn.classList.toggle('hidden');
+            e.stopPropagation();
+          });
+</script>
+
