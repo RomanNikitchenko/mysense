@@ -268,7 +268,9 @@
         cursor: pointer;
     }
 }
-
+.hidden {
+    visibility: hidden;
+}
 .psycholog__content-wrapper {
     margin-top: 60px;
     overflow: hidden;
@@ -468,6 +470,7 @@
     /* здесь может быть любое достаточно большое значение */
 }
 
+/*---------------------------------------*/
 .item__wrap.rotated::before {
     transform: rotate(0deg);
     right: 0;
@@ -475,9 +478,15 @@
 .item__wrap.rotated::after {
     background: #795BDA;
 }
-.item__title.rotated {
-    color: #795BDA;
+
+.item__wrap.rotated {
+    .item__title {
+        color: #795BDA;
+    }
 }
+/*---------------------------------------*/
+
+
 .edu__state {
     margin-top: 60px;
     h2 {
