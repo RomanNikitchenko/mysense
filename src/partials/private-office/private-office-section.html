@@ -775,8 +775,31 @@
 
                                 <div class="item-task">
                                     <div class="task__block">
-                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто
+                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто</div>
+                                        <div class="data_block-task">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-task">
+                                    <div class="task__block">
+                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто.
+                                            Сходити з хлопцем в парк, або поїхати за місто.
+                                        </div>
+                                        <div class="data_block-task">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-task">
+                                    <div class="task__block">
+                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто</div>
                                         <div class="data_block-task">
                                             <div class="data">15:10</div>
                                             <button class="pensil"></button>
@@ -1650,7 +1673,67 @@
                 </div>
             </div>
 
+            <!------ Редагувати профіль -------->
+            <div class="edit_profile-body">
+                <div class="edit_profile__wrap">
+                    <form action="" class="doc__profile">
+                        <div class="profile__photo">
+                            <h4>Фото профілю</h4>
+                            <div class="block__photo center__block">
+                                <input type="file"  class="custom-file-input" name="thumbnail" id="thumbnail">
+                                <img class="custom-file-photo" src="./images/darina.png" alt="">
+                                <button class="btn__load-photo">Редагувати фото профілю</button>
+                            </div>
+                            <p>Це фото буде відображуватись  на сторонці вашого профілю. <a href="#">Вимоги до фото</a></p>
+                        </div>
 
+                        <div class="profile-personal__data">
+                            <h4>Особисті дані</h4>
+                            <div class="block__data center__block">
+                                <label for="name">Імʼя</label>
+                                <input type="text" id="name" name="Імʼя" placeholder="Ваше імʼя">
+                                <label for="name">Прізвище</label>
+                                <input type="text" id="last-name" name="Прізвище" placeholder="Ваше прізвище">
+                            </div>
+                            <p>Ці дані будуть відображуватись на сторонці вашого профілю</p>
+                        </div>
+
+                        <div class="profile-contacts">
+                            <h4>Контакти</h4>
+                            <div class="block__contacts center__block">
+                                <label for="phone">Телефон</label>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+
+                                <label for="email">Email</label>
+                                <input type="email" id="email" pattern=".+@globex\.com" size="30" required>
+                            </div>
+                            <p>Ваші контактні дані не доступні публічно, 
+                            це нам треба для того, щоб тримати з вами звʼязок</p>
+                        </div>
+
+                        <div class="profile-password">
+                            <h4>Змінити пароль</h4>
+                            <div class="block__password center__block">
+                                <label for="pass">Введіть старий пароль</label>
+                                <input type="password" id="pass" name="password" minlength="8" required>
+
+                                <label for="pass">Введіть новий пароль</label>
+                                <input type="password" id="pass" name="password" minlength="8" required>
+
+                                <label for="pass">Повторіть новий пароль</label>
+                                <input type="password" id="pass" name="password" minlength="8" required>
+                            </div>
+                            <p><a href="">Я не памʼятаю старий пароль</a></p>
+                        </div>
+
+                        <div class="profile__submit-btns">
+                            <input type="submit" class="save__info" value="Зберегти" />
+                            <input type="button" class="request" value="Запит на зміну анкети">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
 
         </section>
     </div>
@@ -1788,5 +1871,9 @@
 </section>
 
 <script>
-
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input);
 </script>
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
