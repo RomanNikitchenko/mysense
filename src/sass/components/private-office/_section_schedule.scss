@@ -9,14 +9,11 @@
     }
 }
 /*--------------- Мои сессии -------------------------*/
-.my-sessions {
-    border: 1px solid red;
-}
 
 .mysession__wrap {
     background: #FFFFFF;
     border-radius: 8px;
-    margin-bottom: 15px;
+    // margin-bottom: 15px;
     @media screen and (max-width: 744px) {
         max-width: 350px;
     }
@@ -306,9 +303,15 @@
 .messages-block__wrap.visually-hidden,
 .statistic__body.visually-hidden,
 .work__schedule_body_2.visually-hidden,
+.posts__body.visually-hidden,
+.edit_profile-body.visually-hidden,
+//Мої сесії
 .chat__body.visually-hidden,
 .notes__body.visually-hidden,
-.task__body.visually-hidden {
+.task__body.visually-hidden,
+//Мої статті та вебінари
+.articles__cards-wrap.visually-hidden,
+.meeting__cards-wrap.visually-hidden {
     visibility: hidden;
     pointer-events: none;
     overflow: hidden;
@@ -2037,6 +2040,13 @@ select {
         color: #fff;
     }
 }
+
+.vebinars-btn.is-active,
+.posts.is-active {
+    background: #6c52c4;
+    color: #fff;
+}
+
 .arrow__btns,
 .arrow__btns-meeting {
     display: flex;
@@ -2147,7 +2157,7 @@ select {
 }
 /*------------webinars--------------*/
 .meeting__cards-wrap {
-    margin-bottom: 60px;
+    // margin-bottom: 60px;
 }
 .card__meeting {
     background: rgba(34, 43, 64, 0.05);               

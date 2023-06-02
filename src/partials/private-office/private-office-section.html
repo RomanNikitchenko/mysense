@@ -1322,20 +1322,20 @@
             </div>
             
             <!------ Вебінари та статті -------->
-            <div class="posts__body">
+            <div class="posts__body visually-hidden" data-navigation-content="Мої статті та вебінари">
                 <div class="posts__wrap">
                     <div class="platform__title-block">
                         <div class="controls__block">
                             <div class="switch_btns">
-                                <button class="vebinars-btn">Вебінари</button>
-                                <button class="posts">Статті</button>
-                                </div>
+                                <button class="vebinars-btn is-active" data-switch="Вебінари">Вебінари</button>
+                                <button class="posts" data-switch="Статті">Статті</button>
+                            </div>
                             <button class="new__posts">Запит на нові публікації</button>
                         </div>
                     </div>
 
                     <!-- articles -->
-                    <div class="articles__cards-wrap">
+                    <div class="articles__cards-wrap visually-hidden" data-content="Статті">
                         <ul class="articles__list">
                             <li class="articles__item">
                             <div class="articles__card-column">
@@ -1551,7 +1551,7 @@
                     </div>
 
                     <!-- meeting -->
-                    <div class="meeting__cards-wrap">
+                    <div class="meeting__cards-wrap" data-content="Вебінари">
                         <ul class="meeting__list">
                             <li class="meeting__item">
                             <div class="card__meeting">
@@ -1674,7 +1674,7 @@
             </div>
 
             <!------ Редагувати профіль -------->
-            <div class="edit_profile-body">
+            <div class="edit_profile-body visually-hidden" data-navigation-content="Редагувати профіль">
                 <div class="edit_profile__wrap">
                     <form action="" class="doc__profile">
                         <div class="profile__photo">
@@ -1870,10 +1870,10 @@
     </div>
 </section>
 
-<script>
+<!-- <script>
     var input = document.querySelector("#phone");
     window.intlTelInput(input);
 </script>
     
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
