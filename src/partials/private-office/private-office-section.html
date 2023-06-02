@@ -1680,9 +1680,10 @@
                         <div class="profile__photo">
                             <h4>Фото профілю</h4>
                             <div class="block__photo center__block">
-                                <input type="file"  class="custom-file-input" name="thumbnail" id="thumbnail">
-                                <img class="custom-file-photo" src="./images/darina.png" alt="">
-                                <button class="btn__load-photo">Редагувати фото профілю</button>
+                                <input name="file" type="file" id="input__file" class="custom-file-input input input__file" multiple>
+                                <label for="input__file" class="input__file-button">
+                                <span class="input__file-icon-wrapper"><img class="input__file-icon" src="./images/darina.png" alt="Выбрать файл" width="25"></span>
+                                <span class="input__file-button-text btn__load-photo" >Редагувати фото профілю</span>
                             </div>
                             <p>Це фото буде відображуватись  на сторонці вашого профілю. <a href="#">Вимоги до фото</a></p>
                         </div>
@@ -1702,10 +1703,10 @@
                             <h4>Контакти</h4>
                             <div class="block__contacts center__block">
                                 <label for="phone">Телефон</label>
-                                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                                <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
 
                                 <label for="email">Email</label>
-                                <input type="email" id="email" pattern=".+@globex\.com" size="30" required>
+                                <input type="email" id="email" placeholder="Ваш email" pattern=".+@globex\.com" size="30" >
                             </div>
                             <p>Ваші контактні дані не доступні публічно, 
                             це нам треба для того, щоб тримати з вами звʼязок</p>
@@ -1714,14 +1715,21 @@
                         <div class="profile-password">
                             <h4>Змінити пароль</h4>
                             <div class="block__password center__block">
+
                                 <label for="pass">Введіть старий пароль</label>
-                                <input type="password" id="pass" name="password" minlength="8" required>
+                                <input type="password" id="show1" name="password" placeholder="Старий пароль" minlength="8" >
+                                <span id="showEye"><i id="i" class="far fa-eye"></i></span>
 
                                 <label for="pass">Введіть новий пароль</label>
-                                <input type="password" id="pass" name="password" minlength="8" required>
+                                <input type="password" id="show2" name="password" placeholder="Новий пароль" minlength="8" >
+                                <span id="showEye2"><i id="i" class="far fa-eye"></i></span>
 
                                 <label for="pass">Повторіть новий пароль</label>
-                                <input type="password" id="pass" name="password" minlength="8" required>
+                                <input type="password" id="show3" name="password" placeholder="Повторіть новий пароль" minlength="8" >
+                                <span id="showEye3"><i id="i" class="far fa-eye"></i></span>
+
+    
+
                             </div>
                             <p><a href="">Я не памʼятаю старий пароль</a></p>
                         </div>
@@ -1803,7 +1811,7 @@
             <div class="add_session__correct">
                 <h4>Оберіть клієнта</h4>
                 <div class="list__client">
-                    <select class="drop_client" id="user_language" onchange="set_lang(this.value)&amp;set_lang_dis();">
+                    <select class="drop_client" id="user_language">
                         <option class="drop_client darina" id="yarina" value="darina" slected="selected">Дарина Приходько</option>
                         <option class="drop_client yarina" id="yarina" value="yarina">Ярина Перекотиполе</option>
                         <option class="drop_client maria" id="yarina" value="maria">Марія Соловій</option>
@@ -1871,9 +1879,54 @@
 </section>
 
 <script>
-    var input = document.querySelector("#phone");
-    window.intlTelInput(input);
+    var button = document.getElementById("showEye");
+    var button2 = document.getElementById("showEye2");
+    var button3 = document.getElementById("showEye3");
+
+    button.onclick = showEye;
+    button2.onclick = showEye2;
+    button3.onclick = showEye3;
+
+    var input = document.getElementById("show1");
+    var input2 = document.getElementById("show2");
+    var input3 = document.getElementById("show3");
+    var icon = document.getElementById("i");
+
+    function showEye () {
+        if(input.getAttribute('type') == 'password') {
+        input.removeAttribute('type');
+        input.setAttribute('type', 'text')
+        button.innerHTML='<i id="i" class="far fa-eye-slash">';
+        } else {
+        input.removeAttribute('type');
+        input.setAttribute('type', 'password');
+        button.innerHTML='<i id="i" class="far fa-eye">';
+        }
+    }
+    function showEye2 () {
+        if(input2.getAttribute('type') == 'password') {
+        input2.removeAttribute('type');
+        input2.setAttribute('type', 'text')
+        button2.innerHTML='<i id="i" class="far fa-eye-slash">';
+        } else {
+        input2.removeAttribute('type');
+        input2.setAttribute('type', 'password');
+        button2.innerHTML='<i id="i" class="far fa-eye">';
+        }
+    }
+    function showEye3 () {
+        if(input3.getAttribute('type') == 'password') {
+        input3.removeAttribute('type');
+        input3.setAttribute('type', 'text')
+        button3.innerHTML='<i id="i" class="far fa-eye-slash">';
+        } else {
+        input3.removeAttribute('type');
+        input3.setAttribute('type', 'password');
+        button3.innerHTML='<i id="i" class="far fa-eye">';
+        }
+    }
 </script>
-    
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
