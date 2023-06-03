@@ -1,0 +1,32 @@
+.form__header {
+    padding: 40px 0 30px;
+}
+
+.form__header-conteiner {
+    max-width: 460px;
+    padding: 0 20px;
+}
+.form__logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+        max-width: 142px;
+    }
+}
+.department_care {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    color: #795BDA;
+
+    background: rgba(121, 91, 218, 0.1);
+    border-radius: 30px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    &:hover {
+        background: rgba(121, 91, 218, 0.2);
+    }
+}
