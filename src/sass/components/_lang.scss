@@ -1,0 +1,94 @@
+.category {
+    margin-top: 30px;
+    padding-top: 40px;
+}
+.category__title {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 90%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    max-width: 640px;
+}
+.category__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+.card__link-btn {
+    border: none;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 200px;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    &:hover {
+        background: #795BDA;
+        .lang__card-title {
+            color: #fff;
+        }
+    }
+}
+.lang__card-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.lang__card__icon_1 {
+    background: url('../images/test-icons/ukraine.svg') no-repeat;
+    width: 31px;
+    height: 31px;
+}
+.lang__card__icon_2 {
+    background: url('../images/test-icons/russia.svg') no-repeat;
+    width: 31px;
+    height: 31px;
+}
+.lang__card__icon_3{
+    background: url('../images/test-icons/Globe.svg') no-repeat;
+    width: 48px;
+    height: 48px;
+}
+.card__link-btn:focus .lang__card__icon_3,
+.card__link-btn:hover .lang__card__icon_3 {
+    background: url('../images/test-icons/Globe-pink.svg');
+}
+
+
+@media screen and (max-width: 1280px) {
+    .category__cards {
+        grid-template-columns: 208px 208px 208px;
+    }
+    .category__card-title {
+        margin-right: 0; 
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 744px) {
+    .category__title {
+        font-size: 32px;
+    }
+    .category__cards {
+        grid-template-columns: 170px 170px;
+        gap: 10px;
+    }
+    .lang__card-title {
+        font-size: 16px;
+    }
+    .card__link-btn {
+        min-height: 180px;
+    }
+}

@@ -1,0 +1,157 @@
+.testpage {
+    margin-bottom: 140px;
+}
+.testpage__title-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        max-width: 259px;
+
+    }
+}
+.testpage__title {
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 90%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    margin-bottom: 40px;
+}
+.testpage__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.test__card-wrap {
+    border: none;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 160px;
+    max-height: 200px;
+    transition: all 0.3s ease 0s;
+    &:hover {
+        cursor: pointer;
+        background: rgba(121, 91, 218, 1);
+        .card__link {
+            .test__card-title {
+                color: #fff;
+            }
+            .person-purple {
+                fill: #FF5C8D;
+            }
+    }
+    }
+}
+.card__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.test__card-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 99px;
+}
+.test__card__icon {
+    display: flex;
+    align-items: center;
+    span {
+        font-family: 'Inter Tight';
+        // font-weight: 600;
+        font-size: 14px;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        max-width: 104px;
+        color: #fff;
+        text-align: left;
+    }
+}
+
+.icon__bg_1 {
+    background: url('../images/test-icons/Human.svg');
+    width: 48px;
+    height: 48px;
+}
+.icon__bg_2 {
+    background: url('../images/test-icons/Falmiy.svg');
+    width: 48px;
+    height: 48px;
+}
+.icon__bg_3 {
+    background: url('../images/test-icons/baby.svg');
+    width: 48px;
+    height: 48px;
+}
+.test__card-wrap:hover .icon__bg_1,
+.test__card-wrap:focus .icon__bg_1  {
+    background: url('../images/test-icons/Human-pink.svg');
+    width: 48px;
+    height: 48px;
+}
+.test__card-wrap:hover .icon__bg_2,
+.test__card-wrap:focus .icon__bg_2 {
+    background: url('../images/test-icons/Falmiy-pink.svg');
+    width: 48px;
+    height: 48px;
+} 
+.test__card-wrap:hover .icon__bg_3,
+.test__card-wrap:focus .icon__bg_3   {
+    background: url('../images/test-icons/baby-pink.svg');
+    width: 48px;
+    height: 48px;
+}
+
+
+
+@media screen and (max-width:1280px) {
+    .test__card-title {
+        font-size: 22px;
+    }
+    .testpage__title {
+        font-size: 42px;
+    }
+    .testpage__title-block {
+        p {
+            max-width: 196px;
+        }
+    }
+}
+@media screen and (max-width: 744px) {
+    .test__card-title {
+        font-size: 22px;
+    }
+    .testpage__cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        display: grid;
+    }
+    .testpage__title {
+        font-size: 34px;
+    }
+    .test__card-title {
+        margin-bottom: 62px;
+    }   
+    .testpage__title {
+        font-size: 34px;
+    }
+    .testpage__title-block {
+        flex-wrap: wrap;
+        p {
+            max-width: 302px;
+            margin-bottom: 20px;
+        }
+    }
+}
