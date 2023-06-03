@@ -311,7 +311,10 @@
 .task__body.visually-hidden,
 //Мої статті та вебінари
 .articles__cards-wrap.visually-hidden,
-.meeting__cards-wrap.visually-hidden {
+.meeting__cards-wrap.visually-hidden,
+//Мої клієнти
+.left-block__clients.visually-hidden,
+.right-block__content.visually-hidden {
     visibility: hidden;
     pointer-events: none;
     overflow: hidden;
@@ -917,6 +920,9 @@ td:not(:last-child) {
     width: 100%;
 
     // overflow-y: scroll;//временно
+    @media screen and (min-width: 744px) {
+        display: block;
+    }
 
 }
 .clients__switch-btns {
@@ -2752,7 +2758,6 @@ select {
     }
     .left-block__clients {
         width: 100%;
-        display: none;
     }
     .clients__switch-btns {
         flex-wrap: wrap-reverse;
