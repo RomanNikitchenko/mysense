@@ -1,7 +1,7 @@
 (() => {
   /////
   const clientsSwitchBtns = document.querySelectorAll(
-    '.clients__switch-btns button'
+    'button[data-switch-button]'
   );
   var dataSwitchContent = document.querySelectorAll('div[data-switch-content]');
   /////
