@@ -296,6 +296,8 @@
     border-radius: 8px;
     margin: 0 auto;
     max-width: 850px;
+    overflow-y: auto;
+    height: 646px;
 }
 
 .my-sessions.visually-hidden,
@@ -1504,7 +1506,7 @@ td:not(:last-child) {
 .task__block {
     background: rgba(34, 43, 64, 0.05);
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 10px;
     button {
         border: none;
         span {
@@ -1728,6 +1730,7 @@ td:not(:last-child) {
         line-height: 150%;
         letter-spacing: -0.01em;
         color: #222B40;
+        height: 30%;
     }
 }
 .earnings__title {
@@ -1781,6 +1784,7 @@ td:not(:last-child) {
         line-height: 150%;
         letter-spacing: -0.01em;
         color: #222B40;
+        height: 30%;
     }
 }
 .sesiya__title {
@@ -1828,6 +1832,7 @@ td:not(:last-child) {
         line-height: 150%;
         letter-spacing: -0.01em;
         color: #222B40;
+        height: 30%;
     }
 }
 .content__title {
@@ -2838,11 +2843,7 @@ select {
     .box5 { 
         width: 47%;
     }
-    .box5 { 
-        .summ {
-        margin-top: 18px;
-        } 
-    }
+    
     .switch__box {
         margin-top: 15px;
         width: 380px;
