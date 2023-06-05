@@ -21,9 +21,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
   );
 
   //gender lang cost
-  const gender = document.querySelector('section.gender');
-  const lang = document.querySelector('section.lang');
-  const cost = document.querySelector('section.cost');
+  const sectionGender = document.querySelector('section.gender');
+  const sectionLang = document.querySelector('section.lang');
+  const sectionCost = document.querySelector('section.cost');
 
   let psychiatristFor = [];
 
@@ -35,6 +35,10 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
   let myRequests = [];
   let consern = [];
   let category = [];
+
+  let gender = [];
+  let lang = [];
+  let cost = [];
 
   let disabled = false;
 
@@ -128,17 +132,17 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
       if (family) {
         page += 1;
         sectionConsern.classList.add('visually-hidden');
-        gender.classList.remove('visually-hidden');
-        lang.classList.remove('visually-hidden');
-        cost.classList.remove('visually-hidden');
+        sectionGender.classList.remove('visually-hidden');
+        sectionLang.classList.remove('visually-hidden');
+        sectionCost.classList.remove('visually-hidden');
         return;
       }
       if (child) {
         page += 1;
         sectionCategory.classList.add('visually-hidden');
-        gender.classList.remove('visually-hidden');
-        lang.classList.remove('visually-hidden');
-        cost.classList.remove('visually-hidden');
+        sectionGender.classList.remove('visually-hidden');
+        sectionLang.classList.remove('visually-hidden');
+        sectionCost.classList.remove('visually-hidden');
         return;
       }
     }
@@ -147,9 +151,13 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
       if (myself) {
         page += 1;
         sectionRequests.classList.add('visually-hidden');
-        gender.classList.remove('visually-hidden');
-        lang.classList.remove('visually-hidden');
-        cost.classList.remove('visually-hidden');
+        sectionGender.classList.remove('visually-hidden');
+        sectionLang.classList.remove('visually-hidden');
+        sectionCost.classList.remove('visually-hidden');
+        await getFilterChange(
+          [...psychiatristFor, ...myState, ...myRequests],
+          gender
+        );
         return;
       }
       if (family) {
@@ -157,9 +165,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         fixedButtonNext.classList.add('visually-hidden');
         testResult.classList.remove('visually-hidden');
         fixedButtonLoadMore.classList.remove('visually-hidden');
-        gender.classList.add('visually-hidden');
-        lang.classList.add('visually-hidden');
-        cost.classList.add('visually-hidden');
+        sectionGender.classList.add('visually-hidden');
+        sectionLang.classList.add('visually-hidden');
+        sectionCost.classList.add('visually-hidden');
         toggleActiveClass(testLine, testResult, 2);
         return;
       }
@@ -168,9 +176,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         fixedButtonNext.classList.add('visually-hidden');
         testResult.classList.remove('visually-hidden');
         fixedButtonLoadMore.classList.remove('visually-hidden');
-        gender.classList.add('visually-hidden');
-        lang.classList.add('visually-hidden');
-        cost.classList.add('visually-hidden');
+        sectionGender.classList.add('visually-hidden');
+        sectionLang.classList.add('visually-hidden');
+        sectionCost.classList.add('visually-hidden');
         toggleActiveClass(testLine, testResult, 2);
         return;
       }
@@ -182,9 +190,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         fixedButtonNext.classList.add('visually-hidden');
         testResult.classList.remove('visually-hidden');
         fixedButtonLoadMore.classList.remove('visually-hidden');
-        gender.classList.add('visually-hidden');
-        lang.classList.add('visually-hidden');
-        cost.classList.add('visually-hidden');
+        sectionGender.classList.add('visually-hidden');
+        sectionLang.classList.add('visually-hidden');
+        sectionCost.classList.add('visually-hidden');
         toggleActiveClass(testLine, testResult, 2);
         return;
       }
@@ -195,7 +203,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
   /////
   const fixedButtonPrew = document.querySelector('.fixed__button-prew');
 
-  fixedButtonPrew.addEventListener('click', () => {
+  fixedButtonPrew.addEventListener('click', async () => {
     disabled = false;
 
     if (page === 1) {
@@ -206,6 +214,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
       if (myself) {
         sectionState.classList.add('visually-hidden');
+        await getFilterChange([...psychiatristFor]);
         return;
       }
 
@@ -225,6 +234,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         page -= 1;
         sectionRequests.classList.add('visually-hidden');
         sectionState.classList.remove('visually-hidden');
+        await getFilterChange([...psychiatristFor, ...myState]);
         return;
       }
       if (family) {
@@ -233,9 +243,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         fixedButtonNext.classList.remove('visually-hidden');
         testResult.classList.add('visually-hidden');
         fixedButtonLoadMore.classList.add('visually-hidden');
-        gender.classList.add('visually-hidden');
-        lang.classList.add('visually-hidden');
-        cost.classList.add('visually-hidden');
+        sectionGender.classList.add('visually-hidden');
+        sectionLang.classList.add('visually-hidden');
+        sectionCost.classList.add('visually-hidden');
         toggleActiveClass(testLine, sectionConsern, 1);
         return;
       }
@@ -245,9 +255,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         fixedButtonNext.classList.remove('visually-hidden');
         testResult.classList.add('visually-hidden');
         fixedButtonLoadMore.classList.add('visually-hidden');
-        gender.classList.add('visually-hidden');
-        lang.classList.add('visually-hidden');
-        cost.classList.add('visually-hidden');
+        sectionGender.classList.add('visually-hidden');
+        sectionLang.classList.add('visually-hidden');
+        sectionCost.classList.add('visually-hidden');
         toggleActiveClass(testLine, sectionCategory, 1);
         return;
       }
@@ -257,16 +267,17 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
       if (myself) {
         page -= 1;
         sectionRequests.classList.remove('visually-hidden');
-        gender.classList.add('visually-hidden');
-        lang.classList.add('visually-hidden');
-        cost.classList.add('visually-hidden');
+        sectionGender.classList.add('visually-hidden');
+        sectionLang.classList.add('visually-hidden');
+        sectionCost.classList.add('visually-hidden');
+        await getFilterChange([...psychiatristFor, ...myState, ...myRequests]);
         return;
       }
       if (family) {
         page -= 1;
-        gender.classList.remove('visually-hidden');
-        lang.classList.remove('visually-hidden');
-        cost.classList.remove('visually-hidden');
+        sectionGender.classList.remove('visually-hidden');
+        sectionLang.classList.remove('visually-hidden');
+        sectionCost.classList.remove('visually-hidden');
         testResult.classList.add('visually-hidden');
         fixedButtonNext.classList.remove('visually-hidden');
         fixedButtonLoadMore.classList.add('visually-hidden');
@@ -275,9 +286,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
       }
       if (child) {
         page -= 1;
-        gender.classList.remove('visually-hidden');
-        lang.classList.remove('visually-hidden');
-        cost.classList.remove('visually-hidden');
+        sectionGender.classList.remove('visually-hidden');
+        sectionLang.classList.remove('visually-hidden');
+        sectionCost.classList.remove('visually-hidden');
         testResult.classList.add('visually-hidden');
         fixedButtonNext.classList.remove('visually-hidden');
         fixedButtonLoadMore.classList.add('visually-hidden');
@@ -289,13 +300,13 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
     if (page === 4) {
       if (myself) {
         page -= 1;
-        gender.classList.remove('visually-hidden');
-        lang.classList.remove('visually-hidden');
-        cost.classList.remove('visually-hidden');
+        sectionGender.classList.remove('visually-hidden');
+        sectionLang.classList.remove('visually-hidden');
+        sectionCost.classList.remove('visually-hidden');
         testResult.classList.add('visually-hidden');
         fixedButtonNext.classList.remove('visually-hidden');
         fixedButtonLoadMore.classList.add('visually-hidden');
-        toggleActiveClass(testLine, gender, 1);
+        toggleActiveClass(testLine, sectionGender, 1);
         return;
       }
     }
@@ -393,7 +404,43 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
   const dataButtonGender = document.querySelectorAll('.gender .card__link-btn');
 
   dataButtonGender.forEach(item => {
-    item.addEventListener('click', async e => {
+    item.addEventListener('click', async () => {
+      // Получаем значение дата атрибута элемента
+      const dataValue = item.getAttribute('data-button-gender');
+
+      // Получаем индекс элемента в массиве
+      const index = gender.indexOf(dataValue);
+
+      // Если элемент уже есть в массиве, удаляем его
+      if (index !== -1) {
+        gender.splice(index, 1);
+      } else {
+        gender = [];
+        if (dataValue !== '') {
+          gender.push(dataValue);
+        }
+      }
+
+      if (myself) {
+        await getFilterChange(
+          [...psychiatristFor, ...myState, ...myRequests],
+          gender
+        );
+      }
+
+      if (family) {
+        await getFilterChange([...psychiatristFor, ...consern], gender);
+      }
+
+      if (child) {
+        await getFilterChange([...psychiatristFor, ...category], gender);
+      }
+
+      if (item.classList.contains('is-active')) {
+        item.classList.remove('is-active');
+        return;
+      }
+
       for (let i = 0; i < dataButtonGender.length; i += 1) {
         if (dataButtonGender[i].classList.contains('is-active')) {
           dataButtonGender[i].classList.remove('is-active');
@@ -410,7 +457,31 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
   const dataButtonLang = document.querySelectorAll('.lang .card__link-btn');
 
   dataButtonLang.forEach(item => {
-    item.addEventListener('click', async e => {
+    const title = item.firstElementChild.innerHTML.trim();
+    item.setAttribute('data-button-lang', title);
+
+    item.addEventListener('click', async () => {
+      // Получаем значение дата атрибута элемента
+      const dataValue = item.getAttribute('data-button-lang');
+
+      // Получаем индекс элемента в массиве
+      const index = lang.indexOf(dataValue);
+
+      // Если элемент уже есть в массиве, удаляем его
+      if (index !== -1) {
+        lang.splice(index, 1);
+      } else {
+        lang = [];
+        lang.push(dataValue);
+      }
+
+      console.log(lang);
+
+      if (item.classList.contains('is-active')) {
+        item.classList.remove('is-active');
+        return;
+      }
+
       for (let i = 0; i < dataButtonLang.length; i += 1) {
         if (dataButtonLang[i].classList.contains('is-active')) {
           dataButtonLang[i].classList.remove('is-active');
@@ -427,7 +498,31 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
   const dataButtonCost = document.querySelectorAll('.cost .card__link-btn');
 
   dataButtonCost.forEach(item => {
-    item.addEventListener('click', async e => {
+    const title = item.firstElementChild.innerHTML.trim();
+    item.setAttribute('data-button-cost', title);
+
+    item.addEventListener('click', async () => {
+      // Получаем значение дата атрибута элемента
+      const dataValue = item.getAttribute('data-button-cost');
+
+      // Получаем индекс элемента в массиве
+      const index = cost.indexOf(dataValue);
+
+      // Если элемент уже есть в массиве, удаляем его
+      if (index !== -1) {
+        cost.splice(index, 1);
+      } else {
+        cost = [];
+        cost.push(dataValue);
+      }
+
+      console.log(cost);
+
+      if (item.classList.contains('is-active')) {
+        item.classList.remove('is-active');
+        return;
+      }
+
       for (let i = 0; i < dataButtonCost.length; i += 1) {
         if (dataButtonCost[i].classList.contains('is-active')) {
           dataButtonCost[i].classList.remove('is-active');
