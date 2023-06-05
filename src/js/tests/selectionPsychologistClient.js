@@ -20,6 +20,11 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
     '.fixed__button-load-more'
   );
 
+  //gender lang cost
+  const gender = document.querySelector('section.gender');
+  const lang = document.querySelector('section.lang');
+  const cost = document.querySelector('section.cost');
+
   let psychiatristFor = [];
 
   let myself = false;
@@ -89,7 +94,6 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
     if (page === 0) {
       page += 1;
 
-      // testpageContainer.classList.add('visually-hidden');
       testpageTitle.classList.add('visually-hidden');
       testpageCards.classList.add('visually-hidden');
 
@@ -124,19 +128,17 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
       if (family) {
         page += 1;
         sectionConsern.classList.add('visually-hidden');
-        fixedButtonNext.classList.add('visually-hidden');
-        testResult.classList.remove('visually-hidden');
-        fixedButtonLoadMore.classList.remove('visually-hidden');
-        toggleActiveClass(testLine, testResult, 2);
+        gender.classList.remove('visually-hidden');
+        lang.classList.remove('visually-hidden');
+        cost.classList.remove('visually-hidden');
         return;
       }
       if (child) {
         page += 1;
         sectionCategory.classList.add('visually-hidden');
-        fixedButtonNext.classList.add('visually-hidden');
-        testResult.classList.remove('visually-hidden');
-        fixedButtonLoadMore.classList.remove('visually-hidden');
-        toggleActiveClass(testLine, testResult, 2);
+        gender.classList.remove('visually-hidden');
+        lang.classList.remove('visually-hidden');
+        cost.classList.remove('visually-hidden');
         return;
       }
     }
@@ -145,9 +147,44 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
       if (myself) {
         page += 1;
         sectionRequests.classList.add('visually-hidden');
+        gender.classList.remove('visually-hidden');
+        lang.classList.remove('visually-hidden');
+        cost.classList.remove('visually-hidden');
+        return;
+      }
+      if (family) {
+        page += 1;
         fixedButtonNext.classList.add('visually-hidden');
         testResult.classList.remove('visually-hidden');
         fixedButtonLoadMore.classList.remove('visually-hidden');
+        gender.classList.add('visually-hidden');
+        lang.classList.add('visually-hidden');
+        cost.classList.add('visually-hidden');
+        toggleActiveClass(testLine, testResult, 2);
+        return;
+      }
+      if (child) {
+        page += 1;
+        fixedButtonNext.classList.add('visually-hidden');
+        testResult.classList.remove('visually-hidden');
+        fixedButtonLoadMore.classList.remove('visually-hidden');
+        gender.classList.add('visually-hidden');
+        lang.classList.add('visually-hidden');
+        cost.classList.add('visually-hidden');
+        toggleActiveClass(testLine, testResult, 2);
+        return;
+      }
+    }
+
+    if (page === 3) {
+      if (myself) {
+        page += 1;
+        fixedButtonNext.classList.add('visually-hidden');
+        testResult.classList.remove('visually-hidden');
+        fixedButtonLoadMore.classList.remove('visually-hidden');
+        gender.classList.add('visually-hidden');
+        lang.classList.add('visually-hidden');
+        cost.classList.add('visually-hidden');
         toggleActiveClass(testLine, testResult, 2);
         return;
       }
@@ -196,6 +233,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         fixedButtonNext.classList.remove('visually-hidden');
         testResult.classList.add('visually-hidden');
         fixedButtonLoadMore.classList.add('visually-hidden');
+        gender.classList.add('visually-hidden');
+        lang.classList.add('visually-hidden');
+        cost.classList.add('visually-hidden');
         toggleActiveClass(testLine, sectionConsern, 1);
         return;
       }
@@ -205,6 +245,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         fixedButtonNext.classList.remove('visually-hidden');
         testResult.classList.add('visually-hidden');
         fixedButtonLoadMore.classList.add('visually-hidden');
+        gender.classList.add('visually-hidden');
+        lang.classList.add('visually-hidden');
+        cost.classList.add('visually-hidden');
         toggleActiveClass(testLine, sectionCategory, 1);
         return;
       }
@@ -214,10 +257,45 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
       if (myself) {
         page -= 1;
         sectionRequests.classList.remove('visually-hidden');
-        fixedButtonNext.classList.remove('visually-hidden');
+        gender.classList.add('visually-hidden');
+        lang.classList.add('visually-hidden');
+        cost.classList.add('visually-hidden');
+        return;
+      }
+      if (family) {
+        page -= 1;
+        gender.classList.remove('visually-hidden');
+        lang.classList.remove('visually-hidden');
+        cost.classList.remove('visually-hidden');
         testResult.classList.add('visually-hidden');
+        fixedButtonNext.classList.remove('visually-hidden');
         fixedButtonLoadMore.classList.add('visually-hidden');
-        toggleActiveClass(testLine, sectionRequests, 1);
+        toggleActiveClass(testLine, sectionConsern, 1);
+        return;
+      }
+      if (child) {
+        page -= 1;
+        gender.classList.remove('visually-hidden');
+        lang.classList.remove('visually-hidden');
+        cost.classList.remove('visually-hidden');
+        testResult.classList.add('visually-hidden');
+        fixedButtonNext.classList.remove('visually-hidden');
+        fixedButtonLoadMore.classList.add('visually-hidden');
+        toggleActiveClass(testLine, sectionCategory, 1);
+        return;
+      }
+    }
+
+    if (page === 4) {
+      if (myself) {
+        page -= 1;
+        gender.classList.remove('visually-hidden');
+        lang.classList.remove('visually-hidden');
+        cost.classList.remove('visually-hidden');
+        testResult.classList.add('visually-hidden');
+        fixedButtonNext.classList.remove('visually-hidden');
+        fixedButtonLoadMore.classList.add('visually-hidden');
+        toggleActiveClass(testLine, gender, 1);
         return;
       }
     }
@@ -242,7 +320,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         array.push(dataValue);
       }
 
-      //добавляем клас ввыбраным кнопкам
+      //добавляем класс ввыбраным кнопкам
       item.classList.toggle('is-active');
 
       if (
@@ -308,6 +386,57 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
   );
   dataButtonCategory.forEach(item => {
     toggleArrayElement(item, 'data-button-category', category);
+  });
+  //
+
+  //gender
+  const dataButtonGender = document.querySelectorAll('.gender .card__link-btn');
+
+  dataButtonGender.forEach(item => {
+    item.addEventListener('click', async e => {
+      for (let i = 0; i < dataButtonGender.length; i += 1) {
+        if (dataButtonGender[i].classList.contains('is-active')) {
+          dataButtonGender[i].classList.remove('is-active');
+          break;
+        }
+      }
+
+      item.classList.add('is-active');
+    });
+  });
+  //
+
+  //lang
+  const dataButtonLang = document.querySelectorAll('.lang .card__link-btn');
+
+  dataButtonLang.forEach(item => {
+    item.addEventListener('click', async e => {
+      for (let i = 0; i < dataButtonLang.length; i += 1) {
+        if (dataButtonLang[i].classList.contains('is-active')) {
+          dataButtonLang[i].classList.remove('is-active');
+          break;
+        }
+      }
+
+      item.classList.add('is-active');
+    });
+  });
+  //
+
+  //cost
+  const dataButtonCost = document.querySelectorAll('.cost .card__link-btn');
+
+  dataButtonCost.forEach(item => {
+    item.addEventListener('click', async e => {
+      for (let i = 0; i < dataButtonCost.length; i += 1) {
+        if (dataButtonCost[i].classList.contains('is-active')) {
+          dataButtonCost[i].classList.remove('is-active');
+          break;
+        }
+      }
+
+      item.classList.add('is-active');
+    });
   });
   //
 
