@@ -1,4 +1,5 @@
-.category {
+.category,
+section.lang {
     margin-top: 30px;
     padding-top: 40px;
 }
@@ -29,11 +30,21 @@
     width: 100%;
     transition: all 0.3s ease 0s;
     cursor: pointer;
-    &:hover {
-        background: #795BDA;
-        .lang__card-title {
-            color: #fff;
+    @media screen and (min-width: 1280px) {
+        &:hover {
+            cursor: pointer;
+            background: #795BDA;
+
+            .lang__card-title {
+                color: #fff;
+            }
         }
+    }
+}
+.card__link-btn.is-active{
+    background: #795BDA;
+    .lang__card-title {
+        color: #fff;
     }
 }
 .lang__card-title {

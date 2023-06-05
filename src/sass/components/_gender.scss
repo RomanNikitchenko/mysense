@@ -1,4 +1,5 @@
-.category {
+.category,
+section.gender {
     margin-top: 30px;
     padding-top: 40px;
 }
@@ -28,12 +29,21 @@
     min-height: 200px;
     width: 100%;
     transition: all 0.3s ease 0s;
-    &:hover {
-        cursor: pointer;
-        background: #795BDA;
-        .gender__card-title {
-            color: #fff;
+    @media screen and (min-width: 1280px) {
+        &:hover {
+            cursor: pointer;
+            background: #795BDA;
+
+            .gender__card-title {
+                color: #fff;
+            }
         }
+    }
+}
+.card__link-btn.is-active {
+    background: #795BDA;
+    .gender__card-title {
+        color: #fff;
     }
 }
 .gender__card-title {
