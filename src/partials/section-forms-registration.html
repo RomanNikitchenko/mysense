@@ -1,7 +1,5 @@
-
 <div class="container form__header-conteiner">
-    <form action="" class="registration_client">
-
+    <form class="registration_client">
         <h2>Реєстрація</h2>
         <p>Вже є аккаунт?<a href="">Увійти</a></p>
         <div class="steps__block">
@@ -11,6 +9,7 @@
             <div class="step step_4"><div class="step__line"></div><span>Фото</span></div>
         </div>
 
+        <!-- шаг 1 -->
         <div class="step__wrap-form-1">
             <p>Ваші контактні дані не доступні публічно, але вони будуть використовуватись для входу на платформу</p>
             <div class="input__body">
@@ -22,19 +21,21 @@
             </div>
         </div>
 
+        <!-- шаг 2 -->
         <div class="step__wrap-form-2">
             <p>Пароль повинен складатись не менш ніж з 6 символів та мати великі та малі літери, а також хоча б одну цифру</p>
             <div class="input__body">
                 <label for="pass">Придумайте пароль</label>
-                <input type="password" id="show2" name="password" placeholder="Придумайте пароль" minlength="8" >
+                <input type="password" id="show2" name="password" placeholder="Придумайте пароль">
                 <span id="showEye2"><i id="i" class="far fa-eye"></i></span>
 
                 <label for="pass">Повторіть пароль</label>
-                <input type="password" id="show3" name="password" placeholder="Повторіть пароль" minlength="8" >
+                <input type="password" id="show3" name="password" placeholder="Повторіть пароль">
                 <span id="showEye3"><i id="i" class="far fa-eye"></i></span>
             </div>
         </div>
 
+        <!-- шаг 3 -->
         <div class="step__wrap-form-3">
             <p>Це будуть бачити психологи, з якими ви будете працювати та інші користувачі в коментарях до статей</p>
             <div class="input__body">
@@ -46,6 +47,7 @@
             </div>
         </div>
 
+        <!-- шаг 4 -->
         <div class="step__wrap-form-4">
             <div class="block__data">
                 <input name="file" type="file" id="input__file" class="custom-file-input input input__file" multiple>
@@ -60,25 +62,29 @@
         </div>
 
         <div class="buttons__control">
-            <button class="form__prew-btn">
+            <!-- кнопка назад -->
+            <button type="button" class="form__prew-btn">
                 <svg class="form-btn-arrow-back" width="12" height="12">
                     <use href="./images/symbol-defs.svg#icon-fixed-arrow-prew"></use>
                 </svg>
                 Назад
             </button>
-            <button class="form__next-btn">Далі
+
+            <!-- кнопка вперед следующий шаг -->
+            <button type="button" class="form__next-btn">Далі
                 <svg class="form-btn-arrow-next" width="12" height="12">
                     <use href="./images/symbol-defs.svg#icon-form-arrow-next"></use>
                 </svg>
             </button>
-            <button class="form__end-btn">Завершити
+
+            <!-- кнопка завершить форму регистрации -->
+            <button type="submit" class="form__end-btn">Завершити
                 <svg class="form-btn-arrow-next" width="12" height="12">
                     <use href="./images/symbol-defs.svg#icon-form-arrow-next"></use>
                 </svg>
             </button>
         </div>
     </form>
-
 </div>
 
 <script>
