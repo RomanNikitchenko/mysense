@@ -214,14 +214,43 @@
     background-color: var(--accent-color);
     border-radius: 150px;
     cursor: pointer;
+    position: relative;
+
+    span {
+        width: 100px;
+        text-align: center;
+        letter-spacing: -.01em;
+        text-overflow: ellipsis;
+        color: #222b40;
+        border-radius: 8px;
+        padding: 4px 8px;
+        font-size: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px #0000000f, 0 10px 20px -8px #00000029;
+        z-index: 1001;
+        position: absolute;
+        background-color: #fff;
+        text-transform: none;
+        pointer-events: none;
+        opacity: 0;
+        line-height: 1;
+        right: 0;
+        bottom: 50px;
+        transform: translateY(100%);
+        transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
     &:hover {
         background-color: #7155cd;
     }
 
+    &:hover span {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     .our-team__icon-Hello {
-        max-width: 14px;
-        height: 14px;
+        max-width: 27px;
     }
 }
 
