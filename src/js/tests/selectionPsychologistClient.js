@@ -135,6 +135,12 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         sectionGender.classList.remove('visually-hidden');
         sectionLang.classList.remove('visually-hidden');
         sectionCost.classList.remove('visually-hidden');
+        await getFilterChange(
+          [...psychiatristFor, ...consern],
+          gender,
+          lang,
+          cost
+        );
         return;
       }
       if (child) {
@@ -143,6 +149,12 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         sectionGender.classList.remove('visually-hidden');
         sectionLang.classList.remove('visually-hidden');
         sectionCost.classList.remove('visually-hidden');
+        await getFilterChange(
+          [...psychiatristFor, ...category],
+          gender,
+          lang,
+          cost
+        );
         return;
       }
     }
@@ -156,7 +168,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         sectionCost.classList.remove('visually-hidden');
         await getFilterChange(
           [...psychiatristFor, ...myState, ...myRequests],
-          gender
+          gender,
+          lang,
+          cost
         );
         return;
       }
@@ -220,11 +234,13 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
       if (family) {
         sectionConsern.classList.add('visually-hidden');
+        await getFilterChange([...psychiatristFor]);
         return;
       }
 
       if (child) {
         sectionCategory.classList.add('visually-hidden');
+        await getFilterChange([...psychiatristFor]);
         return;
       }
     }
@@ -247,6 +263,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         sectionLang.classList.add('visually-hidden');
         sectionCost.classList.add('visually-hidden');
         toggleActiveClass(testLine, sectionConsern, 1);
+        await getFilterChange([...psychiatristFor, ...consern]);
         return;
       }
       if (child) {
@@ -259,6 +276,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         sectionLang.classList.add('visually-hidden');
         sectionCost.classList.add('visually-hidden');
         toggleActiveClass(testLine, sectionCategory, 1);
+        await getFilterChange([...psychiatristFor, ...category]);
         return;
       }
     }
@@ -281,7 +299,13 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         testResult.classList.add('visually-hidden');
         fixedButtonNext.classList.remove('visually-hidden');
         fixedButtonLoadMore.classList.add('visually-hidden');
-        toggleActiveClass(testLine, sectionConsern, 1);
+        toggleActiveClass(testLine, sectionGender, 1);
+        await getFilterChange(
+          [...psychiatristFor, ...consern],
+          gender,
+          lang,
+          cost
+        );
         return;
       }
       if (child) {
@@ -292,7 +316,13 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         testResult.classList.add('visually-hidden');
         fixedButtonNext.classList.remove('visually-hidden');
         fixedButtonLoadMore.classList.add('visually-hidden');
-        toggleActiveClass(testLine, sectionCategory, 1);
+        toggleActiveClass(testLine, sectionGender, 1);
+        await getFilterChange(
+          [...psychiatristFor, ...category],
+          gender,
+          lang,
+          cost
+        );
         return;
       }
     }
@@ -307,6 +337,12 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         fixedButtonNext.classList.remove('visually-hidden');
         fixedButtonLoadMore.classList.add('visually-hidden');
         toggleActiveClass(testLine, sectionGender, 1);
+        await getFilterChange(
+          [...psychiatristFor, ...myState, ...myRequests],
+          gender,
+          lang,
+          cost
+        );
         return;
       }
     }
@@ -424,16 +460,28 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
       if (myself) {
         await getFilterChange(
           [...psychiatristFor, ...myState, ...myRequests],
-          gender
+          gender,
+          lang,
+          cost
         );
       }
 
       if (family) {
-        await getFilterChange([...psychiatristFor, ...consern], gender);
+        await getFilterChange(
+          [...psychiatristFor, ...consern],
+          gender,
+          lang,
+          cost
+        );
       }
 
       if (child) {
-        await getFilterChange([...psychiatristFor, ...category], gender);
+        await getFilterChange(
+          [...psychiatristFor, ...category],
+          gender,
+          lang,
+          cost
+        );
       }
 
       if (item.classList.contains('is-active')) {
@@ -457,9 +505,6 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
   const dataButtonLang = document.querySelectorAll('.lang .card__link-btn');
 
   dataButtonLang.forEach(item => {
-    const title = item.firstElementChild.innerHTML.trim();
-    item.setAttribute('data-button-lang', title);
-
     item.addEventListener('click', async () => {
       // Получаем значение дата атрибута элемента
       const dataValue = item.getAttribute('data-button-lang');
@@ -472,10 +517,37 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         lang.splice(index, 1);
       } else {
         lang = [];
-        lang.push(dataValue);
+        if (dataValue !== '') {
+          lang.push(dataValue);
+        }
       }
 
-      console.log(lang);
+      if (myself) {
+        await getFilterChange(
+          [...psychiatristFor, ...myState, ...myRequests],
+          gender,
+          lang,
+          cost
+        );
+      }
+
+      if (family) {
+        await getFilterChange(
+          [...psychiatristFor, ...consern],
+          gender,
+          lang,
+          cost
+        );
+      }
+
+      if (child) {
+        await getFilterChange(
+          [...psychiatristFor, ...category],
+          gender,
+          lang,
+          cost
+        );
+      }
 
       if (item.classList.contains('is-active')) {
         item.classList.remove('is-active');
@@ -498,9 +570,6 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
   const dataButtonCost = document.querySelectorAll('.cost .card__link-btn');
 
   dataButtonCost.forEach(item => {
-    const title = item.firstElementChild.innerHTML.trim();
-    item.setAttribute('data-button-cost', title);
-
     item.addEventListener('click', async () => {
       // Получаем значение дата атрибута элемента
       const dataValue = item.getAttribute('data-button-cost');
@@ -513,10 +582,37 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         cost.splice(index, 1);
       } else {
         cost = [];
-        cost.push(dataValue);
+        if (dataValue !== '') {
+          cost.push(dataValue);
+        }
       }
 
-      console.log(cost);
+      if (myself) {
+        await getFilterChange(
+          [...psychiatristFor, ...myState, ...myRequests],
+          gender,
+          lang,
+          cost
+        );
+      }
+
+      if (family) {
+        await getFilterChange(
+          [...psychiatristFor, ...consern],
+          gender,
+          lang,
+          cost
+        );
+      }
+
+      if (child) {
+        await getFilterChange(
+          [...psychiatristFor, ...category],
+          gender,
+          lang,
+          cost
+        );
+      }
 
       if (item.classList.contains('is-active')) {
         item.classList.remove('is-active');

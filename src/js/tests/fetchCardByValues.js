@@ -1,6 +1,6 @@
 import { fakeAPI } from '../fakeAPI/fakeAPI';
 
-export default async function fetchCardByValues({ array, gender }) {
+export default async function fetchCardByValues({ array, gender, lang, cost }) {
   const response = await fakeAPI;
 
   if (!response) {
@@ -10,6 +10,8 @@ export default async function fetchCardByValues({ array, gender }) {
       response,
       array,
       gender,
+      lang,
+      cost,
     });
 
     const limitedQuantity = filteredEmployees.slice(0, 8);
@@ -21,7 +23,7 @@ export default async function fetchCardByValues({ array, gender }) {
   }
 }
 
-function filterEmployeesByAllSkills({ response, array, gender }) {
+function filterEmployeesByAllSkills({ response, array, gender, lang, cost }) {
   if (array.length === 0) {
     return []; // возвращает пустой массив, если переданный массив пустой
   }
@@ -42,6 +44,26 @@ function filterEmployeesByAllSkills({ response, array, gender }) {
       }
     }
 
-    return hasSelectedSkills && hasSelectedGender;
+    //по price
+    let hasSelectedPriceRange = false;
+    if (cost.length === 0) {
+      hasSelectedPriceRange = true;
+    } else {
+      if (cost.includes(item.priceRange)) {
+        hasSelectedPriceRange = true;
+      }
+    }
+
+    //по language
+    const hasSelectedLanguages = lang.every(language =>
+      item.languages.includes(language)
+    );
+
+    return (
+      hasSelectedSkills &&
+      hasSelectedGender &&
+      hasSelectedPriceRange &&
+      hasSelectedLanguages
+    );
   });
 }
