@@ -269,7 +269,11 @@
     }
 
     @media screen and (min-width: 1280px) {
-        display: none;
+        // display: none;
+        .private-office__exit-button {
+            cursor: pointer;
+            background-color: #795bda1a;
+        }
     }
 
     .private-office__exit-button {
@@ -290,6 +294,14 @@
 
         @media screen and (min-width: 744px) {
             font-size: 14px;
+        }
+
+        @media screen and (min-width: 1280px) {
+            cursor: pointer;
+            border-radius: 100px;
+            &:hover {
+                background-color: #795bda1a;
+            }
         }
     }
 }

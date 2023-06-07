@@ -1,3 +1,8 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+const form = document.querySelector('.registration_client');
+
+form.addEventListener('submit', handleSubmit);
+
 // Функция для регистрации пользователя
 function register(username, password) {
   // Получаем сохраненных пользователей из локального хранилища
@@ -9,7 +14,7 @@ function register(username, password) {
   });
 
   if (isUsernameTaken) {
-    alert('Имя пользователя уже занято.');
+    Notify.info('Имя пользователя уже занято.');
     return;
   }
 
@@ -25,9 +30,24 @@ function register(username, password) {
   // Сохраняем обновленный список пользователей в локальное хранилище
   localStorage.setItem('users', JSON.stringify(users));
 
-  alert('Пользователь успешно зарегистрирован.');
+  Notify.info('Пользователь успешно зарегистрирован.');
+
+  login(username, password);
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+
+  const {
+    elements: { login, password },
+  } = event.currentTarget;
+
+  register(login.value, password.value);
+
+  event.currentTarget.reset();
+}
+
+//////////
 // Функция для выполнения входа пользователя
 function login(username, password) {
   // Получаем сохраненных пользователей из локального хранилища
@@ -42,50 +62,11 @@ function login(username, password) {
     // Сохраняем информацию о текущем пользователе в локальное хранилище
     localStorage.setItem('currentUser', JSON.stringify(user));
 
-    alert('Вы успешно вошли в систему.');
+    Notify.info('Вы успешно вошли в систему.');
+    window.location.assign('private-office.html');
     // Вы можете выполнить перенаправление на другую страницу
   } else {
     // Неверное имя пользователя или пароль
-    alert('Неверное имя пользователя или пароль.');
+    Notify.info('Неверное имя пользователя или пароль.');
   }
 }
-
-// Функция для разлогинивания пользователя
-function logout() {
-  // Удаляем информацию о текущем пользователе из локального хранилища
-  localStorage.removeItem('currentUser');
-
-  alert('Вы успешно вышли из системы.');
-  // Вы можете выполнить перенаправление на страницу входа или другую страницу
-}
-
-// Функция для проверки, вошел ли пользователь в систему
-function checkLoggedIn() {
-  // Проверяем, есть ли информация о текущем пользователе в локальном хранилище
-  var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
-  if (currentUser) {
-    alert('Пользователь уже вошел в систему.');
-    // Вы можете выполнить перенаправление на другую страницу
-  } else {
-    alert('Пользователь не вошел в систему.');
-    // Вы можете выполнить перенаправление на страницу входа или другую страницу
-  }
-}
-
-// Пример использования функций:
-
-// Регистрация нового пользователя
-// register('admin', 'password');
-
-// Вход пользователя
-// login('admin', 'password');
-
-// Проверка, вошел ли пользователь в систему
-// checkLoggedIn();
-
-// Разлогинивание пользователя
-// logout();
-
-// Проверка, вошел ли пользователь в систему после разлогинивания
-// checkLoggedIn();

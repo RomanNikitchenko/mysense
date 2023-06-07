@@ -5,3 +5,5 @@ import './psychologists/theme-menu-handler';
 import './psychologists/mobile-menu-filter';
 import './psychologists/searchByCategory';
 import './psychologists/dropDownMenu';
+import './private-office/modalInformationDepartment';
+import './private-office/modalReminder';

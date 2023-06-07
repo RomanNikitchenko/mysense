@@ -40,7 +40,8 @@
         letter-spacing: -0.06em;
         color: #795BDA;
     }
-    .span_active {
+
+    .step__line-active ~ span {
         display: block;
     }
 }
