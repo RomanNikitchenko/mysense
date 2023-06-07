@@ -1,13 +1,17 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 // Получаем все необходимые элементы
-const form = document.querySelector('.registration_client');
 const step1 = document.querySelector('.step__wrap-form-1');
 const step2 = document.querySelector('.step__wrap-form-2');
 const step3 = document.querySelector('.step__wrap-form-3');
 const step4 = document.querySelector('.step__wrap-form-4');
 const nextBtn = document.querySelector('.form__next-btn');
 const endBtn = document.querySelector('.form__end-btn');
+const stepLine = document.querySelectorAll('.step__line');
+
+// Переменная для блокировки кнопки "Назад" во время перехода между шагами
+let isTransitioning = true;
+let stap = 1;
 
 // При нажатии на кнопку "Далі"
 nextBtn.addEventListener('click', () => {
@@ -16,33 +20,64 @@ nextBtn.addEventListener('click', () => {
     if (step1.style.display !== 'none') {
       step1.style.display = 'none';
       step2.style.display = 'block';
+      isTransitioning = false;
+      stap = 2;
     } else if (step2.style.display !== 'none') {
       step2.style.display = 'none';
       step3.style.display = 'block';
+      stap = 3;
     } else if (step3.style.display !== 'none') {
       step3.style.display = 'none';
-      step4.style.display = 'block';
+      step4.style.display = 'flex';
       nextBtn.style.display = 'none';
       endBtn.style.display = 'block';
+      stap = 4;
     }
+
+    for (let i = 0; i < stepLine.length; i += 1) {
+      if (stepLine[i].classList.contains('step__line-active')) {
+        stepLine[i].classList.remove('step__line-active');
+        break;
+      }
+    }
+
+    stepLine[stap - 1].classList.add('step__line-active');
   }
 });
 
 // При нажатии на кнопку "Назад"
 document.querySelector('.form__prew-btn').addEventListener('click', () => {
-  // Проверяем текущий шаг и переключаемся на предыдущий
+  // Если уже идет переход между шагами, выходим из обработчика
+  if (isTransitioning) {
+    return;
+  }
+
+  // Проверяем текущий шаг и переключаемся на предыдущий, только если не на первом шаге
   if (step2.style.display !== 'none') {
     step2.style.display = 'none';
     step1.style.display = 'block';
+    isTransitioning = true;
+    stap = 1;
   } else if (step3.style.display !== 'none') {
     step3.style.display = 'none';
     step2.style.display = 'block';
+    stap = 2;
   } else if (step4.style.display !== 'none') {
     step4.style.display = 'none';
     step3.style.display = 'block';
     nextBtn.style.display = 'block';
     endBtn.style.display = 'none';
+    stap = 3;
   }
+
+  for (let i = 0; i < stepLine.length; i += 1) {
+    if (stepLine[i].classList.contains('step__line-active')) {
+      stepLine[i].classList.remove('step__line-active');
+      break;
+    }
+  }
+
+  stepLine[stap - 1].classList.add('step__line-active');
 });
 
 // Функция для валидации текущего шага

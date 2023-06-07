@@ -7,3 +7,5 @@ import './psycholog-exemple/card-slider';
 import './psycholog-exemple/card-slider-meeting';
 import './psycholog-exemple/setPaddingRight';
 import './psycholog-exemple/modal';
+import './private-office/modalInformationDepartment';
+import './private-office/modalReminder';

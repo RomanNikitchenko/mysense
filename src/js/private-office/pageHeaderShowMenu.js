@@ -3,5 +3,5 @@
     '.page-header__private-office-menu'
   );
 
-  pageHeaderPrivateOfficeMenu.style.display = 'flex';
+  // pageHeaderPrivateOfficeMenu.style.display = 'flex';
 })();
