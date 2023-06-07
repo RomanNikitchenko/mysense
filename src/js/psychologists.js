@@ -7,3 +7,4 @@ import './psychologists/searchByCategory';
 import './psychologists/dropDownMenu';
 import './private-office/modalInformationDepartment';
 import './private-office/modalReminder';
+import './checkLoggedIn';

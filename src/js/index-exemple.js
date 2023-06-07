@@ -9,3 +9,4 @@ import './psycholog-exemple/setPaddingRight';
 import './psycholog-exemple/modal';
 import './private-office/modalInformationDepartment';
 import './private-office/modalReminder';
+import './checkLoggedIn';
