@@ -4,3 +4,4 @@ import './articles-filter';
 import './articles-drop-down-menu';
 import './private-office/modalInformationDepartment';
 import './private-office/modalReminder';
+import './checkLoggedIn';

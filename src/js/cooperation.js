@@ -4,3 +4,4 @@ import './mobile-menu';
 import './faq';
 import './private-office/modalInformationDepartment';
 import './private-office/modalReminder';
+import './checkLoggedIn';
