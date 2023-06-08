@@ -1,4 +1,5 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 const form = document.querySelector('.registration_client');
 
 form.addEventListener('submit', handleSubmit);
@@ -14,7 +15,7 @@ function register(username, password, eventSubmit) {
   });
 
   if (isUsernameTaken) {
-    Notify.info('Имя пользователя уже занято.');
+    Notify.info('Імя користувача вже зайняте.');
     return;
   }
 
@@ -30,7 +31,7 @@ function register(username, password, eventSubmit) {
   // Сохраняем обновленный список пользователей в локальное хранилище
   localStorage.setItem('users', JSON.stringify(users));
 
-  Notify.info('Пользователь успешно зарегистрирован.');
+  Notify.info('Користувач успішно зареєстрований.');
 
   eventSubmit.currentTarget.reset();
 
@@ -62,11 +63,18 @@ function login(username, password) {
     // Сохраняем информацию о текущем пользователе в локальное хранилище
     localStorage.setItem('currentUser', JSON.stringify(user));
 
-    Notify.info('Вы успешно вошли в систему.');
-    window.location.assign('private-office.html');
+    Notify.info('Ви успішно увійшли до системи.');
+    Loading.circle('', {
+      backgroundColor: 'rgb(121 91 218 / 30%)',
+      svgColor: '#795bda',
+    });
+
+    setTimeout(() => {
+      window.location.assign('private-office.html');
+    }, 500);
     // Вы можете выполнить перенаправление на другую страницу
   } else {
     // Неверное имя пользователя или пароль
-    Notify.info('Неверное имя пользователя или пароль.');
+    Notify.info('Неправильне імя користувача або пароль.');
   }
 }
