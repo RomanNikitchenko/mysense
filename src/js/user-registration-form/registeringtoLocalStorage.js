@@ -4,7 +4,7 @@ const form = document.querySelector('.registration_client');
 form.addEventListener('submit', handleSubmit);
 
 // Функция для регистрации пользователя
-function register(username, password) {
+function register(username, password, eventSubmit) {
   // Получаем сохраненных пользователей из локального хранилища
   var users = JSON.parse(localStorage.getItem('users')) || [];
 
@@ -32,6 +32,8 @@ function register(username, password) {
 
   Notify.info('Пользователь успешно зарегистрирован.');
 
+  eventSubmit.currentTarget.reset();
+
   login(username, password);
 }
 
@@ -42,9 +44,7 @@ function handleSubmit(event) {
     elements: { login, password },
   } = event.currentTarget;
 
-  register(login.value, password.value);
-
-  event.currentTarget.reset();
+  register(login.value, password.value, event);
 }
 
 //////////

@@ -17,9 +17,15 @@ function checkLoggedIn() {
     choosePerson.classList.add('visually-hidden');
     // Вы можете выполнить перенаправление на другую страницу
   } else {
-    pageHeaderPrivateOfficeMenu.classList.add('visually-hidden');
-    login.classList.remove('visually-hidden');
-    choosePerson.classList.remove('visually-hidden');
+    if (pageHeaderPrivateOfficeMenu) {
+      pageHeaderPrivateOfficeMenu.classList.add('visually-hidden');
+    }
+    if (login) {
+      login.classList.remove('visually-hidden');
+    }
+    if (choosePerson) {
+      choosePerson.classList.remove('visually-hidden');
+    }
     // Вы можете выполнить перенаправление на страницу входа или другую страницу
   }
 }
