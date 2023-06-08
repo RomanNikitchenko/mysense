@@ -1,7 +1,7 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const privateOfficeExitButton = document.querySelector(
-  '.private-office__exit-button'
+  '.outside-private-office__exit-button'
 );
 
 privateOfficeExitButton.addEventListener('click', logout);
