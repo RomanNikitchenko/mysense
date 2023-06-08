@@ -1,0 +1,1066 @@
+<section class="private-office-section visually-hidden">
+<div class="container private-office-section-container">
+    <div class="flex-wrapper">
+
+        <div class="private-office js-menu-container-private-office" id="mobile-menu-private-office">
+            <div class="private-office__block">
+
+                <button type="button" class="private-office__close-menu">
+                    <svg width="26" height="26">
+                        <use href="./images/symbol-defs.svg#close_40px"></use>
+                    </svg>
+                </button>
+
+                <div class="private-office__image-wrapper">
+                    <div class="private-office__image-wrapper-border">
+                        <img
+                        src="./images/darina.png"
+                        class="private-office__image"
+                        alt="Фото Іван Виговський"
+                        />
+                    </div>
+                </div>
+
+                <div class="private-office__info">
+                    <h1 class="private-office__title">Дарина Приходько</h1>
+                </div> 
+
+            </div>
+
+            <ul class="private-office__list">
+                <li class="private-office__list-item">
+                    <button type="button" class="private-office__list-button">
+                        Редагувати профіль
+                    </button>
+                </li>
+                <li class="private-office__list-item">
+                    <button type="button" class="private-office__list-button is-active">
+                        Мої сесії
+                    </button>
+                </li>
+                <li class="private-office__list-item">
+                    <button type="button" class="private-office__list-button">
+                        Повідомлення
+                    </button>
+                </li>
+                <li class="private-office__list-item">
+                    <button type="button" class="private-office__list-button">
+                        Баланс та оплата
+                    </button>
+                </li>
+            </ul>
+
+            <div class="private-office__flex-wrapper">
+                <div class="private-office__exit">
+                    <button class="private-office__exit-button">Вийти</button>
+                </div>
+
+
+                <div class="private-office__block-session">
+                    <div class="private-office__person-session">
+                        <div class="private-office__image-session-border">
+                            <img
+                                class="private-office__image-session"
+                                src="./images/darina.png"
+                                alt="Фото Ярина Перекотиполе"
+                                />
+                        </div>
+                        <p>Ярина Перекотиполе</p>
+                    </div>
+                    <button type="button" class="private-office__button private-office__button--start-session">
+                        Розпочати сессію
+                        <svg width="12" height="12" class="private-office__icon">
+                            <use href="./images/symbol-defs.svg#test"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Контейнер для контента справа  -->
+        <section class="content__right">
+
+            <!------ Редагувати профіль -------->
+            <div class="edit_profile-body" data-navigation-content="Редагувати профіль">
+                <div class="edit_profile__wrap">
+                    <form action="" class="doc__profile">
+                        <div class="profile__photo">
+                            <h4>Фото профілю</h4>
+                            <div class="block__photo center__block">
+                                <input name="file" type="file" id="input__file" class="custom-file-input input input__file" multiple>
+                                <label for="input__file" class="input__file-button">
+                                <span class="input__file-icon-wrapper"><img class="input__file-icon" src="./images/darina.png" alt="Выбрать файл" width="25"></span>
+                                <span class="input__file-button-text btn__load-photo" >Редагувати фото профілю</span>
+                            </div>
+                            <p>Це фото буде відображуватись  на сторонці вашого профілю. <a href="#">Вимоги до фото</a></p>
+                        </div>
+
+                        <div class="profile-personal__data">
+                            <h4>Особисті дані</h4>
+                            <div class="block__data center__block">
+                                <label for="name">Імʼя</label>
+                                <input type="text" id="name" name="Імʼя" placeholder="Ваше імʼя">
+                                <label for="name">Прізвище</label>
+                                <input type="text" id="last-name" name="Прізвище" placeholder="Ваше прізвище">
+                            </div>
+                            <p>Ці дані будуть відображуватись на сторонці вашого профілю</p>
+                        </div>
+
+                        <div class="profile-contacts">
+                            <h4>Контакти</h4>
+                            <div class="block__contacts center__block">
+                                <label for="phone">Телефон</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="Ваш email" pattern=".+@globex\.com" size="30" >
+                            </div>
+                            <p>Ваші контактні дані не доступні публічно, 
+                            це нам треба для того, щоб тримати з вами звʼязок</p>
+                        </div>
+
+                        <div class="profile-password">
+                            <h4>Змінити пароль</h4>
+                            <div class="block__password center__block">
+
+                                <label for="show1">Введіть старий пароль</label>
+                                <input type="password" id="show1" name="password" placeholder="Старий пароль" minlength="8" >
+                                <span id="showEye"><i id="i" class="far fa-eye"></i></span>
+
+                                <label for="show2">Введіть новий пароль</label>
+                                <input type="password" id="show2" name="password" placeholder="Новий пароль" minlength="8" >
+                                <span id="showEye2"><i id="i" class="far fa-eye"></i></span>
+
+                                <label for="show3">Повторіть новий пароль</label>
+                                <input type="password" id="show3" name="password" placeholder="Повторіть новий пароль" minlength="8" >
+                                <span id="showEye3"><i id="i" class="far fa-eye"></i></span>
+
+    
+
+                            </div>
+                            <p><a href="">Я не памʼятаю старий пароль</a></p>
+                        </div>
+
+                        <div class="profile__submit-btns">
+                            <input type="submit" class="save__info" value="Зберегти" />
+                            <input type="button" class="request" value="Запит на зміну анкети">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- Контейнер для блока с Мои сессии  -->
+            <div class="my-sessions visually-hidden" data-navigation-content="Мої сесії">
+                <div class="mysession__wrap">
+                    <div class="mysession__switch-btns">
+                        <div class="switch__box">
+                            <button class="btn_focus-session">Заплановані</button>
+                            <button>Минулі</button>
+                        </div>
+                        <div class="switch__box-calendar">
+                            <button class="switch__box-calendar-button">Календар</button>
+                        </div>
+                    </div>
+
+                    <div class="mysession__main-list">
+                        <div class="person-list__body">
+                            <div class="mysession__person-name">
+                                <img src="./images/darina.png" alt="">
+                                <h3>Дарина <br>Приходько</h3>
+                            </div>
+                            <div class="mysession__person-info">
+                                <ul class="info-person__list">
+                                    <li>50 хвилин</li>
+                                    <li>Особиста</li>
+                                    <li>13 березня</li>
+                                    <li>9:00 - 9:50</li>
+                                </ul>
+                            </div>
+                            <div class="mysession__person-edit">
+                                <button class="person-info-button"><div class="icon-square person_icons"></div></button>
+                                <button><div class="icon-edit person_icons"></div></button>
+                                <button><div class="icon-del person_icons"></div></button>
+                            </div>
+                        </div>
+                        <div class="person-list__body">
+                            <div class="mysession__person-name">
+                                <img src="./images/yarik.png" alt="">
+                                <h3>Ярослав<br> Науменко</h3>
+                            </div>
+                            <div class="mysession__person-info">
+                                <ul class="info-person__list">
+                                    <li>50 хвилин</li>
+                                    <li>Особиста</li>
+                                    <li>13 березня</li>
+                                    <li>9:00 - 9:50</li>
+                                </ul>
+                            </div>
+                            <div class="mysession__person-edit">
+                                <button class="person-info-button"><div class="icon-square person_icons"></div></button>
+                                <button><div class="icon-edit person_icons"></div></button>
+                                <button><div class="icon-del person_icons"></div></button>
+                            </div>
+                        </div>
+                        <div class="person-list__body">
+                            <div class="mysession__person-name">
+                                <img src="./images/kamila.png" alt="">
+                                <h3>Каміла<br >Айс</h3>
+                            </div>
+                            <div class="mysession__person-info">
+                                <ul class="info-person__list">
+                                    <li>50 хвилин</li>
+                                    <li>Особиста</li>
+                                    <li>13 березня</li>
+                                    <li>9:00 - 9:50</li>
+                                </ul>
+                            </div>
+                            <div class="mysession__person-edit">
+                                <button class="person-info-button"><div class="icon-square person_icons"></div></button>
+                                <button><div class="icon-edit person_icons"></div></button>
+                                <button><div class="icon-del person_icons"></div></button>
+                            </div>
+                        </div>
+                        <div class="person-list__body">
+                            <div class="mysession__person-name">
+                                <img src="./images/mariya.png" alt="">
+                                <h3>Марія<br> Соловій</h3>
+                            </div>
+                            <div class="mysession__person-info">
+                                <ul class="info-person__list">
+                                    <li>50 хвилин</li>
+                                    <li>Особиста</li>
+                                    <li>13 березня</li>
+                                    <li>9:00 - 9:50</li>
+                                </ul>
+                            </div>
+                            <div class="mysession__person-edit">
+                                <button class="person-info-button"><div class="icon-square person_icons"></div></button>
+                                <button><div class="icon-edit person_icons"></div></button>
+                                <button><div class="icon-del person_icons"></div></button>
+                            </div>
+                        </div>
+                        <div class="person-list__body">
+                            <div class="mysession__person-name">
+                                <img src="./images/yarina.png" alt="">
+                                <h3>Ярина<br> Перекотиполе</h3>
+                            </div>
+                            <div class="mysession__person-info">
+                                <ul class="info-person__list">
+                                    <li>50 хвилин</li>
+                                    <li>Особиста</li>
+                                    <li>13 березня</li>
+                                    <li>9:00 - 9:50</li>
+                                </ul>
+                            </div>
+                            <div class="mysession__person-edit">
+                                <button class="person-info-button"><div class="icon-square person_icons"></div></button>
+                                <button><div class="icon-edit person_icons"></div></button>
+                                <button><div class="icon-del person_icons"></div></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Контейнер для блока с Робочий график  -->
+                <div class="schedule-block_wrap visually-hidden">
+                    <div class="work__schedule-controls">
+                        <div class="controls__wrap">
+                            <div class="work__schedule-date">
+                                <span>3 квітня</span> - <span>9 квітня</span>
+                            </div>
+                            <div class="work__schedule-arrows">
+                                <button class="btn__schedule">
+                                    <img src="./images/svg-mysense/arrow_btns-prew.svg" alt="" />
+                                </button>
+                                <button class="btn__schedule">
+                                    <img src="./images/svg-mysense/arrow_btns-next.svg" alt="" />
+                                </button>
+                            </div>
+                        </div>
+                        <button class="list__btn">Спискок</button>
+                    </div>
+                    
+                    <table class="work__schedule_exemple">
+                            <thead>
+                                <tr>
+                                <th></th>
+                                <th>Понеділок<br><span>3 квітня</span></th>
+                                <th>Вівторок<br><span>4 квітня</span></th>
+                                <th>Середа<br><span>5 квітня</span></th>
+                                <th>Четвер<br><span>6 квітня</span></th>
+                                <th>П'ятниця<br><span>7 квітня</span></th>
+                                <th>Субота<br><span>8 квітня</span></th>
+                                <th>Неділя<br><span>9 квітня</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td class="cell__time">7:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td class="cell__time">8:00</td>
+                                <td><a href="#">Дарина<br> Приходько</a></td>
+                                <td><a href="#">Ярослав<br> Науменко</a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#">Ярослав<br> Науменко</a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td class="cell__time">9:00</td>
+                                <td><a href="#">Ярослав<br> Науменко</a></td>
+                                <td><a href="#">Каміла<br> Айс</a></td>
+                                <td><a href="#">Ярослав<br> Науменко</a></td>
+                                <td><a href="#">Каміла<br> Айс</a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <tr>
+                                <td class="cell__time">10:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td class="td_active"><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td class="cell__time">11:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td class="cell__time">12:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td class="cell__time">13:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#">Каміла<br> Айс</a></td>
+                                <td><a href="#">Дарина<br> Приходько</a></td>
+                                <td><a href="#">Каміла<br> Айс</a></td>
+                                <td><a href="#">Каміла<br> Айс</a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td class="cell__time">14:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td class="cell__time">15:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td class="cell__time">16:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td class="cell__time">17:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td class="cell__time">18:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td  class="cell__time">19:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td  class="cell__time">20:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td  class="cell__time">21:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td  class="cell__time">22:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                <td  class="cell__time">23:00</td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                <td><a href="#"></a></td>
+                                </tr>
+                            </tbody>
+                    </table>
+
+                    <div class="work__schedule_mobile">
+                            <ul class="schedule_mobile-list">
+                                <li class="active_day">Пн<span>3 квітня</span></li>
+                                <li>Вт<span>4 квітня</span></li>
+                                <li>Ср<span>5 квітня</span></li>
+                                <li>Чт<span>6 квітня</span></li>
+                                <li>Пт<span>7 квітня</span></li>
+                                <li>Сб<span>8 квітня</span></li>
+                                <li>Нд<span>9 квітня</span></li>
+                            </ul>
+                            <table class="table__schedule_mobile">
+                                <tbody>
+                                    <tr>
+                                        <td class="cell__time">7:00</td>
+                                        <td><a href="#">Дарина Приходько</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">8:00</td>
+                                        <td><a href="#">Ярослав Науменко</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">9:00</td>
+                                        <td><a href="#">Дарина Приходько</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">10:00</td>
+                                        <td><a href="#">Каміла Айс</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">11:00</td>
+                                        <td><a href="#">Ярослав Науменко</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">12:00</td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">13:00</td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">14:00</td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">15:00</td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">16:00</td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">17:00</td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">18:00</td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">19:00</td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">20:00</td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">21:00</td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">22:00</td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell__time">23:00</td>
+                                        <td><a href="#"></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                    <div class="schedule__info">Увесь час та розклад заплановані за Києвським часом</div>
+
+                    <!-- Картка клієнта для переносу -->
+                    <div class="card__client">
+                        <div class="card__client-name">
+                            <img src="./images/darina.png" alt="">
+                            <h3 class="name__client">Дарина<br> Приходько</h3>
+                        </div>
+                        <div class="card__client-info">
+                            <ul class="info__list">
+                                <li>Тривалість<span>50 хв</span></li>
+                                <li>Тип<span>Особиста</span></li>
+                                <li>Дата<span>13 березня</span></li>
+                                <li>Час<span>11:00 - 11:50</span></li>
+                            </ul>
+                        </div>
+                        <div class="card__client-btns">
+                            <ul class="btns__list">
+                                <li><button>Дивитись анкету</button></li>
+                                <li><button>Перенести</button></li>
+                                <li><button class="cancel_btn">Скасувати сессію</button></li>
+                            </ul>
+                            <ul class="btns__list abolition_list">
+                                <li><button>Підтвердити</button></li>
+                                <li><button class="abolition">Відміна</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Контейнер для блока Повідомлення (Чат, Завдання, Відгуки)  -->
+            <div class="messages-block__wrap visually-hidden" data-navigation-content="Повідомлення">
+                <div class="left-block__clients">
+                    <ul class="clients__list">
+                        <li><button><img src="./images/office/mysense-chat.svg" alt=""><span>my sense</span></button></li>
+                        <li><button><img src="./images/yarina.png" alt=""><span>Ярина Перекотиполе</span></button></li>
+                        <li><button><img src="./images/darina.png" alt=""><span>Дарина Приходько</span></button></li>
+                        <li><button><img src="./images/yarik.png" alt=""><span>Ярослав Науменко</span></button></li>
+                        <li><button><img src="./images/kamila.png" alt=""><span>Каміла Айс</span></button></li>
+                        <li><button><img src="./images/aren.png" alt=""><span>Арен Османьский</span></button></li>
+                        <li><button><img src="./images/darina.png" alt=""><span>Дарина Приходько</span></button></li>
+                        <li><button><img src="./images/yarik.png" alt=""><span>Ярослав Науменко</span></button></li>
+                    </ul>
+                </div>
+                <div class="right-block__content">
+                    <!-- Верхний блок переключения Чат, Завдання, Відгуки  -->
+                    <div class="clients__switch-btns">
+                        <div class="switch__box">
+                            <button data-switch-button="Чат" class="btn_active-chat">Чат</button>
+                            <button data-switch-button="Нотатки">Завдання</button>
+                            <button data-switch-button="Завдання">Відгуки</button>
+                        </div>
+                        <div class="clients__session-wrap">
+                            <button class="back"><img src="./images/office/purple-arrow.svg" alt="">Ярина Перекотиполе</button>
+                            <div class="clients__session">
+                                <span>Наступна сесія</span>
+                                <h4>Не запланована</h4>
+                            </div>
+                            <button class="plus_btn"><img src="./images/office/plus.svg" alt=""></button>
+                            <button class="notes_btn btn-edit"><img src="./images/office/edit.svg" alt=""></button>
+                            <button class="notes_btn btn-del"><img src="./images/office/del.svg" alt=""></button>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Чат контейнер  -->
+                    <div class="chat__body" data-switch-content="Чат">
+                        <div class="chat__container">
+                            <div class="date">24 лютого</div>
+                            <div class="all-chat">
+    
+                                <div class="item-chat">
+                                    <div class="person person-right">
+                                        <div class="message">Добрий день, завдання, які вам треба зробити до наступної сесії я поставив 😊</div>
+                                        <div class="data_block-right">
+                                            <div class="data">15:10</div>
+                                            <div class="data-info">Переглянуто 40 хв тому</div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="item-chat">
+                                    <div class="person person-left">
+                                        <div class="message">Добрий день, так, я бачила, дякую, все зроблю 😍</div>
+                                        <div class="data_block">
+                                            <div class="data">15:10</div>
+                                            <div class="data-info">Переглянуто 40 хв тому</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="item-chat">
+                                    <div class="person person-right">
+                                        <div class="message">Добрий день, завдання, які вам треба зробити до наступної сесії я поставив 😊</div>
+                                        <div class="data_block-right">
+                                            <div class="data">15:10</div>
+                                            <div class="data-info">Переглянуто 40 хв тому</div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="item-chat">
+                                    <div class="person person-left">
+                                        <div class="message">Добрий день, так, я бачила, дякую, все зроблю 😍</div>
+                                        <div class="data_block">
+                                            <div class="data">15:10</div>
+                                            <div class="data-info">Переглянуто 40 хв тому</div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="item-chat">
+                                    <div class="person person-right">
+                                        <div class="message">Добрий день, завдання, які вам треба зробити до наступної сесії я поставив 😊</div>
+                                        <div class="data_block-right">
+                                            <div class="data">15:10</div>
+                                            <div class="data-info">Переглянуто 40 хв тому</div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="item-chat">
+                                    <div class="person person-left">
+                                        <div class="message">Добрий день, так, я бачила, дякую, все зроблю 😍</div>
+                                        <div class="data_block">
+                                            <div class="data">15:10</div>
+                                            <div class="data-info">Переглянуто 40 хв тому</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Чат контейнер my sense -->
+                        <div class="chat__container-mysense">
+                            <div class="date">24 лютого</div>
+                            <div class="all-chat">
+    
+                                <div class="item-chat">
+                                    <div class="chat__mysense-body">
+                                        <div class="person_chat">
+                                            <div class="chat__client-name-mysense">
+                                                <img src="./images/darina.png" alt="">
+                                                <h3 class="name__client">Дарина Приходько</h3>
+                                            </div>
+                                            <div class="chat__time">Коментар, учора о 17:10</div>
+                                        </div>
+                                        <div class="message">
+                                            <p> Цікава, стаття, дякую. Це мені дуже допомогло. Тепер буду використовувати це на практиці частіше. 
+                                            А можете ще підсказати...</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-chat">
+                                    <div class="chat__mysense-body">
+                                        <div class="person_chat">
+                                            <div class="chat__client-name-mysense">
+                                                <img src="./images/darina.png" alt="">
+                                                <h3 class="name__client">Дарина Приходько</h3>
+                                            </div>
+                                            <div class="chat__time">Коментар, учора о 17:10</div>
+                                        </div>
+                                        <div class="message">
+                                            <p>Ми оновили договір оферту для психологів, будь-ласка, ознайомтесь зі змінами, 
+                                                за повагою,  my sense ❤️</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-chat">
+                                    <div class="chat__mysense-body mysense-body_active">
+                                        <div class="person_chat">
+                                            <div class="chat__client-name-mysense">
+                                                <img src="./images/darina.png" alt="">
+                                                <h3 class="name__client client__active">Дарина Приходько</h3>
+                                            </div>
+                                            <div class="chat__time time__active">Коментар, учора о 17:10</div>
+                                        </div>
+                                        <div class="message message__active">
+                                            <p> Нова сессія почнеться за 2 хвилини</p>
+                                            <button class="start-session">Розпочати сесію</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="write__message">
+                            <input type="text" placeholder="Напишіть ваше повідомленя"><button type="submit"><img src="./images/office/arrow_btn.svg" alt=""></button>
+                        </div>
+                    </div>
+                    <!-- Завдання контейнер  -->
+                    <div class="notes__body visually-hidden" data-switch-content="Нотатки">
+                        <div class="notes__container">
+                            <div class="date_notes">24 лютого</div>
+                            <div class="all-notes">
+
+                                <div class="item-notes">
+                                    <div class="notes__block">
+                                        <div class="notes__message">Тут психолог може записувати те, що стосується пацієнта, 
+                                            наприклад, ідеї щодо психологічних практи для пацієнта, або щось інше, що допоможе 
+                                            йому у роботі
+                                        </div>
+                                        <div class="data_block-notes">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-notes">
+                                    <div class="notes__block">
+                                        <div class="notes__message">Тут психолог може записувати те, що стосується пацієнта, 
+                                            наприклад, ідеї щодо психологічних практи для пацієнта, або щось інше, що допоможе 
+                                            йому у роботі
+                                        </div>
+                                        <div class="data_block-notes">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-notes">
+                                    <div class="notes__block">
+                                        <div class="notes__message">Тут психолог може записувати те, що стосується пацієнта, 
+                                            наприклад, ідеї щодо психологічних практи для пацієнта, або щось інше, що допоможе 
+                                            йому у роботі
+                                        </div>
+                                        <div class="data_block-notes">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-notes">
+                                    <div class="notes__block">
+                                        <div class="notes__message">Тут психолог може записувати те, що стосується пацієнта, 
+                                            наприклад, ідеї щодо психологічних практи для пацієнта, або щось інше, що допоможе 
+                                            йому у роботі
+                                        </div>
+                                        <div class="data_block-notes">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-notes">
+                                    <div class="notes__block">
+                                        <div class="notes__message">Тут психолог може записувати те, що стосується пацієнта, 
+                                            наприклад, ідеї щодо психологічних практи для пацієнта, або щось інше, що допоможе 
+                                            йому у роботі
+                                        </div>
+                                        <div class="data_block-notes">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="add__notes">
+                            <input type="text" placeholder="Додати нову нотатку">
+                            <button type="submit"><img src="./images/office/plus-note.svg" alt=""></button>
+                        </div>
+                    </div>
+
+                    <!-- Відгуки контейнер  -->
+                    <div class="task__body visually-hidden" data-switch-content="Завдання">
+                        <div class="task__container">
+                            <div class="date_task">24 лютого</div>
+                            <div class="all-task">
+
+                                <div class="item-task">
+                                    <div class="task__block">
+                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто</div>
+                                        <div class="data_block-task">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-task">
+                                    <div class="task__block">
+                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто.
+                                            Сходити з хлопцем в парк, або поїхати за місто.
+                                        </div>
+                                        <div class="data_block-task">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-task">
+                                    <div class="task__block">
+                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто</div>
+                                        <div class="data_block-task">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-task">
+                                    <div class="task__block on_click-bg">
+                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто
+                                        </div>
+                                        <div class="data_block-task on__click-btns">
+                                            <div class="data">15:10</div>
+                                            <div class="btn_on-click">
+                                                <button class="save">Зберегти</button>
+                                                <button class="cancel">Відмінити</button>
+                                            </div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-task">
+                                    <div class="task__block">
+                                        <div class="task__message">Сходити з хлопцем в парк, або поїхати за місто. 
+                                            Сходити з хлопцем в парк, або поїхати за місто
+                                        </div>
+                                        <div class="data_block-task">
+                                            <div class="data">15:10</div>
+                                            <button class="pensil"></button>
+                                            <button class="cart"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="add__task">
+                            <input type="text" placeholder="Додати нову нотатку">
+                            <button type="submit"><img src="./images/office/plus-note.svg" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-------- Баланс та оплата  --------->
+            <div class="balance__body visually-hidden" data-navigation-content="Баланс та оплата">
+                <div class="balance__container">
+
+                    <div class="earnings__wrap">
+                        <div class="balance___title">Заробіток</div>
+                        <div class="balance__box">
+                            <h4>Баланс на рахунку</h4>    
+                            <div class="balance_pay">
+                                <div class="summ">10 000<span>₴</span></div>
+                                <button>Поповнити рахунок</button>
+                            </div>
+                            <p>Рахунок в my sense, який буде використовуватись для оплати послуг психологів</p>
+                        </div>
+                    </div>
+
+                    <div class="payment__container">
+                        <div class="payment__title">Баланс на рахунку</div>
+                        <div class="payment__wrap">
+                            <h4>Стандартний спосіб оплати</h4>
+                            <div class="type__payment">
+
+                            </div>
+                            <p>Оберіть стандартний спосіб оплати, яким ви будете поповнювати рахунок my sense</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </div>
+    
+    <!-------- Записатись на сеанс ---------->
+    <!-- <div class="add_session__wrap visually-hidden">
+        <div class="add_session">
+            <div class="close"><img src="./images/office/close_popup.svg" alt=""></div>
+            <div class="add_session__title">Записатись на сеанс</div>
+            <div class="add_session__correct">
+                <h4>Оберіть тип сесії</h4>
+                <div class="type__session">
+                    <button><img src="" alt=""></button>
+                    <button><img src="" alt=""></button>
+                    <button><img src="" alt=""></button>
+                </div>
+                <div class="choose__day">
+                    <h3 class="choose__day-title">Виберіть дату сесії</h3>
+                    <p>Не обовʼязково</p>
+                    <div class="choose__day-box">
+                    <div class="month-controls">
+                        <div class="month">Березень 2023</div>
+                        <div class="controls__arrows">
+                            <button>
+                            <img src="./images/svg-mysense/arrow_btns-prew.svg" alt="" />
+                            </button>
+                            <button>
+                            <img src="./images/svg-mysense/arrow_btns-next.svg" alt="" />
+                            </button>
+                        </div>
+                    </div>
+                    <ul class="week__list">
+                        <li><span>Пн</span><button class="num_active">13</button></li>
+                        <li><span>Вт</span><button>14</button></li>
+                        <li><span>Ср</span><button>15</button></li>
+                        <li><span>Чт</span><button>16</button></li>
+                        <li><span>Пт</span><button class="no_active">17</button></li>
+                        <li><span>Сб</span><button class="no_active weekend">18</button></li>
+                        <li><span>Нд</span><button class="no_active weekend">19</button></li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="choose__time">
+                <h3 class="choose__time-title">Оберіть зручний час (за Києвом)</h3>
+                <p>Не обовʼязково</p>
+                <div class="choose__time-body">
+                    <button class="choose__time-btn"><span>7:00 - 7:50</span></button>
+                    <button class="choose__time-btn"><span>8:00 - 8:50</span></button>
+                    <button class="choose__time-btn"><span>9:00 - 9:50</span></button>
+                    <button class="choose__time-btn"><span>10:00 - 10:50</span></button>
+                    <button class="choose__time-btn"><span>11:00 - 11:50</span></button>
+                    <button class="choose__time-btn"><span>12:00 - 12:50</span></button>
+                    <button class="choose__time-btn"><span>13:00 - 13:50</span></button>
+                    <button class="choose__time-btn"><span>14:00 - 14:50</span></button>
+                    <button class="choose__time-btn"><span>15:00 - 15:50</span></button>
+                    <button class="choose__time-btn"><span>16:00 - 16:50</span></button>
+                    <button class="choose__time-btn"><span>17:00 - 17:50</span></button>
+                    <button class="choose__time-btn"><span>18:00 - 18:50</span></button>
+                    <button class="choose__time-btn"><span>19:00 - 19:50</span></button>
+                    <button class="choose__time-btn"><span>20:00 - 20:50</span></button>
+                    <button class="choose__time-btn"><span>21:00 - 21:50</span></button>
+                    <button class="choose__time-btn"><span>22:00 - 22:50</span></button>
+                    <button class="choose__time-btn"><span>23:00 - 23:50</span></button>
+                </div>
+                </div>
+                <h4>Дата та час</h4>
+                <div class="correct_date">
+                    <input  class="text" type="button" value="7 квітня, 11:00 — 11:50 за Києвом">
+                    <button class="edit"><img src="./images/office/pensil.svg" alt=""></button>
+                </div>
+                <button class="plan_session">Запланувати сессію<img src="./images/office/arrow_btn.svg" alt=""></button>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- <script>
+    var button = document.getElementById("showEye");
+    var button2 = document.getElementById("showEye2");
+    var button3 = document.getElementById("showEye3");
+
+    button.onclick = showEye;
+    button2.onclick = showEye2;
+    button3.onclick = showEye3;
+
+    var input = document.getElementById("show1");
+    var input2 = document.getElementById("show2");
+    var input3 = document.getElementById("show3");
+    var icon = document.getElementById("i");
+
+    function showEye () {
+        if(input.getAttribute('type') == 'password') {
+        input.removeAttribute('type');
+        input.setAttribute('type', 'text')
+        button.innerHTML='<i id="i" class="far fa-eye-slash">';
+        } else {
+        input.removeAttribute('type');
+        input.setAttribute('type', 'password');
+        button.innerHTML='<i id="i" class="far fa-eye">';
+        }
+    }
+    function showEye2 () {
+        if(input2.getAttribute('type') == 'password') {
+        input2.removeAttribute('type');
+        input2.setAttribute('type', 'text')
+        button2.innerHTML='<i id="i" class="far fa-eye-slash">';
+        } else {
+        input2.removeAttribute('type');
+        input2.setAttribute('type', 'password');
+        button2.innerHTML='<i id="i" class="far fa-eye">';
+        }
+    }
+    function showEye3 () {
+        if(input3.getAttribute('type') == 'password') {
+        input3.removeAttribute('type');
+        input3.setAttribute('type', 'text')
+        button3.innerHTML='<i id="i" class="far fa-eye-slash">';
+        } else {
+        input3.removeAttribute('type');
+        input3.setAttribute('type', 'password');
+        button3.innerHTML='<i id="i" class="far fa-eye">';
+        }
+    }
+</script> -->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
