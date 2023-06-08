@@ -1,3 +1,4 @@
+const privateOfficeSection = document.querySelector('.private-office-section');
 const pageHeaderPrivateOfficeMenu = document.querySelector(
   '.page-header__private-office-menu'
 );
@@ -15,17 +16,14 @@ function checkLoggedIn() {
     pageHeaderPrivateOfficeMenu.classList.remove('visually-hidden');
     login.classList.add('visually-hidden');
     choosePerson.classList.add('visually-hidden');
+    privateOfficeSection.classList.remove('visually-hidden');
     // Вы можете выполнить перенаправление на другую страницу
   } else {
-    if (pageHeaderPrivateOfficeMenu) {
-      pageHeaderPrivateOfficeMenu.classList.add('visually-hidden');
-    }
-    if (login) {
-      login.classList.remove('visually-hidden');
-    }
-    if (choosePerson) {
-      choosePerson.classList.remove('visually-hidden');
-    }
+    pageHeaderPrivateOfficeMenu.classList.add('visually-hidden');
+    login.classList.remove('visually-hidden');
+    choosePerson.classList.remove('visually-hidden');
+    privateOfficeSection.classList.add('visually-hidden');
+    window.location.assign('registration_form.html');
     // Вы можете выполнить перенаправление на страницу входа или другую страницу
   }
 }

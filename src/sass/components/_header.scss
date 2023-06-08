@@ -478,8 +478,13 @@
     }
 }
 
-.visually-hidden {
+.page-header__private-office-menu.visually-hidden,
+.modal-reminder.visually-hidden,
+.modal-information-department.visually-hidden,
+.page-header__button.login.visually-hidden,
+.page-header__button.choose-person.visually-hidden {
     visibility: hidden;
     pointer-events: none;
     overflow: hidden;
+    display: none;
 }
