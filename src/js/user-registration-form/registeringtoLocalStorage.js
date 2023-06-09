@@ -1,5 +1,4 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { Loading } from 'notiflix/build/notiflix-loading-aio';
 const form = document.querySelector('.registration_client');
 
 form.addEventListener('submit', handleSubmit);
@@ -64,10 +63,6 @@ function login(username, password) {
     localStorage.setItem('currentUser', JSON.stringify(user));
 
     Notify.info('Ви успішно увійшли до системи.');
-    Loading.circle('', {
-      backgroundColor: 'rgb(121 91 218 / 30%)',
-      svgColor: '#795bda',
-    });
 
     setTimeout(() => {
       window.location.assign('private-office.html');

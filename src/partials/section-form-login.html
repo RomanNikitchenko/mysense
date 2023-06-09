@@ -1,0 +1,56 @@
+<section class="section-form-login">
+  <div class="section-form-login__container">
+    <div class="section-form-login__content">
+      <h1 class="section-form-login__title">Вхід на платформу</h1>
+      <p class="section-form-login__text">Ще немає аккаунта?</p>
+      <a class="section-form-login__link" href="./registration_form.html"
+        >Реєстрація</a
+      >
+    </div>
+    <div class="section-form-login__content">
+      <form class="form-login">
+        <div class="form-login__field">
+          <label class="form-login__label" for="mai">Логін (Email)</label>
+          <input
+            class="form-login__input"
+            type="email"
+            name="mail"
+            id="mai"
+            placeholder=" "
+          />
+        </div>
+
+        <div class="form-login__field">
+          <label class="form-login__label" for="pass">Пароль</label>
+
+          <input
+            class="form-login__input"
+            type="password"
+            name="password"
+            id="pass"
+            placeholder=" "
+          />
+
+          <svg
+            class="form-login__icon form-login__icon--password-hidden"
+            width="16"
+            height="16"
+          >
+            <use href="./images/symbol-defs.svg#password-hidden"></use>
+          </svg>
+
+          <svg
+            class="form-login__icon form-login__icon--password-not-hidden"
+            width="16"
+            height="16"
+          >
+            <use href="./images/symbol-defs.svg#password-not-hidden"></use>
+          </svg>
+        </div>
+
+        <button type="submit">Увійти</button>
+        <a href="">Відновити пароль</a>
+      </form>
+    </div>
+  </div>
+</section>
