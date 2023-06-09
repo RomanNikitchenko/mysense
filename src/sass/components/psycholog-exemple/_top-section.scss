@@ -7,11 +7,15 @@
     grid-template-columns: 265px 1fr;
     gap: 20px;
 }
+.psycholog__side-bar {
+    height: 100%;
+}
 .psycholog__card-wrap {
     background: #ffffff;
     border-radius: 8px;
     position: sticky;
     top: 0;
+    height: 560px;
 }
 .card__img {
     overflow: hidden;
@@ -1860,6 +1864,9 @@ color: #795BDA;
             height: 17px;
         }
     }
+    .psycholog__video {
+        height: 245px;
+    }
     .psycholog__video img {
         max-width: 218px;
         object-fit: cover;
@@ -1903,9 +1910,14 @@ color: #795BDA;
     .edu-date {
         width: 220px;
     }
-    .edu__list li span {
-        font-size: 14px;
-        margin-left: 18px;
+    .edu__list {
+        li {
+            span {
+                font-size: 14px;
+                margin-left: 18px;
+                align-items: flex-start;
+            }
+        }
     }
     .edu__wrap {
         flex-direction: column;
@@ -2034,11 +2046,19 @@ color: #795BDA;
     .item__title {
         font-size: 16px;
     }
+    .card__img {
+        height: 250px;
+    }
+
+    .psycholog__video {
+        height: 200px;
+        img {
+            max-width: 190px;
+        }
+    }
+
     .info_video {
         padding: 47px 0 47px 43px;
-    }
-    .psycholog__video img {
-        max-width: 176px;
     }
     .head-video {
         max-width: 59px;
@@ -2052,10 +2072,18 @@ color: #795BDA;
         font-size: 10px;
     }
 
-    .edu__list li {
-        font-size: 14px;
-        span {
-            font-size: 12px;
+    .edu__list {
+        li {
+            font-size: 14px;
+            flex-direction: column;
+            .edu-date {
+                width: 100%;
+            }
+            span {
+                font-size: 12px;
+                margin-left: 0;
+                margin-top: 10px;
+            }
         }
     }
     .state__item {

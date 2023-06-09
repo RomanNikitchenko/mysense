@@ -10,3 +10,5 @@ import './private-office/menuNavigation';
 import './private-office/myCustomersSwitchButton';
 import './private-office/articlesAndWebinarsSwitch';
 import './private-office/clientsListOpenRecords';
+import './private-office/logout';
+import './private-office/checkLoggedIn';

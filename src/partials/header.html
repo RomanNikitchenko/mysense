@@ -39,13 +39,12 @@
         <li>
           <a href="./psycholog-exemple.html" class="link">Сторінка психолога</a>
         </li>
-        <li>
+        <!-- <li>
           <a href="./private-office.html" class="link">Особистий кабінет</a>
+        </li> -->
         </li>
-        <li class="site-nav__item">
-          <a href="./registration_form.html" class="site-nav__link"
-            >Реєстрація</a
-          >
+        <li>
+          <a href="./client-office.html" class="link">Кабінет клієнта</a>
         </li>
       </ul>
     </div>
@@ -81,16 +80,21 @@
             >Сторінка психолога</a
           >
         </li>
-        <li class="site-nav__item">
+        <!-- <li class="site-nav__item">
           <a href="./private-office.html" class="site-nav__link"
+
             >Особистий кабінет</a
           >
+        </li> -->
+        <li>
+          <a href="./client-office.html" class="link">Кабінет клієнта</a>
         </li>
-        <li class="site-nav__item">
+
+        <!-- <li class="site-nav__item">
           <a href="./registration_form.html" class="site-nav__link"
             >Реєстрація</a
           >
-        </li>
+        </li> -->
       </ul>
     </nav>
 
@@ -107,17 +111,22 @@
       </ul>
     </div>
 
-    <button class="page-header__button login">
+    <a
+      href="./registration_form.html"
+      class="page-header__button login visually-hidden"
+    >
       <svg class="icon-login" width="11" height="14">
         <use href="./images/symbol-defs.svg#login"></use>
       </svg>
       Вхід
+    </a>
+
+    <button class="page-header__button choose-person visually-hidden">
+      Обрати психолога
     </button>
 
-    <button class="page-header__button choose-person">Обрати психолога</button>
-
     <!-- Особистий кабінет -->
-    <div class="page-header__private-office-menu">
+    <div class="page-header__private-office-menu visually-hidden">
       <!-- кнопка открыть модальное окно "Нагадування" -->
       <button
         class="page-header__button page-header__button--reminder js-open-modal-reminder"
@@ -149,6 +158,120 @@
       >
         <img src="./images/our-team-desktop.jpg" alt="Фото Іван Виговський" />
       </button>
+
+      <!-- модальное окно "Особистий кабінет меню" -->
+      <div
+        class="outside-private-office visually-hidden js-menu-container-outside-private-office"
+        id="mobile-menu-private-office"
+      >
+        <!-- private-office__block(1) -->
+        <div class="outside-private-office__block">
+          <button type="button" class="outside-private-office__close-menu">
+            <svg width="26" height="26">
+              <use href="./images/symbol-defs.svg#close_40px"></use>
+            </svg>
+          </button>
+
+          <div class="outside-private-office__image-wrapper">
+            <div class="outside-private-office__image-wrapper-border">
+              <img
+                src="./images/our-team-desktop.jpg"
+                class="outside-private-office__image"
+                alt="Фото Іван Виговський"
+              />
+            </div>
+          </div>
+
+          <div class="outside-private-office__info">
+            <h1 class="outside-private-office__title">Іван Виговський</h1>
+          </div>
+        </div>
+
+        <ul class="outside-private-office__list">
+          <li class="outside-private-office__list-item">
+            <button
+              type="button"
+              class="outside-private-office__list-button"
+              data-button-menu-navigation="Редагувати профіль"
+            >
+              Редагувати профіль
+            </button>
+          </li>
+          <li class="outside-private-office__list-item">
+            <button
+              type="button"
+              class="outside-private-office__list-button is-active"
+              data-button-menu-navigation="Мої сесії"
+            >
+              Мої сесії
+            </button>
+          </li>
+          <li class="outside-private-office__list-item">
+            <button
+              type="button"
+              class="outside-private-office__list-button"
+              data-button-menu-navigation="Мої клієнти"
+            >
+              Мої клієнти
+            </button>
+          </li>
+          <li class="outside-private-office__list-item">
+            <button
+              type="button"
+              class="outside-private-office__list-button"
+              data-button-menu-navigation="Статистика"
+            >
+              Статистика
+            </button>
+          </li>
+          <li class="outside-private-office__list-item">
+            <button
+              type="button"
+              class="outside-private-office__list-button"
+              data-button-menu-navigation="Робочий графік"
+            >
+              Робочий графік
+            </button>
+          </li>
+          <li class="outside-private-office__list-item">
+            <button
+              type="button"
+              class="outside-private-office__list-button"
+              data-button-menu-navigation="Мої статті та вебінари"
+            >
+              Мої статті та вебінари
+            </button>
+          </li>
+        </ul>
+
+        <div class="outside-private-office__flex-wrapper">
+          <div class="outside-private-office__exit">
+            <button class="outside-private-office__exit-button">Вийти</button>
+          </div>
+
+          <div class="outside-private-office__block-session">
+            <div class="outside-private-office__person-session">
+              <div class="outside-private-office__image-session-border">
+                <img
+                  class="outside-private-office__image-session"
+                  src="./images/darina.png"
+                  alt="Фото Ярина Перекотиполе"
+                />
+              </div>
+              <p>Ярина Перекотиполе</p>
+            </div>
+            <button
+              type="button"
+              class="outside-private-office__button outside-private-office__button--start-session"
+            >
+              Розпочати сессію
+              <svg width="12" height="12" class="outside-private-office__icon">
+                <use href="./images/symbol-defs.svg#test"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
 
       <!-- модальное окно "Відділ турботи" -->
       <div
@@ -212,7 +335,6 @@
         </div>
       </div>
 
-      <!-- ///// -->
       <!-- модальное окно "Нагадування" -->
       <div class="modal-reminder visually-hidden" id="modal-reminder">
         <div class="reminder">
@@ -340,7 +462,6 @@
           </div>
         </div>
       </div>
-      <!-- ///// -->
     </div>
   </div>
 </header>

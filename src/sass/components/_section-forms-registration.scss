@@ -40,18 +40,19 @@
         letter-spacing: -0.06em;
         color: #795BDA;
     }
-    .span_active {
+
+    .step__line-active ~ span {
         display: block;
     }
 }
-.step_1 {
-}
-.step_2 {
-}
-.step_3 {
-}
-.step_4 {
-}
+// .step_1 {
+// }
+// .step_2 {
+// }
+// .step_3 {
+// }
+// .step_4 {
+// }
 .step__line {
     border: 3px solid rgba(34, 43, 64, 0.1);
 }
@@ -243,4 +244,14 @@
             }
         }
     }
+}
+
+.buttons__control .form__end-btn{
+    display: none;
+}
+
+.step__wrap-form-2,
+.step__wrap-form-3,
+.step__wrap-form-4 {
+    display: none;
 }
