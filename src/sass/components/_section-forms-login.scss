@@ -60,7 +60,7 @@
     position: relative;
     overflow: hidden;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     margin-bottom: 30px;
 
     .form-login__label {
@@ -73,6 +73,7 @@
     }
 
     .form-login__input {
+        outline: none;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
@@ -89,9 +90,15 @@
         &:focus {
             border-bottom: 1px solid #795BDA;
         }
+
+        &:focus + .form-login__label,
+        &:hover + .form-login__label {
+            color: #795BDA;
+        }
     }
 
     .form-login__icon {
+        outline: none;
         cursor: pointer;
         position: absolute;
         bottom: 17px;
@@ -99,8 +106,67 @@
         opacity: 1;
         transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+        &:focus,
         &:hover {
             fill: #795BDA;
         }
     }
+}
+
+.flex-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-login__button-submit {
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    width: 117px;
+    height: 46px;
+    background: #795BDA;
+    border-radius: 150px;
+    border: transparent;
+    outline: none;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+        background: #6849cc;
+    }
+}
+
+.form-login__link-restore-password {
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.05em;
+    text-decoration-line: underline;
+    color: #795BDA;
+}
+
+//JS 
+.form-login__input.is-not-valid {
+    border-bottom: 1px solid #ff5549;
+
+    &:hover,
+    &:focus {
+        border-bottom: 1px solid #ff5549;
+    }
+
+    &:hover + .form-login__label,
+    &:focus + .form-login__label {
+        color: #ff5549;
+    }
+}
+
+.form-login__input.is-not-valid + .form-login__label{
+    color: #ff5549;
 }

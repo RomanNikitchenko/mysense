@@ -10,36 +10,39 @@
     <div class="section-form-login__content">
       <form class="form-login">
         <div class="form-login__field">
-          <label class="form-login__label" for="mai">Логін (Email)</label>
           <input
             class="form-login__input"
             type="email"
             name="mail"
-            id="mai"
+            id="email"
             placeholder=" "
           />
+          <label class="form-login__label" for="email">Логін (Email)</label>
         </div>
 
         <div class="form-login__field">
-          <label class="form-login__label" for="pass">Пароль</label>
-
           <input
             class="form-login__input"
             type="password"
             name="password"
-            id="pass"
+            id="password"
             placeholder=" "
           />
+          <label class="form-login__label" for="password">Пароль</label>
 
           <svg
+            role="button"
+            tabindex="0"
             class="form-login__icon form-login__icon--password-hidden"
             width="16"
             height="16"
           >
             <use href="./images/symbol-defs.svg#password-hidden"></use>
           </svg>
-
+          
           <svg
+            role="button"
+            tabindex="0"
             class="form-login__icon form-login__icon--password-not-hidden"
             width="16"
             height="16"
@@ -48,8 +51,10 @@
           </svg>
         </div>
 
-        <button type="submit">Увійти</button>
-        <a href="">Відновити пароль</a>
+        <div class="flex-wrapper">
+          <button type="button" class="form-login__button-submit">Увійти</button>
+          <a class="form-login__link-restore-password" href="">Відновити пароль</a>
+        </div>
       </form>
     </div>
   </div>
