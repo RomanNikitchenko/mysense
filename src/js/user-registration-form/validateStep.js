@@ -90,11 +90,11 @@ function validateStep() {
     const phoneRegex = /^\d+$/;
 
     if (!emailRegex.test(emailInput.value.trim())) {
-      Notify.info('Введіть правильний Email');
+      Notify.failure('Введіть правильний Email');
       return false;
     }
     if (!phoneRegex.test(phoneInput.value.trim())) {
-      Notify.info('Введіть правильний номер телефону');
+      Notify.failure('Введіть правильний номер телефону');
       return false;
     }
   } else if (step2.style.display !== 'none') {
@@ -104,13 +104,13 @@ function validateStep() {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
     if (!passwordRegex.test(passwordInput.value.trim())) {
-      Notify.info(
+      Notify.failure(
         'Пароль повинен містити принаймні 8 символів, включаючи великі та малі літери'
       );
       return false;
     }
     if (passwordInput.value !== confirmPasswordInput.value) {
-      Notify.info('Паролі не співпадають');
+      Notify.failure('Паролі не співпадають');
       return false;
     }
   } else if (step3.style.display !== 'none') {
@@ -119,11 +119,11 @@ function validateStep() {
     const lastNameInput = document.getElementById('last-name');
 
     if (nameInput.value.trim() === '') {
-      Notify.info('Заповніть поле Імʼя');
+      Notify.failure('Заповніть поле Імʼя');
       return false;
     }
     if (lastNameInput.value.trim() === '') {
-      Notify.info('Заповніть поле Прізвище');
+      Notify.failure('Заповніть поле Прізвище');
       return false;
     }
   }

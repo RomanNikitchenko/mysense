@@ -14,7 +14,7 @@ function register(username, password, eventSubmit) {
   });
 
   if (isUsernameTaken) {
-    Notify.info('Імя користувача вже зайняте.');
+    Notify.warning('Імя користувача вже зайняте.');
     return;
   }
 
@@ -30,7 +30,7 @@ function register(username, password, eventSubmit) {
   // Сохраняем обновленный список пользователей в локальное хранилище
   localStorage.setItem('users', JSON.stringify(users));
 
-  Notify.info('Користувач успішно зареєстрований.');
+  Notify.success('Користувач успішно зареєстрований.');
 
   eventSubmit.currentTarget.reset();
 
@@ -62,7 +62,7 @@ function login(username, password) {
     // Сохраняем информацию о текущем пользователе в локальное хранилище
     localStorage.setItem('currentUser', JSON.stringify(user));
 
-    Notify.info('Ви успішно увійшли до системи.');
+    Notify.success('Ви успішно увійшли до системи.');
 
     setTimeout(() => {
       window.location.assign('private-office.html');
@@ -70,6 +70,6 @@ function login(username, password) {
     // Вы можете выполнить перенаправление на другую страницу
   } else {
     // Неверное имя пользователя или пароль
-    Notify.info('Неправильне імя користувача або пароль.');
+    Notify.warning('Неправильне імя користувача або пароль.');
   }
 }
