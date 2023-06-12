@@ -5,6 +5,7 @@ const step1 = document.querySelector('.step__wrap-form-1');
 const step2 = document.querySelector('.step__wrap-form-2');
 const step3 = document.querySelector('.step__wrap-form-3');
 const step4 = document.querySelector('.step__wrap-form-4');
+const prewBtn = document.querySelector('.form__prew-btn');
 const nextBtn = document.querySelector('.form__next-btn');
 const endBtn = document.querySelector('.form__end-btn');
 const stepLine = document.querySelectorAll('.step__line');
@@ -20,6 +21,7 @@ nextBtn.addEventListener('click', () => {
     if (step1.style.display !== 'none') {
       step1.style.display = 'none';
       step2.style.display = 'block';
+      prewBtn.style.display = 'flex';
       isTransitioning = false;
       stap = 2;
     } else if (step2.style.display !== 'none') {
@@ -57,17 +59,21 @@ document.querySelector('.form__prew-btn').addEventListener('click', () => {
     step2.style.display = 'none';
     step1.style.display = 'block';
     isTransitioning = true;
+    prewBtn.style.display = 'none';
     stap = 1;
+    console.log('1');
   } else if (step3.style.display !== 'none') {
     step3.style.display = 'none';
     step2.style.display = 'block';
     stap = 2;
+    console.log('2');
   } else if (step4.style.display !== 'none') {
     step4.style.display = 'none';
     step3.style.display = 'block';
     nextBtn.style.display = 'block';
     endBtn.style.display = 'none';
     stap = 3;
+    console.log('3');
   }
 
   for (let i = 0; i < stepLine.length; i += 1) {

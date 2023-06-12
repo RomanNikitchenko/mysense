@@ -39,7 +39,7 @@ function login(username, password) {
     }, 500);
   } else {
     // Неверное имя пользователя или пароль
-    Notify.warning('Неправильне імя користувача або пароль.');
+    Notify.warning('користувача не знайдено (не зареєстровано).');
 
     return false;
   }

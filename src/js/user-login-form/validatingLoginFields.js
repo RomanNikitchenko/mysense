@@ -53,7 +53,6 @@ passwordInput.addEventListener('input', () => {
 
 //
 formLoginButtonSubmit.addEventListener('click', () => {
-  console.log('click');
   if (loginIsValid === false) {
     Notify.failure('Введіть правильний Email');
     emailInput.classList.add('is-not-valid');
