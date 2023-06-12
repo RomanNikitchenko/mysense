@@ -12,9 +12,15 @@ function checkLoggedIn() {
   var currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
   if (currentUser) {
-    pageHeaderPrivateOfficeMenu.classList.remove('visually-hidden');
-    login.classList.add('visually-hidden');
-    choosePerson.classList.add('visually-hidden');
+    if (pageHeaderPrivateOfficeMenu) {
+      pageHeaderPrivateOfficeMenu.classList.remove('visually-hidden');
+    }
+    if (login) {
+      login.classList.add('visually-hidden');
+    }
+    if (choosePerson) {
+      choosePerson.classList.add('visually-hidden');
+    }
     // Вы можете выполнить перенаправление на другую страницу
   } else {
     if (pageHeaderPrivateOfficeMenu) {

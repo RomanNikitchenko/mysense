@@ -11,7 +11,9 @@ function logout() {
   // Удаляем информацию о текущем пользователе из локального хранилища
   localStorage.removeItem('currentUser');
 
-  Notify.info('Вы успешно вышли из системы.');
+  Notify.info('Ви успішно вийшли із системи.');
   // Вы можете выполнить перенаправление на страницу входа или другую страницу
-  window.location.assign('index.html');
+  setTimeout(() => {
+    window.location.assign('index.html');
+  }, 500);
 }

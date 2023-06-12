@@ -1,0 +1,67 @@
+<section class="section-form-login">
+  <div class="section-form-login__container">
+    <div class="section-form-login__content">
+      <h1 class="section-form-login__title">Вхід на платформу</h1>
+      <p class="section-form-login__text">Ще немає аккаунта?</p>
+      <a class="section-form-login__link" href="./registration_form.html"
+        >Реєстрація</a
+      >
+    </div>
+    <div class="section-form-login__content">
+      <form class="form-login">
+        <div class="form-login__field">
+          <input
+            class="form-login__input"
+            type="email"
+            name="mail"
+            id="email"
+            placeholder=" "
+          />
+          <label class="form-login__label" for="email">Логін (Email)</label>
+        </div>
+
+        <div class="form-login__field">
+          <input
+            class="form-login__input"
+            type="password"
+            name="password"
+            id="password"
+            placeholder=" "
+          />
+          <label class="form-login__label" for="password">Пароль</label>
+
+          <svg
+            role="button"
+            tabindex="0"
+            class="form-login__icon form-login__icon--password-hidden"
+            width="16"
+            height="16"
+          >
+            <use href="./images/symbol-defs.svg#password-hidden"></use>
+          </svg>
+
+          <svg
+            role="button"
+            tabindex="0"
+            class="form-login__icon form-login__icon--password-not-hidden"
+            width="16"
+            height="16"
+          >
+            <use href="./images/symbol-defs.svg#password-not-hidden"></use>
+          </svg>
+        </div>
+
+        <div class="flex-wrapper">
+          <button type="button" class="form-login__button-submit">
+            Увійти
+          </button>
+          <a
+            class="form-login__link-restore-password"
+            href="./restore-password-form.html"
+            >Відновити пароль</a
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

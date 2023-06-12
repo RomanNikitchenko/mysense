@@ -13,5 +13,7 @@ function logout() {
 
   Notify.info('Вы успешно вышли из системы.');
   // Вы можете выполнить перенаправление на страницу входа или другую страницу
-  window.location.assign('index.html');
+  setTimeout(() => {
+    window.location.assign('index.html');
+  }, 500);
 }
