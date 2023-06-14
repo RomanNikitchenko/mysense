@@ -72,7 +72,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['Для сімʼї (пари)', 'Для дитини'],
     languages: ['українська', 'англійська'],
-    experience: '12 років практикиx',
+    experience: '12 років практики',
     experienceValue: 12,
     specialties: [
       'child',
@@ -178,7 +178,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['Для себе', 'Для дитини'],
     languages: ['українська'],
-    experience: '10 років практикиx',
+    experience: '10 років практики',
     experienceValue: 10,
     specialties: [
       'myself',
@@ -303,7 +303,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['Для сімʼї (пари)', 'Для дитини'],
     languages: ['українська', 'англійська'],
-    experience: '12 років практикиx',
+    experience: '12 років практики',
     experienceValue: 12,
     specialties: [
       'child',
@@ -408,7 +408,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['Для себе', 'Для дитини'],
     languages: ['українська'],
-    experience: '10 років практикиx',
+    experience: '10 років практики',
     experienceValue: 10,
     specialties: [
       'myself',
@@ -532,7 +532,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['Для сімʼї (пари)', 'Для дитини'],
     languages: ['українська', 'англійська'],
-    experience: '12 років практикиx',
+    experience: '12 років практики',
     experienceValue: 12,
     specialties: [
       'child',
@@ -637,7 +637,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['Для себе', 'Для дитини'],
     languages: ['українська'],
-    experience: '10 років практикиx',
+    experience: '10 років практики',
     experienceValue: 10,
     specialties: [
       'myself',
@@ -1058,7 +1058,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['парна', 'Дитяча'],
     languages: ['українська', 'англійська'],
-    experience: '12 років практикиx',
+    experience: '12 років практики',
     experienceValue: 12,
     specialties: [
       'child',
@@ -1096,7 +1096,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['парна', 'Дитяча'],
     languages: ['українська', 'англійська'],
-    experience: '12 років практикиx',
+    experience: '12 років практики',
     experienceValue: 12,
     specialties: [
       'child',
@@ -1134,7 +1134,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['парна', 'Дитяча'],
     languages: ['українська', 'англійська'],
-    experience: '12 років практикиx',
+    experience: '12 років практики',
     experienceValue: 12,
     specialties: [
       'child',
@@ -1172,7 +1172,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['парна', 'Дитяча'],
     languages: ['українська', 'англійська'],
-    experience: '12 років практикиx',
+    experience: '12 років практики',
     experienceValue: 12,
     specialties: [
       'child',
@@ -1209,7 +1209,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['парна', 'Дитяча'],
     languages: ['українська', 'англійська'],
-    experience: '12 років практикиx',
+    experience: '12 років практики',
     experienceValue: 12,
     specialties: ['child', 'Малята', 'Молодший дошкільний вік'],
     priceValue: 857,
@@ -1241,7 +1241,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['парна', 'Дитяча'],
     languages: ['українська', 'англійська'],
-    experience: '12 років практикиx',
+    experience: '12 років практики',
     experienceValue: 12,
     specialties: ['child', 'Малята'],
     priceValue: 850,
@@ -1273,7 +1273,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['парна', 'Дитяча'],
     languages: ['українська', 'англійська'],
-    experience: '12 років практикиx',
+    experience: '12 років практики',
     experienceValue: 12,
     specialties: ['child', 'Старші підлітки'],
     priceValue: 858,
@@ -1690,7 +1690,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['особиста', 'Дитяча'],
     languages: ['українська'],
-    experience: '10 років практикиx',
+    experience: '10 років практики',
     experienceValue: 10,
     specialties: [
       'myself',
@@ -1761,7 +1761,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['особиста', 'Дитяча'],
     languages: ['українська'],
-    experience: '10 років практикиx',
+    experience: '10 років практики',
     experienceValue: 10,
     specialties: [
       'myself',
@@ -1832,7 +1832,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['особиста', 'Дитяча'],
     languages: ['українська'],
-    experience: '10 років практикиx',
+    experience: '10 років практики',
     experienceValue: 10,
     specialties: [
       'myself',
@@ -1903,7 +1903,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['особиста', 'Дитяча'],
     languages: ['українська'],
-    experience: '10 років практикиx',
+    experience: '10 років практики',
     experienceValue: 10,
     specialties: [
       'myself',
@@ -1974,7 +1974,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['особиста', 'Дитяча'],
     languages: ['українська'],
-    experience: '10 років практикиx',
+    experience: '10 років практики',
     experienceValue: 10,
     specialties: [
       'myself',
@@ -2045,7 +2045,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['особиста', 'Дитяча'],
     languages: ['українська'],
-    experience: '10 років практикиx',
+    experience: '10 років практики',
     experienceValue: 10,
     specialties: [
       'myself',
@@ -2116,7 +2116,7 @@ export const fakeAPI = [
     gender: 'female',
     therapys: ['особиста', 'Дитяча'],
     languages: ['українська'],
-    experience: '10 років практикиx',
+    experience: '10 років практики',
     experienceValue: 10,
     specialties: [
       'myself',

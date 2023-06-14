@@ -868,6 +868,16 @@
                 </li>
               </ul>
             </div>
+
+            <div class="psychologists-section__checkbox">
+              <input class="checkbox" type="checkbox" name="mailing" value="mailing" id="agreement" />
+              <label class="checkbox__label" for="agreement">
+                <svg class="checkbox__icon-check" width="16" height="16">
+                  <use class="checkbox__icon" href="./images/symbol-defs.svg#icon-check"></use>
+                </svg>
+                <span>Не показувати психологів зі швидким знайомством (15хв)</span>
+              </label>
+            </div>
           </div>
         </div>
 
@@ -935,7 +945,7 @@
       <div
         class="psychologists-filtered-query psychologists-filtered-query--decktop">
         <div class="filtered-query__buttons">
-          <button
+          <!-- <button
             class="filtered-query__button filtered-query__button--reset"
             type="button"
             data-button-reset
@@ -943,7 +953,7 @@
             <svg class="filtered-query__icon" width="24" height="24">
               <use href="./images/symbol-defs.svg#reset-filter"></use>
             </svg>
-          </button>
+          </button> -->
           <button
             class="filtered-query__button filtered-query__button--done"
             type="button"
@@ -953,6 +963,14 @@
         </div>
 
         <div class="filtered-query__content">
+          <button type="button" class="filtered-query__button">
+            <svg width="12" height="12">
+              <use href="./images/symbol-defs.svg#icon-fixed-arrow-prew"></use>
+            </svg>
+          </button>
+
+          <p>Назад до відібраних психологів</p>
+
           <div class="filtered-query__images">
             <span class="small-image">
               <img
@@ -974,14 +992,14 @@
             </span>
           </div>
 
-          <div class="filtered-query__paragraphs">
+          <!-- <div class="filtered-query__paragraphs">
             <p
               class="filtered-query__paragraph filtered-query__paragraph--number"
             >
               0 психлогів
             </p>
             <p class="filtered-query__paragraph">знайдено для вас</p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
