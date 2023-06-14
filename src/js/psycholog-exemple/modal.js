@@ -1,5 +1,4 @@
 (() => {
-  console.log('qwe');
   const body = document.querySelector('body');
   const beckdropMobileMenu = document.querySelector(
     '.js-menu-container-psycholog'
