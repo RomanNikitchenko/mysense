@@ -4,6 +4,9 @@ const pageHeaderPrivateOfficeMenu = document.querySelector(
 );
 const login = document.querySelector('.login');
 const choosePerson = document.querySelector('.choose-person');
+const pageHheaderImgUserClient = document.querySelector(
+  '.page-header__img-user-client'
+);
 
 // Функция для проверки, вошел ли пользователь в систему
 checkLoggedIn();
@@ -17,6 +20,7 @@ function checkLoggedIn() {
     login.classList.add('visually-hidden');
     choosePerson.classList.add('visually-hidden');
     privateOfficeSection.classList.remove('visually-hidden');
+    pageHheaderImgUserClient.style.display = 'none';
     // Вы можете выполнить перенаправление на другую страницу
   } else {
     pageHeaderPrivateOfficeMenu.classList.add('visually-hidden');
