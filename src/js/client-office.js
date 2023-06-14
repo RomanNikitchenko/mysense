@@ -10,5 +10,5 @@ import './client-office/menuNavigation';
 import './client-office/myCustomersSwitchButton';
 // import './client-office/articlesAndWebinarsSwitch';
 import './client-office/clientsListOpenRecords';
-import './client-office/logout';
+// import './client-office/logout';
 import './client-office/checkLoggedIn';

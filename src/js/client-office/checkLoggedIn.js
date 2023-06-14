@@ -4,6 +4,9 @@ const pageHeaderPrivateOfficeMenu = document.querySelector(
 );
 const login = document.querySelector('.login');
 const choosePerson = document.querySelector('.choose-person');
+const pageHeaderImgUserPsychologist = document.querySelector(
+  '.page-header__img-user-psychologist'
+);
 
 // Функция для проверки, вошел ли пользователь в систему
 checkLoggedIn();
@@ -16,6 +19,7 @@ function checkLoggedIn() {
   login.classList.add('visually-hidden');
   choosePerson.classList.add('visually-hidden');
   privateOfficeSection.classList.remove('visually-hidden');
+  pageHeaderImgUserPsychologist.style.display = 'none';
 
   // if (currentUser) {
   //   pageHeaderPrivateOfficeMenu.classList.remove('visually-hidden');
