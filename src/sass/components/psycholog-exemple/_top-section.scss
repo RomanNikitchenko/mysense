@@ -43,7 +43,7 @@
         font-size: 14px;
         line-height: 140%;
         letter-spacing: -0.05em;
-        color: rgb(34, 43, 64);
+        color: rgba(34, 43, 64, 0.4);
         margin-bottom: 10px;
     }
     .grey__skills {
@@ -326,14 +326,50 @@
     background: #fff;
     border-radius: 8px;
     padding: 30px;
-    p {
+    .moreText {
+        position: relative;
         font-weight: 500;
         font-size: 14px;
         line-height: 140%;
         letter-spacing: -0.05em;
         color: #222B40; 
+        height: 100px;
+        overflow: hidden;
     }
 }
+.three__dots {
+    position: absolute;
+    background-color: #fff;
+    padding: 10px 5px;
+    font-size: 16px;
+    bottom: -7px;
+    right: 3px;
+}
+.viewMore_open.moreText > .three__dots {
+    display: none;
+}
+.viewMore {
+    position: relative;
+    background: transparent;
+    border: none;
+    margin-top: 8px;
+    cursor: pointer;
+    float: right;
+    transition: all 0.2s ease 0s;
+    .viewMore__icon {
+        width: 16px;
+        height: 10px;
+    }
+}
+.viewMore_rotate {
+    transform: rotate(180deg);
+}
+.viewMore_open.moreText {
+    overflow: visible;
+    height: 100%;
+
+}
+
 
 .education {
     margin-top: 60px;
@@ -543,8 +579,8 @@
     padding: 9px 16px 7px;
     margin-top: 5px;
     .myReadBtn__icon {
-        width: 24px;
-        height: 12px;
+        width: 16px;
+        height: 10px;
     }
 }
 

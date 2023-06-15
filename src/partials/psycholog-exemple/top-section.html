@@ -61,38 +61,38 @@
           <h2>З чим я працюю</h2>
           <div class="states__block">
             <div class="state__item">
-              <img src="./images/test-icons/Depresion.svg" alt="" />
+              <!-- <img src="./images/test-icons/Depresion.svg" alt="" /> -->
               <span>Депресія, стрес</span>
             </div>
             <div class="state__item">
-              <img src="./images/test-icons/pulse.svg" alt="" />
+              <!-- <img src="./images/test-icons/pulse.svg" alt="" /> -->
               <span>Залежність (алкогольна, наркотична, ігрова і т.д.)</span>
             </div>
             <div class="state__item">
-              <img src="./images/test-icons/person.wave.2.svg" alt="" />
+              <!-- <img src="./images/test-icons/person.wave.2.svg" alt="" /> -->
               <span>Хронічні болі</span>
             </div>
             <div class="state__item">
-              <img src="./images/test-icons/cross.case.svg" alt="" />
+              <!-- <img src="./images/test-icons/cross.case.svg" alt="" /> -->
               <span>Тяжке захворювання</span>
             </div>
             <div class="state__item">
-              <img src="./images/test-icons/pizza.svg" alt="" />
+              <!-- <img src="./images/test-icons/pizza.svg" alt="" /> -->
               <span>Розлад харчової поведінки</span>
             </div>
 
             <span id="dots"></span>
             <span id="more">
               <div class="state__item">
-                <img src="./images/test-icons/Heart.Snow.svg" alt="" />
+                <!-- <img src="./images/test-icons/Heart.Snow.svg" alt="" /> -->
                 <span>Постійні конфлікти/охолодження стосунків</span>
               </div>
               <div class="state__item">
-                <img src="./images/test-icons/Human.arrows.svg" alt="" />
+                <!-- <img src="./images/test-icons/Human.arrows.svg" alt="" /> -->
                 <span>Відносини на відстані </span>
               </div>
               <div class="state__item state__item-last">
-                <img src="./images/test-icons/8.svg" alt="" />
+                <!-- <img src="./images/test-icons/8.svg" alt="" /> -->
                 <span>Інше</span>
               </div>
             </span>
@@ -104,13 +104,10 @@
           </button>
           <h2 class="psycholog__head">Про мене</h2>
           <div class="psycholog__descr">
-            <p>
+            <p class="moreText">
               Близько 10 років я працював управлінцем. Мені подобалася моя
               робота, і в мене добре виходило, але я ніколи не міг відповісти на
-              запитання: "Чому я не запускаю своєї справи?".
-            </p>
-            <br />
-            <p>
+              запитання: "Чому я не запускаю своєї справи?".<br>
               У 2013 році я прийшов до терапевта, щоб прокачати софт-скілз.
               Поступово в мене з'явився інтерес, а навіщо вони мені потрібні?
               Навіщо мені моя робота? І ось тоді я пішов не за ідеєю стати
@@ -121,7 +118,32 @@
               життя.Мій інтерес до психіки, її механізмів, хитросплетінь все
               посилювався і я вирішив пройти навчання. З роками вивчення
               психотерапії інтерес не зник, а став глибшим і сильнішим.
+              <span class="three__dots">...</span>
             </p>
+            <!-- <span class="three__dots">...</span> -->
+            <button class="viewMore">
+              <svg class="viewMore__icon">
+                <use href="./images/symbol-defs.svg#Arrow"></use>
+              </svg>
+            </button>
+
+            <script>
+              const openText = document.querySelector('.viewMore');
+              const moreText = document.querySelector('.moreText');
+                  if (openText) {
+                      openText.addEventListener("click", function (e) {
+                      moreText.classList.toggle('viewMore_open');
+                      openText.classList.toggle('viewMore_rotate');
+                    return
+                      openText.addEventListener("click", function (e) {
+                        moreText.classList.remove('viewMore_open');
+                        openText.classList.remove('viewMore_rotate');
+                      });
+                    });
+                  }
+            </script>
+
+
           </div>
         </div>
 
