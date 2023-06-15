@@ -251,7 +251,13 @@
         }
     }
 
-    .psychologists-section__filter-themes:not(:last-child) {
+    // .psychologists-section__filter-themes:not(:last-child) {
+    //     border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    //     margin-bottom: 12px;
+    //     padding-bottom: 12px;
+    // }
+
+    .psychologists-section__filter-themes {
         border-bottom: 1px solid rgba(34, 43, 64, 0.1);
         margin-bottom: 12px;
         padding-bottom: 12px;
@@ -387,5 +393,71 @@
     &.active{
         background-color: rgba(121, 91, 218, 0.1);
         color: #795BDA;
+    }
+}
+
+.psychologists-section__checkbox {
+    display: flex;
+
+    @media screen and (min-width: 1280px) {
+        margin-bottom: 8px;
+    }
+
+    .checkbox {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+
+        &:focus+.checkbox__label {
+            .checkbox__icon-check {
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        &+.checkbox__label .checkbox__icon:nth-child(1) {
+            opacity: 0;
+        }
+
+        &:checked+.checkbox__label .checkbox__icon:nth-child(1) {
+            opacity: 1;
+        }
+    }
+
+    .checkbox__label {
+        display: flex;
+        flex-wrap: wrap;
+        cursor: pointer;
+
+        &:hover .checkbox__icon-check{
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .checkbox__icon-check {
+        width: 24px;
+        height: 24px;
+    
+        background: rgba(34, 43, 64, 0.1);
+        border-radius: 8px;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .checkbox__icon-check+span {
+        width: 167px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #222B40;
+        margin-left: 10px;
     }
 }
