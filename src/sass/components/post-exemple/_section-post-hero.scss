@@ -1,0 +1,185 @@
+.hero__section {
+    background: #fff;
+}
+.hero__body {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.hero__autor {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    h1 {
+        font-weight: 500;
+        font-size: 56px;
+        line-height: 110%;
+        letter-spacing: -0.06em;
+        color: #222B40;
+        width: 500px;
+        margin-top: 7%;
+    }  
+}
+.autor__name-block {
+    display: flex;
+    align-items: center;
+    img {
+        width: 46px;
+        margin-right: 10px;
+    }
+    .name__cont {
+        .name__autor {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 100%;
+            letter-spacing: -0.01em;
+            color: #222B40;
+        
+        }
+        .years {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 120%;
+            letter-spacing: -0.05em;
+            color: rgba(34, 43, 64, 0.4);
+        }
+    }
+}
+.date_post {
+    display: grid;
+    grid-template-columns: 60px 60px 1fr;
+    margin-top: 9%;
+    width: 500px;
+    .view__post,
+    .like__post {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+        color: #222B40;
+    }
+    .user-manual__icon-next {
+        margin-right: 5px;
+        width: 16px;
+        height: 12px;
+    }
+    .num__post {
+        text-align: right;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+        color: rgba(34, 43, 64, 0.4);
+    }
+}
+.hero__img {
+    img {
+        max-width: 100%;
+    }
+}
+/*-------------------- post__content ---------------------------------------------*/
+.post__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.post__content {
+    margin-top: 68px;
+    p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 110%;
+        letter-spacing: -0.06em;
+        color: #222B40;
+        margin-bottom: 20px;
+    }
+}
+
+.purple__block {
+    background: rgba(121, 91, 218, 0.05);
+    border-radius: 8px;
+    padding: 40px;
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        background: url('../images/heart_post.svg');
+        width: 36px;
+        height: 36px;
+        left: -18px;
+        top: 36px;
+    }
+    p {
+        color: #685A95;
+        font-size: 16px;
+    }
+}
+.post_list {
+    margin-bottom: 60px;
+    padding-left: 15px;
+    li {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: -0.05em;
+        color: #222B40;
+    }
+}
+img {
+    margin-bottom: 30px;
+}
+
+/*===========================================================================================*/
+/*============================ Media ========================================================*/
+/*===========================================================================================*/
+@media screen and (max-width: 1280px) {
+    .hero__autor {
+        margin-top: 5%;
+        h1 {
+            font-size: 30px;
+            width: 280px;
+            margin-top: 9%;
+        }  
+    }
+    .autor__name-block {
+        img {
+            width: 30px;
+            margin-right: 5px;
+        }
+        .name__cont {
+            .name__autor {
+                font-size: 12px;
+            
+            }
+            .years {
+                font-size: 8px;
+            }
+        }
+    }
+    .date_post {
+        width: 300px;
+        margin-top: 13%;
+    }
+}
+@media screen and (max-width: 744px) {
+    .hero__body {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .hero__autor {
+        margin-top: 8%;
+    }
+}
+
+
