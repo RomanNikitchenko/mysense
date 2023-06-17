@@ -921,24 +921,59 @@
 
                 <div class="balance-payment">
                     <h4 class="balance-payment__title">Стандартний спосіб оплати</h4>
+
                     <div class="balance-payment__content">
                         <div class="balance-payment__option">
-                            <input class="balance-payment__checkbox" type="checkbox" name="mailing" value="mailing" id="agreement" />
-                            <label class="balance-payment__checkbox-label" for="agreement">
-                                <svg class="balance-payment__checkbox-icon-check" width="16" height="16">
-                                    <use class="balance-payment__checkbox-icon" href="./images/symbol-defs.svg#icon-check"></use>
+                            <input class="balance-payment__checkbox" type="checkbox" name="visa" value="visa" id="agreement-visa" />
+                            <label class="balance-payment__checkbox-label" for="agreement-visa">
+                                <svg class="balance-payment__checkbox-icon-check" width="24" height="24">
+                                    <use class="balance-payment__checkbox-icon" href="./images/symbol-defs.svg#icon-check-balance"></use>
                                 </svg>
-                                <div class="balance-payment__checkbox-img-visa">
-                                    <!-- <img class="balance-payment__checkbox-img" href="./images/symbol-defs.svg#icon-check"></use> -->
+                                <div class="balance-payment__checkbox-img">
+                                    <img src="./images/visa.png" alt="visa">
                                 </div>
                                 <span class="balance-payment__option-text">Monobank</span>
                             </label>
                             <span class="balance-payment__option-number">0823</span>
-                            <button type="button" class="balance-payment__button-edit">р</button>
-                            <button type="button" class="balance-payment__button-delete">у</button>
+                            <button type="button" class="balance-payment__button-edit">
+                                <svg width="32" height="32">
+                                    <use href="./images/symbol-defs.svg#edit-button"></use>
+                                </svg>
+                            </button>
+                            <button type="button" class="balance-payment__button-delete">
+                                <svg width="32" height="32">
+                                    <use href="./images/symbol-defs.svg#delete-button"></use>
+                                </svg>
+                            </button>
                         </div>
+
+                        <div class="balance-payment__option">
+                            <input class="balance-payment__checkbox" type="checkbox" name="mastercard" value="mastercard" id="agreement-mastercard" />
+                            <label class="balance-payment__checkbox-label" for="agreement-mastercard">
+                                <svg class="balance-payment__checkbox-icon-check" width="24" height="24">
+                                    <use class="balance-payment__checkbox-icon" href="./images/symbol-defs.svg#icon-check-balance"></use>
+                                </svg>
+                                <div class="balance-payment__checkbox-img">
+                                    <img src="./images/mastercard.png" alt="mastercard">
+                                </div>
+                                <span class="balance-payment__option-text">Monobank</span>
+                            </label>
+                            <span class="balance-payment__option-number">0823</span>
+                            <button type="button" class="balance-payment__button-edit">
+                                <svg width="32" height="32">
+                                    <use href="./images/symbol-defs.svg#edit-button"></use>
+                                </svg>
+                            </button>
+                            <button type="button" class="balance-payment__button-delete">
+                                <svg width="32" height="32">
+                                    <use href="./images/symbol-defs.svg#delete-button"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        
                         <button type="button" class="balance-payment__button-add">Додати новий спосіб оплати</button>
                     </div>
+
                     <p class="balance-payment__description">Оберіть стандартний спосіб оплати, яким ви будете поповнювати рахунок my sense</p>
                 </div>
     
