@@ -12,3 +12,5 @@ import './client-office/myCustomersSwitchButton';
 import './client-office/clientsListOpenRecords';
 // import './client-office/logout';
 import './client-office/checkLoggedIn';
+import './client-office/modalTopUpBalance';
+import './client-office/chooseBankCard';
