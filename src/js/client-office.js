@@ -14,3 +14,5 @@ import './client-office/clientsListOpenRecords';
 import './client-office/checkLoggedIn';
 import './client-office/modalTopUpBalance';
 import './client-office/chooseBankCard';
+import './client-office/addNewPaymentMethod';
+import './client-office/formAddNewPaymentMethodInput';

@@ -971,7 +971,7 @@
                             </button>
                         </div>
                         
-                        <button type="button" class="balance-payment__button-add">Додати новий спосіб оплати</button>
+                        <button type="button" class="balance-payment__button-add" data-modal-open-add-new-payment-method>Додати новий спосіб оплати</button>
                     </div>
 
                     <p class="balance-payment__description">Оберіть стандартний спосіб оплати, яким ви будете поповнювати рахунок my sense</p>
@@ -1112,7 +1112,7 @@
                     </li>
                 </ul>
 
-                <button type="submit" class="form-top-up__button-submit">
+                <button type="button" class="form-top-up__button-submit">
                     Попопвнити
                 </button>
             </form>
@@ -1120,57 +1120,34 @@
     </div>
 </div>
 
+<!-- модальное окно бекдропом (для для бекдроба и модалки можно в любой части странице писать код поскольку он будет позицеонирован абсолютно) -->
+<div class="beckdrop-add-new-payment-method beckdrop--is-hidden" data-modal-add-new-payment-method>
+    <div class="beckdrop-add-new-payment-method__modal-wrap">
+        <div class="beckdrop-add-new-payment-method__modal">
+
+            <div class="beckdrop-add-new-payment-method__header-wrap">
+                <h2 class="beckdrop-add-new-payment-method__request">Додати спосіб оплати</h2>
+                <button type="button" class="beckdrop-add-new-payment-method__button-close" data-modal-close-add-new-payment-method>
+                    <svg width="30" height="30">
+                        <use href="./images/symbol-defs.svg#close_40px"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <form class="form-add-new-payment-method">
+                <div class="form-add-new-payment-method__field">
+                    <input class="form-add-new-payment-method__input" type="text" name="add-new-payment-method" id="add-new-payment-method"
+                        placeholder="1234 5678 9012 3456"/>
+                    <label class="form-add-new-payment-method__label" for="add-new-payment-method">Номер картки</label>
+                </div>
+
+                <button type="button" class="form-add-new-payment-method__button-submit">
+                    Додати
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
 
 
-<!-- <script>
-    var button = document.getElementById("showEye");
-    var button2 = document.getElementById("showEye2");
-    var button3 = document.getElementById("showEye3");
-
-    button.onclick = showEye;
-    button2.onclick = showEye2;
-    button3.onclick = showEye3;
-
-    var input = document.getElementById("show1");
-    var input2 = document.getElementById("show2");
-    var input3 = document.getElementById("show3");
-    var icon = document.getElementById("i");
-
-    function showEye () {
-        if(input.getAttribute('type') == 'password') {
-        input.removeAttribute('type');
-        input.setAttribute('type', 'text')
-        button.innerHTML='<i id="i" class="far fa-eye-slash">';
-        } else {
-        input.removeAttribute('type');
-        input.setAttribute('type', 'password');
-        button.innerHTML='<i id="i" class="far fa-eye">';
-        }
-    }
-    function showEye2 () {
-        if(input2.getAttribute('type') == 'password') {
-        input2.removeAttribute('type');
-        input2.setAttribute('type', 'text')
-        button2.innerHTML='<i id="i" class="far fa-eye-slash">';
-        } else {
-        input2.removeAttribute('type');
-        input2.setAttribute('type', 'password');
-        button2.innerHTML='<i id="i" class="far fa-eye">';
-        }
-    }
-    function showEye3 () {
-        if(input3.getAttribute('type') == 'password') {
-        input3.removeAttribute('type');
-        input3.setAttribute('type', 'text')
-        button3.innerHTML='<i id="i" class="far fa-eye-slash">';
-        } else {
-        input3.removeAttribute('type');
-        input3.setAttribute('type', 'password');
-        button3.innerHTML='<i id="i" class="far fa-eye">';
-        }
-    }
-</script> -->
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->

@@ -1,9 +1,15 @@
 (() => {
   const refs = {
-    openModalBtn: document.querySelector('[data-modal-open-top-up-balance]'),
-    closeModalBtn: document.querySelector('[data-modal-close-top-up-balance]'),
-    beckdrop: document.querySelector('[data-modal-top-up-balance]'),
-    modalWrap: document.querySelector('.beckdrop-top-up-balance__modal-wrap'),
+    openModalBtn: document.querySelector(
+      '[data-modal-open-add-new-payment-method]'
+    ),
+    closeModalBtn: document.querySelector(
+      '[data-modal-close-add-new-payment-method]'
+    ),
+    beckdrop: document.querySelector('[data-modal-add-new-payment-method]'),
+    modalWrap: document.querySelector(
+      '.beckdrop-add-new-payment-method__modal-wrap'
+    ),
   };
 
   refs.openModalBtn.addEventListener('click', openModal);
