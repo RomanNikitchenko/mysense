@@ -1137,24 +1137,74 @@
             <form class="form-add-new-payment-method">
                 <div class="form-add-new-payment-method__field">
                     <input class="form-add-new-payment-method__input" type="text" name="card-number" id="card-number"
-                    placeholder="1234 5678 9012 3456" />
+                        placeholder="1234 5678 9012 3456" />
                     <label class="form-add-new-payment-method__label" for="card-number">Номер карты</label>
                 </div>
 
-                <div class="form-add-new-payment-method__field">
+                <div class="form-add-new-payment-method__input-wrap">
+                    <div class="form-add-new-payment-method__field">
+                        <input class="form-add-new-payment-method__input" type="text" name="expiry" id="expiry" placeholder="MM / YY" />
+                        <label class="form-add-new-payment-method__label" for="expiry">Срок действия</label>
+                    </div>
+
+                    <div class="form-add-new-payment-method__field">
+                        <input class="form-add-new-payment-method__input" type="password" name="cvv" id="cvv" placeholder="CVV" />
+                        <label class="form-add-new-payment-method__label" for="cvv">CVV</label>
+                        <svg
+                            role="button"
+                            tabindex="0"
+                            class="form-login__icon form-login__icon--password-hidden"
+                            width="16"
+                            height="16"
+                        >
+                            <use href="./images/symbol-defs.svg#password-hidden"></use>
+                        </svg>
+
+                        <svg
+                            role="button"
+                            tabindex="0"
+                            class="form-login__icon form-login__icon--password-not-hidden"
+                            width="16"
+                            height="16"
+                        >
+                            <use href="./images/symbol-defs.svg#password-not-hidden"></use>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- <div class="form-add-new-payment-method__field">
                     <input class="form-add-new-payment-method__input" type="text" name="expiry" id="expiry" placeholder="MM / YY" />
                     <label class="form-add-new-payment-method__label" for="expiry">Срок действия</label>
                 </div>
 
                 <div class="form-add-new-payment-method__field">
-                    <input class="form-add-new-payment-method__input" type="text" name="cvv" id="cvv" placeholder="CVV" />
+                    <input class="form-add-new-payment-method__input" type="password" name="cvv" id="cvv" placeholder="CVV" />
                     <label class="form-add-new-payment-method__label" for="cvv">CVV</label>
-                </div>
+                    <svg
+                        role="button"
+                        tabindex="0"
+                        class="form-login__icon form-login__icon--password-hidden"
+                        width="16"
+                        height="16"
+                    >
+                        <use href="./images/symbol-defs.svg#password-hidden"></use>
+                    </svg>
+
+                    <svg
+                        role="button"
+                        tabindex="0"
+                        class="form-login__icon form-login__icon--password-not-hidden"
+                        width="16"
+                        height="16"
+                    >
+                        <use href="./images/symbol-defs.svg#password-not-hidden"></use>
+                    </svg>
+                </div> -->
 
                 <div class="form-add-new-payment-method__field">
                     <input class="form-add-new-payment-method__input" type="text" name="card-name" id="card-name"
                     placeholder="Картка MonoBank" />
-                    <label class="form-add-new-payment-method__label" for="card-name">Название карты</label>
+                    <label class="form-add-new-payment-method__label" for="card-name">Назва картки (не обовʼязково)</label>
                 </div>
 
                 <button type="button" class="form-add-new-payment-method__button-submit">
