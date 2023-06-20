@@ -1,0 +1,179 @@
+.hero-section__figure {
+    margin: 0;
+    padding: 0;
+
+    @media screen and (min-width: 744px) {
+        display: flex;
+        justify-content: center;
+        flex-direction: row-reverse;
+    }
+}
+
+.hero-section__figcaption {
+    padding: 20px 27.98px 22px 20px;
+
+    @media screen and (max-width: 743px) {
+        max-width: 396px;
+        margin: auto;
+    }
+    @media screen and (min-width: 744px) {
+        padding: 30px 63px 57px 40px;
+    }
+    @media screen and (min-width: 1280px) {
+        padding: 52px 45px 50px 80px;
+    }
+}
+
+.hero-section__list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 23px;
+    @media screen and (min-width: 744px) {
+        margin-bottom: 48px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-bottom: 53px;
+    }
+}
+
+.hero-section__item {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+
+    border: 1px solid #222B40;
+    border-radius: 100px;
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 13px;
+
+    @media screen and (min-width: 1280px) {
+        height: 36px;
+        font-size: 14px;
+    }
+}
+
+.hero-section__item:not(:last-child) {
+    margin-right: 4px;
+}
+
+.hero-section__item:first-child {
+    border: 1px solid #795BDA;
+    color: #795BDA;
+}
+
+.hero-section__icon {
+    width: 13px;
+    height: 13px;
+    margin-right: 4px;
+    @media screen and (min-width: 1280px) {
+        margin-right: 10px;
+    }
+}
+
+.hero-section__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+    color: #222B40;
+    margin-bottom: 48px;
+    max-width: 333px;
+
+    @media screen and (min-width: 744px) {
+        font-size: 30px;
+        margin-bottom: 40px;
+        max-width: 259px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        font-size: 56px;
+        margin-bottom: 56px;
+        max-width: 525px;
+    }
+}
+
+.hero-section__speaker {
+    display: flex;
+    align-items: center;
+}
+
+.hero-section__speaker-label {
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #222B40;
+    border-radius: 100px;
+
+    width: 71px;
+    height: 23px;
+    @media screen and (min-width: 744px) {
+        width: 63px;
+        height: 22px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        font-size: 14px;
+        color: #222B40;
+        width: 79px;
+        height: 36px;
+    }
+}
+
+.hero-section__speaker-info {
+    margin-left: auto;
+    
+    @media screen and (min-width: 744px) {
+        margin-left: 15px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-left: 20px;
+    }
+}
+
+.hero-section__speaker-name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    color: #222B40;
+    margin-bottom: 5px;
+
+    @media screen and (min-width: 744px) {
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: -0.01em;
+        margin-bottom: 4px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        font-size: 16px;
+    }
+}
+
+.hero-section__speaker-experience {
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    color: rgba(34, 43, 64, 0.4);
+}
