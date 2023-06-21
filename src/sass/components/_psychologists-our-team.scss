@@ -77,10 +77,14 @@
     font-family: 'Golos Text';
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 140%;
     letter-spacing: -0.05em;
-    color: rgb(34, 43, 64);
+    color: rgba(34, 43, 64, 0.4);
+
+    @media screen and (min-width: 1280px) {
+        color: #222B40;
+    }
 }
 
 .our-team__title {

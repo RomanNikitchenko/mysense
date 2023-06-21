@@ -386,6 +386,11 @@
     cursor: pointer;
     transition: color .3s ease-in-out, background-color .3s ease-in-out;
 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 12px;
+
     &:hover {
         background-color: #F3F3F3;
     }
