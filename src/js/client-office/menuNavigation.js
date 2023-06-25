@@ -8,11 +8,54 @@
   );
   /////
 
+  /////получаем из локального хранилища
+  const load = key => {
+    try {
+      const serializedState = localStorage.getItem(key);
+      return serializedState === null ? undefined : JSON.parse(serializedState);
+    } catch (error) {
+      console.error('Get state error: ', error.message);
+    }
+  };
+
+  if (load('valuePersonalAccountMenuItemClient')) {
+    const serializedState = load('valuePersonalAccountMenuItemClient');
+    userSelectionNavigation(serializedState);
+  }
+
+  function userSelectionNavigation(serializedState) {
+    // Перебираем все элементы с атрибутом 'data-navigation-content'
+    dataNavigationContent.forEach(item => {
+      const dataValueContent = item.getAttribute('data-navigation-content');
+      item.classList.add('visually-hidden');
+      // Если значение данных элемента совпадает со значением данных кнопки, удаляем класс 'visually-hidden'
+      if (dataValueContent === serializedState) {
+        item.classList.remove('visually-hidden');
+      }
+    });
+    //если у элемента есть is-active удаляем его
+    for (let i = 0; i < privateOfficeListButton.length; i += 1) {
+      if (privateOfficeListButton[i].classList.contains('is-active')) {
+        privateOfficeListButton[i].classList.remove('is-active');
+        break;
+      }
+    }
+    //если у элемента есть is-active удаляем его
+    for (let i = 0; i < privateOfficeListButton.length; i += 1) {
+      if (
+        privateOfficeListButton[i].getAttribute(
+          'data-button-menu-navigation'
+        ) === serializedState
+      ) {
+        privateOfficeListButton[i].classList.add('is-active');
+        break;
+      }
+    }
+  }
+  /////
+
   /////
   const toggleArrayElement = (item, data) => {
-    const title = item.innerHTML.trim();
-    item.setAttribute(data, title);
-
     item.addEventListener('click', async () => {
       //если у элемента есть is-active удаляем его
       for (let i = 0; i < privateOfficeListButton.length; i += 1) {
@@ -27,6 +70,12 @@
 
       // Получаем значение данных кнопки
       const dataValueBtn = item.getAttribute(data);
+
+      // значение пункта меню личного кабинета
+      localStorage.setItem(
+        'valuePersonalAccountMenuItemClient',
+        JSON.stringify(dataValueBtn)
+      );
 
       // Перебираем все элементы с атрибутом 'data-navigation-content'
       dataNavigationContent.forEach(item => {
