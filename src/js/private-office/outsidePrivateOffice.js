@@ -11,13 +11,13 @@
   );
 
   const toggleMenu = () => {
-    const width = window.innerWidth;
-
     const isMenuOpen =
       openMenuBtnPrivate.getAttribute('aria-expanded') === 'true' || false;
     openMenuBtnPrivate.setAttribute('aria-expanded', !isMenuOpen);
     beckdropMobileMenunPrivate.classList.toggle('visually-hidden');
     openMenuBtnPrivate.classList.toggle('active');
+
+    const width = window.innerWidth;
 
     if (width <= 744) {
       body.classList.toggle('modal-is-open');

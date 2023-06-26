@@ -13,7 +13,9 @@ checkLoggedIn();
 
 function checkLoggedIn() {
   // Проверяем, есть ли информация о текущем пользователе в локальном хранилище
-  var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  var currentUser = JSON.parse(
+    localStorage.getItem('currentUser-psychologist')
+  );
 
   if (currentUser) {
     pageHeaderPrivateOfficeMenu.classList.remove('visually-hidden');

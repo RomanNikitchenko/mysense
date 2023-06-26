@@ -1,0 +1,133 @@
+<div class="container form__header-conteiner">
+    <form class="registration_client">
+        <h2>Реєстрація</h2>
+        <p>Вже є аккаунт?<a href="./login-form-client.html">Увійти</a></p>
+        <div class="steps__block">
+            <div class="step step_1">
+                <div class="step__line step__line-active"></div><span>Контактні дані</span>
+            </div>
+            <div class="step step_2">
+                <div class="step__line"></div><span>Пароль</span>
+            </div>
+            <div class="step step_3">
+                <div class="step__line"></div><span>Імя та прізвище</span>
+            </div>
+            <div class="step step_4">
+                <div class="step__line"></div><span>Фото</span>
+            </div>
+        </div>
+
+        <!-- шаг 1 -->
+        <div class="step__wrap-form-1">
+            <p>Ваші контактні дані не доступні публічно, але вони будуть використовуватись для входу на платформу</p>
+            <div class="input__body">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="login" placeholder="Ваш email">
+
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" placeholder="Ваш телефон">
+            </div>
+        </div>
+
+        <!-- шаг 2 -->
+        <div class="step__wrap-form-2">
+            <p>Пароль повинен складатись не менш ніж з 6 символів та мати великі та малі літери, а також хоча б одну
+                цифру</p>
+            <div class="input__body">
+                <label for="show2">Придумайте пароль</label>
+                <input type="password" id="show2" name="password" placeholder="Придумайте пароль">
+                <span id="showEye2"><i id="i" class="far fa-eye"></i></span>
+
+                <label for="show3">Повторіть пароль</label>
+                <input type="password" id="show3" placeholder="Повторіть пароль">
+                <span id="showEye3"><i id="i" class="far fa-eye"></i></span>
+            </div>
+        </div>
+
+        <!-- шаг 3 -->
+        <div class="step__wrap-form-3">
+            <p>Це будуть бачити психологи, з якими ви будете працювати та інші користувачі в коментарях до статей</p>
+            <div class="input__body">
+                <label for="name">Імʼя</label>
+                <input type="text" id="name" name="Імʼя" placeholder="Ваше імʼя">
+
+                <label for="last-name">Прізвище</label>
+                <input type="text" id="last-name" name="Прізвище" placeholder="Ваше прізвище">
+            </div>
+        </div>
+
+        <!-- шаг 4 -->
+        <div class="step__wrap-form-4">
+            <div class="block__data">
+                <input name="file" type="file" id="input__file" class="custom-file-input input input__file" multiple>
+                <label for="input__file" class="input__file-button">
+                    <span class="input__file-icon-wrapper"><img class="input__file-icon"
+                            src="./images/camera.shutter.button.svg" alt="Выбрать файл" width="25"></span>
+                    <span class="input__file-button-text btn__load-photo">Завантажити<br> фото</span>
+            </div>
+            <div class="step_text">
+                <p>Ваше фото будуть бачити тільки психологи, з якими ви будете працювати.</p>
+                <p> Це не обовʼязково. Цей етап можна пропустити, а фото додати пізніше</p>
+            </div>
+        </div>
+
+        <div class="buttons__control">
+            <!-- кнопка назад -->
+            <button type="button" class="form__prew-btn">
+                <svg class="form-btn-arrow-back" width="12" height="12">
+                    <use href="./images/symbol-defs.svg#icon-fixed-arrow-prew"></use>
+                </svg>
+                Назад
+            </button>
+
+            <!-- кнопка вперед следующий шаг -->
+            <button type="button" class="form__next-btn">Далі
+                <svg class="form-btn-arrow-next" width="12" height="12">
+                    <use href="./images/symbol-defs.svg#icon-form-arrow-next"></use>
+                </svg>
+            </button>
+
+            <!-- кнопка завершить форму регистрации -->
+            <button type="submit" class="form__end-btn">Завершити
+                <svg class="form-btn-arrow-next" width="12" height="12">
+                    <use href="./images/symbol-defs.svg#icon-form-arrow-next"></use>
+                </svg>
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+    var button2 = document.getElementById("showEye2");
+    var button3 = document.getElementById("showEye3");
+
+    button2.onclick = showEye2;
+    button3.onclick = showEye3;
+
+    var input2 = document.getElementById("show2");
+    var input3 = document.getElementById("show3");
+    var icon = document.getElementById("i");
+
+    function showEye2() {
+        if (input2.getAttribute('type') == 'password') {
+            input2.removeAttribute('type');
+            input2.setAttribute('type', 'text')
+            button2.innerHTML = '<i id="i" class="far fa-eye-slash">';
+        } else {
+            input2.removeAttribute('type');
+            input2.setAttribute('type', 'password');
+            button2.innerHTML = '<i id="i" class="far fa-eye">';
+        }
+    }
+    function showEye3() {
+        if (input3.getAttribute('type') == 'password') {
+            input3.removeAttribute('type');
+            input3.setAttribute('type', 'text')
+            button3.innerHTML = '<i id="i" class="far fa-eye-slash">';
+        } else {
+            input3.removeAttribute('type');
+            input3.setAttribute('type', 'password');
+            button3.innerHTML = '<i id="i" class="far fa-eye">';
+        }
+    }
+</script>

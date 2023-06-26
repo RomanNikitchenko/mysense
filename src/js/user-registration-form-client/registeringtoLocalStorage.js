@@ -6,7 +6,7 @@ form.addEventListener('submit', handleSubmit);
 // Функция для регистрации пользователя
 function register(username, password, eventSubmit) {
   // Получаем сохраненных пользователей из локального хранилища
-  var users = JSON.parse(localStorage.getItem('users-psychologist')) || [];
+  var users = JSON.parse(localStorage.getItem('users-client')) || [];
 
   // Проверяем, не занят ли выбранный username
   var isUsernameTaken = users.some(function (user) {
@@ -28,7 +28,7 @@ function register(username, password, eventSubmit) {
   users.push(newUser);
 
   // Сохраняем обновленный список пользователей в локальное хранилище
-  localStorage.setItem('users-psychologist', JSON.stringify(users));
+  localStorage.setItem('users-client', JSON.stringify(users));
 
   Notify.success('психолог успішно зареєстрований.');
 
@@ -51,7 +51,7 @@ function handleSubmit(event) {
 // Функция для выполнения входа пользователя
 function login(username, password) {
   // Получаем сохраненных пользователей из локального хранилища
-  var users = JSON.parse(localStorage.getItem('users-psychologist')) || [];
+  var users = JSON.parse(localStorage.getItem('users-client')) || [];
 
   // Ищем пользователя с указанным именем пользователя
   var user = users.find(function (user) {
@@ -59,17 +59,17 @@ function login(username, password) {
   });
 
   if (user && user.password === password) {
-    //удаляем текущего пользоватеоя клиента если он был в системи (разлогиниваем)
-    localStorage.removeItem('currentUser-client');
+    //удаляем текущего пользоватеоя психолога если он был в системи (разлогиниваем)
+    localStorage.removeItem('currentUser-psychologist');
 
-    // Сохраняем информацию о текущем пользователе в локальное хранилище психолога
-    localStorage.setItem('currentUser-psychologist', JSON.stringify(user));
+    // Сохраняем информацию о текущем пользователе в локальное хранилище
+    localStorage.setItem('currentUser-client', JSON.stringify(user));
 
-    Notify.success('Ви успішно увійшли до систем як психолог.');
+    Notify.success('Ви успішно увійшли до систем як клиент.');
 
     setTimeout(() => {
       // страничка психолога
-      window.location.assign('private-office.html');
+      window.location.assign('client-office.html');
     }, 500);
     // Вы можете выполнить перенаправление на другую страницу
   } else {

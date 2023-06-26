@@ -1,7 +1,7 @@
 (() => {
   /////
   const privateOfficeListButton = document.querySelectorAll(
-    '.outside-private-office__list--psychologist .outside-private-office__list-button'
+    '.outside-private-office__list--client .outside-private-office__list-button'
   );
   /////
 
@@ -15,8 +15,8 @@
     }
   };
 
-  if (load('valuePersonalAccountMenuItem')) {
-    const serializedState = load('valuePersonalAccountMenuItem');
+  if (load('valuePersonalAccountMenuItemClient')) {
+    const serializedState = load('valuePersonalAccountMenuItemClient');
     userSelectionNavigation(serializedState);
   }
 
@@ -32,7 +32,7 @@
     for (let i = 0; i < privateOfficeListButton.length; i += 1) {
       if (
         privateOfficeListButton[i].getAttribute(
-          'data-button-menu-navigation'
+          'data-button-menu-navigation-client'
         ) === serializedState
       ) {
         privateOfficeListButton[i].classList.add('is-active');
@@ -81,10 +81,10 @@
 
       // значение пункта меню личного кабинета
       localStorage.setItem(
-        'valuePersonalAccountMenuItem',
+        'valuePersonalAccountMenuItemClient',
         JSON.stringify(dataValueBtn)
       );
-      window.location.assign('private-office.html');
+      window.location.assign('client-office.html');
 
       toggleMenu();
     });
@@ -93,7 +93,7 @@
 
   /////
   privateOfficeListButton.forEach(item => {
-    toggleArrayElement(item, 'data-button-menu-navigation');
+    toggleArrayElement(item, 'data-button-menu-navigation-client');
   });
   /////
 })();

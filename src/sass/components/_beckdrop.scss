@@ -1,3 +1,15 @@
+.beckdrop-top-up-balance.beckdrop--is-hidden,
+.beckdrop-add-new-payment-method.beckdrop--is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  .beckdrop-top-up-balance__modal,
+  .beckdrop-add-new-payment-method__modal {
+    transform: scale(0.9);
+  }
+}
+
 .beckdrop-top-up-balance,
 .beckdrop-add-new-payment-method {
   position: fixed;
