@@ -61,19 +61,16 @@ document.querySelector('.form__prew-btn').addEventListener('click', () => {
     isTransitioning = true;
     prewBtn.style.display = 'none';
     stap = 1;
-    console.log('1');
   } else if (step3.style.display !== 'none') {
     step3.style.display = 'none';
     step2.style.display = 'block';
     stap = 2;
-    console.log('2');
   } else if (step4.style.display !== 'none') {
     step4.style.display = 'none';
     step3.style.display = 'block';
     nextBtn.style.display = 'block';
     endBtn.style.display = 'none';
     stap = 3;
-    console.log('3');
   }
 
   for (let i = 0; i < stepLine.length; i += 1) {
@@ -91,18 +88,18 @@ function validateStep() {
   if (step1.style.display !== 'none') {
     // Проверяем поля шага 1
     const emailInput = document.getElementById('email');
-    const phoneInput = document.getElementById('phone');
+    // const phoneInput = document.getElementById('phone');
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^\d+$/;
+    // const phoneRegex = /^\d+$/;
 
     if (!emailRegex.test(emailInput.value.trim())) {
       Notify.failure('Введіть правильний Email');
       return false;
     }
-    if (!phoneRegex.test(phoneInput.value.trim())) {
-      Notify.failure('Введіть правильний номер телефону');
-      return false;
-    }
+    // if (!phoneRegex.test(phoneInput.value.trim())) {
+    //   Notify.failure('Введіть правильний номер телефону');
+    //   return false;
+    // }
   } else if (step2.style.display !== 'none') {
     // Проверяем поля шага 2
     const passwordInput = document.getElementById('show2');
@@ -135,3 +132,66 @@ function validateStep() {
   }
   return true;
 }
+
+import 'intl-tel-input/build/css/intlTelInput.css';
+import intlTelInput from 'intl-tel-input';
+import utils from 'intl-tel-input/build/js/utils';
+import $ from 'jquery';
+import 'jquery.inputmask';
+
+const input = document.querySelector('#phone');
+
+// Инициализация intl-tel-input
+const iti = intlTelInput(input, {
+  utilsScript: utils,
+  initialCountry: 'auto',
+  geoIpLookup: function (callback) {
+    fetch('https://ipapi.co/json')
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        callback(data.country_code);
+      })
+      .catch(function () {
+        callback('us');
+      });
+  },
+  nationalMode: false,
+  onlyCountries: ['ua', 'ru', 'us'], // Ограничение доступных стран
+});
+
+// Обработчик события изменения страны
+$(input).on('countrychange', function (e) {
+  const countryData = iti.getSelectedCountryData();
+  const countryCode = countryData.iso2;
+
+  // Обновление маски в зависимости от выбранной страны
+  $(input).inputmask({
+    mask: getPhoneMaskByCountryCode(countryCode),
+  });
+});
+
+// Функция получения маски номера телефона по коду страны
+function getPhoneMaskByCountryCode(countryCode) {
+  if (countryCode === 'ua') {
+    return '+380 99 999 9999'; // Маска для Украины
+  }
+
+  if (countryCode === 'ru') {
+    return '+7 (999) 999-9999'; // Маска для России
+  }
+
+  if (countryCode === 'us') {
+    return '+1 (999) 999-9999'; // Маска для США
+  }
+
+  return ''; // Возвращать пустую строку для других стран
+}
+
+// Обновление маски при инициализации
+const countryData = iti.getSelectedCountryData();
+const countryCode = countryData.iso2;
+$(input).inputmask({
+  mask: getPhoneMaskByCountryCode(countryCode),
+});
