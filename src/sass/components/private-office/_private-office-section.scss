@@ -63,7 +63,7 @@ main {
         border-radius: 8px;
         width: 100%;
         height: auto;
-        max-width: 225px;
+        width: 225px;
         position: absolute;
         overflow-y: visible;
         top: -40px;
@@ -78,7 +78,7 @@ main {
         overflow-y: visible;
         width: auto;
         height: auto;
-        max-width: 265px;
+        width: 265px;
         opacity: 1;
         transform: translateX(0);
     }

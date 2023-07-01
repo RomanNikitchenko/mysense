@@ -71,6 +71,7 @@ p {
 .private-office__list,
 .outside-private-office__list,
 .social-networks-list,
-.hero-section__list {
+.hero-section__list,
+.table-modal-client__list {
   @extend %list;
 }

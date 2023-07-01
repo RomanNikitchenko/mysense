@@ -1,0 +1,78 @@
+.table-modal-client {
+    position: absolute;
+    width: 180px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 10px 20px -8px rgba(0, 0, 0, 0.16), 0px 0px 10px 0px rgba(0, 0, 0, 0.06);
+    z-index: 1;
+    padding-bottom: 2px;
+}
+
+.table-modal-client__flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 0 0 10px;
+    margin-bottom: 11px;
+}
+
+.table-modal-client__border {
+    width: 40px;
+    height: 40px;
+}
+
+.table-modal-client__name {
+    color: #795BDA;
+    font-size: 12px;
+    font-family: Golos Text;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.6px;
+
+    width: 103px;
+    text-align: initial;
+    margin-left: 10px;
+}
+
+.table-modal-client__list {
+    padding: 0  20px;
+    margin-bottom: 14px;
+}
+
+.table-modal-client__item {
+    color: #222B40;
+    font-size: 12px;
+    font-family: Golos Text;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-modal-client__item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.table-modal-client__btn {
+    color: #795BDA;
+    font-size: 14px;
+    font-family: Golos Text;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: -0.84px;
+
+    width: 100%;
+    border: transparent;
+    background-color: transparent;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #222B401A;
+}
+
+.work__schedule_exemple {
+    overflow: hidden;
+}

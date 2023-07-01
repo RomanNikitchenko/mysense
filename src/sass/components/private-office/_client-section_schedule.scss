@@ -330,6 +330,11 @@
     width: 100%;
     border-collapse: collapse;
 }
+.work__schedule_exemple {
+    td {
+        position: relative;
+    }
+}
 .controls__wrap {
     display: flex;
     align-items: center;
