@@ -64,6 +64,7 @@
     font-weight: 600;
     line-height: 100%;
     letter-spacing: -0.84px;
+    cursor: pointer;
 
     width: 100%;
     border: transparent;
@@ -71,8 +72,39 @@
     padding-top: 10px;
     padding-bottom: 10px;
     border-top: 1px solid #222B401A;
+
+    &:hover {
+        color: #FF5C8D;;
+        background-color: #F3F3F3;
+    }
 }
 
 .work__schedule_exemple {
     overflow: hidden;
+}
+
+td{
+    &:hover a {
+        color: #795BDA;
+    }
+    &:hover a.disabled {
+        color: #222B4033;
+    }
+}
+
+
+a.disabled {
+    color: #222B4033;
+}
+
+a.href-active {
+    color: #795BDA;
+}
+
+.empty-link {
+    &:hover {
+        background: #D5CAF9 url('../images/add.png') no-repeat;
+        background-position: center;
+        border: 1px solid #D5CAF9;
+    }
 }
