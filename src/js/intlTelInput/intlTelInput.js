@@ -2,7 +2,7 @@ import 'intl-tel-input/build/css/intlTelInput.css';
 import intlTelInput from 'intl-tel-input';
 import utils from 'intl-tel-input/build/js/utils';
 import $ from 'jquery';
-import 'jquery.inputmask';
+import 'inputmask/dist/jquery.inputmask';
 
 const input = document.querySelector('#phone');
 

@@ -3312,3 +3312,15 @@ select {
     pointer-events: none;
     overflow: hidden;
 }
+
+.switch__box-calendar {
+    visibility: hidden;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+div div.switch__box {
+    @media screen and (max-width: 743px) {
+        margin-top: 0px;
+    }
+}
