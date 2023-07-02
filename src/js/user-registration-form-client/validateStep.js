@@ -91,16 +91,10 @@ function validateStep() {
   if (step1.style.display !== 'none') {
     // Проверяем поля шага 1
     const emailInput = document.getElementById('email');
-    const phoneInput = document.getElementById('phone');
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^\d+$/;
 
     if (!emailRegex.test(emailInput.value.trim())) {
       Notify.failure('Введіть правильний Email');
-      return false;
-    }
-    if (!phoneRegex.test(phoneInput.value.trim())) {
-      Notify.failure('Введіть правильний номер телефону');
       return false;
     }
   } else if (step2.style.display !== 'none') {

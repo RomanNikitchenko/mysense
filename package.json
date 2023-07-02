@@ -20,6 +20,10 @@
   "dependencies": {
     "body-scroll-lock": "^4.0.0-beta.0",
     "cleave.js": "^1.6.0",
+    "inputmask": "^5.0.8",
+    "intl-tel-input": "^18.1.7",
+    "jquery": "^3.7.0",
+    "jquery.inputmask": "^3.3.4",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.6",
     "vanilla-lazyload": "^17.8.3"

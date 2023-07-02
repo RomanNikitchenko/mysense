@@ -12,3 +12,4 @@ import './private-office/articlesAndWebinarsSwitch';
 import './private-office/clientsListOpenRecords';
 import './private-office/logout';
 import './private-office/checkLoggedIn';
+import './private-office/modalCalendarWindow';
