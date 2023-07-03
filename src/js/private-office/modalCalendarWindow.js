@@ -5,6 +5,10 @@ import ourTeam4Desktop2x from '../../images/darina.png';
 let disabled = false;
 let disabledAction = false;
 let transferName = null;
+let selectedTableCell = null;
+let deleteSession = false;
+let time = null;
+let date = null;
 
 //при загрузки страницы каждой ячейки под ссылкой добавляем карточку.
 href.forEach(item => {
@@ -25,7 +29,7 @@ href.forEach(item => {
 
                           <button class="table-modal-client__btn" type="button">Дивитись анкету</button>
                           <button class="table-modal-client__btn table-modal-client__reschedule-meeting" type="button">Перенести</button>
-                          <button class="table-modal-client__btn" type="button">Скасувати сессію</button>
+                          <button class="table-modal-client__btn table-modal-client__btn-delete-session" type="button">Скасувати сессію</button>
                       </div>
                   </div>`;
 
@@ -40,9 +44,9 @@ href.forEach(item => {
                                     <ul class="table-modal-client-action__list">
                                         <li class="table-modal-client-action__item">Тривалість <span>50 хв</span></li>
                                         <li class="table-modal-client-action__item">Тип <span>Особиста</span></li>
-                                        <li class="table-modal-client-action__item">Дата <span class="table-modal-client__data">13 березня</span></li>
-                                        <li class="table-modal-client-action__item">Час <span><span class="table-modal-client__time">11:00</span> - <span
-                                                    class="table-modal-client__time-end">11:50</span></span></li>
+                                        <li class="table-modal-client-action__item">Дата <span class="table-modal-client-action__data">13 березня</span></li>
+                                        <li class="table-modal-client-action__item">Час <span><span class="table-modal-client-action__time">11:00</span> - <span
+                                                    class="table-modal-client-action__time-end">11:50</span></span></li>
                                     </ul>
                             
                                     <button class="table-modal-client-action__btn table-modal-client-action__btn-confirm" type="button">Підтвердити</button>
@@ -54,6 +58,16 @@ href.forEach(item => {
   item.insertAdjacentHTML('afterend', markupConfirmation);
 });
 
+//каждой ссылки добавляем id по index
+href.forEach((item, i) => {
+  item.setAttribute('id', i);
+});
+
+// href.forEach((item, i) => {
+//   console.log(item.parentNode);
+// });
+
+//при клике по мадалке клик не уходит на родителя
 const tableModalClients = document.querySelectorAll('.table-modal-client');
 const tableModalClientAction = document.querySelectorAll(
   '.table-modal-client-action'
@@ -83,6 +97,7 @@ td.forEach(item => {
     const linkContentHTML = e.currentTarget.querySelector('a').innerHTML;
     const tableModalCent = e.currentTarget.querySelector('.table-modal-client');
 
+    /////
     const clientName = tableModalCent.querySelector(
       '.table-modal-client__name'
     );
@@ -96,22 +111,35 @@ td.forEach(item => {
       '.table-modal-client__time-end'
     );
 
+    /////
     const tableModalClientAction = e.currentTarget.querySelector(
       '.table-modal-client-action'
     );
 
+    const clientActionName = tableModalClientAction.querySelector(
+      '.table-modal-client-action__name'
+    );
+    const clientActiondata = tableModalClientAction.querySelector(
+      '.table-modal-client-action__data'
+    );
+    const clientActionTime = tableModalClientAction.querySelector(
+      '.table-modal-client-action__time'
+    );
+    const clientActionTimeEnd = tableModalClientAction.querySelector(
+      '.table-modal-client-action__time-end'
+    );
+
     // Получение времени из соответствующей ячейки времени
     const timeCell = e.currentTarget.parentNode.querySelector('.cell__time');
-    const time = timeCell.textContent.trim();
+    time = timeCell.textContent.trim();
 
     // Получение даты из заголовка столбца таблицы
     var column = link.parentNode.cellIndex;
     var dateCell = document.querySelector(
       '.work__schedule_exemple thead th:nth-child(' + (column + 1) + ') span'
     );
-    var date = dateCell.textContent.trim();
+    date = dateCell.textContent.trim();
 
-    //
     if (!tableModalCent.classList.contains('visually-hidden')) {
       tableModalCent.classList.add('visually-hidden');
       return;
@@ -126,6 +154,7 @@ td.forEach(item => {
 
     if (!linkContent) {
       if (!disabled) {
+        console.log('qwe1');
         for (let i = 0; i < href.length; i += 1) {
           if (href[i].classList.contains('href-active')) {
             href[i].classList.remove('href-active');
@@ -135,6 +164,7 @@ td.forEach(item => {
 
       //добавляем имя в пустую ячейку
       if (disabled) {
+        console.log('qwe2');
         if (disabledAction) return;
 
         link.innerHTML = transferName;
@@ -151,6 +181,11 @@ td.forEach(item => {
 
         tableModalClientAction.classList.remove('visually-hidden');
 
+        clientActionName.innerHTML = transferName;
+        clientActiondata.innerHTML = date;
+        clientActionTime.innerHTML = time;
+        clientActionTimeEnd.innerHTML = time.split(':')[0] + ':50';
+
         disabledAction = true;
       }
 
@@ -162,6 +197,7 @@ td.forEach(item => {
       clientdata.innerHTML = date;
       clientTime.innerHTML = time;
       clientTimeEnd.innerHTML = time.split(':')[0] + ':50';
+
       tableModalCent.classList.remove('visually-hidden');
 
       for (let i = 0; i < href.length; i += 1) {
@@ -172,12 +208,15 @@ td.forEach(item => {
       }
 
       link.classList.add('href-active');
+      //сохраняем ссылку на родительский елемент
+      selectedTableCell = link.parentNode.querySelector('a').getAttribute('id');
+      console.log(selectedTableCell);
       return;
     }
   });
 });
 
-///
+// кнопка Перенести
 const rescheduleMeeting = document.querySelectorAll(
   '.table-modal-client__reschedule-meeting'
 );
@@ -214,7 +253,7 @@ rescheduleMeeting.forEach(item => {
   });
 });
 
-///
+//кнопка Підтвердити
 const tableModalClientActionBtnConfirm = document.querySelectorAll(
   '.table-modal-client-action__btn-confirm'
 );
@@ -240,7 +279,147 @@ tableModalClientActionBtnConfirm.forEach(item => {
       }
     }
 
+    if (deleteSession) {
+      const link =
+        e.currentTarget.parentNode.parentNode.parentNode.querySelector('a');
+      link.innerHTML = '';
+      deleteSession = false;
+    }
+
     disabled = false;
     disabledAction = false;
+  });
+});
+
+//кнопка Відміна
+const tableModalClientActionBtnUndo = document.querySelectorAll(
+  '.table-modal-client-action__btn-undo'
+);
+
+tableModalClientActionBtnUndo.forEach(item => {
+  item.addEventListener('click', e => {
+    ///
+    if (deleteSession) {
+      for (let i = 0; i < tableModalClientAction.length; i += 1) {
+        if (!tableModalClientAction[i].classList.contains('visually-hidden')) {
+          tableModalClientAction[i].classList.add('visually-hidden');
+          break;
+        }
+      }
+
+      for (let i = 0; i < href.length; i += 1) {
+        if (href[i].classList.contains('disabled')) {
+          href[i].classList.remove('disabled');
+        }
+      }
+
+      for (let i = 0; i < href.length; i += 1) {
+        if (href[i].classList.contains('href-active')) {
+          href[i].classList.remove('href-active');
+        }
+      }
+
+      deleteSession = false;
+      disabled = false;
+      disabledAction = false;
+      return;
+    }
+
+    ///
+    const link =
+      e.currentTarget.parentNode.parentNode.parentNode.querySelector('a');
+    const linkHTML =
+      e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+        'a'
+      ).innerHTML;
+
+    for (let i = 0; i < href.length; i += 1) {
+      if (href[i].getAttribute('id') === selectedTableCell) {
+        href[i].innerHTML = linkHTML;
+        break;
+      }
+    }
+
+    link.innerHTML = '';
+
+    for (let i = 0; i < href.length; i += 1) {
+      if (href[i].classList.contains('disabled')) {
+        href[i].classList.remove('disabled');
+      }
+    }
+
+    for (let i = 0; i < href.length; i += 1) {
+      if (href[i].classList.contains('href-active')) {
+        href[i].classList.remove('href-active');
+      }
+    }
+
+    for (let i = 0; i < tableModalClientAction.length; i += 1) {
+      if (!tableModalClientAction[i].classList.contains('visually-hidden')) {
+        tableModalClientAction[i].classList.add('visually-hidden');
+        break;
+      }
+    }
+
+    disabled = false;
+    disabledAction = false;
+  });
+});
+
+//кнопка удалить сеанс
+const tableModalClientBtnDeleteSession = document.querySelectorAll(
+  '.table-modal-client__btn-delete-session'
+);
+
+tableModalClientBtnDeleteSession.forEach(item => {
+  item.addEventListener('click', e => {
+    const link =
+      e.currentTarget.parentNode.parentNode.parentNode.querySelector('a');
+    const linkHTML =
+      e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+        'a'
+      ).innerHTML;
+    const tableModalClients =
+      e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+        '.table-modal-client'
+      );
+    const tableModalClientAction =
+      e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+        '.table-modal-client-action'
+      );
+
+    const clientActionName = tableModalClientAction.querySelector(
+      '.table-modal-client-action__name'
+    );
+    const clientActiondata = tableModalClientAction.querySelector(
+      '.table-modal-client-action__data'
+    );
+    const clientActionTime = tableModalClientAction.querySelector(
+      '.table-modal-client-action__time'
+    );
+    const clientActionTimeEnd = tableModalClientAction.querySelector(
+      '.table-modal-client-action__time-end'
+    );
+
+    tableModalClients.classList.add('visually-hidden');
+    tableModalClientAction.classList.remove('visually-hidden');
+
+    clientActionName.innerHTML = linkHTML;
+    clientActiondata.innerHTML = date;
+    clientActionTime.innerHTML = time;
+    clientActionTimeEnd.innerHTML = time.split(':')[0] + ':50';
+
+    for (let i = 0; i < href.length; i += 1) {
+      if (href[i].textContent) {
+        href[i].classList.add('disabled');
+      }
+      if (href[i].classList.contains('href-active')) {
+        href[i].classList.remove('disabled');
+      }
+    }
+
+    deleteSession = true;
+    disabledAction = true;
+    disabled = true;
   });
 });
