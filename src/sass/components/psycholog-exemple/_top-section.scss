@@ -1377,6 +1377,7 @@
     display: flex;
     justify-content: space-between;
     padding-left: 0;
+    overflow-x: scroll;
     li {
         display: flex;
         flex-direction: column;
