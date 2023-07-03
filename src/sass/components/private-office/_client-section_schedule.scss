@@ -313,6 +313,7 @@
 .chat__body.visually-hidden,
 .notes__body.visually-hidden,
 .task__body.visually-hidden,
+.balance.visually-hidden,
 //Мої статті та вебінари
 .articles__cards-wrap.visually-hidden,
 .meeting__cards-wrap.visually-hidden,
@@ -328,6 +329,11 @@
 .work__schedule_exemple {
     width: 100%;
     border-collapse: collapse;
+}
+.work__schedule_exemple {
+    td {
+        position: relative;
+    }
 }
 .controls__wrap {
     display: flex;
@@ -2981,10 +2987,340 @@ select {
     }
 }
 
+// balance
+.balance {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 20px;
 
+    @media screen and (min-width: 1280px) {
+        padding: 30px;
+    }
+}
 
+.balance-account {
+    border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 744px) {
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.balance-account__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: #222B40;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 744px) {
+        width: 100%;
+        max-width: 130px;
+        margin-bottom: 0;
+        margin-right: 40px;
+    }
+    @media screen and (min-width: 1280px) {
+        max-width: 150px;
+    }
+}
+
+.balance-account__content {
+    width: 100%;
+    max-width: 240px;
+    margin-bottom: 20px;
+    @media screen and (min-width: 744px) {
+        margin-bottom: 0;
+    }
+    @media screen and (min-width: 1280px) {
+        max-width: 300px;
+    }
+}
+
+.balance-account__amount {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 90%;
+    letter-spacing: -0.05em;
+    color: #795BDA;
+    margin-bottom: 20px;
+    @media screen and (min-width: 1280px) {
+        font-size: 60px;
+        margin-bottom: 30px;
+    }
+}
+
+.balance-account__currency {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 21.6px;
+    margin-left: 10px;
+}
+
+.balance-account__button {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    color: #795BDA;
+
+    width: 100%;
+    max-width: 157px;
+    min-height: 32px;
+    padding: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(121, 91, 218, 0.1);
+    border-radius: 100px;
+    border: transparent;
+    cursor: pointer;
+    transition: color .25s ease-in-out, background-color .25s ease-in-out;
+    
+    &:hover,
+    &:focus {
+        color: #643fdb;
+        background: rgba(121, 91, 218, 0.281);
+    }
+}
+
+.balance-account__description{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    color: rgba(34, 43, 64, 0.4);
+    width: 100%;
+    max-width: 316px;
+    @media screen and (min-width: 744px) {
+        max-width: 174px;
+        margin-left: auto;
+    }
+
+    @media screen and (min-width: 1280px) {
+       max-width: 245px;
+    }
+}
+
+.balance-payment {
+    @media screen and (min-width: 744px) {
+        display: flex;
+    }
+}
+
+.balance-payment__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: #222B40;
+    margin-bottom: 20px;
+    @media screen and (min-width: 744px) {
+        width: 100%;
+        max-width: 150px;
+        margin-right: 40px;
+        margin-bottom: 0;
+    }
+}
+
+.balance-payment__content {
+    width: 100%;
+}
+
+.balance-payment__option {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(34, 43, 64, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 744px) {
+        max-width: 434px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    @media screen and (min-width: 1280px) {
+        max-width: 300px;
+    }
+}
+
+.balance-payment__checkbox-label {
+    display: flex;
+    align-items: center;
+}
+
+.balance-payment__option-number {
+    margin-left: auto;
+    margin-right: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: right;
+    letter-spacing: -0.01em;
+    color: rgba(34, 43, 64, 0.4);
+}
+
+.balance-payment__button-edit,
+.balance-payment__button-delete {
+    width: 100%;
+    max-width: 32px;
+    max-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    border: transparent;
+    border-radius: 100px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color .25s ease-in-out;
+
+    svg {
+        fill: #a7aab3;
+        transition: fill .25s ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: rgba(121, 91, 218, 0.1);
+    }
+
+    &:hover svg,
+    &:focus svg {
+        fill: #795BDA;
+    }
+}
+
+.balance-payment__button-delete {
+    margin-left: 4px;
+}
+
+.balance-payment__description {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.05em;
+    color: rgba(34, 43, 64, 0.4);
+    display: none;
+    width: 100%;
+    max-width: 245px;
+    @media screen and (min-width: 1280px) {
+        display: block;
+    }
+}
+
+.balance-payment__button-add {
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    color: #795BDA;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(121, 91, 218, 0.1);
+    border-radius: 100px;
+    padding: 8px;
+    width: 100%;
+    max-width: 209px;
+    border: transparent;
+    cursor: pointer;
+    transition: background-color .25s ease-in-out, color .25s ease-in-out;
+    &:hover,
+    &:focus {
+        color: #643fdb;
+        background-color: rgba(121, 91, 218, 0.281);
+    }
+}
+
+.balance-payment__checkbox-label {
+    cursor: pointer;
+}
+
+.balance-payment__checkbox-icon-check {
+    margin-right: 10px;
+    background-color: rgba(34, 43, 64, 0.1);
+    border-radius: 8px;
+    transition: background-color .25s ease-in-out;
+}
+
+//по псевдокласс checked показываем скрываем svg use
+.balance-payment__checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+    &:focus+.balance-payment__checkbox-label,
+    &:hover+.balance-payment__checkbox-label {
+        .balance-payment__checkbox-icon-check {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    &+.balance-payment__checkbox-label .balance-payment__checkbox-icon {
+        opacity: 0;
+        transition: opacity .25s ease-in-out;
+    }
+
+    &:checked+.balance-payment__checkbox-label .balance-payment__checkbox-icon {
+        opacity: 1;
+    }
+}
+
+//img
+.balance-payment__checkbox-img {
+    width: 100%;
+    max-width: 28px;
+    max-height: 14px;
+    margin-right: 10px;
+}
+
+.balance-payment__option-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: #222B40;
+}
+
+//visually-hidden
 .visually-hidden {
     visibility: hidden;
     pointer-events: none;
     overflow: hidden;
+}
+
+.switch__box-calendar {
+    visibility: hidden;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+div div.switch__box {
+    @media screen and (max-width: 743px) {
+        margin-top: 0px;
+    }
 }

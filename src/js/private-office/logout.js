@@ -9,7 +9,7 @@ privateOfficeExitButton.addEventListener('click', logout);
 // Функция для разлогинивания пользователя
 function logout() {
   // Удаляем информацию о текущем пользователе из локального хранилища
-  localStorage.removeItem('currentUser');
+  localStorage.removeItem('currentUser-psychologist');
 
   Notify.info('Ви успішно вийшли із системи.');
   // Вы можете выполнить перенаправление на страницу входа или другую страницу

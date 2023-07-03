@@ -1,7 +1,7 @@
 (() => {
   /////
   const privateOfficeListButton = document.querySelectorAll(
-    '.outside-private-office__list-button'
+    '.outside-private-office__list--psychologist .outside-private-office__list-button'
   );
   /////
 

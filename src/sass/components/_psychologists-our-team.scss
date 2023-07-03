@@ -45,7 +45,7 @@
 
 .our-team__photo {
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
 .our-team__caption {
@@ -77,10 +77,32 @@
     font-family: 'Golos Text';
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 140%;
     letter-spacing: -0.05em;
-    color: rgb(34, 43, 64);
+    color: rgba(34, 43, 64, 0.4);
+
+    @media screen and (min-width: 1280px) {
+        color: #222B40;
+    }
+}
+
+.our-team__title {
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    /* or 20px */
+
+    letter-spacing: -0.05em;
+
+    color: rgba(34, 43, 64, 0.7);
+    background: rgba(34, 43, 64, 0.05);
+    border-radius: 10px;
+    margin: 0 20px;
+    margin-bottom: 20px;
+    padding: 10px;
 }
 
 .our-team__specialties {

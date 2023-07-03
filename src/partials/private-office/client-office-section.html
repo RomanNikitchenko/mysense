@@ -908,33 +908,75 @@
             </div>
             
             <!-------- Баланс та оплата  --------->
-            <div class="balance__body visually-hidden" data-navigation-content="Баланс та оплата">
-                <div class="balance__container">
-
-                    <div class="earnings__wrap">
-                        <div class="balance___title">Заробіток</div>
-                        <div class="balance__box">
-                            <h4>Баланс на рахунку</h4>    
-                            <div class="balance_pay">
-                                <div class="summ">10 000<span>₴</span></div>
-                                <button>Поповнити рахунок</button>
-                            </div>
-                            <p>Рахунок в my sense, який буде використовуватись для оплати послуг психологів</p>
-                        </div>
+            <div class="balance visually-hidden" data-navigation-content="Баланс та оплата">
+            
+                <div class="balance-account">
+                    <h4 class="balance-account__title">Баланс на рахунку</h4>
+                    <div class="balance-account__content">
+                        <div class="balance-account__amount">10 000<span class="balance-account__currency">₴</span></div>
+                        <button type="button" class="balance-account__button" data-modal-open-top-up-balance>Поповнити рахунок</button>
                     </div>
-
-                    <div class="payment__container">
-                        <div class="payment__title">Баланс на рахунку</div>
-                        <div class="payment__wrap">
-                            <h4>Стандартний спосіб оплати</h4>
-                            <div class="type__payment">
-
-                            </div>
-                            <p>Оберіть стандартний спосіб оплати, яким ви будете поповнювати рахунок my sense</p>
-                        </div>
-                    </div>
-
+                    <p class="balance-account__description">Рахунок в my sense, який буде використовуватись для оплати послуг психологів</p>
                 </div>
+
+                <div class="balance-payment">
+                    <h4 class="balance-payment__title">Стандартний спосіб оплати</h4>
+
+                    <div class="balance-payment__content">
+                        <div class="balance-payment__option">
+                            <input class="balance-payment__checkbox" type="checkbox" name="visa" value="visa" id="agreement-visa" />
+                            <label class="balance-payment__checkbox-label" for="agreement-visa">
+                                <svg class="balance-payment__checkbox-icon-check" width="24" height="24">
+                                    <use class="balance-payment__checkbox-icon" href="./images/symbol-defs.svg#icon-check-balance"></use>
+                                </svg>
+                                <div class="balance-payment__checkbox-img">
+                                    <img src="./images/visa.png" alt="visa">
+                                </div>
+                                <span class="balance-payment__option-text">Monobank</span>
+                            </label>
+                            <span class="balance-payment__option-number">0823</span>
+                            <button type="button" class="balance-payment__button-edit">
+                                <svg width="32" height="32">
+                                    <use href="./images/symbol-defs.svg#edit-button"></use>
+                                </svg>
+                            </button>
+                            <button type="button" class="balance-payment__button-delete">
+                                <svg width="32" height="32">
+                                    <use href="./images/symbol-defs.svg#delete-button"></use>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="balance-payment__option">
+                            <input class="balance-payment__checkbox" type="checkbox" name="mastercard" value="mastercard" id="agreement-mastercard" />
+                            <label class="balance-payment__checkbox-label" for="agreement-mastercard">
+                                <svg class="balance-payment__checkbox-icon-check" width="24" height="24">
+                                    <use class="balance-payment__checkbox-icon" href="./images/symbol-defs.svg#icon-check-balance"></use>
+                                </svg>
+                                <div class="balance-payment__checkbox-img">
+                                    <img src="./images/mastercard.png" alt="mastercard">
+                                </div>
+                                <span class="balance-payment__option-text">Приват</span>
+                            </label>
+                            <span class="balance-payment__option-number">0246</span>
+                            <button type="button" class="balance-payment__button-edit">
+                                <svg width="32" height="32">
+                                    <use href="./images/symbol-defs.svg#edit-button"></use>
+                                </svg>
+                            </button>
+                            <button type="button" class="balance-payment__button-delete">
+                                <svg width="32" height="32">
+                                    <use href="./images/symbol-defs.svg#delete-button"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <button type="button" class="balance-payment__button-add" data-modal-open-add-new-payment-method>Додати новий спосіб оплати</button>
+                    </div>
+
+                    <p class="balance-payment__description">Оберіть стандартний спосіб оплати, яким ви будете поповнювати рахунок my sense</p>
+                </div>
+    
             </div>
 
         </section>
@@ -1012,55 +1054,137 @@
     </div>
 </section>
 
-<!-- <script>
-    var button = document.getElementById("showEye");
-    var button2 = document.getElementById("showEye2");
-    var button3 = document.getElementById("showEye3");
+<!-- модальное окно бекдропом (для для бекдроба и модалки можно в любой части странице писать код поскольку он будет позицеонирован абсолютно) -->
+<div class="beckdrop-top-up-balance beckdrop--is-hidden" data-modal-top-up-balance>
+    <div class="beckdrop-top-up-balance__modal-wrap">
+        <div class="beckdrop-top-up-balance__modal">
 
-    button.onclick = showEye;
-    button2.onclick = showEye2;
-    button3.onclick = showEye3;
+            <div class="beckdrop-top-up-balance__header-wrap">
+                <h2 class="beckdrop-top-up-balance__request">Поповнити рахунок</h2>
+                <button type="button" class="beckdrop-top-up-balance__button-close" data-modal-close-top-up-balance>
+                    <svg width="30" height="30">
+                        <use href="./images/symbol-defs.svg#close_40px"></use>
+                    </svg>
+                </button>
+            </div>
 
-    var input = document.getElementById("show1");
-    var input2 = document.getElementById("show2");
-    var input3 = document.getElementById("show3");
-    var icon = document.getElementById("i");
+            <form class="form-top-up-balance">
+                <div class="form-top-up-balance__field">
+                    <input class="form-top-up-balance__input" type="number" name="top-up-balance" id="top-up-balance"
+                        placeholder="1000 грн"/>
+                    <label class="form-top-up-balance__label" for="top-up-balance">Сума поповнення</label>
+                </div>
 
-    function showEye () {
-        if(input.getAttribute('type') == 'password') {
-        input.removeAttribute('type');
-        input.setAttribute('type', 'text')
-        button.innerHTML='<i id="i" class="far fa-eye-slash">';
-        } else {
-        input.removeAttribute('type');
-        input.setAttribute('type', 'password');
-        button.innerHTML='<i id="i" class="far fa-eye">';
-        }
-    }
-    function showEye2 () {
-        if(input2.getAttribute('type') == 'password') {
-        input2.removeAttribute('type');
-        input2.setAttribute('type', 'text')
-        button2.innerHTML='<i id="i" class="far fa-eye-slash">';
-        } else {
-        input2.removeAttribute('type');
-        input2.setAttribute('type', 'password');
-        button2.innerHTML='<i id="i" class="far fa-eye">';
-        }
-    }
-    function showEye3 () {
-        if(input3.getAttribute('type') == 'password') {
-        input3.removeAttribute('type');
-        input3.setAttribute('type', 'text')
-        button3.innerHTML='<i id="i" class="far fa-eye-slash">';
-        } else {
-        input3.removeAttribute('type');
-        input3.setAttribute('type', 'password');
-        button3.innerHTML='<i id="i" class="far fa-eye">';
-        }
-    }
-</script> -->
+                <div class="choose-payment-method">
+                    <span class="choose-payment-method__text">Спосіб оплати</span>
+
+                    <div class="payment-card">
+                        <div class="payment-card__wrap">
+                            <div class="payment-card__img">
+                                <img src="./images/visa.png" alt="visa">
+                            </div>
+                            <span class="payment-card__text">Monobank</span>
+                            <span class="payment-card__number">0823</span>
+                        </div>
+                        <button type="button" class="payment-card__button">
+                            <svg class="payment-card__icon" width="11" height="6">
+                                <use href="./images/symbol-defs.svg#Arrow"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- список карточек -->
+                <ul class="payment-card-list">
+                    <li class="payment-card-item">
+                        <div class="payment-card__img">
+                            <img src="./images/visa.png" alt="visa">
+                        </div>
+                        <span class="payment-card__text">Monobank</span>
+                        <span class="payment-card__number">0823</span>
+                    </li>
+                    <li class="payment-card-item">
+                        <div class="payment-card__img">
+                            <img src="./images/mastercard.png" alt="mastercard">
+                        </div>
+                        <span class="payment-card__text">Приват</span>
+                        <span class="payment-card__number">0246</span>
+                    </li>
+                </ul>
+
+                <button type="button" class="form-top-up__button-submit">
+                    Попопвнити
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- модальное окно бекдропом (для для бекдроба и модалки можно в любой части странице писать код поскольку он будет позицеонирован абсолютно) -->
+<div class="beckdrop-add-new-payment-method beckdrop--is-hidden" data-modal-add-new-payment-method>
+    <div class="beckdrop-add-new-payment-method__modal-wrap">
+        <div class="beckdrop-add-new-payment-method__modal">
+
+            <div class="beckdrop-add-new-payment-method__header-wrap">
+                <h2 class="beckdrop-add-new-payment-method__request">Додати спосіб оплати</h2>
+                <button type="button" class="beckdrop-add-new-payment-method__button-close" data-modal-close-add-new-payment-method>
+                    <svg width="30" height="30">
+                        <use href="./images/symbol-defs.svg#close_40px"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <form class="form-add-new-payment-method">
+                <div class="form-add-new-payment-method__field">
+                    <input class="form-add-new-payment-method__input" type="text" name="card-number" id="card-number"
+                        placeholder="1234 5678 9012 3456" />
+                    <label class="form-add-new-payment-method__label" for="card-number">Номер карты</label>
+                </div>
+
+                <div class="form-add-new-payment-method__input-wrap">
+                    <div class="form-add-new-payment-method__field">
+                        <input class="form-add-new-payment-method__input" type="text" name="expiry" id="expiry" placeholder="MM / YY" />
+                        <label class="form-add-new-payment-method__label" for="expiry">Срок действия</label>
+                    </div>
+
+                    <div class="form-add-new-payment-method__field">
+                        <input class="form-add-new-payment-method__input" type="password" name="cvv" id="cvv" placeholder="CVV" />
+                        <label class="form-add-new-payment-method__label" for="cvv">CVV</label>
+                        <svg
+                            role="button"
+                            tabindex="0"
+                            class="form-login__icon form-login__icon--password-hidden"
+                            width="16"
+                            height="16"
+                        >
+                            <use href="./images/symbol-defs.svg#password-hidden"></use>
+                        </svg>
+
+                        <svg
+                            role="button"
+                            tabindex="0"
+                            class="form-login__icon form-login__icon--password-not-hidden"
+                            width="16"
+                            height="16"
+                        >
+                            <use href="./images/symbol-defs.svg#password-not-hidden"></use>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="form-add-new-payment-method__field">
+                    <input class="form-add-new-payment-method__input" type="text" name="card-name" id="card-name"
+                    placeholder="Картка MonoBank" />
+                    <label class="form-add-new-payment-method__label" for="card-name">Назва картки (не обовʼязково)</label>
+                </div>
+
+                <button type="button" class="form-add-new-payment-method__button-submit">
+                    Додати
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
 
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->

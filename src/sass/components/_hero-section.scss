@@ -124,7 +124,15 @@
     max-width: 370px;
     padding: 30px;
     background: #FFFFFF;
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    @media screen and (min-width: 744px) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
 }
 
 .hero-section__content-text{

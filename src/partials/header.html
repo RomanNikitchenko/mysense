@@ -29,27 +29,30 @@
         </svg>
       </button>
 
+      <!-- раздел основной навигации мобильное меню -->
       <ul class="mobile-menu">
         <li><a href="./index.html" class="link">На головну</a></li>
         <li><a href="./psychologists.html" class="link">Психологи</a></li>
-        <li><a href="./testpage.html" class="link">Підбір психолога</a></li>
+        <li><a href="./testpage.html" class="link">Тести</a></li>
+        <li><a href="./cooperation.html" class="link">Психологам</a></li>
         <li><a href="./articlespage.html" class="link">Статті</a></li>
         <li><a href="./webinars.html" class="link">Вебінари</a></li>
-        <li><a href="./cooperation.html" class="link">Психологам</a></li>
-        <li>
+        <!-- <li>
           <a href="./psycholog-exemple.html" class="link">Сторінка психолога</a>
-        </li>
+        </li> -->
         <!-- <li>
           <a href="./private-office.html" class="link">Особистий кабінет</a>
         </li> -->
-        </li>
-        <li>
+        <!-- <li>
           <a href="./client-office.html" class="link">Кабінет клієнта</a>
         </li>
+        <li>
+          <a href="./webinar-exemple.html" class="link">webinar-exemple</a>
+        </li> -->
       </ul>
     </div>
 
-    <!--раздел основной навигации-->
+    <!-- раздел основной навигации -->
     <nav class="main-nav">
       <!--логотип хедер-->
       <a class="logo page-header__logo--padding-top" href="./index.html">
@@ -64,7 +67,10 @@
           <a href="./psychologists.html" class="site-nav__link">Психологи</a>
         </li>
         <li class="site-nav__item">
-          <a href="./testpage.html" class="site-nav__link">Підбір психолога</a>
+          <a href="./testpage.html" class="site-nav__link">Тести</a>
+        </li>
+        <li class="site-nav__item">
+          <a href="./cooperation.html" class="site-nav__link">Психологам</a>
         </li>
         <li class="site-nav__item">
           <a href="./articlespage.html" class="site-nav__link">Статті</a>
@@ -72,27 +78,27 @@
         <li class="site-nav__item">
           <a href="./webinars.html" class="site-nav__link">Вебінари</a>
         </li>
-        <li class="site-nav__item">
-          <a href="./cooperation.html" class="site-nav__link">Психологам</a>
-        </li>
-        <li class="site-nav__item">
+        <!-- <li class="site-nav__item">
           <a href="./psycholog-exemple.html" class="site-nav__link"
             >Сторінка психолога</a
           >
-        </li>
+        </li> -->
         <!-- <li class="site-nav__item">
           <a href="./private-office.html" class="site-nav__link"
-
             >Особистий кабінет</a
           >
         </li> -->
-        <li>
+        <!-- <li class="site-nav__item">
           <a href="./client-office.html" class="link">Кабінет клієнта</a>
-        </li>
-
+        </li> -->
         <!-- <li class="site-nav__item">
           <a href="./registration_form.html" class="site-nav__link"
             >Реєстрація</a
+          >
+        </li> -->
+        <!-- <li class="site-nav__item">
+          <a href="./webinar-exemple.html" class="site-nav__link"
+            >webinar-exemple</a
           >
         </li> -->
       </ul>
@@ -111,8 +117,9 @@
       </ul>
     </div>
 
+    <!-- скрывается когда пользователь авторизован -->
     <a
-      href="./registration_form.html"
+      href="./login-form-client.html"
       class="page-header__button login visually-hidden"
     >
       <svg class="icon-login" width="11" height="14">
@@ -127,6 +134,7 @@
 
     <!-- Особистий кабінет -->
     <div class="page-header__private-office-menu visually-hidden">
+
       <!-- кнопка открыть модальное окно "Нагадування" -->
       <button
         class="page-header__button page-header__button--reminder js-open-modal-reminder"
@@ -157,9 +165,17 @@
         class="page-header__button page-header__button-user--image private-office__open-menu"
       >
         <!-- изображение если психолог вошел -->
-        <img src="./images/our-team-desktop.jpg" alt="Фото Іван Виговський" class="page-header__img-user-psychologist"/>
-        <!-- изображение если клиент психолога вошел -->
-        <img src="./images/darina.png" alt="Фото Іван Виговський" class="page-header__img-user-client"/>
+        <img
+          src="./images/our-team-desktop.jpg"
+          alt="Фото психолог"
+          class="page-header__img-user-psychologist"
+        />
+        <!-- изображение если клиент вошел -->
+        <img
+          src="./images/darina.png"
+          alt="Фото клиент"
+          class="page-header__img-user-client"
+        />
       </button>
 
       <!-- модальное окно "Особистий кабінет меню" -->
@@ -177,20 +193,30 @@
 
           <div class="outside-private-office__image-wrapper">
             <div class="outside-private-office__image-wrapper-border">
+              <!-- изображение если психолог вошел -->
               <img
                 src="./images/our-team-desktop.jpg"
-                class="outside-private-office__image"
-                alt="Фото Іван Виговський"
+                class="outside-private-office__image outside-private-office__image--psychologist"
+                alt="Фото психолог"
               />
+              <!-- изображение если клиент вошел -->
+              <img
+                src="./images/darina.png"
+                class="outside-private-office__image outside-private-office__image--client"
+                alt="Фото клиент" />
             </div>
           </div>
 
           <div class="outside-private-office__info">
-            <h1 class="outside-private-office__title">Іван Виговський</h1>
+            <!-- имя психолога -->
+            <p class="outside-private-office__title outside-private-office__title--psychologist">Іван Виговський</p>
+            <!-- имя клиента -->
+            <p class="outside-private-office__title outside-private-office__title--client">Дарина Приходько</p>
           </div>
         </div>
 
-        <ul class="outside-private-office__list">
+        <!-- список пунктов меню психолога -->
+        <ul class="outside-private-office__list outside-private-office__list--psychologist">
           <li class="outside-private-office__list-item">
             <button
               type="button"
@@ -243,6 +269,30 @@
               data-button-menu-navigation="Мої статті та вебінари"
             >
               Мої статті та вебінари
+            </button>
+          </li>
+        </ul>
+
+        <!-- список пунктов меню клиента -->
+        <ul class="outside-private-office__list outside-private-office__list--client">
+          <li class="outside-private-office__list-item">
+            <button type="button" class="outside-private-office__list-button" data-button-menu-navigation-client="Редагувати профіль">
+              Редагувати профіль
+            </button>
+          </li>
+          <li class="outside-private-office__list-item">
+            <button type="button" class="outside-private-office__list-button is-active" data-button-menu-navigation-client="Мої сесії">
+              Мої сесії
+            </button>
+          </li>
+          <li class="outside-private-office__list-item">
+            <button type="button" class="outside-private-office__list-button" data-button-menu-navigation-client="Повідомлення">
+              Повідомлення
+            </button>
+          </li>
+          <li class="outside-private-office__list-item">
+            <button type="button" class="outside-private-office__list-button" data-button-menu-navigation-client="Баланс та оплата">
+              Баланс та оплата
             </button>
           </li>
         </ul>

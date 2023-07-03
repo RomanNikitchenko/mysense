@@ -20,7 +20,7 @@ function handleSubmit(event) {
 // Функция для выполнения входа пользователя
 function login(username, password) {
   // Получаем сохраненных пользователей из локального хранилища
-  var users = JSON.parse(localStorage.getItem('users')) || [];
+  var users = JSON.parse(localStorage.getItem('users-psychologist')) || [];
 
   // Ищем пользователя с указанным именем пользователя
   var user = users.find(function (user) {
@@ -28,13 +28,17 @@ function login(username, password) {
   });
 
   if (user && user.password === password) {
-    // Сохраняем информацию о текущем пользователе в локальное хранилище
-    localStorage.setItem('currentUser', JSON.stringify(user));
+    //удаляем текущего пользоватеоя психолога если он был в системи (разлогиниваем)
+    localStorage.removeItem('currentUser-client');
 
-    Notify.success('Ви успішно увійшли до системи.');
+    // Сохраняем информацию о текущем пользователе в локальное хранилище
+    localStorage.setItem('currentUser-psychologist', JSON.stringify(user));
+
+    Notify.success('Ви успішно увійшли до системи як психолог.');
 
     // Вы можете выполнить перенаправление на другую страницу
     setTimeout(() => {
+      // страничка психолога
       window.location.assign('private-office.html');
     }, 500);
   } else {

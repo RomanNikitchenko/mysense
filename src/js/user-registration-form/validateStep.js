@@ -61,19 +61,16 @@ document.querySelector('.form__prew-btn').addEventListener('click', () => {
     isTransitioning = true;
     prewBtn.style.display = 'none';
     stap = 1;
-    console.log('1');
   } else if (step3.style.display !== 'none') {
     step3.style.display = 'none';
     step2.style.display = 'block';
     stap = 2;
-    console.log('2');
   } else if (step4.style.display !== 'none') {
     step4.style.display = 'none';
     step3.style.display = 'block';
     nextBtn.style.display = 'block';
     endBtn.style.display = 'none';
     stap = 3;
-    console.log('3');
   }
 
   for (let i = 0; i < stepLine.length; i += 1) {
@@ -91,16 +88,10 @@ function validateStep() {
   if (step1.style.display !== 'none') {
     // Проверяем поля шага 1
     const emailInput = document.getElementById('email');
-    const phoneInput = document.getElementById('phone');
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^\d+$/;
 
     if (!emailRegex.test(emailInput.value.trim())) {
       Notify.failure('Введіть правильний Email');
-      return false;
-    }
-    if (!phoneRegex.test(phoneInput.value.trim())) {
-      Notify.failure('Введіть правильний номер телефону');
       return false;
     }
   } else if (step2.style.display !== 'none') {

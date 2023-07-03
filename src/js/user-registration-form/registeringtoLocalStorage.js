@@ -6,7 +6,7 @@ form.addEventListener('submit', handleSubmit);
 // Функция для регистрации пользователя
 function register(username, password, eventSubmit) {
   // Получаем сохраненных пользователей из локального хранилища
-  var users = JSON.parse(localStorage.getItem('users')) || [];
+  var users = JSON.parse(localStorage.getItem('users-psychologist')) || [];
 
   // Проверяем, не занят ли выбранный username
   var isUsernameTaken = users.some(function (user) {
@@ -28,9 +28,9 @@ function register(username, password, eventSubmit) {
   users.push(newUser);
 
   // Сохраняем обновленный список пользователей в локальное хранилище
-  localStorage.setItem('users', JSON.stringify(users));
+  localStorage.setItem('users-psychologist', JSON.stringify(users));
 
-  Notify.success('Користувач успішно зареєстрований.');
+  Notify.success('психолог успішно зареєстрований.');
 
   eventSubmit.currentTarget.reset();
 
@@ -51,7 +51,7 @@ function handleSubmit(event) {
 // Функция для выполнения входа пользователя
 function login(username, password) {
   // Получаем сохраненных пользователей из локального хранилища
-  var users = JSON.parse(localStorage.getItem('users')) || [];
+  var users = JSON.parse(localStorage.getItem('users-psychologist')) || [];
 
   // Ищем пользователя с указанным именем пользователя
   var user = users.find(function (user) {
@@ -59,12 +59,16 @@ function login(username, password) {
   });
 
   if (user && user.password === password) {
-    // Сохраняем информацию о текущем пользователе в локальное хранилище
-    localStorage.setItem('currentUser', JSON.stringify(user));
+    //удаляем текущего пользоватеоя клиента если он был в системи (разлогиниваем)
+    localStorage.removeItem('currentUser-client');
 
-    Notify.success('Ви успішно увійшли до системи.');
+    // Сохраняем информацию о текущем пользователе в локальное хранилище психолога
+    localStorage.setItem('currentUser-psychologist', JSON.stringify(user));
+
+    Notify.success('Ви успішно увійшли до систем як психолог.');
 
     setTimeout(() => {
+      // страничка психолога
       window.location.assign('private-office.html');
     }, 500);
     // Вы можете выполнить перенаправление на другую страницу

@@ -55,6 +55,9 @@ export default function createImageCardsMarcup({ visiblefilter, change }) {
                           <p class="our-team__experience">${experience}</p>
                       </figcaption>
                   </figure>
+                  
+                  <p class="our-team__title">Психолог, психотерапевт <br> в Гештальт-підході, <br> травматерапевт</p>
+                  
                   <ul class="our-team__specialties">
                       ${specialties
                         .map(

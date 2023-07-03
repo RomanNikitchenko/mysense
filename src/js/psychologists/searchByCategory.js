@@ -238,6 +238,8 @@ const filteredQueryParagraphNumber = document.querySelectorAll(
 
       checkLoadMoreButton();
       viewProfile(visiblefilterAll);
+
+      console.log(selectedPriceRanges);
     });
   });
   //
