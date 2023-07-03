@@ -2,6 +2,11 @@
 section.gender {
     margin-top: 30px;
     padding-top: 40px;
+    margin: 30px auto 0;
+}
+.category__container  {
+    margin: 0 auto;
+    width: 1280px;
 }
 .category__title {
     font-weight: 500;
@@ -85,7 +90,7 @@ section.gender {
 }
 
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
     .category__cards {
         grid-template-columns: 208px 208px 208px;
     }
@@ -95,7 +100,7 @@ section.gender {
     }
 }
 
-@media screen and (max-width: 744px) {
+@media screen and (max-width: 743px) {
     .category__title {
         font-size: 32px;
     }
