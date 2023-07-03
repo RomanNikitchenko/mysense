@@ -1,5 +1,6 @@
 const td = document.querySelectorAll('.work__schedule_exemple td');
 const href = document.querySelectorAll('.work__schedule_exemple td a');
+const add_session__wrap = document.querySelector('.add_session__wrap');
 
 import ourTeam4Desktop2x from '../../images/darina.png';
 let disabled = false;
@@ -62,6 +63,24 @@ href.forEach(item => {
 href.forEach((item, i) => {
   item.setAttribute('id', i);
 });
+
+function addSession() {
+  for (let i = 0; i < href.length; i += 1) {
+    if (!href[i].textContent) {
+      href[i].parentNode.classList.add('add-session');
+    }
+  }
+}
+
+addSession();
+
+function removeSession() {
+  for (let i = 0; i < href.length; i += 1) {
+    if (!href[i].textContent) {
+      href[i].parentNode.classList.remove('add-session');
+    }
+  }
+}
 
 //при клике по мадалке клик не уходит на родителя
 const tableModalClients = document.querySelectorAll('.table-modal-client');
@@ -150,17 +169,23 @@ td.forEach(item => {
 
     if (!linkContent) {
       if (!disabled) {
-        console.log('qwe1');
+        console.log('add-session');
         for (let i = 0; i < href.length; i += 1) {
           if (href[i].classList.contains('href-active')) {
             href[i].classList.remove('href-active');
           }
         }
+
+        add_session__wrap.style.display = 'block';
+        selectedTableCell = link.parentNode
+          .querySelector('a')
+          .getAttribute('id');
+        console.log(selectedTableCell);
       }
 
       //добавляем имя в пустую ячейку
       if (disabled) {
-        console.log('qwe2');
+        console.log('dont-add-session');
         if (disabledAction) return;
 
         link.innerHTML = transferName;
@@ -241,6 +266,8 @@ rescheduleMeeting.forEach(item => {
 
     disabled = true;
 
+    removeSession();
+
     for (let i = 0; i < href.length; i += 1) {
       if (!href[i].textContent) {
         href[i].parentNode.classList.add('empty-link');
@@ -284,6 +311,8 @@ tableModalClientActionBtnConfirm.forEach(item => {
 
     disabled = false;
     disabledAction = false;
+
+    addSession();
   });
 });
 
@@ -318,6 +347,8 @@ tableModalClientActionBtnUndo.forEach(item => {
       deleteSession = false;
       disabled = false;
       disabledAction = false;
+
+      addSession();
       return;
     }
 
@@ -359,6 +390,8 @@ tableModalClientActionBtnUndo.forEach(item => {
 
     disabled = false;
     disabledAction = false;
+
+    addSession();
   });
 });
 
@@ -417,5 +450,27 @@ tableModalClientBtnDeleteSession.forEach(item => {
     deleteSession = true;
     disabledAction = true;
     disabled = true;
+
+    removeSession();
   });
+});
+
+///
+///
+///скрыть модалку редактировать Додати сесію
+add_session__wrap.addEventListener('click', e => {
+  if (e.currentTarget !== e.target) {
+    return;
+  }
+
+  add_session__wrap.style.display = 'none';
+});
+
+const close = add_session__wrap.querySelector('.close');
+
+close.addEventListener('click', e => {
+  console.log(e.currentTarget);
+  console.log(e.target);
+
+  add_session__wrap.style.display = 'none';
 });

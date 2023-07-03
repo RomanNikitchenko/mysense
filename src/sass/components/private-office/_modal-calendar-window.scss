@@ -116,3 +116,11 @@ a.href-active {
         border: 1px solid #D5CAF9;
     }
 }
+
+.add-session {
+    &:hover {
+        background: #D5CAF9 url('../images/plus.png') no-repeat;
+        background-position: center;
+        border: 1px solid #D5CAF9;
+    }
+}
