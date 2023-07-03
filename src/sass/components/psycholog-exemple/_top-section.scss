@@ -855,6 +855,7 @@
 
 .work__schedule {
     margin-top: 50px;
+    max-width: 836px;
 }
 .work__schedule-wrapper {
     background: #fff;
@@ -903,6 +904,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 30px 10px;
+    overflow-x: scroll;
 }
 .days {
     display: flex;
@@ -916,6 +918,17 @@
     &:hover {
         cursor: pointer;
     }
+    &:focus {
+        background: #795BDA;
+        color: #fff;
+        padding: 8px 16px;
+        .num__day, .day__week {
+            color: #fff;
+        }
+        .show-month {
+            display: block;
+        }
+    }
 }
 .day__week {
     font-weight: 500;
@@ -925,14 +938,7 @@
     margin-right: 8px;
     color: rgba(34, 43, 64, 0.4);
 }
-.day_active {
-    background: #795BDA;
-    color: #fff;
-    padding: 8px 16px;
-    .num__day, .day__week {
-        color: #fff;
-    }
-}
+
 .num__day {
     display: flex;
     font-weight: 500;
@@ -944,7 +950,7 @@
         display: none;
     }
     .show-month {
-        display: block;
+        display: none;
         font-size: 16px;
         line-height: 100%;
         letter-spacing: -0.06em;
@@ -976,13 +982,13 @@
         line-height: 140%;
         letter-spacing: -0.05em;
         color: #222B40;
-    }
-    &:hover {
-        background: rgba(121, 91, 218, 0.1);
         cursor: pointer;
-    span {
-        color: #795BDA;
     }
+    &:focus {
+        background: rgba(121, 91, 218, 0.1);
+        span {
+            color: #795BDA;
+        }
     }
 }
 /*----- not hours -----*/
