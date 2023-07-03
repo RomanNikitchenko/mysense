@@ -63,10 +63,6 @@ href.forEach((item, i) => {
   item.setAttribute('id', i);
 });
 
-// href.forEach((item, i) => {
-//   console.log(item.parentNode);
-// });
-
 //при клике по мадалке клик не уходит на родителя
 const tableModalClients = document.querySelectorAll('.table-modal-client');
 const tableModalClientAction = document.querySelectorAll(
