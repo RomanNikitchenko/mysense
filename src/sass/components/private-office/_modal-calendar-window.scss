@@ -1,4 +1,5 @@
-.table-modal-client {
+.table-modal-client,
+.table-modal-client-action {
     position: absolute;
     width: 180px;
     border-radius: 8px;
@@ -8,7 +9,8 @@
     padding-bottom: 2px;
 }
 
-.table-modal-client__flex {
+.table-modal-client__flex,
+.table-modal-client-action__flex {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -16,12 +18,14 @@
     margin-bottom: 11px;
 }
 
-.table-modal-client__border {
+.table-modal-client__border,
+.table-modal-client-action__border {
     width: 40px;
     height: 40px;
 }
 
-.table-modal-client__name {
+.table-modal-client__name,
+.table-modal-client-action__name {
     color: #795BDA;
     font-size: 12px;
     font-family: Golos Text;
@@ -35,12 +39,14 @@
     margin-left: 10px;
 }
 
-.table-modal-client__list {
+.table-modal-client__list,
+.table-modal-client-action__list {
     padding: 0  20px;
     margin-bottom: 14px;
 }
 
-.table-modal-client__item {
+.table-modal-client__item,
+.table-modal-client-action__item {
     color: #222B40;
     font-size: 12px;
     font-family: Golos Text;
@@ -52,11 +58,13 @@
     justify-content: space-between;
 }
 
-.table-modal-client__item:not(:last-child) {
+.table-modal-client__item:not(:last-child),
+.table-modal-client-action__item:not(:last-child) {
     margin-bottom: 10px;
 }
 
-.table-modal-client__btn {
+.table-modal-client__btn,
+.table-modal-client-action__btn {
     color: #795BDA;
     font-size: 14px;
     font-family: Golos Text;
