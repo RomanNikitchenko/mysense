@@ -84,12 +84,12 @@
     padding-top: 2px;
 }
 .criteria__name {
-    font-weight: 545px;
+    font-weight: 500;
     font-size: 40px;
     line-height: 90%;
     letter-spacing: -0.05em;
     color: #222B40;
-    max-width: 400px;
+    max-width: 545px;
 }
 .criteria__descr {
     font-weight: 500;
@@ -110,7 +110,7 @@
     }
 }
 .criteria__btn {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
     line-height: 100%;
     letter-spacing: -0.01em;
@@ -127,7 +127,7 @@
 }
 
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
     .choice__block-title {
         display: flex;
         justify-content: space-between;
@@ -172,7 +172,7 @@
     }
 }
 
-@media screen and (max-width: 744px) {
+@media screen and (max-width: 743px) {
     .choice__block-title {
         flex-wrap: wrap;
     }
