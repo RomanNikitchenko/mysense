@@ -170,6 +170,7 @@ td.forEach(item => {
     if (!linkContent) {
       if (!disabled) {
         console.log('add-session');
+
         for (let i = 0; i < href.length; i += 1) {
           if (href[i].classList.contains('href-active')) {
             href[i].classList.remove('href-active');
@@ -177,10 +178,18 @@ td.forEach(item => {
         }
 
         add_session__wrap.style.display = 'block';
+
         selectedTableCell = link.parentNode
           .querySelector('a')
           .getAttribute('id');
-        console.log(selectedTableCell);
+
+        const dateHourSession = add_session__wrap.querySelector(
+          '.correct_date .text'
+        );
+
+        dateHourSession.value = `${date}, ${time} - ${
+          time.split(':')[0] + ':50'
+        } за Києвом`;
       }
 
       //добавляем имя в пустую ячейку
@@ -457,7 +466,7 @@ tableModalClientBtnDeleteSession.forEach(item => {
 
 ///
 ///
-///скрыть модалку редактировать Додати сесію
+///скрыть модалку Додати сесію бекдроп
 add_session__wrap.addEventListener('click', e => {
   if (e.currentTarget !== e.target) {
     return;
@@ -466,11 +475,99 @@ add_session__wrap.addEventListener('click', e => {
   add_session__wrap.style.display = 'none';
 });
 
+///скрыть модалку Додати сесію по крестику в модалки
 const close = add_session__wrap.querySelector('.close');
 
 close.addEventListener('click', e => {
-  console.log(e.currentTarget);
-  console.log(e.target);
+  add_session__wrap.style.display = 'none';
+});
+
+///развернуть свернуть редактирование времени сеанса
+const edit = add_session__wrap.querySelector('.edit');
+
+let toggle = false;
+
+edit.addEventListener('click', () => {
+  const chooseDay = add_session__wrap.querySelector('.choose__day');
+  const chooseTime = add_session__wrap.querySelector('.choose__time');
+
+  if (!toggle) {
+    console.log('false');
+    chooseDay.style.display = 'block';
+    chooseTime.style.display = 'block';
+    toggle = true;
+    return;
+  }
+
+  if (toggle) {
+    console.log('true');
+    chooseDay.style.display = 'none';
+    chooseTime.style.display = 'none';
+    toggle = false;
+    return;
+  }
+});
+
+//раскрываем меню
+const listClient = add_session__wrap.querySelector('.list__client');
+listClient.addEventListener('click', () => {
+  listClient.classList.toggle('show');
+});
+
+//клик по всему спску ul в глубь не проходит
+const dropDownList = add_session__wrap.querySelector('.drop-down-list');
+dropDownList.addEventListener('click', e => {
+  e.stopPropagation();
+});
+
+//кликаем по item перезаписываем изобоажение и текст внутри list__client
+const dropDownListItem = add_session__wrap.querySelectorAll(
+  '.drop-down-list-item'
+);
+const img = add_session__wrap.querySelector('.list__client__img');
+const text = add_session__wrap.querySelector('.list__client__text');
+
+dropDownListItem.forEach(item => {
+  item.addEventListener('click', e => {
+    const itemImgSrc = e.currentTarget
+      .querySelector('.drop-down-list__img')
+      .getAttribute('src');
+
+    const itemText = e.currentTarget.querySelector(
+      '.drop-down-list__text'
+    ).textContent;
+
+    img.src = itemImgSrc;
+    text.textContent = itemText;
+
+    listClient.classList.toggle('show');
+
+    for (let i = 0; i < dropDownListItem.length; i += 1) {
+      if (dropDownListItem[i].classList.contains('active')) {
+        dropDownListItem[i].classList.remove('active');
+        break;
+      }
+    }
+
+    item.classList.add('active');
+  });
+});
+
+///развернуть свернуть редактирование времени сеанса
+const planSession = add_session__wrap.querySelector('.plan_session');
+planSession.addEventListener('click', () => {
+  console.log(selectedTableCell);
+  console.log(time);
+  console.log(date);
+  console.log(text.innerHTML);
+
+  for (let i = 0; i < href.length; i += 1) {
+    if (href[i].getAttribute('id') === selectedTableCell) {
+      href[i].innerHTML = text.innerHTML;
+      href[i].parentNode.classList.remove('add-session');
+      break;
+    }
+  }
 
   add_session__wrap.style.display = 'none';
 });

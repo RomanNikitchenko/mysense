@@ -124,3 +124,85 @@ a.href-active {
         border: 1px solid #D5CAF9;
     }
 }
+
+.choose__day,
+.choose__time {
+    display: none;
+}
+
+//выпадающий список
+.list__client {
+    display: flex;
+    align-items: center;
+    border-radius: 150px;
+    background: rgba(34, 43, 64, 0.05);
+    padding: 6px 18px 6px 6px;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        background: #222b4017;
+    }
+}
+.list__client__img,
+.drop-down-list__img {
+    width: 24px;
+    height: 24px;
+}
+
+.list__client__text {
+    margin-left: 10px;
+}
+
+.list__client__icon {
+    margin-left: auto;
+}
+
+.drop-down-list {
+    display: none;
+    position: absolute;
+    background-color: #F3F3F3;
+    top: 37px;
+    width: 100%;
+    border-radius: 10px;
+    left: 0;
+    padding: 6px;
+}
+
+.show .drop-down-list{
+    display: block;
+}
+
+.list__client__icon {
+    transform: rotate(180deg);
+    transition: transform .3s ease-in-out;
+}
+
+.show .list__client__icon {
+    transform: rotate(0deg);
+}
+
+.drop-down-list-item {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    border-radius: 100px;
+    
+    &:hover {
+        color: #795bda;
+        background: #795bda1a;
+    }
+}
+
+.drop-down-list-item.active {
+    color: #795bda;
+    background: #795bda1a;
+}
+
+.drop-down-list-item:not(:last-child) {
+    margin-bottom: 6px;
+}   
+
+.drop-down-list__text {
+    margin-left: 10px;
+}
