@@ -556,10 +556,10 @@ dropDownListItem.forEach(item => {
 ///развернуть свернуть редактирование времени сеанса
 const planSession = add_session__wrap.querySelector('.plan_session');
 planSession.addEventListener('click', () => {
-  console.log(selectedTableCell);
-  console.log(time);
-  console.log(date);
-  console.log(text.innerHTML);
+  console.log(selectedTableCell); //id
+  console.log(time); //time
+  console.log(date); //time
+  console.log(text.innerHTML); //name user
 
   for (let i = 0; i < href.length; i += 1) {
     if (href[i].getAttribute('id') === selectedTableCell) {
