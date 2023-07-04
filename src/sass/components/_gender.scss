@@ -91,6 +91,10 @@ section.gender {
 
 
 @media screen and (max-width: 1279px) {
+    .category__container {
+        width: 740px;
+        margin: 0 auto;
+    }
     .category__cards {
         grid-template-columns: 208px 208px 208px;
     }
@@ -101,6 +105,10 @@ section.gender {
 }
 
 @media screen and (max-width: 743px) {
+    .category__container {
+        width: 390px;
+        margin: 0 auto;
+    }
     .category__title {
         font-size: 32px;
     }
