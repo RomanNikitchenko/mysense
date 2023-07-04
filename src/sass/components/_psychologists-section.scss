@@ -355,7 +355,7 @@
 
  .sort-list {
     z-index: 1;
-    width: 173px;
+    width: 306px;
     position: absolute;
     overflow: hidden;
     max-height: 0;
@@ -464,5 +464,11 @@
         letter-spacing: -0.01em;
         color: #222B40;
         margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .sort-list {
+        width: 160px;
     }
 }

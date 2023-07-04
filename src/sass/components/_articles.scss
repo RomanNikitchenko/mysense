@@ -187,14 +187,14 @@
         font-size: 14px;
         line-height: 100%;
         letter-spacing: -0.06em;
-        color: #fff;
         border: none;
-        background: #795bda;
         height: 46px;
         border-radius: 23px;
         padding: 16px 10px 16px 24px;
         margin: 20px 10px;
         width: 90%;
+        color: #795bda;
+        background: #795bda1a;
         &:hover {
             background: rgba(121, 91, 218, 0.2);
         }
