@@ -177,6 +177,7 @@ td.forEach(item => {
           }
         }
 
+        //открыть модалку Додати сесію
         add_session__wrap.style.display = 'block';
 
         selectedTableCell = link.parentNode
@@ -190,6 +191,46 @@ td.forEach(item => {
         dateHourSession.value = `${date}, ${time} - ${
           time.split(':')[0] + ':50'
         } за Києвом`;
+
+        //Виберіть дату сесії
+        //подсвечиваем дату когда открываем модалку
+        const weekList = document.querySelectorAll('.week__list button');
+
+        //удаляем всем сласс num_active
+        for (let i = 0; i < weekList.length; i += 1) {
+          if (weekList[i].classList.contains('num_active')) {
+            weekList[i].classList.remove('num_active');
+            break;
+          }
+        }
+
+        //тому у которого совпала дата атрибут с переменной дата, добаволяем класс
+        for (let i = 0; i < weekList.length; i += 1) {
+          if (weekList[i].getAttribute('data-day') === date) {
+            weekList[i].classList.add('num_active');
+            break;
+          }
+        }
+
+        //Оберіть зручний час (за Києвом)
+        //подсвечиваем время когда открываем модалку
+        const chooseTime = document.querySelectorAll('.choose__time button');
+
+        //удаляем всем сласс num_active
+        for (let i = 0; i < chooseTime.length; i += 1) {
+          if (chooseTime[i].classList.contains('active')) {
+            chooseTime[i].classList.remove('active');
+            break;
+          }
+        }
+
+        //тому у которого совпала дата атрибут с переменной дата, добаволяем класс
+        for (let i = 0; i < chooseTime.length; i += 1) {
+          if (chooseTime[i].getAttribute('data-time') === time) {
+            chooseTime[i].classList.add('active');
+            break;
+          }
+        }
       }
 
       //добавляем имя в пустую ячейку
@@ -560,6 +601,47 @@ dropDownListItem.forEach(item => {
 });
 
 /////
+function searchСellInTable(date, time) {
+  const tableTheadDay = document.querySelectorAll(
+    '.work__schedule_exemple [day-month]'
+  );
+
+  let indexDay = null;
+
+  for (let i = 0; i < tableTheadDay.length; i += 1) {
+    if (tableTheadDay[i].getAttribute('day-month') === date) {
+      indexDay = i;
+      break;
+    }
+  }
+
+  const tableTbodyLine = document.querySelectorAll(
+    '.work__schedule_exemple [line]'
+  );
+
+  let trLineTime = null;
+
+  for (let i = 0; i < tableTbodyLine.length; i += 1) {
+    if (tableTbodyLine[i].getAttribute('line') === time) {
+      trLineTime = tableTbodyLine[i];
+      break;
+    }
+  }
+
+  const lineTdTime = trLineTime.querySelectorAll('td[time]');
+
+  let tdTime = null;
+
+  for (let i = 0; i < lineTdTime.length; i += 1) {
+    if (i === indexDay) {
+      tdTime = lineTdTime[i];
+      break;
+    }
+  }
+
+  console.log(date, time);
+  console.log(tdTime);
+}
 /////
 
 //поиск даты в модальном окне Додати сесію
@@ -582,10 +664,12 @@ weekList.addEventListener('click', e => {
 
   const dayMonth = e.target.dataset.day;
   date = dayMonth;
-  console.log(dayMonth);
+  // console.log(date);
 
   const input = add_session__wrap.querySelector('.correct_date .text');
   input.value = `${date}, ${time} - ${time.split(':')[0] + ':50'} за Києвом`;
+
+  searchСellInTable(date, time);
 });
 
 //поиск времени в модальном окне Додати сесію
@@ -606,10 +690,11 @@ chooseTimeBtn.forEach(item => {
 
     const dataTime = e.currentTarget.dataset.time;
     time = dataTime;
-    console.log(dataTime);
 
     const input = add_session__wrap.querySelector('.correct_date .text');
     input.value = `${date}, ${time} - ${time.split(':')[0] + ':50'} за Києвом`;
+
+    searchСellInTable(date, time);
   });
 });
 
