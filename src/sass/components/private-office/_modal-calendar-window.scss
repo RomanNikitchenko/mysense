@@ -87,7 +87,10 @@
     }
 }
 
-.work__schedule_exemple {
+.visually-hidden-modal{
+    visibility: hidden;
+    pointer-events: none;
+    display: none;
     overflow: hidden;
 }
 

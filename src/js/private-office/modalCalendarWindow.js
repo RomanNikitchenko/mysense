@@ -13,7 +13,7 @@ let date = null;
 
 //при загрузки страницы каждой ячейки под ссылкой добавляем карточку.
 href.forEach(item => {
-  const markup = `<div class="table-modal-client visually-hidden">
+  const markup = `<div class="table-modal-client visually-hidden-modal">
                       <div class="table-modal-client__content">
                           <div class="table-modal-client__flex">
                               <div class="table-modal-client__border">
@@ -34,7 +34,7 @@ href.forEach(item => {
                       </div>
                   </div>`;
 
-  const markupConfirmation = `<div class="table-modal-client-action visually-hidden">
+  const markupConfirmation = `<div class="table-modal-client-action visually-hidden-modal">
                                 <div class="table-modal-client-action__content">
                                     <div class="table-modal-client-action__flex">
                                         <div class="table-modal-client-action__border">
@@ -155,14 +155,14 @@ td.forEach(item => {
     );
     date = dateCell.textContent.trim();
 
-    if (!tableModalCent.classList.contains('visually-hidden')) {
-      tableModalCent.classList.add('visually-hidden');
+    if (!tableModalCent.classList.contains('visually-hidden-modal')) {
+      tableModalCent.classList.add('visually-hidden-modal');
       return;
     }
 
     for (let i = 0; i < tableModalClients.length; i += 1) {
-      if (!tableModalClients[i].classList.contains('visually-hidden')) {
-        tableModalClients[i].classList.add('visually-hidden');
+      if (!tableModalClients[i].classList.contains('visually-hidden-modal')) {
+        tableModalClients[i].classList.add('visually-hidden-modal');
         break;
       }
     }
@@ -209,7 +209,7 @@ td.forEach(item => {
           }
         }
 
-        tableModalClientAction.classList.remove('visually-hidden');
+        tableModalClientAction.classList.remove('visually-hidden-modal');
 
         clientActionName.innerHTML = transferName;
         clientActiondata.innerHTML = date;
@@ -228,7 +228,7 @@ td.forEach(item => {
       clientTime.innerHTML = time;
       clientTimeEnd.innerHTML = time.split(':')[0] + ':50';
 
-      tableModalCent.classList.remove('visually-hidden');
+      tableModalCent.classList.remove('visually-hidden-modal');
 
       for (let i = 0; i < href.length; i += 1) {
         if (href[i].classList.contains('href-active')) {
@@ -258,8 +258,8 @@ rescheduleMeeting.forEach(item => {
     ).innerHTML;
 
     for (let i = 0; i < tableModalClients.length; i += 1) {
-      if (!tableModalClients[i].classList.contains('visually-hidden')) {
-        tableModalClients[i].classList.add('visually-hidden');
+      if (!tableModalClients[i].classList.contains('visually-hidden-modal')) {
+        tableModalClients[i].classList.add('visually-hidden-modal');
         break;
       }
     }
@@ -305,8 +305,10 @@ tableModalClientActionBtnConfirm.forEach(item => {
     }
 
     for (let i = 0; i < tableModalClientAction.length; i += 1) {
-      if (!tableModalClientAction[i].classList.contains('visually-hidden')) {
-        tableModalClientAction[i].classList.add('visually-hidden');
+      if (
+        !tableModalClientAction[i].classList.contains('visually-hidden-modal')
+      ) {
+        tableModalClientAction[i].classList.add('visually-hidden-modal');
         break;
       }
     }
@@ -335,8 +337,10 @@ tableModalClientActionBtnUndo.forEach(item => {
     ///
     if (deleteSession) {
       for (let i = 0; i < tableModalClientAction.length; i += 1) {
-        if (!tableModalClientAction[i].classList.contains('visually-hidden')) {
-          tableModalClientAction[i].classList.add('visually-hidden');
+        if (
+          !tableModalClientAction[i].classList.contains('visually-hidden-modal')
+        ) {
+          tableModalClientAction[i].classList.add('visually-hidden-modal');
           break;
         }
       }
@@ -391,8 +395,10 @@ tableModalClientActionBtnUndo.forEach(item => {
     }
 
     for (let i = 0; i < tableModalClientAction.length; i += 1) {
-      if (!tableModalClientAction[i].classList.contains('visually-hidden')) {
-        tableModalClientAction[i].classList.add('visually-hidden');
+      if (
+        !tableModalClientAction[i].classList.contains('visually-hidden-modal')
+      ) {
+        tableModalClientAction[i].classList.add('visually-hidden-modal');
         break;
       }
     }
@@ -439,8 +445,8 @@ tableModalClientBtnDeleteSession.forEach(item => {
       '.table-modal-client-action__time-end'
     );
 
-    tableModalClients.classList.add('visually-hidden');
-    tableModalClientAction.classList.remove('visually-hidden');
+    tableModalClients.classList.add('visually-hidden-modal');
+    tableModalClientAction.classList.remove('visually-hidden-modal');
 
     clientActionName.innerHTML = linkHTML;
     clientActiondata.innerHTML = date;
@@ -550,6 +556,60 @@ dropDownListItem.forEach(item => {
     }
 
     item.classList.add('active');
+  });
+});
+
+/////
+/////
+
+//поиск даты в модальном окне Додати сесію
+const weekList = add_session__wrap.querySelector('.week__list');
+weekList.addEventListener('click', e => {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+
+  const button = weekList.querySelectorAll('button');
+
+  for (let i = 0; i < button.length; i += 1) {
+    if (button[i].classList.contains('num_active')) {
+      button[i].classList.remove('num_active');
+      break;
+    }
+  }
+
+  e.target.classList.add('num_active');
+
+  const dayMonth = e.target.dataset.day;
+  date = dayMonth;
+  console.log(dayMonth);
+
+  const input = add_session__wrap.querySelector('.correct_date .text');
+  input.value = `${date}, ${time} - ${time.split(':')[0] + ':50'} за Києвом`;
+});
+
+//поиск времени в модальном окне Додати сесію
+const chooseTimeBtn = add_session__wrap.querySelectorAll(
+  '.choose__time-body .choose__time-btn'
+);
+
+chooseTimeBtn.forEach(item => {
+  item.addEventListener('click', e => {
+    for (let i = 0; i < chooseTimeBtn.length; i += 1) {
+      if (chooseTimeBtn[i].classList.contains('active')) {
+        chooseTimeBtn[i].classList.remove('active');
+        break;
+      }
+    }
+
+    item.classList.add('active');
+
+    const dataTime = e.currentTarget.dataset.time;
+    time = dataTime;
+    console.log(dataTime);
+
+    const input = add_session__wrap.querySelector('.correct_date .text');
+    input.value = `${date}, ${time} - ${time.split(':')[0] + ':50'} за Києвом`;
   });
 });
 
