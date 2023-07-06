@@ -1,5 +1,5 @@
 main {
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .private-office-section {
@@ -20,7 +20,7 @@ main {
 }
 
 .private-office-section {
-    // padding: 20px 0;
+    padding: 20px 0;
     
     @media screen and (min-width: 744px) {
         padding: 40px 0;
@@ -51,13 +51,13 @@ main {
     z-index: 998;
     opacity: 0;
 
-    transform: translateX(-100%);
+    // transform: translateX(-100%);
     transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, visibility 350ms ease-in-out;
     padding: 30px 0 0;
     background-color: #FFFFFF;
 
     @media screen and (min-width: 744px) {
-        transform: translateX(100%);
+        // transform: translateX(100%);
         opacity: 0;
         padding: 0;
         border-radius: 8px;
@@ -91,7 +91,7 @@ main {
 }
 
 .private-office.is-open {
-    transform: translateX(0);
+    // transform: translateX(0);
     opacity: 1;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06), 0px 10px 20px -8px rgba(0, 0, 0, 0.16);
 }

@@ -1,11 +1,9 @@
 .content__right {
     position: relative;
-    margin-left: 16px;
     width: 850px;
     // overflow-y: auto;
-    @media screen and (max-width: 744px) {
-        margin-left: 0;
-        
+    @media screen and (min-width: 1280px) {
+        margin-left: 16px;
     }
 }
 /*--------------- Мои сессии -------------------------*/
@@ -294,10 +292,10 @@
 .schedule-block_wrap {
     background: #FFFFFF;
     border-radius: 8px;
-    margin: 0 auto;
+    // margin: 0 auto;
     max-width: 850px;
-    overflow-y: auto;
-    height: 646px;
+    // overflow-y: auto;
+    // height: 646px;
 }
 //секция
 .private-office-section.visually-hidden,
@@ -440,6 +438,8 @@ th {
     letter-spacing: -0.05em;
     color: #222B40;
     text-align: center;
+
+    min-width: 105px;
     span {
         font-size: 14px;
         line-height: 140%;
@@ -1089,12 +1089,6 @@ td:not(:last-child) {
     }
 
 }
-.btn-edit {
-}
-.btn-del {
-}
-
-
 
 
 /*--------- Чат контейнер ----------*/
@@ -1439,9 +1433,6 @@ td:not(:last-child) {
     }
 }
 /*-------------- Завдання контейнер -----------------------*/
-.task__body {
-    
-}
 .task__container {
     position: relative;
 }
@@ -2214,9 +2205,6 @@ select {
     }
 }
 /*------------webinars--------------*/
-.meeting__cards-wrap {
-    // margin-bottom: 60px;
-}
 .card__meeting {
     background: rgba(34, 43, 64, 0.05);               
     border-radius: 8px;
@@ -2323,15 +2311,10 @@ select {
 }
 
 /*------------- Профіль ------------------------*/
-
-.edit_profile-body {
-}
 .edit_profile__wrap {
     background: #FFFFFF;
     border-radius: 8px;
     padding: 30px;
-}
-.doc__profile {
 }
 .profile__photo {
     display: grid;
@@ -2789,9 +2772,9 @@ select {
     .schedule-block_wrap {
         max-width: 350px;
     }
-    .work__schedule_exemple {
-        display: none;
-    }
+    // .work__schedule_exemple {
+    //     display: none;
+    // }
     .work__schedule_mobile {
         display: block;
     }
@@ -3026,7 +3009,47 @@ select {
     }
 }
 
+.schedule-block_wrap {
+    overflow: hidden;
+    @media screen and (min-width: 744px) {
+        width: 664px;
+    }
+    @media screen and (min-width: 1280px) {
+        width: 835px;
+    }
+}
 
+.work__schedule_exemple {
+    th {
+        width: 290px;
+        min-width: 290px;
+        @media screen and (max-width: 743px) {
+            border-right: 1px solid transparent;
+            opacity: 0;
+        }
+        @media screen and (min-width: 744px) {
+            width: 85px;
+            min-width: 85px;
+        }
+        @media screen and (min-width: 1280px) {
+            width: 106px;
+            min-width: 105px;
+        }
+    }
+
+    th.empty-cell {
+        width: 60px;
+        min-width: 60px;
+        @media screen and (min-width: 744px) {
+            width: 69px;
+            min-width: 69px;
+        }
+        @media screen and (min-width: 1280px) {
+            width: 100px;
+            min-width: 100px;
+        }
+    }
+}
 
 .visually-hidden {
     visibility: hidden;
