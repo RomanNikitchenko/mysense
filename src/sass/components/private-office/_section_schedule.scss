@@ -411,6 +411,18 @@ th, td {
         letter-spacing: -0.05em;
         color: #222B40;
     }
+    
+    a {
+        width: 50px;
+        display: block;
+        text-align: initial;
+        padding-left: 8px;
+    }
+    
+}
+
+thead th p {
+    display: none;
 }
 .td_active {
     background: #D5CAF9 url('../images/add.png') no-repeat;
@@ -640,7 +652,7 @@ td:not(:last-child) {
     }
 }
 .list__client {
-    padding-bottom: 60px;
+    // padding-bottom: 60px;
     border-bottom: 1px solid rgba(34, 43, 64, 0.1);
     width: 100%;
     margin-bottom: 30px;
@@ -769,6 +781,11 @@ td:not(:last-child) {
     button {
         border: none;
         background: none;
+        cursor: pointer;
+
+        &:hover {
+            background: #1d263b0d;
+        }
     }
 }
 .week__list {
@@ -800,16 +817,29 @@ td:not(:last-child) {
         border-radius: 20px;
         padding: 7px 10px;
         background: transparent;
+        cursor: pointer;
+
+        &:hover {
+            background: rgba(34, 43, 64, 0.05);
+        }
     }
-    .num_active {
-        background: #795BDA;
-        color: #fff; 
+
+    button.num_active {
+        &:hover {
+            background: #795BDA;
+                color: #fff;
+        }
     }
     .no_active {
         color: rgba(34, 43, 64, 0.3);
     }
+
     .weekend {
         color: rgba(255, 92, 141, 0.5);
+    }
+    .num_active {
+        background: #795BDA;
+        color: #fff; 
     }
 }
 
@@ -849,6 +879,7 @@ td:not(:last-child) {
     width: 100%;
     padding: 6px 0;
     cursor: pointer;
+
     span {
         font-weight: 500;
         font-size: 14px;
@@ -856,6 +887,7 @@ td:not(:last-child) {
         letter-spacing: -0.05em;
         color: #222B40;
     }
+
     &:focus {
         background: rgba(121, 91, 218, 0.1);
         span {
@@ -864,6 +896,14 @@ td:not(:last-child) {
     }
 
 }
+
+.choose__time-btn.active {
+    background: rgba(121, 91, 218, 0.1);
+    span {
+        color: #795BDA;
+    }
+}
+
 /*----------------------------------------------------------------------------------------------*/
 /*--------------- Чат, Нотатки, Завдання -------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------------*/
