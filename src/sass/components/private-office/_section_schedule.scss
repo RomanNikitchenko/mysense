@@ -411,6 +411,18 @@ th, td {
         letter-spacing: -0.05em;
         color: #222B40;
     }
+    
+    a {
+        width: 50px;
+        display: block;
+        text-align: initial;
+        padding-left: 8px;
+    }
+    
+}
+
+thead th p {
+    display: none;
 }
 .td_active {
     background: #D5CAF9 url('../images/add.png') no-repeat;

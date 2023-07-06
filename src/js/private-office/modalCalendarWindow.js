@@ -2,7 +2,12 @@ const td = document.querySelectorAll('.work__schedule_exemple td');
 const href = document.querySelectorAll('.work__schedule_exemple td a');
 const add_session__wrap = document.querySelector('.add_session__wrap');
 
-import ourTeam4Desktop2x from '../../images/darina.png';
+import imagesDarinaPng from '../../images/darina.png';
+import imagesYarikPng from '../../images/yarik.png';
+import imagesKamilaPng from '../../images/kamila.png';
+import imagesMariyaPng from '../../images/mariya.png';
+import imagesYarinaPng from '../../images/yarina.png';
+
 let disabled = false;
 let disabledAction = false;
 let transferName = null;
@@ -17,7 +22,7 @@ href.forEach(item => {
                       <div class="table-modal-client__content">
                           <div class="table-modal-client__flex">
                               <div class="table-modal-client__border">
-                                  <img class="private-office__image" src="${ourTeam4Desktop2x}" alt="Фото Дарина Приходько" />
+                                  <img class="private-office__image" src="${imagesDarinaPng}" alt="Фото Дарина Приходько" />
                               </div>
                               <p class="table-modal-client__name">Дарина<br> Приходько</p>
                           </div>
@@ -38,7 +43,7 @@ href.forEach(item => {
                                 <div class="table-modal-client-action__content">
                                     <div class="table-modal-client-action__flex">
                                         <div class="table-modal-client-action__border">
-                                            <img class="private-office-action__image" src="${ourTeam4Desktop2x}" alt="Фото Дарина Приходько" />
+                                            <img class="private-office-action__image" src="${imagesDarinaPng}" alt="Фото Дарина Приходько" />
                                         </div>
                                         <p class="table-modal-client-action__name">Дарина<br> Приходько</p>
                                     </div>
@@ -113,6 +118,8 @@ td.forEach(item => {
     const tableModalCent = e.currentTarget.querySelector('.table-modal-client');
 
     /////
+    const clientImage = tableModalCent.querySelector('.private-office__image');
+
     const clientName = tableModalCent.querySelector(
       '.table-modal-client__name'
     );
@@ -131,6 +138,9 @@ td.forEach(item => {
       '.table-modal-client-action'
     );
 
+    const clientActionImage = tableModalCent.querySelector(
+      '.private-office-action__image'
+    );
     const clientActionName = tableModalClientAction.querySelector(
       '.table-modal-client-action__name'
     );
@@ -264,6 +274,24 @@ td.forEach(item => {
     }
 
     if (!disabled) {
+      console.log('!disabled');
+
+      //меняем изображение в модалки в зависимости от контента в ячейки
+      if (link.textContent === 'Дарина Приходько')
+        clientImage.src = `${imagesDarinaPng}`;
+
+      if (link.textContent === 'Ярослав Науменко')
+        clientImage.src = `${imagesYarikPng}`;
+
+      if (link.textContent === 'Каміла Айс')
+        clientImage.src = `${imagesKamilaPng}`;
+
+      if (link.textContent === 'Марія Соловій')
+        clientImage.src = `${imagesMariyaPng}`;
+
+      if (link.textContent === 'Ярина Перекотиполе')
+        clientImage.src = `${imagesYarinaPng}`;
+
       clientName.innerHTML = linkContentHTML;
       clientdata.innerHTML = date;
       clientTime.innerHTML = time;
@@ -539,7 +567,6 @@ edit.addEventListener('click', () => {
   const chooseTime = add_session__wrap.querySelector('.choose__time');
 
   if (!toggle) {
-    console.log('false');
     chooseDay.style.display = 'block';
     chooseTime.style.display = 'block';
     toggle = true;
@@ -547,7 +574,6 @@ edit.addEventListener('click', () => {
   }
 
   if (toggle) {
-    console.log('true');
     chooseDay.style.display = 'none';
     chooseTime.style.display = 'none';
     toggle = false;
@@ -641,6 +667,9 @@ function searchСellInTable(date, time) {
 
   console.log(date, time);
   console.log(tdTime);
+  console.log(tdTime.querySelector('a').getAttribute('id'));
+
+  selectedTableCell = tdTime.querySelector('a').getAttribute('id');
 }
 /////
 
