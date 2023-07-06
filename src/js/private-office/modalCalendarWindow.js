@@ -33,7 +33,7 @@ href.forEach(item => {
                               <li class="table-modal-client__item">Час <span><span class="table-modal-client__time">11:00</span> - <span class="table-modal-client__time-end">11:50</span></span></li>
                           </ul>
 
-                          <button class="table-modal-client__btn" type="button">Дивитись анкету</button>
+                          <button class="table-modal-client__btn table-modal-client__view-profile" type="button">Дивитись анкету</button>
                           <button class="table-modal-client__btn table-modal-client__reschedule-meeting" type="button">Перенести</button>
                           <button class="table-modal-client__btn table-modal-client__btn-delete-session" type="button">Скасувати сессію</button>
                       </div>
@@ -138,7 +138,7 @@ td.forEach(item => {
       '.table-modal-client-action'
     );
 
-    const clientActionImage = tableModalCent.querySelector(
+    const clientActionImage = tableModalClientAction.querySelector(
       '.private-office-action__image'
     );
     const clientActionName = tableModalClientAction.querySelector(
@@ -261,6 +261,21 @@ td.forEach(item => {
         }
 
         tableModalClientAction.classList.remove('visually-hidden-modal');
+
+        if (link.textContent === 'Дарина Приходько')
+          clientActionImage.src = `${imagesDarinaPng}`;
+
+        if (link.textContent === 'Ярослав Науменко')
+          clientActionImage.src = `${imagesYarikPng}`;
+
+        if (link.textContent === 'Каміла Айс')
+          clientActionImage.src = `${imagesKamilaPng}`;
+
+        if (link.textContent === 'Марія Соловій')
+          clientActionImage.src = `${imagesMariyaPng}`;
+
+        if (link.textContent === 'Ярина Перекотиполе')
+          clientActionImage.src = `${imagesYarinaPng}`;
 
         clientActionName.innerHTML = transferName;
         clientActiondata.innerHTML = date;
@@ -744,4 +759,38 @@ planSession.addEventListener('click', () => {
   }
 
   add_session__wrap.style.display = 'none';
+});
+
+//можно вынести в другой файл
+///открыть модально екно дывытысь анкету
+const viewProfileBtn = document.querySelectorAll(
+  '.table-modal-client__view-profile'
+);
+
+const infoCardClient = document.querySelector('.info-card__client-wrapper');
+
+//по клику открыть модальное окно и записать инфу
+viewProfileBtn.forEach(item => {
+  item.addEventListener('click', e => {
+    const content = e.currentTarget.parentNode;
+
+    const img = content.querySelector('.private-office__image').src;
+    const name = content.querySelector('.table-modal-client__name').textContent;
+
+    const infoNameImg = infoCardClient.querySelector('.info-name__img');
+    const infoNameClient = infoCardClient.querySelector('.info-name__client');
+
+    infoNameImg.src = img;
+    infoNameClient.textContent = name;
+
+    infoCardClient.classList.remove('visually-hidden');
+  });
+});
+
+//скрыть модалку по бекдропу
+infoCardClient.addEventListener('click', e => {
+  if (e.currentTarget !== e.target) {
+    return;
+  }
+  infoCardClient.classList.add('visually-hidden');
 });
