@@ -3036,8 +3036,8 @@ select {
         width: 290px;
         min-width: 290px;
         @media screen and (max-width: 743px) {
-            // border-right: 1px solid transparent;
-            // opacity: 0;
+            border-right: 1px solid transparent;
+            opacity: 0;
         }
         @media screen and (min-width: 744px) {
             width: 85px;
@@ -3068,6 +3068,70 @@ select {
             display: none;
         }
     }
+}
+
+.switch-days-week__list {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    top: 81px;
+    @media screen and (min-width: 744px) {
+        visibility: hidden;
+        pointer-events: none;
+        overflow: hidden;
+        display: none;
+    }
+}
+
+.switch-days-week__btn {
+    color: #222B40;
+    font-family: Golos Text;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.72px;
+    border-radius: 100px;
+    background-color: rgba(34, 43, 64, 0.05);
+    border: 1px solid transparent;
+    padding: 8px;
+    margin: 0;
+    height: 32px;
+    min-width: 32px;
+}
+
+.switch-days-week__btn.is-active {
+    background: #795BDA;
+    color: #FFF;
+    min-width: 95px;
+}
+
+.switch-days-week__day-month {
+    color: rgba(255, 255, 255, 0.40);
+    font-family: Golos Text;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.6px;
+    margin-left: 8px;
+    display: none;
+}
+
+.switch-days-week__btn.is-active .switch-days-week__day-month {
+    display: inline;
+}
+
+.work__schedule-date .work__schedule-date--first-day-week,
+.work__schedule-date .work__schedule-date--last-day-week {
+    color: #222B40;
+    font-family: Golos Text;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: -0.84px;
 }
 
 .visually-hidden {

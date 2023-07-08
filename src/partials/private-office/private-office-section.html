@@ -207,7 +207,7 @@
                     <div class="work__schedule-controls">
                         <div class="controls__wrap">
                             <div class="work__schedule-date">
-                                <span>3 квітня</span> - <span>9 квітня</span>
+                                <span class="work__schedule-date--first-day-week">3 квітня</span> - <span class="work__schedule-date--last-day-week">9 квітня</span>
                             </div>
                             <div class="work__schedule-arrows">
                                 <button class="btn__schedule btn__back-page-table">
@@ -221,73 +221,127 @@
                         <button class="list__btn">Спискок</button>
                     </div>
 
+                    <ul class="switch-days-week switch-days-week__list">
+                        <li class="switch-days-week__item">
+                            <button type="button" class="switch-days-week__btn is-active">
+                                Пн
+                                <span class="switch-days-week__day-month"></span>
+                            </button>
+                        </li>
+                        <li class="switch-days-week__item">
+                            <button type="button" class="switch-days-week__btn">
+                                Вт
+                                <span class="switch-days-week__day-month"></span>
+                            </button>
+                        </li>
+                        <li class="switch-days-week__item">
+                            <button type="button" class="switch-days-week__btn">
+                                Ср
+                                <span class="switch-days-week__day-month"></span>
+                            </button>
+                        </li>
+                        <li class="switch-days-week__item">
+                            <button type="button" class="switch-days-week__btn">
+                                Чт
+                                <span class="switch-days-week__day-month"></span>
+                            </button>
+                        </li>
+                        <li class="switch-days-week__item">
+                            <button type="button" class="switch-days-week__btn">
+                                Пт
+                                <span class="switch-days-week__day-month"></span>
+                            </button>
+                        </li>
+                        <li class="switch-days-week__item">
+                            <button type="button" class="switch-days-week__btn">
+                                Сб
+                                <span class="switch-days-week__day-month"></span>
+                            </button>
+                        </li>
+                        <li class="switch-days-week__item">
+                            <button type="button" class="switch-days-week__btn">
+                                Нд
+                                <span class="switch-days-week__day-month"></span>
+                            </button>
+                        </li>
+                    </ul>
+
                     <!-- <div class="table-wrap"> -->
                         <table class="work__schedule_exemple">
                             <thead>
                                 <tr>
                                     <!-- 1 неделя -->
-                                    <th class="empty-cell"></th>
-                                    <th day-month="3 липня, 2023">Понеділок<br><span>3 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="4 липня, 2023">Вівторок<br><span>4 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="5 липня, 2023">Середа<br><span>5 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="6 липня, 2023">Четвер<br><span>6 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="7 липня, 2023">П'ятниця<br><span>7 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="8 липня, 2023">Субота<br><span>8 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="9 липня, 2023">Неділя<br><span>9 липня<p>, 2023</p></span></th>
+                                    
+                                        <th class="empty-cell"></th>
+                                        <th day-month="3 липня, 2023">Понеділок<br><span>3 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="4 липня, 2023">Вівторок<br><span>4 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="5 липня, 2023">Середа<br><span>5 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="6 липня, 2023">Четвер<br><span>6 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="7 липня, 2023">П'ятниця<br><span>7 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="8 липня, 2023">Субота<br><span>8 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="9 липня, 2023">Неділя<br><span>9 липня<p>, 2023</p></span></th>
+                                    
                         
                                     <!-- 2 неделя -->
-                                    <th class="empty-cell"></th>
-                                    <th day-month="10 липня, 2023">Понеділок<br><span>10 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="11 липня, 2023">Вівторок<br><span>11 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="12 липня, 2023">Середа<br><span>12 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="13 липня, 2023">Четвер<br><span>13 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="14 липня, 2023">П'ятниця<br><span>14 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="15 липня, 2023">Субота<br><span>15 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="16 липня, 2023">Неділя<br><span>16 липня<p>, 2023</p></span></th>
-                        
+                                    
+                                        <th class="empty-cell"></th>
+                                        <th day-month="10 липня, 2023">Понеділок<br><span>10 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="11 липня, 2023">Вівторок<br><span>11 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="12 липня, 2023">Середа<br><span>12 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="13 липня, 2023">Четвер<br><span>13 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="14 липня, 2023">П'ятниця<br><span>14 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="15 липня, 2023">Субота<br><span>15 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="16 липня, 2023">Неділя<br><span>16 липня<p>, 2023</p></span></th>
+                                    
+
                                     <!-- 3 неделя -->
-                                    <th class="empty-cell"></th>
-                                    <th day-month="17 липня, 2023">Понеділок<br><span>17 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="18 липня, 2023">Вівторок<br><span>18 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="19 липня, 2023">Середа<br><span>19 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="20 липня, 2023">Четвер<br><span>20 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="21 липня, 2023">П'ятниця<br><span>21 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="22 липня, 2023">Субота<br><span>22 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="23 липня, 2023">Неділя<br><span>23 липня<p>, 2023</p></span></th>
-                        
+                                    
+                                        <th class="empty-cell"></th>
+                                        <th day-month="17 липня, 2023">Понеділок<br><span>17 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="18 липня, 2023">Вівторок<br><span>18 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="19 липня, 2023">Середа<br><span>19 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="20 липня, 2023">Четвер<br><span>20 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="21 липня, 2023">П'ятниця<br><span>21 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="22 липня, 2023">Субота<br><span>22 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="23 липня, 2023">Неділя<br><span>23 липня<p>, 2023</p></span></th>
+                                    
+
                                     <!-- 4 неделя -->
-                                    <th class="empty-cell"></th>
-                                    <th day-month="24 липня, 2023">Понеділок<br><span>24 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="25 липня, 2023">Вівторок<br><span>25 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="26 липня, 2023">Середа<br><span>26 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="27 липня, 2023">Четвер<br><span>27 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="28 липня, 2023">П'ятниця<br><span>28 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="29 липня, 2023">Субота<br><span>29 липня<p>, 2023</p></span></th>
-                                    <th class="empty-cell empty-cell-mobile"></th>
-                                    <th day-month="30 липня, 2023">Неділя<br><span>30 липня<p>, 2023</p></span></th>
+                                    
+                                        <th class="empty-cell"></th>
+                                        <th day-month="24 липня, 2023">Понеділок<br><span>24 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="25 липня, 2023">Вівторок<br><span>25 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="26 липня, 2023">Середа<br><span>26 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="27 липня, 2023">Четвер<br><span>27 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="28 липня, 2023">П'ятниця<br><span>28 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="29 липня, 2023">Субота<br><span>29 липня<p>, 2023</p></span></th>
+                                        <th class="empty-cell empty-cell-mobile"></th>
+                                        <th day-month="30 липня, 2023">Неділя<br><span>30 липня<p>, 2023</p></span></th>
+                                    
+
                                 </tr>
                             </thead>
                             <tbody>

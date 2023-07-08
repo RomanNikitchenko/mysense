@@ -73,6 +73,7 @@ p {
 .social-networks-list,
 .hero-section__list,
 .table-modal-client__list,
-.drop-down-list {
+.drop-down-list,
+.switch-days-week__list {
   @extend %list;
 }

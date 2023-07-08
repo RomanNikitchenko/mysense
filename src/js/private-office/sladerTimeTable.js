@@ -1,133 +1,109 @@
-//перемещение таблицы по стрелачкам в перед назад
 (() => {
-  //перемещение таблицы по стрелачкам в перед назад
+  // Перемещение таблицы по стрелкам вперед и назад
   const btnNextPageTable = document.querySelector('.btn__next-page-table');
   const btnBackPageTable = document.querySelector('.btn__back-page-table');
   const table = document.querySelector('.work__schedule_exemple');
+  const dayMonthElements = Array.from(table.querySelectorAll('th[day-month]')); // Выбираем все элементы заголовков с атрибутом day-month
+  const switchDayMonthElements = Array.from(
+    document.querySelectorAll('.switch-days-week__day-month')
+  );
 
-  let page = 1;
+  let page = 0;
+  let translateX = 0;
   let width = window.innerWidth;
+  let weeks = [];
+  let firstDayWeek = '';
+  let lastDayWeek = '';
+
+  const breakpoints = {
+    desktop: -835,
+    tablet: -664,
+    mobile: -2450,
+  };
+
+  //получаем массив недель
+  for (let i = 0; i < dayMonthElements.length; i += 7) {
+    const week = dayMonthElements.slice(i, i + 7);
+    weeks.push(week);
+  }
+
+  //перезаписываем недели в элементах switch-days-week__day-month
+  function switchWeeks() {
+    for (let i = 0; i < weeks[page].length; i += 1) {
+      const dayMonth = weeks[page][i].getAttribute('day-month');
+      const parts = dayMonth.split(','); // Разделяем строку на части по запятой
+      const formattedDayMonth = parts[0].trim(); // Получаем первую часть и удаляем лишние пробелы
+      switchDayMonthElements[i].innerHTML = formattedDayMonth;
+
+      if (i === 0) {
+        firstDayWeek = formattedDayMonth;
+      }
+      if (i === 6) {
+        lastDayWeek = formattedDayMonth;
+      }
+    }
+  }
+
+  function overwriteDateHeader() {
+    const firstDay = document.querySelector(
+      '.work__schedule-date--first-day-week'
+    );
+    const lastDay = document.querySelector(
+      '.work__schedule-date--last-day-week'
+    );
+
+    firstDay.textContent = firstDayWeek;
+    lastDay.textContent = lastDayWeek;
+  }
+
+  //сбрассываем настройки при загрузки страницы и при изменени брекпоита
+  function resetStorage() {
+    width = window.innerWidth;
+    page = 1;
+    translateX = getTranslateX();
+    table.style.transform = `translateX(${translateX}px)`;
+    switchWeeks();
+    overwriteDateHeader();
+  }
+
+  const pages = Math.ceil(dayMonthElements.length / 7);
 
   btnNextPageTable.addEventListener('click', () => {
-    if (width >= 1280) {
-      if (page === 1) {
-        table.style.transform = `translateX(${-835 * page}px)`;
-      }
-      if (page === 2) {
-        table.style.transform = `translateX(${-835 * page}px)`;
-      }
-      if (page === 3) {
-        table.style.transform = `translateX(${-835 * page}px)`;
-        return;
-      }
-
+    if (page < pages - 1) {
       page += 1;
-      return;
-    }
-
-    if (width >= 744) {
-      if (page === 1) {
-        table.style.transform = `translateX(${-664 * page}px)`;
-      }
-      if (page === 2) {
-        table.style.transform = `translateX(${-664 * page}px)`;
-      }
-      if (page === 3) {
-        table.style.transform = `translateX(${-664 * page}px)`;
-        return;
-      }
-
-      page += 1;
-      return;
-    }
-
-    if (width < 744) {
-      if (page === 1) {
-        table.style.transform = `translateX(${-2450 * page}px)`;
-      }
-      if (page === 2) {
-        table.style.transform = `translateX(${-2450 * page}px)`;
-      }
-      if (page === 3) {
-        table.style.transform = `translateX(${-2450 * page}px)`;
-        return;
-      }
-
-      page += 1;
-      return;
+      translateX = getTranslateX();
+      table.style.transform = `translateX(${translateX}px)`;
+      switchWeeks();
+      overwriteDateHeader();
     }
   });
 
   btnBackPageTable.addEventListener('click', () => {
-    if (width >= 1280) {
-      if (page === 1) {
-        table.style.transform = `translateX(0px)`;
-        return;
-      }
-      if (page === 2) {
-        table.style.transform = `translateX(-835px)`;
-      }
-      if (page === 3) {
-        table.style.transform = `translateX(-1670px)`;
-      }
-
+    if (page > 0) {
       page -= 1;
-      return;
-    }
-
-    if (width >= 744) {
-      if (page === 1) {
-        table.style.transform = `translateX(0px)`;
-        return;
-      }
-      if (page === 2) {
-        table.style.transform = `translateX(-664px)`;
-      }
-      if (page === 3) {
-        table.style.transform = `translateX(-1328px)`;
-      }
-
-      page -= 1;
-      return;
-    }
-
-    if (width < 744) {
-      if (page === 1) {
-        table.style.transform = `translateX(0px)`;
-        return;
-      }
-      if (page === 2) {
-        table.style.transform = `translateX(-2450px)`;
-      }
-      if (page === 3) {
-        table.style.transform = `translateX(-4900px)`;
-      }
-
-      page -= 1;
-      return;
+      translateX = getTranslateX();
+      table.style.transform = `translateX(${translateX}px)`;
+      switchWeeks();
+      overwriteDateHeader();
     }
   });
 
-  function resetStorage() {
-    page = 1;
-    width = window.innerWidth;
-    table.style.transform = `translateX(0px)`;
+  function getTranslateX() {
+    const currentBreakpoint = getCurrentBreakpoint();
+    return breakpoints[currentBreakpoint] * page;
   }
 
-  window.matchMedia('(min-width: 1280px)').addEventListener('change', e => {
-    if (!e.matches) return;
-    resetStorage();
-  });
+  function getCurrentBreakpoint() {
+    if (width >= 1280) {
+      return 'desktop';
+    } else if (width >= 744) {
+      return 'tablet';
+    } else {
+      return 'mobile';
+    }
+  }
 
-  window
-    .matchMedia('(min-width: 744px) and (max-width: 1279px)')
-    .addEventListener('change', e => {
-      if (!e.matches) return;
-      resetStorage();
-    });
+  window.addEventListener('resize', resetStorage);
 
-  window.matchMedia('(max-width: 743px)').addEventListener('change', e => {
-    if (!e.matches) return;
-    resetStorage();
-  });
+  resetStorage();
 })();
