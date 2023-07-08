@@ -3010,7 +3010,9 @@ select {
 }
 
 .schedule-block_wrap {
+    position: relative;
     overflow: hidden;
+    // overflow-y: auto;
     @media screen and (min-width: 744px) {
         width: 664px;
     }
@@ -3019,13 +3021,23 @@ select {
     }
 }
 
+// .table-wrap {
+//     width: 100%;
+//     min-height: 100%;
+//     margin: auto;
+// }
+
 .work__schedule_exemple {
+    position: relative;
+    transform: translateX(0);
+    transition: transform 250ms ease-in-out;
+
     th {
         width: 290px;
         min-width: 290px;
         @media screen and (max-width: 743px) {
-            border-right: 1px solid transparent;
-            opacity: 0;
+            // border-right: 1px solid transparent;
+            // opacity: 0;
         }
         @media screen and (min-width: 744px) {
             width: 85px;
@@ -3047,6 +3059,13 @@ select {
         @media screen and (min-width: 1280px) {
             width: 100px;
             min-width: 100px;
+        }
+    }
+
+    .empty-cell-mobile,
+    .cell__time-mibile {
+        @media screen and (min-width: 744px) {
+            display: none;
         }
     }
 }
