@@ -764,11 +764,16 @@ td:not(:last-child) {
     background: #F3F3F3;
     border-radius: 10px;
     padding: 20px;
+    padding-top: 10px;
     margin-top: 20px;
+    margin-bottom: 30px;
+    overflow: hidden;
 }
 .month-controls {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
 }
 .month {
     font-weight: 500;
@@ -818,6 +823,12 @@ td:not(:last-child) {
         padding: 7px 10px;
         background: transparent;
         cursor: pointer;
+
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
             background: rgba(34, 43, 64, 0.05);
@@ -3133,6 +3144,23 @@ select {
     font-weight: 600;
     line-height: 100%;
     letter-spacing: -0.84px;
+}
+
+.month-list {
+    display: flex;
+    position: relative;
+    transform: translateX(0);
+    transition: transform 250ms ease-in-out
+}
+
+.month-list__item {
+    min-width: 420px;
+    margin-right: 20px;
+}
+
+.controls__btn-back,
+.controls__btn-next {
+    padding: 10px;
 }
 
 .visually-hidden {

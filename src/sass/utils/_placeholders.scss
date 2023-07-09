@@ -74,6 +74,7 @@ p {
 .hero-section__list,
 .table-modal-client__list,
 .drop-down-list,
-.switch-days-week__list {
+.switch-days-week__list,
+.month-list {
   @extend %list;
 }

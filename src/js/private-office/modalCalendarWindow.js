@@ -12,6 +12,7 @@ let disabled = false;
 let disabledAction = false;
 let transferName = null;
 let selectedTableCell = null;
+let idTransferCell = null;
 let deleteSession = false;
 let time = null;
 let date = null;
@@ -243,9 +244,53 @@ td.forEach(item => {
         }
       }
 
+      if (disabledAction) {
+        console.log('отмена');
+
+        const modal = document.querySelectorAll('.table-modal-client-action');
+
+        for (let i = 0; i < modal.length; i += 1) {
+          if (!modal[i].classList.contains('visually-hidden-modal')) {
+            modal[i].classList.add('visually-hidden-modal');
+            break;
+          }
+        }
+
+        for (let i = 0; i < href.length; i += 1) {
+          if (href[i].classList.contains('disabled')) {
+            href[i].classList.remove('disabled');
+          }
+        }
+
+        for (let i = 0; i < href.length; i += 1) {
+          if (href[i].classList.contains('href-active')) {
+            href[i].classList.remove('href-active');
+          }
+        }
+
+        deleteSession = false;
+        disabled = false;
+        disabledAction = false;
+
+        for (let i = 0; i < href.length; i += 1) {
+          if (href[i].getAttribute('id') === idTransferCell) {
+            href[i].innerHTML = '';
+            break;
+          }
+        }
+
+        for (let i = 0; i < href.length; i += 1) {
+          if (href[i].getAttribute('id') === selectedTableCell) {
+            href[i].innerHTML = transferName;
+            break;
+          }
+        }
+
+        addSession();
+      }
+
       //добавляем имя в пустую ячейку
       if (disabled) {
-        console.log('dont-add-session');
         if (disabledAction) return;
 
         link.innerHTML = transferName;
@@ -283,6 +328,9 @@ td.forEach(item => {
         clientActionTimeEnd.innerHTML = time.split(':')[0] + ':50';
 
         disabledAction = true;
+
+        //id ячейки в которую хотим перезаписать имя перед потверждением или отменой
+        idTransferCell = e.currentTarget.querySelector('a').getAttribute('id');
       }
 
       return;
@@ -416,55 +464,16 @@ const tableModalClientActionBtnUndo = document.querySelectorAll(
   '.table-modal-client-action__btn-undo'
 );
 
-tableModalClientActionBtnUndo.forEach(item => {
-  item.addEventListener('click', e => {
-    ///
-    if (deleteSession) {
-      for (let i = 0; i < tableModalClientAction.length; i += 1) {
-        if (
-          !tableModalClientAction[i].classList.contains('visually-hidden-modal')
-        ) {
-          tableModalClientAction[i].classList.add('visually-hidden-modal');
-          break;
-        }
-      }
-
-      for (let i = 0; i < href.length; i += 1) {
-        if (href[i].classList.contains('disabled')) {
-          href[i].classList.remove('disabled');
-        }
-      }
-
-      for (let i = 0; i < href.length; i += 1) {
-        if (href[i].classList.contains('href-active')) {
-          href[i].classList.remove('href-active');
-        }
-      }
-
-      deleteSession = false;
-      disabled = false;
-      disabledAction = false;
-
-      addSession();
-      return;
-    }
-
-    ///
-    const link =
-      e.currentTarget.parentNode.parentNode.parentNode.querySelector('a');
-    const linkHTML =
-      e.currentTarget.parentNode.parentNode.parentNode.querySelector(
-        'a'
-      ).innerHTML;
-
-    for (let i = 0; i < href.length; i += 1) {
-      if (href[i].getAttribute('id') === selectedTableCell) {
-        href[i].innerHTML = linkHTML;
+const undoAction = e => {
+  if (deleteSession) {
+    for (let i = 0; i < tableModalClientAction.length; i += 1) {
+      if (
+        !tableModalClientAction[i].classList.contains('visually-hidden-modal')
+      ) {
+        tableModalClientAction[i].classList.add('visually-hidden-modal');
         break;
       }
     }
-
-    link.innerHTML = '';
 
     for (let i = 0; i < href.length; i += 1) {
       if (href[i].classList.contains('disabled')) {
@@ -478,20 +487,60 @@ tableModalClientActionBtnUndo.forEach(item => {
       }
     }
 
-    for (let i = 0; i < tableModalClientAction.length; i += 1) {
-      if (
-        !tableModalClientAction[i].classList.contains('visually-hidden-modal')
-      ) {
-        tableModalClientAction[i].classList.add('visually-hidden-modal');
-        break;
-      }
-    }
-
+    deleteSession = false;
     disabled = false;
     disabledAction = false;
 
     addSession();
-  });
+    return;
+  }
+
+  ///
+  const link =
+    e.currentTarget.parentNode.parentNode.parentNode.querySelector('a');
+  const linkHTML =
+    e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+      'a'
+    ).innerHTML;
+
+  for (let i = 0; i < href.length; i += 1) {
+    if (href[i].getAttribute('id') === selectedTableCell) {
+      href[i].innerHTML = linkHTML;
+      break;
+    }
+  }
+
+  link.innerHTML = '';
+
+  for (let i = 0; i < href.length; i += 1) {
+    if (href[i].classList.contains('disabled')) {
+      href[i].classList.remove('disabled');
+    }
+  }
+
+  for (let i = 0; i < href.length; i += 1) {
+    if (href[i].classList.contains('href-active')) {
+      href[i].classList.remove('href-active');
+    }
+  }
+
+  for (let i = 0; i < tableModalClientAction.length; i += 1) {
+    if (
+      !tableModalClientAction[i].classList.contains('visually-hidden-modal')
+    ) {
+      tableModalClientAction[i].classList.add('visually-hidden-modal');
+      break;
+    }
+  }
+
+  disabled = false;
+  disabledAction = false;
+
+  addSession();
+};
+
+tableModalClientActionBtnUndo.forEach(item => {
+  item.addEventListener('click', undoAction);
 });
 
 //кнопка удалить сеанс
@@ -503,19 +552,25 @@ tableModalClientBtnDeleteSession.forEach(item => {
   item.addEventListener('click', e => {
     const link =
       e.currentTarget.parentNode.parentNode.parentNode.querySelector('a');
+
     const linkHTML =
       e.currentTarget.parentNode.parentNode.parentNode.querySelector(
         'a'
       ).innerHTML;
+
     const tableModalClients =
       e.currentTarget.parentNode.parentNode.parentNode.querySelector(
         '.table-modal-client'
       );
+
     const tableModalClientAction =
       e.currentTarget.parentNode.parentNode.parentNode.querySelector(
         '.table-modal-client-action'
       );
 
+    const clientActionImage = tableModalClientAction.querySelector(
+      '.private-office-action__image'
+    );
     const clientActionName = tableModalClientAction.querySelector(
       '.table-modal-client-action__name'
     );
@@ -528,6 +583,21 @@ tableModalClientBtnDeleteSession.forEach(item => {
     const clientActionTimeEnd = tableModalClientAction.querySelector(
       '.table-modal-client-action__time-end'
     );
+
+    if (link.textContent === 'Дарина Приходько')
+      clientActionImage.src = `${imagesDarinaPng}`;
+
+    if (link.textContent === 'Ярослав Науменко')
+      clientActionImage.src = `${imagesYarikPng}`;
+
+    if (link.textContent === 'Каміла Айс')
+      clientActionImage.src = `${imagesKamilaPng}`;
+
+    if (link.textContent === 'Марія Соловій')
+      clientActionImage.src = `${imagesMariyaPng}`;
+
+    if (link.textContent === 'Ярина Перекотиполе')
+      clientActionImage.src = `${imagesYarinaPng}`;
 
     tableModalClients.classList.add('visually-hidden-modal');
     tableModalClientAction.classList.remove('visually-hidden-modal');
@@ -688,33 +758,31 @@ function searchСellInTable(date, time) {
 }
 /////
 
+//////
 //поиск даты в модальном окне Додати сесію
-const weekList = add_session__wrap.querySelector('.week__list');
-weekList.addEventListener('click', e => {
-  if (e.target.nodeName !== 'BUTTON') {
-    return;
-  }
+const weekList = document.querySelectorAll('.week__list button');
 
-  const button = weekList.querySelectorAll('button');
-
-  for (let i = 0; i < button.length; i += 1) {
-    if (button[i].classList.contains('num_active')) {
-      button[i].classList.remove('num_active');
-      break;
+weekList.forEach(item => {
+  item.addEventListener('click', () => {
+    for (let i = 0; i < weekList.length; i += 1) {
+      if (weekList[i].classList.contains('num_active')) {
+        weekList[i].classList.remove('num_active');
+        break;
+      }
     }
-  }
 
-  e.target.classList.add('num_active');
+    item.classList.add('num_active');
 
-  const dayMonth = e.target.dataset.day;
-  date = dayMonth;
-  // console.log(date);
+    const dayMonth = item.dataset.day;
+    date = dayMonth;
 
-  const input = add_session__wrap.querySelector('.correct_date .text');
-  input.value = `${date}, ${time} - ${time.split(':')[0] + ':50'} за Києвом`;
+    const input = add_session__wrap.querySelector('.correct_date .text');
+    input.value = `${date}, ${time} - ${time.split(':')[0] + ':50'} за Києвом`;
 
-  searchСellInTable(date, time);
+    searchСellInTable(date, time);
+  });
 });
+//////
 
 //поиск времени в модальном окне Додати сесію
 const chooseTimeBtn = add_session__wrap.querySelectorAll(
