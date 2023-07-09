@@ -3076,6 +3076,7 @@ select {
     position: absolute;
     width: 100%;
     top: 81px;
+    z-index: 1;
     @media screen and (min-width: 744px) {
         visibility: hidden;
         pointer-events: none;

@@ -4,6 +4,7 @@
   const btnBackPageTable = document.querySelector('.btn__back-page-table');
   const table = document.querySelector('.work__schedule_exemple');
   const dayMonthElements = Array.from(table.querySelectorAll('th[day-month]')); // Выбираем все элементы заголовков с атрибутом day-month
+  const switchDaysWeekBtn = document.querySelectorAll('.switch-days-week__btn');
   const switchDayMonthElements = Array.from(
     document.querySelectorAll('.switch-days-week__day-month')
   );
@@ -56,6 +57,15 @@
     lastDay.textContent = lastDayWeek;
   }
 
+  function removeClass(array) {
+    for (let i = 0; i < array.length; i += 1) {
+      if (array[i].classList.contains('is-active')) {
+        array[i].classList.remove('is-active');
+        break;
+      }
+    }
+  }
+
   //сбрассываем настройки при загрузки страницы и при изменени брекпоита
   function resetStorage() {
     width = window.innerWidth;
@@ -64,6 +74,8 @@
     table.style.transform = `translateX(${translateX}px)`;
     switchWeeks();
     overwriteDateHeader();
+    removeClass(switchDaysWeekBtn);
+    switchDaysWeekBtn[0].classList.add('is-active');
   }
 
   const pages = Math.ceil(dayMonthElements.length / 7);
@@ -75,6 +87,8 @@
       table.style.transform = `translateX(${translateX}px)`;
       switchWeeks();
       overwriteDateHeader();
+      removeClass(switchDaysWeekBtn);
+      switchDaysWeekBtn[0].classList.add('is-active');
     }
   });
 
@@ -85,6 +99,8 @@
       table.style.transform = `translateX(${translateX}px)`;
       switchWeeks();
       overwriteDateHeader();
+      removeClass(switchDaysWeekBtn);
+      switchDaysWeekBtn[0].classList.add('is-active');
     }
   });
 
@@ -106,4 +122,18 @@
   window.addEventListener('resize', resetStorage);
 
   resetStorage();
+
+  //перключения по дням недели в кобилки
+  switchDaysWeekBtn.forEach((item, i) => {
+    item.addEventListener('click', () => {
+      let nextWeek = -350;
+      let distanceNextWeek = nextWeek * i;
+
+      removeClass(switchDaysWeekBtn);
+
+      item.classList.add('is-active');
+
+      table.style.transform = `translateX(${distanceNextWeek + translateX}px)`;
+    });
+  });
 })();
