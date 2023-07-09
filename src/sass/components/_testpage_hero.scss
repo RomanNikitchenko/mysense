@@ -196,6 +196,7 @@
     margin: 0 5px;
 }
 .fixed__button-prew {
+    width: 46px;
     &:hover {
         cursor: pointer;
         background: rgba(121, 91, 218, 0.2);
@@ -210,7 +211,6 @@
     }
 }
 
-.icon-fixed-arrow-prew,
 .icon-fixed-arrow-next,
 .icon-fixed-arrow-load-more {
     margin-left: 9px;
@@ -326,11 +326,8 @@
     }
 }
 
-
 .icon-fixed-arrow-prew {
     margin: 0;
     padding: 0;
-    @media screen and (min-width:744px) {
-        margin-right: 9px;
-    }
+    
 }

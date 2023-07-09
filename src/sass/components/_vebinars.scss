@@ -116,7 +116,7 @@
     flex-direction: column;
     justify-content: space-between;
     border-left: 1px solid rgba(34, 43, 64, 0.1);
-    margin-left: 280px;
+    margin-left: 260px;
 }
 .meeting__spicer {
     span {
@@ -285,7 +285,7 @@
         width: 550px;
     }
 }
-@media screen and (max-width: 744px) {
+@media screen and (max-width: 743px) {
     .card__meeting {
         background: #fff;
         max-width: 350px;
