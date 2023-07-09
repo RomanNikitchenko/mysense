@@ -13,3 +13,5 @@ import './private-office/clientsListOpenRecords';
 import './private-office/logout';
 import './private-office/checkLoggedIn';
 import './private-office/modalCalendarWindow';
+import './private-office/sladerTimeTable';
+import './private-office/addSessionWeekMonthSlider';
