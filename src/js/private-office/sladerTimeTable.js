@@ -123,7 +123,7 @@
 
   resetStorage();
 
-  //перключения по дням недели в кобилки
+  //перключения по дням недели в breakpoints mobile
   switchDaysWeekBtn.forEach((item, i) => {
     item.addEventListener('click', () => {
       let nextWeek = -350;
