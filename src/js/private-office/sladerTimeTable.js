@@ -119,9 +119,23 @@
     }
   }
 
-  window.addEventListener('resize', resetStorage);
+  // в случае изменения ориентации устройства.
+  window.matchMedia('(min-width: 1280px)').addEventListener('change', e => {
+    if (!e.matches) return;
+    resetStorage();
+  });
 
-  resetStorage();
+  window
+    .matchMedia('(min-width: 744px) and (max-width: 1279px)')
+    .addEventListener('change', e => {
+      if (!e.matches) return;
+      resetStorage();
+    });
+
+  window.matchMedia('(max-width: 743px)').addEventListener('change', e => {
+    if (!e.matches) return;
+    resetStorage();
+  });
 
   //перключения по дням недели в breakpoints mobile
   switchDaysWeekBtn.forEach((item, i) => {

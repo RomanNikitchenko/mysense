@@ -456,6 +456,7 @@ tableModalClientActionBtnConfirm.forEach(item => {
     disabledAction = false;
 
     addSession();
+    findAllRegisteredClientsSession();
   });
 });
 
@@ -827,6 +828,8 @@ planSession.addEventListener('click', () => {
   }
 
   add_session__wrap.style.display = 'none';
+
+  findAllRegisteredClientsSession();
 });
 
 //можно вынести в другой файл
@@ -862,3 +865,57 @@ infoCardClient.addEventListener('click', e => {
   }
   infoCardClient.classList.add('visually-hidden');
 });
+
+//создаем массив всех клиентов записанных в таблицу
+const theadDayMonth = document.querySelectorAll('[day-month]');
+
+let registeredClients = [];
+
+function findAllRegisteredClientsSession() {
+  registeredClients = [];
+
+  for (let i = 0; i < href.length; i += 1) {
+    if (href[i].textContent !== '') {
+      let idСlient = href[i].getAttribute('id');
+      let nameСlient = href[i].textContent;
+      let link = href[i].parentNode.parentNode;
+      let timeСlient = link.getAttribute('line');
+      let lineDataСlient = link.querySelectorAll('a');
+      let indexDataСlient;
+
+      lineDataСlient.forEach((item, i) => {
+        if (item.getAttribute('id') === idСlient) {
+          return (indexDataСlient = i);
+        }
+      });
+
+      let DataСlient = theadDayMonth[indexDataСlient].getAttribute('day-month');
+
+      //находим изображение
+      let imgСlient = '';
+      if (nameСlient === 'Дарина Приходько') imgСlient = `${imagesDarinaPng}`;
+
+      if (nameСlient === 'Ярослав Науменко') imgСlient = `${imagesYarikPng}`;
+
+      if (nameСlient === 'Каміла Айс') imgСlient = `${imagesKamilaPng}`;
+
+      if (nameСlient === 'Марія Соловій') imgСlient = `${imagesMariyaPng}`;
+
+      if (nameСlient === 'Ярина Перекотиполе') imgСlient = `${imagesYarinaPng}`;
+
+      const user = {
+        id: idСlient,
+        name: nameСlient,
+        img: imgСlient,
+        time: timeСlient,
+        data: DataСlient,
+      };
+
+      registeredClients.push(user);
+    }
+  }
+
+  console.log(registeredClients);
+}
+
+findAllRegisteredClientsSession();
