@@ -1,3 +1,5 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 const td = document.querySelectorAll('.work__schedule_exemple td');
 const href = document.querySelectorAll('.work__schedule_exemple td a');
 const add_session__wrap = document.querySelector('.add_session__wrap');
@@ -456,6 +458,7 @@ tableModalClientActionBtnConfirm.forEach(item => {
     disabledAction = false;
 
     addSession();
+    findAllRegisteredClientsSession();
   });
 });
 
@@ -820,6 +823,11 @@ planSession.addEventListener('click', () => {
 
   for (let i = 0; i < href.length; i += 1) {
     if (href[i].getAttribute('id') === selectedTableCell) {
+      if (href[i].textContent !== '') {
+        Notify.warning('ця дата вже зайнята');
+        return;
+      }
+
       href[i].innerHTML = text.innerHTML;
       href[i].parentNode.classList.remove('add-session');
       break;
@@ -827,6 +835,8 @@ planSession.addEventListener('click', () => {
   }
 
   add_session__wrap.style.display = 'none';
+
+  findAllRegisteredClientsSession();
 });
 
 //можно вынести в другой файл
@@ -837,6 +847,7 @@ const viewProfileBtn = document.querySelectorAll(
 
 const infoCardClient = document.querySelector('.info-card__client-wrapper');
 
+/////
 //по клику открыть модальное окно и записать инфу
 viewProfileBtn.forEach(item => {
   item.addEventListener('click', e => {
@@ -862,3 +873,136 @@ infoCardClient.addEventListener('click', e => {
   }
   infoCardClient.classList.add('visually-hidden');
 });
+
+//создаем массив всех клиентов записанных в таблицу
+const theadDayMonth = document.querySelectorAll('[day-month]');
+const gallery = document.querySelector('.mysession__main-list');
+
+let registeredClients = [];
+
+function findAllRegisteredClientsSession() {
+  registeredClients = [];
+
+  for (let i = 0; i < href.length; i += 1) {
+    if (href[i].textContent !== '') {
+      let idСlient = href[i].getAttribute('id');
+      let nameСlient = href[i].textContent;
+      let link = href[i].parentNode.parentNode;
+      let timeСlient = link.getAttribute('line');
+      let lineDataСlient = link.querySelectorAll('a');
+      let indexDataСlient;
+
+      lineDataСlient.forEach((item, i) => {
+        if (item.getAttribute('id') === idСlient) {
+          return (indexDataСlient = i);
+        }
+      });
+
+      let DataСlient = theadDayMonth[indexDataСlient].getAttribute('day-month');
+
+      //находим изображение
+      let imgСlient = '';
+      if (nameСlient === 'Дарина Приходько') imgСlient = `${imagesDarinaPng}`;
+
+      if (nameСlient === 'Ярослав Науменко') imgСlient = `${imagesYarikPng}`;
+
+      if (nameСlient === 'Каміла Айс') imgСlient = `${imagesKamilaPng}`;
+
+      if (nameСlient === 'Марія Соловій') imgСlient = `${imagesMariyaPng}`;
+
+      if (nameСlient === 'Ярина Перекотиполе') imgСlient = `${imagesYarinaPng}`;
+
+      const user = {
+        id: idСlient,
+        name: nameСlient,
+        img: imgСlient,
+        date: DataСlient,
+        time: timeСlient,
+      };
+
+      registeredClients.push(user);
+    }
+  }
+
+  registeredClients.sort(function (a, b) {
+    var dateA = parseDateTime(a.date, a.time);
+    var dateB = parseDateTime(b.date, b.time);
+    return dateA - dateB;
+  });
+
+  //получаем массив обектов
+  console.log(registeredClients);
+
+  function conversionTime(time) {
+    return time.split(':')[0] + ':50';
+  }
+
+  function removeYearFromDate(date) {
+    return date.split(',')[0];
+  }
+
+  const personListBody = registeredClients
+    .map(
+      ({ id, name, img, date, time }) =>
+        `
+        <div person-id=${id} class="person-list__body">
+            <div class="mysession__person-name">
+                <img src=${img} alt="img ${name}">
+                <h3>${name}</h3>
+            </div>
+            <div class="mysession__person-info">
+                <ul class="info-person__list">
+                    <li>50 хвилин</li>
+                    <li>Особиста</li>
+                    <li>${removeYearFromDate(date)}</li>
+                    <li>${conversionTime(time)}</li>
+                </ul>
+            </div>
+            <div class="mysession__person-edit">
+                <button class="person-info-button"><div class="icon-square person_icons"></div></button>
+                <button><div class="icon-edit person_icons"></div></button>
+                <button><div class="icon-del person_icons"></div></button>
+            </div>
+        </div>
+      `
+    )
+    .join('');
+
+  gallery.innerHTML = personListBody;
+}
+
+//Для сортировки объектов в массиве по дате и времени в формате "4 липня, 2023" и "8:00"
+// Функция для преобразования строки даты и времени в объект Date
+function parseDateTime(dateStr, timeStr) {
+  var dateParts = dateStr.split(' ');
+  var day = parseInt(dateParts[0], 10);
+  var month = getMonthIndex(dateParts[1]);
+  var year = parseInt(dateParts[2], 10);
+
+  var timeParts = timeStr.split(':');
+  var hours = parseInt(timeParts[0], 10);
+  var minutes = parseInt(timeParts[1], 10);
+
+  return new Date(year, month, day, hours, minutes);
+}
+
+function getMonthIndex(monthStr) {
+  var months = [
+    'січня',
+    'лютого',
+    'березня',
+    'квітня',
+    'травня',
+    'червня',
+    'липня',
+    'серпня',
+    'вересня',
+    'жовтня',
+    'листопада',
+    'грудня',
+  ];
+  return months.indexOf(monthStr);
+}
+
+findAllRegisteredClientsSession();
+/////
