@@ -137,6 +137,8 @@
     resetStorage();
   });
 
+  resetStorage();
+
   //перключения по дням недели в breakpoints mobile
   switchDaysWeekBtn.forEach((item, i) => {
     item.addEventListener('click', () => {
