@@ -853,6 +853,7 @@ viewProfileBtn.forEach(item => {
   item.addEventListener('click', e => {
     const content = e.currentTarget.parentNode;
 
+    const body = document.querySelector('body');
     const img = content.querySelector('.private-office__image').src;
     const name = content.querySelector('.table-modal-client__name').textContent;
 
@@ -863,6 +864,7 @@ viewProfileBtn.forEach(item => {
     infoNameClient.textContent = name;
 
     infoCardClient.classList.remove('visually-hidden');
+    body.classList.toggle('modal-is-open');
   });
 });
 
@@ -871,7 +873,9 @@ infoCardClient.addEventListener('click', e => {
   if (e.currentTarget !== e.target) {
     return;
   }
+  const body = document.querySelector('body');
   infoCardClient.classList.add('visually-hidden');
+  body.classList.toggle('modal-is-open');
 });
 
 //создаем массив всех клиентов записанных в таблицу
@@ -961,7 +965,7 @@ function findAllRegisteredClientsSession() {
             <div class="mysession__person-edit">
                 <button class="person-info-button"><div class="icon-square person_icons"></div></button>
                 <button><div class="icon-edit person_icons"></div></button>
-                <button><div class="icon-del person_icons"></div></button>
+                <button class="remove-client-from-list"><div class="icon-del person_icons"></div></button>
             </div>
         </div>
       `
@@ -969,6 +973,7 @@ function findAllRegisteredClientsSession() {
     .join('');
 
   gallery.innerHTML = personListBody;
+  updateEventListener();
 }
 
 //Для сортировки объектов в массиве по дате и времени в формате "4 липня, 2023" и "8:00"
@@ -1004,5 +1009,60 @@ function getMonthIndex(monthStr) {
   return months.indexOf(monthStr);
 }
 
+/////
 findAllRegisteredClientsSession();
 /////
+
+/////
+function updateEventListener() {
+  const body = document.querySelector('body');
+  const open = document.querySelectorAll('.person-info-button');
+  const btnRemoveClientFromList = document.querySelectorAll(
+    '.remove-client-from-list'
+  );
+
+  const findUser = e => {
+    let personId =
+      e.currentTarget.parentNode.parentNode.getAttribute('person-id');
+    return registeredClients.find(item => item.id === personId);
+  };
+
+  //открыть модально окно Загальна інформація в списке пользователей
+  const openModal = e => {
+    infoCardClient.classList.remove('visually-hidden');
+    body.classList.add('modal-is-open');
+    const { id, name, img, date, time } = findUser(e);
+    console.log(id, name, img, date, time);
+
+    const infoNameImg = infoCardClient.querySelector('.info-name__img');
+    const infoNameClient = infoCardClient.querySelector('.info-name__client');
+
+    infoNameImg.src = img;
+    infoNameClient.textContent = name;
+  };
+
+  open.forEach(item => {
+    item.addEventListener('click', openModal);
+  });
+  //
+
+  //удалить пользователя из списка и таблицы
+  const RemoveClient = e => {
+    const { id } = findUser(e);
+
+    for (let i = 0; i < href.length; i += 1) {
+      if (href[i].getAttribute('id') === id) {
+        href[i].innerHTML = '';
+        href[i].parentNode.classList.add('add-session');
+        break;
+      }
+    }
+
+    findAllRegisteredClientsSession();
+  };
+
+  btnRemoveClientFromList.forEach(item => {
+    item.addEventListener('click', RemoveClient);
+  });
+  //
+}

@@ -1,9 +1,11 @@
 (() => {
   const body = document.querySelector('body');
   const open = document.querySelectorAll('.person-info-button');
+
   const infoCardClientWrapper = document.querySelector(
     '.info-card__client-wrapper'
   );
+
   const close = document.querySelector('.close');
 
   const toggleMenu = e => {
