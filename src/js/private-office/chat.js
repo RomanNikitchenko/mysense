@@ -21,6 +21,16 @@
 
   const dataSwitchButton = document.querySelectorAll('[data-switch-button]');
 
+  const clientsSession = document.querySelector('.clients__session');
+
+  const clientsSessionWrap = document.querySelector('.clients__session-wrap');
+
+  const plusBtn = document.querySelector('.plus_btn');
+  const btnEdit = document.querySelector('.btn-edit');
+  const btnDel = document.querySelector('.btn-del');
+
+  let width = window.innerWidth;
+
   //chat switcher
   function chatSwitcher(element) {
     for (let i = 0; i < btnChatCorrespondence.length; i++) {
@@ -35,22 +45,36 @@
   }
 
   btnChatApp.addEventListener('click', e => {
+    width = window.innerWidth;
     chatContainerMysense.style.display = 'block';
     chatContainer.style.display = 'none';
 
     notesBody.classList.add('visually-hidden');
     taskBody.classList.add('visually-hidden');
     chatBody.classList.remove('visually-hidden');
-    // clientsSwitchBtns.style.display = 'none';
 
     chatSwitcher(e.currentTarget);
+
+    dataSwitchButton[0].parentNode.style.display = 'none';
+    clientsSession.style.display = 'none';
+    plusBtn.style.display = 'none';
+    btnEdit.style.display = 'none';
+    btnDel.style.display = 'none';
+
+    clientsSwitchBtns.style.borderBottom = 'none';
+    clientsSwitchBtns.style.padding = '0';
+
+    if (width < 744) {
+      console.log('qw');
+      clientsSessionWrap.style.padding = '14px 10px';
+    }
   });
 
   btnChatCorrespondence.forEach(item => {
     item.addEventListener('click', () => {
+      width = window.innerWidth;
       chatContainerMysense.style.display = 'none';
       chatContainer.style.display = 'block';
-      clientsSwitchBtns.style.display = 'flex';
       chatSwitcher(item);
 
       for (let i = 0; i < dataSwitchButton.length; i++) {
@@ -60,11 +84,25 @@
         }
       }
 
+      dataSwitchButton[0].parentNode.style.display = 'flex';
       dataSwitchButton[0].classList.add('btn_active-chat');
 
       notesBody.classList.add('visually-hidden');
       taskBody.classList.add('visually-hidden');
       chatBody.classList.remove('visually-hidden');
+
+      clientsSession.style.display = 'block';
+      plusBtn.style.display = 'flex';
+      btnEdit.style.display = 'flex';
+      btnDel.style.display = 'flex';
+
+      clientsSwitchBtns.style.borderBottom = '1px solid #222b401a';
+      clientsSwitchBtns.style.padding = '12px 0';
+
+      if (width < 744) {
+        console.log('qw');
+        clientsSessionWrap.style.padding = '0 10px 14px';
+      }
     });
   });
 })();
