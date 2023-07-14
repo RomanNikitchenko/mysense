@@ -15,3 +15,4 @@ import './private-office/checkLoggedIn';
 import './private-office/modalCalendarWindow';
 import './private-office/sladerTimeTable';
 import './private-office/addSessionWeekMonthSlider';
+import './private-office/chat';

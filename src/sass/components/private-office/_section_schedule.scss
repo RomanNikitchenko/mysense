@@ -945,6 +945,7 @@ td:not(:last-child) {
             border-bottom: 1px solid rgba(34, 43, 64, 0.1);
             cursor: pointer;
             width: 100%;
+
             &:hover, &:focus {
                 background: rgba(121, 91, 218, 0.1);
                 border-bottom: 1px solid transparent;
@@ -954,6 +955,19 @@ td:not(:last-child) {
                 span {
                     color: #795BDA;
                 }
+            }
+        }
+
+        button.active {
+            background: rgba(121, 91, 218, 0.1);
+            border-bottom: 1px solid transparent;
+        
+            img {
+                border: 2px solid #795BDA;
+            }
+        
+            span {
+                color: #795BDA;
             }
         }
         img {
