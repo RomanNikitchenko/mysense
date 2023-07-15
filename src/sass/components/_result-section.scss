@@ -337,13 +337,14 @@
 //js
 .result__container {
     position: relative;
-    padding-bottom: 530px;
+    // padding-bottom: 530px;
+    min-height: 650px;
     overflow: hidden;
     @media screen and (min-width: 744px) {
-        padding-bottom: 780px;
+        min-height: 860px;
     }
     @media screen and (min-width: 1280px) {
-        padding-bottom: 360px;
+        min-height: 440px;
     }
 }
 
