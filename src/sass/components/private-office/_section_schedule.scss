@@ -2637,6 +2637,21 @@ select {
 /*================================================================================================*/
 
 @media screen and (max-width:1280px) {
+    .content__right {
+        width: 664px;
+    }
+    .cell__time {
+        font-size: 12px;
+    }
+    th {
+        font-size: 12px;
+        min-width: 80px;
+        span {
+            font-size: 12px; 
+            font-weight: 600;
+        }
+    }
+
     .right-block__content {
         width: 456px;
     }
@@ -2942,9 +2957,29 @@ select {
     }
     .work__schedule_2-mobile {
         display: block;
+        width: 350px;
+        overflow-x: scroll;
+        th {
+            min-width: 50px;
+            font-size: 12px;
+            span {
+                font-weight: 600;
+                color: #222B40;
+            }
+        }
+    }
+    .bottom_block__grafik {
+        flex-direction: column-reverse;
+        align-items: self-start;
+        width: 350px;
+        .edit__grafik {
+            margin-top: 20px;
+            width: 160px;
+        }
     }
     .two__select {
         flex-wrap: wrap;
+        flex-direction: column;
     }
     .lessons {
         margin-left: 0;
