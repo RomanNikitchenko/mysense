@@ -88,6 +88,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
   /////
   const fixedButtonNext = document.querySelector('.fixed__button-next');
+  const fixedButtonNextText = fixedButtonNext.querySelector(
+    '.fixed__button-next__text'
+  );
 
   fixedButtonNext.addEventListener('click', async () => {
     if (disabled) {
@@ -141,6 +144,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
           lang,
           cost
         );
+        console.log('family');
+        fixedButtonNextText.textContent = 'Обрати психолога';
         return;
       }
       if (child) {
@@ -155,6 +160,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
           lang,
           cost
         );
+        console.log('child');
+        fixedButtonNextText.textContent = 'Обрати психолога';
         return;
       }
     }
@@ -172,6 +179,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
           lang,
           cost
         );
+        console.log('myself');
+        fixedButtonNextText.textContent = 'Обрати психолога';
         return;
       }
       if (family) {
@@ -264,6 +273,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         sectionCost.classList.add('visually-hidden');
         toggleActiveClass(testLine, sectionConsern, 1);
         await getFilterChange([...psychiatristFor, ...consern]);
+        console.log('family beck');
+        fixedButtonNextText.textContent = 'Далі';
         return;
       }
       if (child) {
@@ -277,6 +288,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         sectionCost.classList.add('visually-hidden');
         toggleActiveClass(testLine, sectionCategory, 1);
         await getFilterChange([...psychiatristFor, ...category]);
+        console.log('child beck');
+        fixedButtonNextText.textContent = 'Далі';
         return;
       }
     }
@@ -289,6 +302,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
         sectionLang.classList.add('visually-hidden');
         sectionCost.classList.add('visually-hidden');
         await getFilterChange([...psychiatristFor, ...myState, ...myRequests]);
+        console.log('myself beck');
+        fixedButtonNextText.textContent = 'Далі';
         return;
       }
       if (family) {

@@ -904,7 +904,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 30px 10px;
-    overflow-x: scroll;
+    // overflow-x: scroll;
 }
 .days {
     display: flex;
@@ -918,13 +918,36 @@
     &:hover {
         cursor: pointer;
     }
-    &:focus {
+
+    // &:focus {
+    //     background: #795BDA;
+    //     color: #fff;
+    //     padding: 8px 16px;
+    //     .num__day, .day__week {
+    //         color: #fff;
+    //     }
+    //     .day {
+    //         display: none;
+    //     }
+    //     .show-month {
+    //         display: block;
+    //     }
+    // }
+
+    &.active {
         background: #795BDA;
         color: #fff;
         padding: 8px 16px;
-        .num__day, .day__week {
+    
+        .num__day,
+        .day__week {
             color: #fff;
         }
+    
+        .day {
+            display: none;
+        }
+    
         .show-month {
             display: block;
         }
@@ -989,6 +1012,13 @@
         span {
             color: #795BDA;
         }
+    }
+    &.active {
+        background: rgba(121, 91, 218, 0.1);
+        
+            span {
+                color: #795BDA;
+            }
     }
 }
 /*----- not hours -----*/
