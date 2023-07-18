@@ -156,8 +156,97 @@
     .speaker__img {
         display: flex;
     }
+    .speaker__title-block {
+        h2 {
+            font-size: 32px;
+            line-height: 34px;
+        }
+        h3 {
+            font-size: 32px;
+            line-height: 34px;
+        }
+    }
+    .speaker__info {
+        .advantages_item {
+            width: 205px;
+            height: 136px;
+            margin: 0 10px 10px 20px;
+        }
+        .advantages_item:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .speaker__info {
+        .speaker__img {
+            max-width: 443px;
+            height: 427px;
+            
+        }
+    }
+    .speaker__description {
+        margin-top: 50px;
+    }
 }
 
 @media screen and (max-width: 743.98px) {
+    .speaker__title-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        h3 {
+            a {
+                margin-left: 47px;
+                display: none;
+            }
+        }
+    }
+    .speaker__info {
+        .speaker__img {
+            width: 344px;
+            height: 378px;
+            img {
+                border-radius: 8px;
+            }
+        }
+    }
+    .speaker__description {
+        margin-top: 20px;
+        width: 355px;
+    }
+    .speaker__info {
+        .speaker__img {
+            .speaker__advantages-tablet {
+                display: none;
+            }
+        }
+    }
+    .speaker__info {
+        .speaker__advantages {
+            display: flex;
+            justify-content: space-between;
+            margin-left: -5px;
+            max-width: 344px;
+        }
+        .advantages_item {
+            width: 110px;
+            height: auto;
+            margin: 4px;
+            padding: 14px;
+            p {
+                width: 94px;
+                font-size: 12px;
+            }
+        }
+        .work_themes {
+            .theme__list {
+                flex-wrap: wrap;
+                li {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
 
 }
