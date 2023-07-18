@@ -911,15 +911,16 @@
     align-items: center;
     justify-content: center;
     height: 32px;
-    // margin: 2px;
-
     background: rgba(34, 43, 64, 0.05);
-    // padding: 8px 16px;
     border-radius: 15px;
     border: none;
     min-width: 104px;
     &:hover {
         cursor: pointer;
+    }
+
+    &:not(:last-child) {
+        margin-right: 4px;
     }
 
     // &:focus {
@@ -2451,6 +2452,7 @@ color: #795BDA;
     @media screen and (min-width: 1280px) {
         min-width: 776px;
         padding: 0;
+        overflow-x: visible;
     }
 
     &:not(:last-child) {

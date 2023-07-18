@@ -16,10 +16,15 @@ function formatDate(date) {
 // Функция создания кнопки для дня недели
 function createDayButton(day, active = false) {
   const button = document.createElement('button');
+
   button.classList.add('days');
   if (active) {
     button.classList.add('active');
   }
+
+  const dateLabel = `${formatDate(day)}, ${day.getFullYear()}`;
+  button.setAttribute('aria-label', dateLabel);
+
   button.innerHTML = `
     <span class="day__week">${
       weekDays[day.getDay() === 0 ? 6 : day.getDay() - 1]
@@ -29,6 +34,7 @@ function createDayButton(day, active = false) {
       <span class="show-month">${formatDate(day)}</span>
     </div>
   `;
+
   return button;
 }
 
@@ -50,6 +56,7 @@ function updateCalendar() {
 
   // Создаем кнопки для каждой недели
   let tempDate = new Date(startWeekDate);
+  let currentDayButton; // Переменная для хранения кнопки текущего дня
   while (tempDate <= endWeekDate) {
     const currentWeek = [];
     for (let i = 0; i < 7; i++) {
@@ -61,135 +68,19 @@ function updateCalendar() {
     weekContainer.classList.add('week');
 
     currentWeek.forEach(day => {
-      const button = createDayButton(day);
+      const active = day.toDateString() === currentDate.toDateString(); // Проверка текущего дня
+      const button = createDayButton(day, active);
+      if (active) {
+        currentDayButton = button; // Установка ссылки на кнопку текущего дня
+      }
       weekContainer.appendChild(button);
     });
 
     weeksContainer.appendChild(weekContainer);
   }
+
+  currentDayButton.classList.add('active'); // Добавление класса 'active' к текущей кнопке дня
 }
 
 // Инициализация календаря
 updateCalendar();
-
-//клик по кнопке
-const days = document.querySelectorAll('.days');
-
-days.forEach(item => {
-  item.addEventListener('click', () => {
-    days.forEach(e => {
-      if (e.classList.contains('active')) {
-        e.classList.remove('active');
-        return;
-      }
-    });
-
-    item.classList.add('active');
-  });
-});
-
-///
-///
-
-(() => {
-  // по стрелкам вперед и назад
-  const btnScheduleNext = document.querySelector('.btn__schedule:last-child');
-  const btnScheduleBack = document.querySelector('.btn__schedule:first-child');
-  const workScheduleWeeks = document.querySelector('.work__schedule-weeks');
-  const week = workScheduleWeeks.querySelectorAll('.week');
-
-  const workScheduleDateSpanLastChild = document.querySelector(
-    '.work__schedule-date span:last-child'
-  );
-  const workScheduleDateSpanFirstChild = document.querySelector(
-    '.work__schedule-date span:first-child'
-  );
-
-  let page = 4;
-  let width = window.innerWidth;
-  let translateX = 0;
-
-  const breakpoints = {
-    desktop: -808,
-    tablet: -468,
-    mobile: -382,
-  };
-
-  const pages = week.length;
-
-  btnScheduleNext.addEventListener('click', () => {
-    if (page < pages - 1) {
-      page += 1;
-      translateX = getTranslateX();
-      workScheduleWeeks.style.transform = `translateX(${translateX}px)`;
-      overwriteDateHeader();
-    }
-  });
-
-  btnScheduleBack.addEventListener('click', () => {
-    if (page > 0) {
-      page -= 1;
-      translateX = getTranslateX();
-      workScheduleWeeks.style.transform = `translateX(${translateX}px)`;
-      overwriteDateHeader();
-    }
-  });
-
-  function resetStorage() {
-    page = 4;
-    translateX = getTranslateX();
-    workScheduleWeeks.style.transform = `translateX(${translateX}px)`;
-    overwriteDateHeader();
-  }
-
-  resetStorage();
-
-  function getTranslateX() {
-    const currentBreakpoint = getCurrentBreakpoint();
-    return breakpoints[currentBreakpoint] * page;
-  }
-
-  function getCurrentBreakpoint() {
-    if (width >= 1280) {
-      return 'desktop';
-    } else if (width >= 744) {
-      return 'tablet';
-    } else {
-      return 'mobile';
-    }
-  }
-
-  function overwriteDateHeader() {
-    const firstDayWeek = week[page]
-      .querySelectorAll('.days')[0]
-      .querySelector('.show-month').textContent;
-
-    const lastDayWeek = week[page]
-      .querySelectorAll('.days')[6]
-      .querySelector('.show-month').textContent;
-
-    workScheduleDateSpanFirstChild.textContent = firstDayWeek;
-    workScheduleDateSpanLastChild.textContent = lastDayWeek;
-  }
-
-  // в случае изменения ориентации устройства.
-  window.matchMedia('(min-width: 1280px)').addEventListener('change', e => {
-    if (!e.matches) return;
-    width = window.innerWidth;
-    resetStorage();
-  });
-
-  window
-    .matchMedia('(min-width: 744px) and (max-width: 1279px)')
-    .addEventListener('change', e => {
-      if (!e.matches) return;
-      width = window.innerWidth;
-      resetStorage();
-    });
-
-  window.matchMedia('(max-width: 743px)').addEventListener('change', e => {
-    if (!e.matches) return;
-    width = window.innerWidth;
-    resetStorage();
-  });
-})();
