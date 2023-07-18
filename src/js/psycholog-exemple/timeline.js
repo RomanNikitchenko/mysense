@@ -1,19 +1,10 @@
+//календарь на 9 недель
 // Получаем элементы DOM
 const scheduleDate = document.querySelector('.work__schedule-date');
-const prevButton = document.querySelector('.btn__schedule:first-child');
-const nextButton = document.querySelector('.btn__schedule:last-child');
 const weeksContainer = document.querySelector('.work__schedule-weeks');
 
-// Массив сокращенных названий дней недели
+// Массив сокращенных названий дней недели на украинском языке
 const weekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
-
-// Установка текущей даты и диапазона недели
-const currentDate = new Date(); // Текущая дата
-const currentDay = currentDate.getDay(); // Номер текущего дня недели
-const startDate = new Date(currentDate);
-startDate.setDate(startDate.getDate() - currentDay + 1); // Начало текущей недели (понедельник)
-const endDate = new Date(startDate);
-endDate.setDate(endDate.getDate() + 6); // Конец текущей недели (воскресенье)
 
 // Функция форматирования даты с украинской локализацией
 function formatDate(date) {
@@ -22,89 +13,74 @@ function formatDate(date) {
   return ukrainianLocale.format(date);
 }
 
+// Функция создания кнопки для дня недели
+function createDayButton(day, active = false) {
+  const button = document.createElement('button');
+
+  button.classList.add('days');
+  if (active) {
+    button.classList.add('active');
+  }
+
+  const dateLabel = `${formatDate(day)}, ${day.getFullYear()}`;
+  button.setAttribute('aria-label', dateLabel);
+
+  button.innerHTML = `
+    <span class="day__week">${
+      weekDays[day.getDay() === 0 ? 6 : day.getDay() - 1]
+    }</span>
+    <div class="num__day">
+      <p class="day">${day.getDate()}</p>
+      <span class="show-month">${formatDate(day)}</span>
+    </div>
+  `;
+
+  return button;
+}
+
 // Функция обновления календаря
 function updateCalendar() {
-  scheduleDate.innerHTML = `${formatDate(startDate)} - ${formatDate(endDate)}`;
-
   // Очищаем контейнер с неделями
   weeksContainer.innerHTML = '';
 
-  // Определяем текущую неделю
-  const currentWeek = [];
-  const tempDate = new Date(startDate);
+  // Установка диапазона недель
+  const currentDate = new Date(); // Текущая дата
+  const startWeekDate = new Date(currentDate);
+  startWeekDate.setDate(
+    startWeekDate.getDate() - ((startWeekDate.getDay() + 6) % 7) - 28
+  ); // Начало первой отображаемой недели (4 прошлые недели)
+  const endWeekDate = new Date(currentDate);
+  endWeekDate.setDate(
+    endWeekDate.getDate() + 28 - ((endWeekDate.getDay() + 6) % 7)
+  ); // Конец последней отображаемой недели (4 следующие недели)
 
-  // Добавляем дни текущей недели в массив currentWeek
-  while (tempDate <= endDate) {
-    currentWeek.push(new Date(tempDate)); // Используем новый объект даты, чтобы избежать изменений оригинальной даты
-    tempDate.setDate(tempDate.getDate() + 1);
-  }
+  // Создаем кнопки для каждой недели
+  let tempDate = new Date(startWeekDate);
+  let currentDayButton; // Переменная для хранения кнопки текущего дня
+  while (tempDate <= endWeekDate) {
+    const currentWeek = [];
+    for (let i = 0; i < 7; i++) {
+      currentWeek.push(new Date(tempDate));
+      tempDate.setDate(tempDate.getDate() + 1);
+    }
 
-  // Создаем кнопки для каждого дня текущей недели
-  for (let day of currentWeek) {
-    const button = document.createElement('button');
-    button.classList.add('days');
-    button.innerHTML = `
-      <span class="day__week">${
-        weekDays[day.getDay() === 0 ? 6 : day.getDay() - 1]
-      }</span>
-      <div class="num__day">
-        <p class="day">${day.getDate()}</p>
-        <span class="show-month">${formatDate(day)}</span>
-      </div>
-    `;
+    const weekContainer = document.createElement('div');
+    weekContainer.classList.add('week');
 
-    weeksContainer.appendChild(button);
-  }
-}
-
-function updateElements() {
-  const days = document.querySelectorAll('.days');
-
-  days.forEach(item => {
-    item.addEventListener('click', () => {
-      days.forEach(day => {
-        if (day.classList.contains('active')) {
-          day.classList.remove('active');
-          return;
-        }
-      });
-
-      item.classList.add('active');
+    currentWeek.forEach(day => {
+      const active = day.toDateString() === currentDate.toDateString(); // Проверка текущего дня
+      const button = createDayButton(day, active);
+      if (active) {
+        currentDayButton = button; // Установка ссылки на кнопку текущего дня
+      }
+      weekContainer.appendChild(button);
     });
-  });
+
+    weeksContainer.appendChild(weekContainer);
+  }
+
+  currentDayButton.classList.add('active'); // Добавление класса 'active' к текущей кнопке дня
 }
-
-// Обработчик клика на кнопку "Назад"
-prevButton.addEventListener('click', () => {
-  startDate.setDate(startDate.getDate() - 7); // Переходим к предыдущей неделе
-  endDate.setDate(endDate.getDate() - 7);
-  updateCalendar();
-  updateElements();
-});
-
-// Обработчик клика на кнопку "Вперед"
-nextButton.addEventListener('click', () => {
-  startDate.setDate(startDate.getDate() + 7); // Переходим к следующей неделе
-  endDate.setDate(endDate.getDate() + 7);
-  updateCalendar();
-  updateElements();
-});
 
 // Инициализация календаря
 updateCalendar();
-updateElements();
-
-const hourBtn = document.querySelectorAll('.hour-btn');
-
-hourBtn.forEach(item => {
-  item.addEventListener('click', () => {
-    for (let i = 0; i < hourBtn.length; i += 1) {
-      if (hourBtn[i].classList.contains('active')) {
-        hourBtn[i].classList.remove('active');
-        break;
-      }
-    }
-
-    item.classList.add('active');
-  });
-});

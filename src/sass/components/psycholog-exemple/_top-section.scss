@@ -865,7 +865,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 32px 10px;
+    padding: 30px 30px 10px;
 }
 .work__schedule-date {
     span {
@@ -902,21 +902,25 @@
 .work__schedule-weeks {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 30px 10px;
+    // justify-content: space-between;
+    // padding: 0 30px 10px;
     // overflow-x: scroll;
 }
 .days {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 2px;
+    justify-content: center;
+    height: 32px;
     background: rgba(34, 43, 64, 0.05);
-    padding: 8px 32px;
     border-radius: 15px;
     border: none;
+    min-width: 104px;
     &:hover {
         cursor: pointer;
+    }
+
+    &:not(:last-child) {
+        margin-right: 4px;
     }
 
     // &:focus {
@@ -2081,7 +2085,7 @@ color: #795BDA;
         font-size: 11px;
     }
     .work__schedule-weeks {
-        overflow-x: scroll;
+        // overflow-x: scroll;
     }
     .states__block {
         display: flex;
@@ -2415,5 +2419,43 @@ color: #795BDA;
 
     @media screen and (min-width: 1280px) {
         margin-right: 20px;
+    }
+}
+
+/////
+/// 
+.work__schedule-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.work__schedule-weeks{
+    transition: transform 300ms ease-in-out;
+
+    @media screen and (min-width: 1280px) {
+        padding: 0 30px 10px;
+    }
+
+}
+
+.week {
+    display: flex;
+    justify-content: space-between;
+    min-width: 350px;
+    overflow-x: auto;
+    padding: 10px 0;
+
+    @media screen and (min-width: 744px) {
+        min-width: 436px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        min-width: 776px;
+        padding: 0;
+        overflow-x: visible;
+    }
+
+    &:not(:last-child) {
+        margin-right: 32px;
     }
 }
