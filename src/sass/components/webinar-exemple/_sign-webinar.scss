@@ -1,0 +1,138 @@
+.sign__webinar {
+    background: #795BDA;
+    padding: 50px 0 0;
+}
+.purple__body {
+    display: flex;
+    justify-content: space-between;
+}
+.purple__left-block {
+    margin-right: 140px;
+}
+.purple__title {
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 62px;
+    letter-spacing: -0.06em;
+    color: #fff;
+    max-width: 360px;
+    .sign-section__icon-heart {
+        margin-bottom: -6px;
+    }
+}
+.purple__center-block {
+    background: #fff;
+    border-radius: 8px 8px 0 0;
+    padding: 30px;
+    max-width: 360px;
+    .purple__subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: -0.01em;
+    }
+    .purple__btn {
+        background: #795BDA;
+        padding: 16px 24px;
+        border-radius: 40px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 14px;
+        letter-spacing: -0.06em;
+        color: #fff;
+        border: none;
+        margin-top: 20px;
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+.purple__common-blocks {
+    width: 120px;
+}
+.purple__right-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.right-block__subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin-bottom: 50px;
+
+}
+.purple__images {
+    list-style: none;
+    margin-left: -40px;
+    display: flex;
+    img {
+        width: 46px;
+    }
+    .one {
+    }
+    .two {
+        margin-left: -15px;
+    }
+    .three {
+        margin-left: -15px;
+    }
+}
+
+
+
+@media screen and (max-width: 1279.98px) {
+    .purple__left-block {
+        margin-right: 0;
+    }
+    .purple__title {
+        font-size: 36px;
+        line-height: 40px;
+        margin-top: 19px;
+    }
+    .purple__center-block {
+        margin: 0 30px;
+        max-width: 270px;
+        padding: 20px;
+        .purple__subtitle {
+            font-size: 14px;
+            line-height: 21px;
+        }
+    }
+    .right-block__subtitle {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 743.98px) {
+    .purple__body {
+        flex-direction: column;
+    }
+    .purple__center-block {
+        max-width: 100%;
+        margin: 0 10px;
+        padding: 20px;
+        order: 1;
+    }
+    .purple__title {
+        margin-top: 0;
+        margin-bottom: 20px;
+        max-width: 222px;
+        .sign-section__icon-heart {
+            width: 10px;
+        }
+    }
+    .purple__common-blocks {
+        width: 100%;
+    }
+    .purple__right-block {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .right-block__subtitle {
+        max-width: 140px;
+    }
+    
+
+}
