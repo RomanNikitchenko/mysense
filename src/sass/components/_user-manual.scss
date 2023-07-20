@@ -4,16 +4,16 @@
 }
 
 .user-manual__container{
-    height: 670px;
+    height: 616px;
     position: relative;
 
     @media screen and (min-width: 744px) {
-        height: 515px;
+        height: 480px;
         padding-left: 40px;
         padding-right: 40px;
     }
     @media screen and (min-width: 1280px) {
-        height: 600px;
+        height: 580px;
         padding-left: 80px;
         padding-right: 80px;
     }
@@ -132,17 +132,19 @@
 .user-manual__item {
     background: #FFFFFF;
     border-radius: 8px;
-    padding-top: 20px;
     overflow: hidden;
+    height: 478px;
     width: 350px;   
+    display: flex;
+    flex-direction: column;
 
     @media screen and (min-width: 744px) {
-        display: flex;
-        align-items: flex-end;
+        flex-direction: row;
+        height: 347px;
         width: 664px;
-        padding: 20px 0 20px 20px;
     }
     @media screen and (min-width: 1280px) {
+        height: 420px;
         width: 1120px;
     }
 }
@@ -158,24 +160,24 @@
 }
 
 .user-manual__card{
-    margin: 0 20px;
-    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
     @media screen and (min-width: 744px) {
         margin: 0;
         width: 304px;
+        padding: 20px 0 20px 20px;
     }
     @media screen and (min-width: 1280px) {
-        width: 380px;
+        width: 440px;
+        padding: 30px 0 30px 30px;
     }
 }
 
 .user-manual__step-number{
-    margin-bottom: 30px;
     @media screen and (min-width: 744px) {
-        margin-bottom: 177px;
     }
     @media screen and (min-width: 1280px) {
-        margin-bottom: 245px;
     }
 }
 
@@ -204,18 +206,21 @@
     letter-spacing: -0.06em;
     color: var(--text-color);
     margin-bottom: 10px;
+    margin-top: 30px;
     @media screen and (min-width: 744px) {
         font-weight: 500;
         font-size: 32px;
         line-height: 100%;
         letter-spacing: -0.05em;
         margin-bottom: 25px;
+        margin-top: auto;
     }
     @media screen and (min-width: 744px) {
         font-weight: 500;
         font-size: 32px;
         line-height: 100%;
         letter-spacing: -0.05em;
+        margin-top: auto;
         margin-bottom: 20px;
     }
 }
@@ -234,8 +239,44 @@
 }
 
 .user-manual__image{
-    @media screen and (min-width: 1280px) {
+    position: relative;
+    margin-top: auto;
+    @media screen and (min-width: 744px) {
+        width: 340px;
+        height: 270px;
         margin-left: auto;
-        margin-bottom: -20px;
+        margin-bottom: auto;
     }
+    @media screen and (min-width: 1280px) {
+        width: 530px;
+        height: 420px;
+        margin-left: auto;
+    }
+}
+
+.user-manual__image--img-top {
+    position: absolute;
+    width: 178px;
+    top: 122px;
+    left: 152px;
+    overflow: hidden;
+    border-radius: 8px;
+
+    @media screen and (min-width: 744px) {
+        width: 174px;
+        top: 126px;
+        left: 136px;
+    }
+    
+    @media screen and (min-width: 1280px) {
+        width: 270px;
+        top: 186px;
+        left: 230px;
+    }
+}
+
+.card__text.card__text--width {
+    @media screen and (min-width: 1280px) {
+            width: 375px;
+        }
 }
