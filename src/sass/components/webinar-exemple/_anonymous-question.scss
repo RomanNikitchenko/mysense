@@ -1,0 +1,312 @@
+.purple__anonymous {
+    background: #795BDA;
+    margin-top: 60px;
+}
+.anonymous__body {
+    display: flex;
+    padding-top: 50px;
+}
+
+.anonymous__form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px 8px 0 0;
+    max-width: 450px;
+    h3 {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 32px;
+        letter-spacing: -0.05em;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: -0.05em;
+        max-width: 355px;
+        margin-bottom: 20px;
+    }
+    .anonymous__input {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #222B401A;
+        margin-bottom: 20px;
+        padding: 8px;
+        outline: none;
+    }
+    .anonymous__input:focus {
+        border-bottom: 1px solid #7155cd;
+    }
+    input::placeholder {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 14px;
+        letter-spacing: -0.01em;
+    }
+    .send__question {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 14px;
+        letter-spacing: -0.01em;
+        border-radius: 40px;
+        color: #fff;
+        background: #795BDA;
+        padding: 16px 36px;
+        border: none;
+        cursor: pointer;
+
+    }
+}
+
+.anonymous__right-block {
+    margin-left: 115px;
+    margin-top: 30px;
+    h4 {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 32px;
+        letter-spacing: -0.05em;
+        color: #fff;
+        margin-bottom: 30px;
+    }
+}
+.write__now {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    margin-bottom: 30px;
+    img {
+        width: 64px;
+        margin-right: 20px;
+    }
+    span {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: -0.05em;
+    }
+}
+.anonymous__buttons {
+    display: flex;
+    align-items: center;
+    .our-team__session-button {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 16px;
+        letter-spacing: -0.06em;
+        border-radius: 40px;
+        background: #fff;
+        color: #222B40;
+        border: none;
+        margin-right: 4px;
+        padding: 16px 24px;
+        cursor: pointer;
+
+    }
+    .our-team__details-button {
+
+    }
+    .friendly {
+
+    }
+    .our-team__icon-Hello {
+
+    }
+    .price {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 19px;
+        letter-spacing: -0.05em;
+        color: #fff;
+        margin-left: 20px;
+        padding-top: 5px;
+        span {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: -0.05em;
+            color: #fff;
+    
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 1279.98px) {
+    .anonymous__body {
+        flex-direction: column;
+        padding-top: 0;
+        padding-bottom: 30px;
+    }
+    .anonymous__form {
+        max-width: 100%;
+        border-radius: 0 0 8px 8px;
+    }
+    .anonymous__right-block {
+        margin-top: 60px;
+        margin-left: 0;
+    }
+    .write__now {
+        display: inline-flex;
+        float: left;
+        max-width: 270px;
+        margin-right: 10px;
+    }
+
+
+}
+
+@media screen and (max-width: 743.98px) {
+    .anonymous__form {
+        h3 {
+            font-size: 24px;
+            line-height: 26px;
+        }
+        p {
+            font-size: 10px;
+            line-height: 14px;
+        }
+        .send__question {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 14px;
+            width: 100%;
+        }
+    }
+    .anonymous__right-block h4 {
+        font-size: 24px;
+        line-height: 26px;
+    }
+
+    .write__now {
+        display: flex;
+        float: none;
+        max-width: 270px;
+        margin-right: 0;
+    }
+    .anonymous__buttons {
+        .our-team__session-button {
+            padding: 16px;
+        }
+        .price {
+            margin-left: 10px;
+        }
+    }
+}
+
+
+
+
+.our-team__details-button {
+    display: none;
+    width: 46px;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    background-color: #fff;
+    border-radius: 150px;
+    cursor: pointer;
+
+    .our-team__icon-Hello {
+        width: 23px;  
+    }
+}
+
+.our-team__details-button.friendly{
+    display: flex;
+}
+
+/* START TOOLTIP STYLES */
+[tooltip] {
+    position: relative; /* opinion 1 */
+}
+
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+    text-transform: none; /* opinion 2 */
+    font-size: .9em; /* opinion 3 */
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    display: none;
+    opacity: 0;
+}
+[tooltip]::before {
+    content: '';
+    border: 5px solid transparent; /* opinion 4 */
+    z-index: 1001; /* absurdity 1 */
+}
+[tooltip]::after {
+    content: attr(tooltip); /* magic! */
+    text-align: center;
+    /* 
+    Let the content set the size of the tooltips 
+    but this will also keep them from being obnoxious
+    */
+    width: 110px;
+    height: 47px;
+    font-size: 10px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 4px 8px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06), 0px 10px 20px -8px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    color: #222B40;
+    z-index: 1000; /* absurdity 2 */
+    left: -50px;
+
+}
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+    display: block;
+}
+
+/* don't show empty tooltips */
+[tooltip='']::before,
+[tooltip='']::after {
+    display: none !important;
+}
+[tooltip][flow^="down"]::before {
+    top: 100%;
+    border-top-width: 0;
+    border-bottom-color: #333;
+}
+[tooltip][flow^="down"]::after {
+    top: calc(100% + 5px);
+}
+[tooltip][flow^="down"]::before,
+[tooltip][flow^="down"]::after {
+    left: 50%;
+    transform: translate(-50%, .5em);
+}
+
+/* KEYFRAMES */
+@keyframes tooltips-vert {
+    to {
+        opacity: 1;
+        transform: translate( 0, -100%);
+    }
+}
+
+/* FX All The Things */ 
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^="up"]:hover::before,
+[tooltip][flow^="up"]:hover::after,
+[tooltip][flow^="down"]:hover::before,
+[tooltip][flow^="down"]:hover::after {
+    animation: tooltips-vert 300ms ease-out forwards;
+}
+
