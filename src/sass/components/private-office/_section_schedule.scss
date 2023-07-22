@@ -3217,3 +3217,20 @@ select {
     pointer-events: none;
     overflow: hidden;
 }
+
+.btn_on-click {
+    display: none;
+}
+
+.task__message-edit{
+    display: none;
+    width: 100%;
+    height: auto;
+    overflow-y: hidden;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.on_click-bg .task__message-edit{
+    display: block;
+}

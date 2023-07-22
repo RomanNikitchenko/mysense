@@ -16,3 +16,4 @@ import './private-office/modalCalendarWindow';
 import './private-office/sladerTimeTable';
 import './private-office/addSessionWeekMonthSlider';
 import './private-office/chat';
+import './private-office/task-editing';
