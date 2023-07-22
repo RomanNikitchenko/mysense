@@ -132,21 +132,51 @@
         }
 
     }
-    .sign-webinar {
-        border: none;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 14px;
-        letter-spacing: -0.06em;
-        color: #fff;
-
-        background: #795BDA;
-        padding: 16px 24px;
-        border-radius: 40px;
-        cursor: pointer;
-
-
+    .anonymous__buttons {
+        display: flex;
+        align-items: center;
+        .our-team__session-button {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 16px;
+            letter-spacing: -0.06em;
+            border-radius: 40px;
+            background: #795BDA;
+            color: #fff;
+            border: none;
+            margin-right: 4px;
+            padding: 16px 24px;
+            cursor: pointer;
+    
+        }
+        .our-team__details-button {
+    
+        }
+        .friendly {
+    
+        }
+        .our-team__icon-Hello {
+    
+        }
+        .price {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 19px;
+            letter-spacing: -0.05em;
+            color: #222B40;
+            margin-left: 20px;
+            padding-top: 5px;
+            span {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: -0.05em;
+                color: #222B40;
+        
+            }
+        }
     }
+    
 }
 
 
@@ -252,5 +282,127 @@
             margin-top: 60px;
         }
     }
-    
+    .speaker__info {
+        .anonymous__buttons {
+            .our-team__session-button {
+                padding: 16px;
+            }
+            .price {
+                margin-left: 10px;
+            }
+        }
+    }
+   
 }
+
+
+.our-team__details-button {
+    display: none;
+    width: 46px;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    background-color: #795BDA;
+    border-radius: 150px;
+    cursor: pointer;
+
+    .our-team__icon-Hello {
+        width: 23px;  
+    }
+}
+
+.our-team__details-button.friendly{
+    display: flex;
+}
+
+/* START TOOLTIP STYLES */
+[tooltip] {
+    position: relative; /* opinion 1 */
+}
+
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+    text-transform: none; /* opinion 2 */
+    font-size: .9em; /* opinion 3 */
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    display: none;
+    opacity: 0;
+}
+[tooltip]::before {
+    content: '';
+    border: 5px solid transparent; /* opinion 4 */
+    z-index: 1001; /* absurdity 1 */
+}
+[tooltip]::after {
+    content: attr(tooltip); /* magic! */
+    text-align: center;
+    /* 
+    Let the content set the size of the tooltips 
+    but this will also keep them from being obnoxious
+    */
+    width: 110px;
+    height: 47px;
+    font-size: 10px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 4px 8px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06), 0px 10px 20px -8px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    color: #222B40;
+    z-index: 1000; /* absurdity 2 */
+    left: -50px;
+
+}
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+    display: block;
+}
+
+/* don't show empty tooltips */
+[tooltip='']::before,
+[tooltip='']::after {
+    display: none !important;
+}
+[tooltip][flow^="down"]::before {
+    top: 100%;
+    border-top-width: 0;
+    border-bottom-color: #333;
+}
+[tooltip][flow^="down"]::after {
+    top: calc(100% + 5px);
+}
+[tooltip][flow^="down"]::before,
+[tooltip][flow^="down"]::after {
+    left: 50%;
+    transform: translate(-50%, .5em);
+}
+
+/* KEYFRAMES */
+@keyframes tooltips-vert {
+    to {
+        opacity: 1;
+        transform: translate( 0, -100%);
+    }
+}
+
+/* FX All The Things */ 
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^="up"]:hover::before,
+[tooltip][flow^="up"]:hover::after,
+[tooltip][flow^="down"]:hover::before,
+[tooltip][flow^="down"]:hover::after {
+    animation: tooltips-vert 300ms ease-out forwards;
+}
+

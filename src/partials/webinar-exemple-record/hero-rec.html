@@ -1,0 +1,59 @@
+<section class="hero-section">
+  <figure class="hero-section__figure">
+    <picture class="hero-section__picture">
+      <source
+        media="(min-width: 1280px)"
+        srcset="
+          ./images/webinar-exemple-hero-desktop@2x.jpg 1x,
+          ./images/webinar-exemple-hero-desktop@2x.jpg 2x
+        "
+      />
+      <source
+        media="(min-width: 744px)"
+        srcset="
+          ./images/webinar-exemple-hero-tablet@2x.jpg 1x,
+          ./images/webinar-exemple-hero-tablet@2x.jpg 2x
+        "
+      />
+      <source
+        media="(max-width: 743px)"
+        srcset="
+          ./images/webinar-exemple-hero-mobile@2x.jpg 1x,
+          ./images/webinar-exemple-hero-mobile@2x.jpg 2x
+        "
+      />
+
+      <img
+        alt=""
+        src="./images/webinar-exemple-hero-mobile@2x.jpg"
+        class="hero-section__image"
+      />
+    </picture>
+
+    <figcaption class="hero-section__figcaption">
+      <ul class="hero-section__list">
+        <li class="hero-section__item">
+          <svg class="hero-section__icon">
+            <use href="./images/symbol-defs.svg#video"></use>
+          </svg>
+
+          Вебінар у записі
+        </li>
+      </ul>
+
+      <h1 class="hero-section__title">
+        Як позбутися панічних атак вагітним жінкам?
+      </h1>
+
+      <div class="hero-section__speaker">
+        <span class="hero-section__speaker-label">Спікер</span>
+
+        <figcaption class="hero-section__speaker-info">
+          <h3 class="hero-section__speaker-name">Імʼя Прізвище</h3>
+
+          <p class="hero-section__speaker-experience">10 років практики</p>
+        </figcaption>
+      </div>
+    </figcaption>
+  </figure>
+</section>
