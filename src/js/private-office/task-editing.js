@@ -41,7 +41,7 @@
     });
   });
 
-  /////
+  ///// сохранить
 
   save.forEach(item => {
     item.addEventListener('click', () => {
@@ -58,7 +58,7 @@
     });
   });
 
-  /////
+  ///// отмена
 
   cancel.forEach(item => {
     item.addEventListener('click', () => {
@@ -69,6 +69,16 @@
       taskBlock.classList.remove('on_click-bg');
       dataBlockTask.classList.remove('on__click-btns');
       taskMessage.style.display = 'block';
+    });
+  });
+
+  ///// удалить блок
+  const cart = document.querySelectorAll('.cart');
+
+  cart.forEach(item => {
+    item.addEventListener('click', () => {
+      const itemTask = item.parentNode.parentNode.parentNode;
+      itemTask.remove();
     });
   });
 })();
