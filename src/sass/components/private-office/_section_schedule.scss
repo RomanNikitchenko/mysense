@@ -3229,8 +3229,19 @@ select {
     overflow-y: hidden;
     resize: none;
     box-sizing: border-box;
+
+    color: #222B40;
+    font-family: Golos Text;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.16px;
+    border: transparent;
+    background: transparent;
 }
 
 .on_click-bg .task__message-edit{
     display: block;
+    
 }
