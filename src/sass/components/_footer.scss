@@ -98,13 +98,47 @@
     }
 }
 .copyright {
-    font-weight: 500;
+    letter-spacing: -.01em;
+    color: #222b4066;
     font-size: 12px;
+    font-weight: 500;
     line-height: 150%;
-    letter-spacing: -0.01em;
-    color: rgba(34, 43, 64, 0.4);
+    display: flex;
+  }
+  
+  .copyright span {
     max-width: 212px;
-}
+    margin-right: 40px;
+  }
+  
+  .copyright .pay_card {
+    align-items: center;
+    display: flex;
+  }
+  
+  .copyright .pay_card img {
+    max-width: 75px;
+    margin: 5px 10px;
+  }
+  
+  .copyright .policy__links {
+    flex-direction: column;
+    margin-left: 30px;
+    display: flex;
+  }
+  
+  .copyright .policy__links a {
+    letter-spacing: -.01em;
+    color: #222b4066;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+  
+  .copyright .policy__links a:hover {
+    color: #795bda;
+  }
+
 .footer__right {
     display: flex;
     justify-content: flex-end;
@@ -178,6 +212,14 @@
         border-left: none;
         padding: 18px 20px 20px 0;
     }
+    .copyright {
+        flex-wrap: wrap;
+      }
+    
+      .copyright .policy__links {
+        margin-top: 15px;
+        margin-left: 0;
+      }
   }
   @media screen and (max-width: 744px) {
     .footer__list {
@@ -196,8 +238,16 @@
     .footer__social {
         margin-bottom: 50px;
     }
-  }
-  @media screen and (max-width: 390px) {
+    .copyright .pay_card {
+        margin-top: 10px;
+    }
+    
+    .copyright .pay_card img {
+        max-width: 40px;
+    }
+}
+
+@media screen and (max-width: 390px) {
     .footer__list .footer__link a {
         font-size: 12px;
     }
