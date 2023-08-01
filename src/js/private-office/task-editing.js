@@ -2,7 +2,7 @@
   const pensil = document.querySelectorAll('.item-task .pensil');
   const save = document.querySelectorAll('.item-task .save');
   const cancel = document.querySelectorAll('.item-task .cancel');
-  const textarea = document.querySelectorAll('.task__message-edit');
+  const textarea = document.querySelectorAll('.item-task .task__message-edit');
 
   const looksElements = taskBlock => {
     const taskMessage = taskBlock.querySelector('.task__message');
@@ -73,7 +73,7 @@
   });
 
   ///// удалить блок
-  const cart = document.querySelectorAll('.cart');
+  const cart = document.querySelectorAll('.item-task .cart');
 
   cart.forEach(item => {
     item.addEventListener('click', () => {
