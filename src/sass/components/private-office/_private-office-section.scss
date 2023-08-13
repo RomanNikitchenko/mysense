@@ -12,6 +12,10 @@ main {
 .private-office-section-container {
     @media screen and (min-width: 744px) {
             position: relative;
+            padding-bottom: 70px;
+        }
+        @media screen and (min-width: 389.98px) {
+            padding-bottom: 80px;
         }
 }
 
@@ -438,5 +442,61 @@ main {
                 display: block;
             }
         }
+    }
+}
+.block-session_bottom {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0px -4px 20px -10px #0000001A;
+    padding: 20px;
+    width: 664px;
+
+    @media screen and (min-width: 1279.98px) {
+        display: none;
+    }
+    @media screen and (max-width: 743.98px) {
+        width: 350px;
+    }
+   
+    .private-office__person-session {
+        display: flex;
+        align-items: center;
+        p {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 17px;
+            letter-spacing: -0.01em;
+            @media screen and (max-width: 743.98px) {
+                display: none;
+            }
+        }
+    }
+    .private-office__image-session-border {
+        margin-right: 15px;
+    }
+    .private-office__image-session {
+    }
+    .private-office__button {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 14px;
+        letter-spacing: -0.06em;
+        color: #FFFFFF;
+
+        border: none;
+        background: #795BDA;
+        border-radius: 30px;
+        padding: 16px 24px;
+        @media screen and (max-width: 743.98px) {
+            padding: 16px 54px;
+        }
+
+
+    }
+    .private-office__icon {
     }
 }
