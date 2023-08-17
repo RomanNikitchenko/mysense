@@ -2840,7 +2840,13 @@ select {
         width: 380px;
     }
     .switch__box button {
-        width: 120px;
+        width: 105px;
+    }
+    .switch__box-calendar button {
+        border-radius: 30px;
+        padding: 12px 16px;
+        margin-top: 10px;
+        margin-left: 5px;
     }
     .clients__session {
         margin-left: 127px;
