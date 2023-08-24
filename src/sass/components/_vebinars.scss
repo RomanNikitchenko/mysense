@@ -63,17 +63,19 @@
 }
 
 .meeting__left-block {
-    padding: 30px 20px 20px 20px;
     display: flex;
     justify-content: space-between;
+    height: 270px;
 }
 .meeting__info-block {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 20px;
 }
 .meeting__date {
-    margin-bottom: 74px;
+    margin-bottom: 64px;
+    padding-top: 10px;
     span {
         font-weight: 600;
         font-size: 14px;
@@ -250,22 +252,24 @@
 }
 
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 1279.98px) {
     .card__meeting {
         flex-wrap: wrap;
+        height: 420px;
     }
     .meeting__left-block {
         flex-direction: column;
+        width: 396px;
     }
     .meeting__spicer-block {
         border-left: none;
         margin-left: 0;
-        padding: 20px 0 0;
+        padding: 20px;
     }
     .meeting__info-block {
         border-bottom: 1px solid rgba(34, 43, 64, 0.2);
         padding-bottom: 20px;
-        max-width: 305px;
+        max-width: 100%;
     }
     .meeting__spicer {
         margin: 8px 0 20px;
@@ -285,20 +289,19 @@
         width: 550px;
     }
 }
-@media screen and (max-width: 743px) {
+@media screen and (max-width: 743.98px) {
     .card__meeting {
         background: #fff;
         max-width: 350px;
+        height: auto;
     }
     .meeting__image {
         max-width: 100%;
         display: block;
+        margin-top: 20px;
     }
     .meeting__image img {
         border-radius: 0;
-    }
-    .meeting__left-block {
-        padding: 30px 0px 20px 20px;
     }
     .meeting__title {
         font-size: 20px;

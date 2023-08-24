@@ -50,6 +50,7 @@
     color: #222B40;
     text-align: left;
     margin-right: 10px;
+    width: 162px;
 }
 
 .category__card-old {
@@ -65,7 +66,7 @@
 
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279.98px) {
     .category__cards {
         grid-template-columns: 208px 208px 208px;
     }
@@ -75,7 +76,7 @@
     }
 }
 
-@media screen and (max-width: 744px) {
+@media screen and (max-width: 743.98px) {
     .category__title {
         font-size: 32px;
     }
