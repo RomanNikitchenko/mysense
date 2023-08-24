@@ -188,7 +188,7 @@
     align-items: center;
     justify-content: center;
     border: none;
-    width: 140px;
+    width: 186px;
     height: 46px;
     background: rgba(121, 91, 218, 0.1);
     border-radius: 23px;
@@ -257,9 +257,7 @@
     }
 }
 
-
-
-@media screen and (max-width:1280px) {
+@media screen and (max-width:1279.98px) {
     .test__card-title {
         font-size: 22px;
     }
@@ -279,7 +277,7 @@
     }
     
 }
-@media screen and (max-width: 744px) {
+@media screen and (max-width: 743.98px) {
     .test__card-title {
         font-size: 22px;
     }
