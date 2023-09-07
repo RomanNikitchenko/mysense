@@ -115,16 +115,67 @@
         color: #222B40;
     }
     .therapy__body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4;
     }
     .therapy__item {
+    display: flex;
+    align-items: center;
+    border: none;
+    width: 100%;
+    background: #f3f3f3;
+    border-radius: 20px;
+    padding: 4px 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+        span {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: -0.05em;
+            margin-left: calc(50% - 48px);
+        }
+    }   
+    .therapy__item {
+        display: flex;
+        align-items: center;
+        border: none;
+        width: 100%;
+        background: #f3f3f3;
+        border-radius: 20px;
+        padding: 4px 8px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        span {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: -0.05em;
+            margin-left: calc(50% - 48px);
+        }
     }
     .therapy__item-offline {
+        .box_icon {
+            background: url('../images/map.svg') no-repeat;
+            width: 24px;
+            height: 24px;
+        }
     }
-    .box_icon {
+    .therapy__item-offline.button-active > .box_icon {
+        background: url('../images/map_active.svg') no-repeat;
     }
     .therapy__item-online {
+        .box_icon {
+            background: url('../images/planet.svg') no-repeat;
+            width: 24px;
+            height: 24px;
+        }
     }
-    .cities {
+    .therapy__item-online.button-active > .box_icon {
+        background: url('../images/planet_active.svg') no-repeat;
+    }
+    .sities {
     }
     .type {
     }
@@ -146,3 +197,146 @@
     }
 }
 
+
+
+
+
+// .cities {
+//     margin-top: 30px;
+//     width: 100%;
+//     border: none;
+//     border-bottom: 1px solid #222B40;
+//     color: #222B4066;
+//     padding: 6px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 14px;
+//     letter-spacing: -0.01em;
+//     option {
+//         color: #222B40;
+//     }
+// }
+
+// .form {
+//     border-bottom: 1px solid #222B401A;
+// }
+// .form__input {
+//     outline: none;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 14px;
+//     letter-spacing: -0.01em;
+//     color: #222B40;
+// }
+// label {
+//     font-size: 10px;
+//     font-weight: 500;
+//     line-height: 10px;
+//     letter-spacing: -0.01em;
+//     color: #222B4066;
+// }
+
+// .call_us {
+//     margin-top: 30px;
+//     padding-bottom: 30px;
+//     border-bottom: 1px solid #222B401A;
+// }
+// .call_us-title {
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 14px;
+//     letter-spacing: -0.01em;
+//     color: #222B40;
+//     margin-bottom: 15px;
+// }
+// .call_us-body {
+//     display: flex;
+//     align-items: center;
+// }
+// .call_us-item {
+//     display: flex;
+//     align-items: center;
+//     border: none;
+//     width: 100%;
+//     background: #f3f3f3;
+//     border-radius: 20px;
+//     padding: 5px 8px;
+//     border: 1px solid transparent;
+//     margin: 2px;
+//     span {
+//         font-size: 14px;
+//         font-weight: 500;
+//         line-height: 20px;
+//         letter-spacing: -0.05em;
+//         margin-left: calc(50% - 80px);
+//     }
+// }
+// .item_phone {
+//     .box_icon {
+//         background: url('../images/phone.svg') no-repeat;
+//         width: 24px;
+//         height: 24px;
+//     }
+// }
+// .item_phone.button-active > .box_icon {
+//     background: url('../images/phone_active.svg') no-repeat;
+// }
+    
+// .item_messenger {
+//     .box_icon {
+//         background: url('../images/message.svg') no-repeat;
+//         width: 24px;
+//         height: 24px;
+//     }
+// }
+// .item_messenger.button-active >  .box_icon {
+//     background: url('../images/message_active.svg') no-repeat;
+// }
+    
+
+// .check {
+//     margin-top: 30px;
+//     display: flex;
+//     align-items: center;
+//     .input_check {
+        
+//     }
+//     label {
+//         font-size: 14px;
+//         font-weight: 500;
+//         line-height: 20px;
+//         letter-spacing: -0.05em;
+//         margin-left: 10px;
+//         color: #222B40;
+//         a {
+//             color: #795BDA;
+//         }
+//     }
+//     input[type=checkbox] {
+//         width: 18px;
+//         height: 18px;
+//         border: #000000;
+//     }
+// }
+
+// .submit_btn {
+//     margin-top: 30px;
+//     padding: 16px;
+//     background: #795BDA;
+//     border: none;
+//     border-radius: 40px;
+//     width: 100%;
+//     cursor: pointer;
+//     color: #fff;
+//     &:hover {
+//         background: #6f53c9;
+//     }
+// }
+
+// .button-active {
+//     background: rgba(121, 91, 218, 0.1);
+//     border: 1px solid #795BDA;
+//     span {
+//         color: #795BDA;
+//     }
+// }
