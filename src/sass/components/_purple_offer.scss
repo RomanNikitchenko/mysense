@@ -12,6 +12,7 @@ body.lock {
     padding: 80px 0;
     background: #795BDA;
     color: #fff;
+    overflow-x: hidden;
     // position: relative;
 }
 .purple-offer_body {
@@ -172,8 +173,12 @@ body.lock {
         margin-bottom: 20px;
         outline: none;
     }
-    textarea {
-        // color: #222B4066 !important;
+    .form__input-area textarea {
+        color: #222B4066;
+        border: none;
+        border-bottom: 1px solid #222B40;
+        padding: 6px 0;
+        outline: none;
     }
     .therapy__title {
         font-size: 14px;
