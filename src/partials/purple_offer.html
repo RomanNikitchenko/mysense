@@ -8,16 +8,15 @@
                 <p>Відправте нам запит і ми із задоволенням це зробимо.</p>
             </div>
             <div class="purple-offer_btn">
-                <a class="leave_request" href="">Залишити заявку</a>
+                <a href="#" class="leave_request open-popup">Залишити заявку</a>
             </div>
         </div>
     </div>
 
-
     <!-- form popup -->
-    <div class="form_wrapper">
+    <!-- <div id="popup" class="popup">
         <form action="" class="request__session">
-            <a href="#" class="close js-close-menu-psycholog"><img src="images/svg-mysense/close.svg" alt=""></a>
+            <a href="#" class="close popup__close close-popup js-close-menu-psycholog"><img src="images/svg-mysense/close.svg" alt=""></a>
             <div class="request__session-title">Запит на підбір психотерапевта</div>
             
             <div class="form">
@@ -34,14 +33,14 @@
             <div class="format_therapy">
                 <h3 class="therapy__title">Оберіть формат терапії</h3>
                 <div class="therapy__body">
-                    <button class="therapy__item therapy__item-offline">
+                    <div class="therapy__item therapy__item-offline">
                         <div class="box_icon"></div>
                         <span>Очно</span>
-                    </button>
-                    <button class="therapy__item therapy__item-online">
+                    </div>
+                    <div class="therapy__item therapy__item-online">
                         <div class="box_icon"></div>
                         <span>Онлайн</span>
-                    </button>
+                    </div>
                 </div>
     
                 <select class="cities"  name="select">
@@ -52,38 +51,138 @@
                     <option value="value3">Одеса</option>
                 </select>
                 <select class="cities type"  name="select">
-                    <option value="value1" selected>Оберіть місто</option>
+                    <option value="value1" selected>Оберіть тип терапії</option>
                     <option value="value2">Індивідуальна</option>
                     <option value="value3">Парна</option>
                     <option value="value3">Дітяча</option>
                 </select>
                 
+                <textarea class="form__input" placeholder="Опишіть коротко ваш запит" type="text" rows="5">
+                </textarea>
             </div>
     
             <div class="call_us">
-                <h3 class="call_us-title">Оберіть формат терапії</h3>
+                <h3 class="call_us-title">В якій формі ви бажаєте отримати наші рекомендаці</h3>
                 <div class="call_us-body">
-                <button class="call_us-item item_phone">
-                    <div class="box_icon"></div>
-                    <span>Зателефонувати</span>
-                </button>
-                <button class="call_us-item item_messenger">
-                    <div class="box_icon"></div>
-                    <span>Написати в месенжер</span>
-                </button>
+                    <div class="call_us-item item_phone">
+                        <div class="box_icon"></div>
+                        <span>Зателефонувати</span>
+                    </div>
+                    <div class="call_us-item item_messenger">
+                        <div class="box_icon"></div>
+                        <span>Написати в месенжер</span>
+                    </div>
                 </div>
             </div>  
             
             <select class="cities messenger"  name="select">
-                <option value="value1" selected>Оберіть місто</option>
+                <option value="value1" selected>Оберіть месенжер</option>
                 <option value="value2">Телеграм</option>
                 <option value="value3">Вайбер</option>
             </select>
     
-            <button type="submit" class="submit_btn">Домовитись про сесію</button>
-    
+            <button type="submit" class="submit_btn">Відправити запит</button>
         </form>
-    </div>
+    </div> -->
+
+    
+    <div class="popup__bg"> 
+        <form class="popup request__session">
+            <img src="images/svg-mysense/close.svg" class="close popup__close close-popup">
+            <div class="request__session-title">Запит на підбір психотерапевта</div>
+            
+            <div class="form">
+                <label for="username">Імʼя</label> 
+                <input class="form__input" type="text" placeholder="Введіть ім'я" id="username" />
+    
+                <label for="usertel">Номер телефону</label> 
+                <input class="form__input" type="tel" placeholder="Введіть телефон" id="usertel" />
+    
+                <label for="useremail">Електронна адреса</label> 
+                <input class="form__input" type="email" placeholder="Введіть email" id="useremail" />
+            </div>
+    
+            <div class="format_therapy">
+                <h3 class="therapy__title">Оберіть формат терапії</h3>
+                <div class="therapy__body">
+                    <div class="therapy__item therapy__item-offline">
+                        <div class="box_icon"></div>
+                        <span>Очно</span>
+                    </div>
+                    <div class="therapy__item therapy__item-online">
+                        <div class="box_icon"></div>
+                        <span>Онлайн</span>
+                    </div>
+                </div>
+    
+                <select class="cities"  name="select">
+                    <option value="value1" selected>Оберіть місто</option>
+                    <option value="value2">Київ</option>
+                    <option value="value3">Дніпро</option>
+                    <option value="value3">Харків</option>
+                    <option value="value3">Одеса</option>
+                </select>
+                <select class="cities type"  name="select">
+                    <option value="value1" selected>Оберіть тип терапії</option>
+                    <option value="value2">Індивідуальна</option>
+                    <option value="value3">Парна</option>
+                    <option value="value3">Дітяча</option>
+                </select>
+                
+                <textarea class="form__input" placeholder="Опишіть коротко ваш запит" type="text" rows="5">
+                </textarea>
+            </div>
+    
+            <div class="call_us">
+                <h3 class="call_us-title">В якій формі ви бажаєте отримати наші рекомендаці</h3>
+                <div class="call_us-body">
+                    <div class="call_us-item item_phone">
+                        <div class="box_icon"></div>
+                        <span>Зателефонувати</span>
+                    </div>
+                    <div class="call_us-item item_messenger">
+                        <div class="box_icon"></div>
+                        <span>Написати в месенжер</span>
+                    </div>
+                </div>
+            </div>  
+            
+            <select class="cities messenger"  name="select">
+                <option value="value1" selected>Оберіть месенжер</option>
+                <option value="value2">Телеграм</option>
+                <option value="value3">Вайбер</option>
+            </select>
+    
+            <button type="submit" class="submit_btn">Відправити запит</button>
+        </form>
+    </div>  
+
 
 </section>
+
+<script>
+    let type = document.querySelectorAll('.type__session-item')
+    let therapy = document.querySelectorAll('.therapy__item')
+    let call = document.querySelectorAll('.call_us-item')
+        type.forEach(item =>{
+            item.addEventListener('click', (e) =>{
+            type.forEach(el=>{ el.classList.remove('button-active'); });
+            item.classList.add('button-active')
+        })
+    })
+        therapy.forEach(item =>{
+            item.addEventListener('click', (e) =>{
+            therapy.forEach(el=>{ el.classList.remove('button-active'); });
+            item.classList.add('button-active')
+        })
+    })
+        call.forEach(item =>{
+            item.addEventListener('click', (e) =>{
+            call.forEach(el=>{ el.classList.remove('button-active'); });
+            item.classList.add('button-active')
+        })
+    })
+</script>
+
+
     

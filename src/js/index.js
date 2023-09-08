@@ -10,3 +10,4 @@ import './private-office/outsidePrivateOffice';
 import './private-office/outsideMenuNavigation';
 import './client-office/outsideMenuNavigation';
 import './outsideLogout';
+import './mainPurplePopup';
