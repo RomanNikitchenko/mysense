@@ -89,19 +89,8 @@
     <div class="popup__bg"> 
         <form class="popup request__session">
             <img src="images/svg-mysense/close.svg" class="close popup__close close-popup">
-            <div class="request__session-title">Запит на підбір психотерапевта</div>
+            <div class="form_logo"><img src="images/Mysense-Logo.png" alt=""></div>
             
-            <div class="form">
-                <label for="username">Імʼя</label> 
-                <input class="form__input" type="text" placeholder="Введіть ім'я" id="username" />
-    
-                <label for="usertel">Номер телефону</label> 
-                <input class="form__input" type="tel" placeholder="Введіть телефон" id="usertel" />
-    
-                <label for="useremail">Електронна адреса</label> 
-                <input class="form__input" type="email" placeholder="Введіть email" id="useremail" />
-            </div>
-    
             <div class="format_therapy">
                 <h3 class="therapy__title">Оберіть формат терапії</h3>
                 <div class="therapy__body">
@@ -122,17 +111,22 @@
                     <option value="value3">Харків</option>
                     <option value="value3">Одеса</option>
                 </select>
-                <select class="cities type"  name="select">
-                    <option value="value1" selected>Оберіть тип терапії</option>
-                    <option value="value2">Індивідуальна</option>
-                    <option value="value3">Парна</option>
-                    <option value="value3">Дітяча</option>
-                </select>
                 <div class="form__input-area">
-                    <textarea name="message" placeholder="Опишіть коротко ваш запит" rows="4">
-                    </textarea>
+                    <textarea name="message" placeholder="Опишіть коротко ваш запит" rows="4"></textarea>
                 </div>   
             </div>
+
+            <div class="form">
+                <label for="username">Імʼя</label> 
+                <input class="form__input" type="text" placeholder="Введіть ім'я" id="username" />
+    
+                <label for="usertel">Номер телефону</label> 
+                <input class="form__input" type="tel" placeholder="Введіть телефон" id="usertel" />
+    
+                <label for="useremail">Електронна адреса</label> 
+                <input class="form__input" type="email" placeholder="Введіть email" id="useremail" />
+            </div>
+    
     
             <div class="call_us">
                 <h3 class="call_us-title">В якій формі ви бажаєте отримати наші рекомендаці</h3>
@@ -147,12 +141,6 @@
                     </div>
                 </div>
             </div>  
-            
-            <select class="cities messenger"  name="select">
-                <option value="value1" selected>Оберіть месенжер</option>
-                <option value="value2">Телеграм</option>
-                <option value="value3">Вайбер</option>
-            </select>
     
             <button type="submit" class="submit_btn">Відправити запит</button>
         </form>
