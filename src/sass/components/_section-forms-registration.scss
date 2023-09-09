@@ -40,30 +40,30 @@
         }
     }
 }
-.steps__block {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-.step {
-    position: relative;
-    span {
-        display: none;
-        position: absolute;
-        top: 10px;
-        left: 0;
-        width: 105px;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 100%;
-        letter-spacing: -0.06em;
-        color: #795BDA;
-    }
+// .steps__block {
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     gap: 10px;
+// }
+// .step {
+//     position: relative;
+//     span {
+//         display: none;
+//         position: absolute;
+//         top: 10px;
+//         left: 0;
+//         width: 105px;
+//         font-weight: 600;
+//         font-size: 14px;
+//         line-height: 100%;
+//         letter-spacing: -0.06em;
+//         color: #795BDA;
+//     }
 
-    .step__line-active ~ span {
-        display: block;
-    }
-}
+//     .step__line-active ~ span {
+//         display: block;
+//     }
+// }
 // .step_1 {
 // }
 // .step_2 {
@@ -72,29 +72,77 @@
 // }
 // .step_4 {
 // }
-.step__line {
-    border: 3px solid rgba(34, 43, 64, 0.1);
-}
-.step__line-active {
-    border: 3px solid #795BDA;
-}
+// .step__line {
+//     border: 3px solid rgba(34, 43, 64, 0.1);
+// }
+// .step__line-active {
+//     border: 3px solid #795BDA;
+// }
 
+/*-------------- social register --------------------------*/
+.social_reg {
+    margin-bottom: 30px;
+    p {
+        color: #222b4066;
+        margin: 20px 0 10px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: -0.05em;
+    }
+    .social_reg-list {
+        list-style: none;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 4px;
+        li {
+            background: #F3F3F3;
+            border-radius: 30px;
+            a {
+                display: flex;
+                text-decoration: none;
+                padding: 9px;
+                img {
+                    width: 16px;
+                }
+                span {
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 14px;
+                    letter-spacing: -0.06em;
+                    color: #222B40;
+                    margin-left: 7px;
+                }
+            }
+        }
+    }
+    .social_reg-link {
+    }
+}
 
 .step__wrap-form-1,
 .step__wrap-form-2,
 .step__wrap-form-3 {
-    margin-top: 54px;
+    margin-top: 30px;
     p {
         font-weight: 500;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 120%;
         letter-spacing: -0.05em;
         color: rgba(34, 43, 64, 0.4);
+        margin-bottom: 20px;
+    }
+    .input__body-step_1 {
+        flex-direction: column;
         margin-bottom: 30px;
     }
     .input__body {
         display: flex;
-        flex-direction: column;
+        .input__group {
+            margin: 4px 8px;
+            width: 50%;
+        }
         input {
             width: 100%;
             border: none;
@@ -121,6 +169,23 @@
             color: rgba(34, 43, 64, 0.4);
         }
     }
+    .checkbox {
+        margin-bottom: 20px;
+        display: flex;
+        input {
+            width: 18px;
+            height: 18px;
+            margin-top: 4px;
+        }
+        label {
+            letter-spacing: -.05em;
+            color: #222b40;
+            padding-left: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+        }
+    }
 }
 #show2,
 #show3 {
@@ -128,7 +193,8 @@
 }
 #showEye2,
 #showEye3 {
-    transform: translate(0, -50px);
+    transform: translate(0, 10px);
+    position: absolute;
 }
 .fa-eye-slash {
     position: absolute;
@@ -204,7 +270,6 @@
 
 /*-----------------------------------*/
 .buttons__control {
-    margin-top: 30px;
     display: flex;
     align-items: center;
     button {
@@ -223,12 +288,14 @@
     }
     .form__prew-btn{
         display: flex;
+        align-items: center;
+        justify-content: center;
         background: rgba(121, 91, 218, 0.1);
         color: #795BDA;
+        max-width: 45px;
+        padding: 16px;
         .form-btn-arrow-back {
             fill: #795BDA;
-            margin-right: 12px;
-            margin-top: 1px;
         }
         display: none;
     }
@@ -251,6 +318,10 @@
         }
     }
 }
+.link_sign-up {
+    margin-top: 20px;
+}
+
 
 @media screen and (max-width: 744px) {
     .block__data {

@@ -36,14 +36,14 @@ nextBtn.addEventListener('click', () => {
       stap = 4;
     }
 
-    for (let i = 0; i < stepLine.length; i += 1) {
-      if (stepLine[i].classList.contains('step__line-active')) {
-        stepLine[i].classList.remove('step__line-active');
-        break;
-      }
-    }
+    // for (let i = 0; i < stepLine.length; i += 1) {
+    //   if (stepLine[i].classList.contains('step__line-active')) {
+    //     stepLine[i].classList.remove('step__line-active');
+    //     break;
+    //   }
+    // }
 
-    stepLine[stap - 1].classList.add('step__line-active');
+    // stepLine[stap - 1].classList.add('step__line-active');
   }
 });
 
@@ -73,14 +73,14 @@ document.querySelector('.form__prew-btn').addEventListener('click', () => {
     stap = 3;
   }
 
-  for (let i = 0; i < stepLine.length; i += 1) {
-    if (stepLine[i].classList.contains('step__line-active')) {
-      stepLine[i].classList.remove('step__line-active');
-      break;
-    }
-  }
+  // for (let i = 0; i < stepLine.length; i += 1) {
+  //   if (stepLine[i].classList.contains('step__line-active')) {
+  //     stepLine[i].classList.remove('step__line-active');
+  //     break;
+  //   }
+  // }
 
-  stepLine[stap - 1].classList.add('step__line-active');
+  // stepLine[stap - 1].classList.add('step__line-active');
 });
 
 // Функция для валидации текущего шага
