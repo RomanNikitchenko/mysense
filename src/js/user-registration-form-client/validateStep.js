@@ -22,28 +22,32 @@ nextBtn.addEventListener('click', () => {
       step1.style.display = 'none';
       step2.style.display = 'block';
       prewBtn.style.display = 'flex';
+      nextBtn.style.display = 'none';
+      endBtn.style.display = 'block';
       isTransitioning = false;
       stap = 2;
-    } else if (step2.style.display !== 'none') {
+    } 
+    else if (step2.style.display !== 'none') {
       step2.style.display = 'none';
       step3.style.display = 'block';
       stap = 3;
-    } else if (step3.style.display !== 'none') {
-      step3.style.display = 'none';
-      step4.style.display = 'flex';
-      nextBtn.style.display = 'none';
-      endBtn.style.display = 'block';
-      stap = 4;
-    }
+    } 
+    // else if (step3.style.display !== 'none') {
+    //   step3.style.display = 'none';
+    //   step4.style.display = 'flex';
+    //   nextBtn.style.display = 'none';
+    //   endBtn.style.display = 'block';
+    //   stap = 4;
+    // }
 
-    for (let i = 0; i < stepLine.length; i += 1) {
-      if (stepLine[i].classList.contains('step__line-active')) {
-        stepLine[i].classList.remove('step__line-active');
-        break;
-      }
-    }
+    // for (let i = 0; i < stepLine.length; i += 1) {
+    //   if (stepLine[i].classList.contains('step__line-active')) {
+    //     stepLine[i].classList.remove('step__line-active');
+    //     break;
+    //   }
+    // }
 
-    stepLine[stap - 1].classList.add('step__line-active');
+    // stepLine[stap - 1].classList.add('step__line-active');
   }
 });
 
@@ -62,28 +66,30 @@ document.querySelector('.form__prew-btn').addEventListener('click', () => {
     prewBtn.style.display = 'none';
     stap = 1;
     console.log('1');
-  } else if (step3.style.display !== 'none') {
+  } 
+  else if (step3.style.display !== 'none') {
     step3.style.display = 'none';
     step2.style.display = 'block';
     stap = 2;
     console.log('2');
-  } else if (step4.style.display !== 'none') {
-    step4.style.display = 'none';
-    step3.style.display = 'block';
-    nextBtn.style.display = 'block';
-    endBtn.style.display = 'none';
-    stap = 3;
-    console.log('3');
-  }
+  } 
+  // else if (step4.style.display !== 'none') {
+  //   step4.style.display = 'none';
+  //   step3.style.display = 'block';
+  //   nextBtn.style.display = 'block';
+  //   endBtn.style.display = 'none';
+  //   stap = 3;
+  //   console.log('3');
+  // }
 
-  for (let i = 0; i < stepLine.length; i += 1) {
-    if (stepLine[i].classList.contains('step__line-active')) {
-      stepLine[i].classList.remove('step__line-active');
-      break;
-    }
-  }
+  // for (let i = 0; i < stepLine.length; i += 1) {
+  //   if (stepLine[i].classList.contains('step__line-active')) {
+  //     stepLine[i].classList.remove('step__line-active');
+  //     break;
+  //   }
+  // }
 
-  stepLine[stap - 1].classList.add('step__line-active');
+  // stepLine[stap - 1].classList.add('step__line-active');
 });
 
 // Функция для валидации текущего шага
@@ -113,7 +119,8 @@ function validateStep() {
       Notify.failure('Паролі не співпадають');
       return false;
     }
-  } else if (step3.style.display !== 'none') {
+  } 
+  else if (step3.style.display !== 'none') {
     // Проверяем поля шага 3
     const nameInput = document.getElementById('name');
     const lastNameInput = document.getElementById('last-name');
