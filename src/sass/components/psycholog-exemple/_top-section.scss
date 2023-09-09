@@ -1308,7 +1308,7 @@
         font-weight: 500;
         line-height: 20px;
         letter-spacing: -0.05em;
-        margin-left: 20px;
+        margin-left: 17px;
     }
 }
 
@@ -1918,7 +1918,7 @@ color: #795BDA;
 /*================================================================================================*/
 
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 1279.98px) {
     .psycholog__content {
         width: 100%;
         overflow: hidden;
@@ -2112,7 +2112,7 @@ color: #795BDA;
     }
 }
 
-@media screen and (max-width: 744px) {
+@media screen and (max-width: 743.98px) {
     .wrap__main {
         display: flex;
         flex-direction: column;
@@ -2276,6 +2276,15 @@ color: #795BDA;
         width: 100%;
         button {
             padding: 16px;
+        }
+    }
+    .type__session-item span {
+        margin-left: 7px;
+    }
+    .call_us-body {
+        flex-direction: column;
+        .call_us-item {
+            margin: 2px 0 10px;
         }
     }
 
