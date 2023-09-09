@@ -129,6 +129,8 @@ body.lock {
     height: 15px;
 }
 
+
+
 .request__session {
     max-width: 550px;
     background: #fff;
@@ -153,10 +155,52 @@ body.lock {
         color: #222B40;
         max-width: 300px;
     }
+    .type__session {
+        margin-top: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #222B401A;
+        h2 {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 14px;
+            letter-spacing: -0.01em;
+            margin-bottom: 15px;
+            color: #222B40;
+        }
+    
+    }
+    .type__session-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .type__session-item {
+        border: none;
+        background: #F3F3F3;
+        border-radius: 30px;
+        padding: 6px 16px;
+        display: flex;
+        align-items: center;
+        margin: 2px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        span {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: -0.05em;
+            margin-left: 20px;
+            color: #222B40;
+        }
+        .person-seans {
+            fill: #795bda;
+        }
+    }
     .form {
         margin-top: 30px;
         display: flex;
         flex-direction: column;
+        border-bottom: 1px solid #222B401A;
+        padding-bottom: 15px;
     }
     label {
         font-size: 10px;
@@ -172,12 +216,24 @@ body.lock {
         margin-bottom: 20px;
         outline: none;
     }
-    .form__input-area textarea {
-        color: #222B4066;
-        border: none;
-        border-bottom: 1px solid #222B40;
-        padding: 6px 0;
-        outline: none;
+    .form__input-area {
+        textarea {
+            color: #222B40;
+            border: none;
+            border-bottom: 1px solid #222B40;
+            padding: 6px 0;
+            outline: none;
+            font-weight: 500;
+        }
+        textarea::placeholder {
+            color: #222b4066;
+        }
+    }
+    
+    .format_therapy {
+        margin-top: 30px;
+        border-bottom: 1px solid #222B401A;
+        padding-bottom: 30px;
     }
     .therapy__title {
         font-size: 14px;
@@ -337,7 +393,27 @@ body.lock {
     .item_messenger.button-active >  .box_icon {
         background: url('../images/message_active.svg') no-repeat;
     }
-    
+    .checkbox {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        input {
+            width: 18px;
+            height: 18px;
+        }
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: -0.05em;
+            color: #222B40;
+            padding-left: 10px;
+            a {
+                color: #795BDA;
+            }
+        }
+    }
+
     .submit_btn {
         margin-top: 30px;
         padding: 16px;
@@ -403,6 +479,10 @@ body.lock {
         }
         .call_us-item {
             margin: 5px 2px;
+        }
+        .type__session-body {
+            grid-template-columns: 1fr 1fr;
+            display: grid;
         }
     }
 }
