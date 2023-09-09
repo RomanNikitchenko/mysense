@@ -3,14 +3,139 @@
         <div class="purple-offer_body">
             <div class="purple-offer_text">
                 <h2 class="purple-offer_title">
-                    Бажаєте отримати <br>нашу допомогу в підборі психотерапевта?
+                    Бажаєте отримати нашу допомогу в підборі психотерапевта?
                 </h2>
                 <p>Відправте нам запит і ми із задоволенням це зробимо.</p>
             </div>
             <div class="purple-offer_btn">
-                <a class="leave_request" href="">Залишити заявку</a>
+                <a href="#" class="leave_request open-popup">Залишити заявку
+                    <svg class="purple-offer_btn__icon-love-heart" width="18" height="16">
+                        <use href="images/symbol-defs.svg#icon-love-heart"></use>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
+
+
+    <!-- form popup -->
+    <div class="popup__bg"> 
+        <form class="popup request__session">
+            <img src="images/svg-mysense/close.svg" class="close popup__close close-popup">
+            <div class="form_logo"><img src="images/Mysense-Logo.png" alt=""></div>
+            
+            <div class="type__session">
+                <h2>Оберіть тип сесії</h2>
+                <div class="type__session-body">
+                    <div class="type__session-item">
+                        <svg class="person-seans" width="16" height="16">
+                        <use href="./images/symbol-defs.svg#icon-user-circle"></use>
+                        </svg>
+                        <span>Індивідуальна</span>
+                    </div>
+                    <div class="type__session-item">
+                        <svg class="person-seans" width="20" height="18">
+                        <use href="./images/symbol-defs.svg#icon-test-person-purple"></use>
+                        </svg>
+                        <span>Парна</span>
+                    </div>
+                    <div class="type__session-item">
+                        <svg class="person-seans" width="19" height="17">
+                        <use href="./images/symbol-defs.svg#icon-face-child"></use>
+                        </svg>
+                        <span>Дітяча</span>
+                    </div>
+                </div>
+            </div> 
+
+
+
+            <div class="format_therapy">
+                <h3 class="therapy__title">Оберіть формат терапії</h3>
+                <div class="therapy__body">
+                    <div class="therapy__item therapy__item-offline">
+                        <div class="box_icon"></div>
+                        <span>Очно</span>
+                    </div>
+                    <div class="therapy__item therapy__item-online">
+                        <div class="box_icon"></div>
+                        <span>Онлайн</span>
+                    </div>
+                </div>
+    
+                <select class="cities"  name="select">
+                    <option value="value1" selected>Оберіть місто</option>
+                    <option value="value2">Київ</option>
+                    <option value="value3">Дніпро</option>
+                    <option value="value3">Харків</option>
+                    <option value="value3">Одеса</option>
+                </select>
+                <div class="form__input-area">
+                    <textarea name="message" placeholder="Опишіть коротко ваш запит" rows="5"></textarea>
+                </div>   
+            </div>
+
+            <div class="form">
+                <label for="username">Імʼя</label> 
+                <input class="form__input" type="text" placeholder="Введіть ім'я" id="username" />
+    
+                <label for="usertel">Номер телефону</label> 
+                <input class="form__input" type="tel" placeholder="Введіть телефон" id="usertel" />
+    
+                <label for="useremail">Електронна адреса</label> 
+                <input class="form__input" type="email" placeholder="Введіть email" id="useremail" />
+            </div>
+    
+    
+            <div class="call_us">
+                <h3 class="call_us-title">В якій формі ви бажаєте отримати наші рекомендаці</h3>
+                <div class="call_us-body">
+                    <div class="call_us-item item_phone">
+                        <div class="box_icon"></div>
+                        <span>Зателефонувати</span>
+                    </div>
+                    <div class="call_us-item item_messenger">
+                        <div class="box_icon"></div>
+                        <span>Написати в месенжер</span>
+                    </div>
+                </div>
+            </div>  
+
+            <div class="checkbox">
+                <input type="checkbox" id="click">
+                <label for="click" class="text">Вам є 18 років і ви приймаєте <a href="">правила платформи My Sense</a></label>
+            </div>
+    
+            <button type="submit" class="submit_btn">Відправити запит</button>
+        </form>
+    </div>  
+
+
 </section>
+
+<script>
+    let type = document.querySelectorAll('.type__session-item')
+    let therapy = document.querySelectorAll('.therapy__item')
+    let call = document.querySelectorAll('.call_us-item')
+        type.forEach(item =>{
+            item.addEventListener('click', (e) =>{
+            type.forEach(el=>{ el.classList.remove('button-active'); });
+            item.classList.add('button-active')
+        })
+    })
+        therapy.forEach(item =>{
+            item.addEventListener('click', (e) =>{
+            therapy.forEach(el=>{ el.classList.remove('button-active'); });
+            item.classList.add('button-active')
+        })
+    })
+        call.forEach(item =>{
+            item.addEventListener('click', (e) =>{
+            call.forEach(el=>{ el.classList.remove('button-active'); });
+            item.classList.add('button-active')
+        })
+    })
+</script>
+
+
     
