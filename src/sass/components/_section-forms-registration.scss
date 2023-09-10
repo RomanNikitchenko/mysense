@@ -99,10 +99,13 @@
         li {
             background: #F3F3F3;
             border-radius: 30px;
+            display: flex;
+            justify-content: center;
             a {
                 display: flex;
                 text-decoration: none;
                 padding: 9px;
+                margin-left: 0;
                 img {
                     width: 16px;
                 }
@@ -116,8 +119,6 @@
                 }
             }
         }
-    }
-    .social_reg-link {
     }
 }
 
@@ -323,7 +324,7 @@
 }
 
 
-@media screen and (max-width: 744px) {
+@media screen and (max-width: 743.98px) {
     .block__data {
         width: 150px;
         height: 150px;
@@ -334,6 +335,14 @@
             p {
                 font-size: 10px;
             }
+        }
+    }
+    .step__wrap-form-2 .input__body {
+        display: flex;
+        flex-direction: column;
+        .input__group {
+            width: 100%;
+            margin: 0;
         }
     }
 }
