@@ -35,14 +35,14 @@ body.lock {
         line-height: 36px;
         letter-spacing: -0.01em;
         margin-top: 20px;
-        max-width: 513px;
+        max-width: 547px;
         &:after {
             content: '';
             position: absolute;
             width: 100%;
             height: 114px;
-            bottom: -66px;
-            right: -88%;
+            bottom: -79px;
+            right: -86%;
             background: url('../images/arrow_wawes.svg') no-repeat;
         }
     }
@@ -452,7 +452,7 @@ body.lock {
         margin-bottom: 30px;
         &:after {
             transform: rotate(70deg) scale(1, -1);
-            bottom: 40px;
+            bottom: 8px;
             right: -224px;
             height: 56px;
             width: 49%;
