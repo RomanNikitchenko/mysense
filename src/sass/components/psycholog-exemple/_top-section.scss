@@ -1241,16 +1241,15 @@
     top: 15px;
     right: 15px;
 }
-.reg__session-title {
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    color: #222B40;
-    margin-bottom: 30px;
-}
+// .reg__session-title {
+//     font-weight: 500;
+//     font-size: 32px;
+//     line-height: 100%;
+//     letter-spacing: -0.05em;
+//     color: #222B40;
+//     margin-bottom: 30px;
+// }
 .reg__session-name {
-    border-top: 1px solid rgba(34, 43, 64, 0.1);
     border-bottom: 1px solid rgba(34, 43, 64, 0.1);
     padding: 30px 0;
     display: flex;
@@ -1405,6 +1404,21 @@ label {
     line-height: 10px;
     letter-spacing: -0.01em;
     color: #222B4066;
+}
+.form__input-area {
+    textarea {
+        color: #222B40;
+        border: none;
+        border-bottom: 1px solid #222B40;
+        padding: 6px 0;
+        outline: none;
+        font-weight: 500;
+        margin-top: 30px;
+        width: 100%;
+    }
+    textarea::placeholder {
+        color: #222b4066;
+    }
 }
 
 .call_us {
